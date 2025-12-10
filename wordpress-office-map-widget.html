@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>MWWST Global Offices - Interactive Map</title>
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-dark: #1d4ed8;
+            --primary-blue-light: #3b82f6;
+            --accent-blue: #dbeafe;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --text-light: #9ca3af;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .office-map-widget {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            padding: 60px 30px;
+            border-radius: var(--radius-xl);
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-200);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .office-map-widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%);
+            z-index: -1;
+        }
+
+        .widget-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .widget-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, rgba(219, 234, 254, 0.8) 100%);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .widget-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .widget-badge svg {
+            animation: bounce 2s infinite;
+        }
+
+        .widget-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary-blue) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .widget-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                transform: translate3d(0, -8px, 0);
+            }
+            70% {
+                transform: translate3d(0, -4px, 0);
+            }
+        }
+
+
+
+        .map-container {
+            position: relative;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 0;
+            margin-bottom: 60px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            animation: slideInUp 1s ease-out 0.2s both;
+            border: 2px solid var(--gray-200);
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, transparent 50%, rgba(37, 99, 235, 0.03) 100%);
+            pointer-events: none;
+            z-index: 2;
+            border-radius: var(--radius-xl);
+        }
+
+        .world-map {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .animated-world-map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .animated-world-map svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .world-countries {
+            fill: #e5e7eb;
+            stroke: #ffffff;
+            stroke-width: 0.8;
+            transition: all 0.4s ease;
+            animation: landmassGlow 4s ease-in-out infinite alternate;
+        }
+
+        .world-countries:hover {
+            fill: #d1d5db;
+            transform: scale(1.02);
+            filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.3));
+        }
+
+        .world-oceans {
+            fill: #dbeafe;
+            animation: oceanFlow 6s ease-in-out infinite;
+        }
+
+        @keyframes landmassGlow {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.05); }
+        }
+
+        @keyframes oceanFlow {
+            0%, 100% { fill: #dbeafe; }
+            50% { fill: #bfdbfe; }
+        }
+
+        .animated-elements {
+            animation: fadeInSequence 3s ease-out;
+        }
+
+        .floating-dots {
+            animation: floatingDots 8s ease-in-out infinite;
+        }
+
+        .pulse-ring {
+            animation: pulseRing 3s ease-out infinite;
+        }
+
+        @keyframes fadeInSequence {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes floatingDots {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulseRing {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .connection-lines {
+            stroke: #2563eb;
+            stroke-width: 2;
+            fill: none;
+            opacity: 0.6;
+            stroke-dasharray: 10,5;
+            animation: energyFlow 4s linear infinite;
+        }
+
+        .data-flow {
+            stroke: #3b82f6;
+            stroke-width: 3;
+            fill: none;
+            opacity: 0.8;
+            stroke-linecap: round;
+            animation: dataStream 2s ease-in-out infinite;
+        }
+
+        @keyframes energyFlow {
+            0% { stroke-dashoffset: 0; opacity: 0.6; }
+            50% { opacity: 0.9; }
+            100% { stroke-dashoffset: -30; opacity: 0.6; }
+        }
+
+        @keyframes dataStream {
+            0%, 100% { stroke-dasharray: 0,20; }
+            50% { stroke-dasharray: 10,10; }
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* Enhanced office pin styles for better visibility */
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .office-pin {
+            position: absolute;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .pin-marker {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pin-dot {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .pin-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.6;
+            animation: rippleEffect 2s ease-out infinite;
+        }
+
+        .dynamic-pin {
+            animation: pinAppear 0.8s ease-out;
+        }
+
+        .dynamic-pin:nth-child(1) { animation-delay: 0.2s; }
+        .dynamic-pin:nth-child(2) { animation-delay: 0.4s; }
+        .dynamic-pin:nth-child(3) { animation-delay: 0.6s; }
+        .dynamic-pin:nth-child(4) { animation-delay: 0.8s; }
+        .dynamic-pin:nth-child(5) { animation-delay: 1.0s; }
+        .dynamic-pin:nth-child(6) { animation-delay: 1.2s; }
+        .dynamic-pin:nth-child(7) { animation-delay: 1.4s; }
+        .dynamic-pin:nth-child(8) { animation-delay: 1.6s; }
+
+        @keyframes pinAppear {
+            0% { 
+                opacity: 0; 
+                transform: translate(-50%, -50%) scale(0.3) translateY(-20px);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.2) translateY(-5px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translate(-50%, -50%) scale(1) translateY(0);
+            }
+        }
+
+        @keyframes rippleEffect {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+
+        .office-pin:hover .pin-marker {
+            transform: scale(1.3);
+        }
+
+        .office-pin:hover .pin-dot {
+            background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+            transform: scale(1.1);
+        }
+
+        .office-pin:hover .pin-ripple {
+            animation-play-state: paused;
+            opacity: 0.8;
+        }
+
+        .office-tooltip {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 0;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            white-space: nowrap;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 20;
+            overflow: hidden;
+            min-width: 200px;
+        }
+
+        .tooltip-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+        }
+
+        .tooltip-image {
+            width: 50px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+            border: 2px solid var(--primary-blue);
+            background: var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .tooltip-image:hover {
+            border-color: var(--primary-blue-light);
+            transform: scale(1.05);
+        }
+
+        .tooltip-image[src=""], .tooltip-image:not([src]) {
+            background: linear-gradient(45deg, var(--gray-100), var(--gray-200));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tooltip-image[src=""]::before, .tooltip-image:not([src])::before {
+            content: '🏢';
+            font-size: 20px;
+        }
+
+        .tooltip-text {
+            flex: 1;
+        }
+
+        .tooltip-city {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .tooltip-type {
+            font-size: 12px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .tooltip-address {
+            font-size: 11px;
+            color: var(--text-gray);
+            font-weight: 400;
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+
+        .tooltip-phone {
+            font-size: 11px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .office-tooltip::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-top: none;
+            border-left: none;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .office-pin:hover .office-tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Enhanced continent hover effects */
+        .world-countries:hover {
+            fill: #d1d5db;
+            filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.4)) brightness(1.1);
+            transform-origin: center;
+        }
+
+        /* Dynamic connection lines between offices */
+        .office-connections {
+            stroke: var(--primary-blue);
+            stroke-width: 1.5;
+            fill: none;
+            opacity: 0.3;
+            stroke-dasharray: 5,10;
+            animation: connectionFlow 8s linear infinite;
+        }
+
+        @keyframes connectionFlow {
+            0% { 
+                stroke-dashoffset: 0; 
+                opacity: 0.2; 
+            }
+            50% { 
+                opacity: 0.6; 
+            }
+            100% { 
+                stroke-dashoffset: -50; 
+                opacity: 0.2; 
+            }
+        }
+
+        .office-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .office-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .office-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .office-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .office-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .office-card:nth-child(1) { animation-delay: 0.1s; }
+        .office-card:nth-child(2) { animation-delay: 0.2s; }
+        .office-card:nth-child(3) { animation-delay: 0.3s; }
+        .office-card:nth-child(4) { animation-delay: 0.4s; }
+        .office-card:nth-child(5) { animation-delay: 0.5s; }
+        .office-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .office-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .office-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, rgba(219, 234, 254, 0.6) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .office-card:hover .office-icon {
+            transform: rotate(5deg) scale(1.1);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            color: var(--white);
+        }
+
+        .office-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .office-info .office-type {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            padding: 4px 12px;
+            background: var(--gray-100);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .office-details {
+            margin-top: 8px;
+        }
+
+        .office-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .office-detail-icon {
+            width: 16px;
+            height: 16px;
+            color: #2563eb;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 32px 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.2s; }
+        .stat-card:nth-child(2) { animation-delay: 0.4s; }
+        .stat-card:nth-child(3) { animation-delay: 0.6s; }
+        .stat-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 50%, var(--primary-blue-light) 100%);
+            border-radius: var(--radius-xl);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 1s ease-out 0.8s both;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 2;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+            background: var(--gray-50);
+        }
+
+        .cta-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .office-map-widget {
+                padding: 40px 16px;
+            }
+            
+            .widget-title {
+                font-size: 2.25rem;
+            }
+            
+            .widget-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .map-container {
+                padding: 0;
+                margin-bottom: 40px;
+            }
+            
+            .world-map {
+                height: 350px;
+            }
+            
+            .office-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .office-card {
+                padding: 24px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            
+            .cta-section {
+                padding: 40px 24px;
+                margin-top: 40px;
+            }
+            
+            .cta-title {
+                font-size: 1.75rem;
+            }
+            
+            .office-pin {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .office-pin::before {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .office-tooltip {
+                min-width: 180px;
+                font-size: 12px;
+            }
+            
+            .tooltip-image {
+                width: 40px;
+                height: 32px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .office-map-widget {
+                max-width: 100%;
+                padding: 50px 24px;
+            }
+            
+            .widget-title {
+                font-size: 2.5rem;
+            }
+            
+            .world-map {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .widget-title {
+                font-size: 1.75rem;
+            }
+            
+            .widget-subtitle {
+                font-size: 1rem;
+            }
+            
+            .office-map-widget {
+                padding: 20px 12px;
+            }
+            
+            .widget-header {
+                margin-bottom: 30px;
+            }
+            
+            .widget-badge {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .world-map {
+                height: 250px;
+            }
+            
+            .map-container {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .widget-title {
+                font-size: 1.5rem;
+            }
+            
+            .office-map-widget {
+                padding: 16px 8px;
+            }
+            
+            .world-map {
+                height: 200px;
+            }
+            
+            .office-pin {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .office-pin::before {
+                width: 6px;
+                height: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="office-map-widget">
+        <!-- Header -->
+        <div class="widget-header">
+            <div class="widget-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                Global Presence
+            </div>
+            <h2 class="widget-title">MWWST Worldwide Offices</h2>
+            <p class="widget-subtitle">
+                Discover our global network of offices and connect with our teams across six continents. 
+                We're strategically positioned to serve clients worldwide with local expertise and global reach.
+            </p>
+        </div>
+
+        <!-- Interactive Map -->
+        <div class="map-container">
+            <div class="world-map">
+                <!-- Enhanced Animated World Map SVG -->
+                <div class="animated-world-map">
+                    <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <!-- Gradients -->
+                            <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#bfdbfe;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#93c5fd;stop-opacity:1" />
+                            </linearGradient>
+                            
+                            <radialGradient id="landGradient" cx="50%" cy="30%" r="70%">
+                                <stop offset="0%" style="stop-color:#f3f4f6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:1" />
+                            </radialGradient>
+                            
+                            <!-- Filters -->
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            
+                            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Animated Ocean Background -->
+                        <rect width="1000" height="500" fill="url(#oceanGradient)" class="world-oceans"/>
+                        
+
+                        
+                        <!-- Enhanced World Continents with Realistic Shapes -->
+                        <g class="animated-elements">
+                            <!-- North America -->
+                            <path d="M 50 140 C 80 100 120 80 180 90 C 220 70 280 60 320 85 C 350 100 380 120 390 160 C 380 200 350 230 310 250 C 280 270 240 275 200 270 C 160 265 120 250 90 220 C 60 190 45 165 50 140 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- Greenland -->
+                            <path d="M 280 40 C 320 35 350 50 360 80 C 355 110 340 125 315 130 C 290 125 275 100 280 40 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- South America -->
+                            <path d="M 220 290 C 250 275 280 280 300 300 C 315 330 320 360 315 390 C 310 420 295 445 275 460 C 255 470 235 465 220 450 C 205 430 200 410 205 385 C 210 360 215 330 220 290 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- Europe -->
+                            <path d="M 420 120 C 450 110 480 115 510 130 C 530 145 535 165 530 185 C 520 200 500 205 480 200 C 460 195 440 185 425 170 C 415 155 415 135 420 120 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- Africa -->
+                            <path d="M 430 200 C 470 190 510 200 540 230 C 560 260 565 290 560 320 C 555 350 545 380 530 400 C 515 415 495 420 475 415 C 455 410 440 395 430 375 C 420 355 415 335 418 315 C 422 295 425 275 430 240 C 432 220 431 210 430 200 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- Asia -->
+                            <path d="M 540 120 C 600 110 660 115 720 130 C 780 145 840 160 890 185 C 920 210 930 240 925 270 C 920 300 900 325 875 345 C 850 365 820 375 790 370 C 760 365 730 355 700 340 C 670 325 640 305 620 280 C 600 255 590 230 585 200 C 580 170 575 145 570 125 C 560 122 550 121 540 120 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- Australia -->
+                            <path d="M 750 380 C 790 375 830 385 860 400 C 880 415 885 435 875 450 C 865 465 845 470 825 465 C 805 460 785 450 770 435 C 755 420 750 400 750 380 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)"/>
+                            
+                            <!-- Antarctica -->
+                            <path d="M 100 470 C 200 465 300 468 400 470 C 500 472 600 470 700 468 C 800 466 900 468 950 475 L 950 500 L 50 500 C 60 485 80 475 100 470 Z" 
+                                  fill="url(#landGradient)" class="world-countries" filter="url(#shadow)" opacity="0.7"/>
+                        </g>
+                        
+                        <!-- Dynamic Office Connections -->
+                        <g class="office-network">
+                            <!-- NYC to London -->
+                            <path d="M 250 190 Q 350 160 470 160" class="office-connections"/>
+                            
+                            <!-- London to Dubai -->
+                            <path d="M 470 160 Q 520 200 570 260" class="office-connections"/>
+                            
+                            <!-- Dubai to Mumbai -->
+                            <path d="M 570 260 Q 620 250 670 240" class="office-connections"/>
+                            
+                            <!-- Mumbai to Singapore -->
+                            <path d="M 670 240 Q 720 280 750 310" class="office-connections"/>
+                            
+                            <!-- Singapore to Tokyo -->
+                            <path d="M 750 310 Q 800 250 850 175" class="office-connections"/>
+                            
+                            <!-- Tokyo to Sydney -->
+                            <path d="M 850 175 Q 860 300 820 410" class="office-connections"/>
+                            
+                            <!-- NYC to São Paulo -->
+                            <path d="M 250 190 Q 280 250 300 360" class="office-connections"/>
+                            
+                            <!-- Cross-Pacific: Tokyo to NYC -->
+                            <path d="M 850 175 Q 500 100 250 190" class="office-connections"/>
+                        </g>
+
+                        <!-- Animated Data Flow Lines -->
+                        <g class="connection-lines">
+                            <path d="M200 200 Q400 150 600 200" class="data-flow"/>
+                            <path d="M600 250 Q750 200 850 250" class="data-flow"/>
+                            <path d="M300 300 Q500 250 700 300" class="data-flow"/>
+                        </g>
+                        
+
+                    </svg>
+                </div>
+                <!-- Office Pins Overlay -->
+                <div class="map-overlay">
+                    <!-- New York -->
+                    <div class="office-pin dynamic-pin" data-office="new-york" style="left: 25%; top: 38%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=100&h=80&fit=crop&crop=entropy" alt="New York Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">New York</div>
+                                    <div class="tooltip-type">Headquarters</div>
+                                    <div class="tooltip-address">350 5th Ave, NY 10118</div>
+                                    <div class="tooltip-phone">+1 (212) 555-0100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- London -->
+                    <div class="office-pin dynamic-pin" data-office="london" style="left: 47%; top: 32%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=100&h=80&fit=crop&crop=entropy" alt="London Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">London</div>
+                                    <div class="tooltip-type">European HQ</div>
+                                    <div class="tooltip-address">1 Canary Wharf, E14 5AB</div>
+                                    <div class="tooltip-phone">+44 20 7946 0958</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tokyo -->
+                    <div class="office-pin dynamic-pin" data-office="tokyo" style="left: 85%; top: 35%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=100&h=80&fit=crop&crop=entropy" alt="Tokyo Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">Tokyo</div>
+                                    <div class="tooltip-type">Asia Pacific HQ</div>
+                                    <div class="tooltip-address">Tokyo Station, Chiyoda</div>
+                                    <div class="tooltip-phone">+81 3-5521-8100</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sydney -->
+                    <div class="office-pin dynamic-pin" data-office="sydney" style="left: 82%; top: 82%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=80&fit=crop&crop=entropy" alt="Sydney Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">Sydney</div>
+                                    <div class="tooltip-type">Regional Office</div>
+                                    <div class="tooltip-address">Sydney Opera House Area</div>
+                                    <div class="tooltip-phone">+61 2 9374 4000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- São Paulo -->
+                    <div class="office-pin dynamic-pin" data-office="sao-paulo" style="left: 30%; top: 72%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=100&h=80&fit=crop&crop=entropy" alt="São Paulo Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">São Paulo</div>
+                                    <div class="tooltip-type">South America HQ</div>
+                                    <div class="tooltip-address">Av. Paulista, 1578</div>
+                                    <div class="tooltip-phone">+55 11 3371-3000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Singapore -->
+                    <div class="office-pin dynamic-pin" data-office="singapore" style="left: 75%; top: 62%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=100&h=80&fit=crop&crop=entropy" alt="Singapore Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">Singapore</div>
+                                    <div class="tooltip-type">SE Asia Hub</div>
+                                    <div class="tooltip-address">Marina Bay Financial Centre</div>
+                                    <div class="tooltip-phone">+65 6823 8000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dubai -->
+                    <div class="office-pin dynamic-pin" data-office="dubai" style="left: 57%; top: 52%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=100&h=80&fit=crop&crop=entropy" alt="Dubai Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">Dubai</div>
+                                    <div class="tooltip-type">Middle East Hub</div>
+                                    <div class="tooltip-address">Burj Khalifa District</div>
+                                    <div class="tooltip-phone">+971 4-330-3000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mumbai -->
+                    <div class="office-pin dynamic-pin" data-office="mumbai" style="left: 67%; top: 48%;">
+                        <div class="pin-marker">
+                            <div class="pin-dot"></div>
+                            <div class="pin-ripple"></div>
+                        </div>
+                        <div class="office-tooltip">
+                            <div class="tooltip-content">
+                                <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=100&h=80&fit=crop&crop=entropy" alt="Mumbai Office" class="tooltip-image">
+                                <div class="tooltip-text">
+                                    <div class="tooltip-city">Mumbai</div>
+                                    <div class="tooltip-type">India Operations</div>
+                                    <div class="tooltip-address">Bandra Kurla Complex</div>
+                                    <div class="tooltip-phone">+91 22 6112 1000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.map-container');
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+
+
+
+            // Animate numbers on scroll
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const animateNumber = (element, finalNumber) => {
+                let currentNumber = 0;
+                const increment = finalNumber / 30;
+                const timer = setInterval(() => {
+                    currentNumber += increment;
+                    if (currentNumber >= finalNumber) {
+                        currentNumber = finalNumber;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(currentNumber) + (finalNumber > 100 ? '+' : '');
+                }, 50);
+            };
+
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const number = entry.target;
+                        const finalValue = number.textContent.replace(/\D/g, '');
+                        if (finalValue) {
+                            animateNumber(number, parseInt(finalValue));
+                        }
+                        statsObserver.unobserve(number);
+                    }
+                });
+            }, observerOptions);
+
+            statNumbers.forEach(number => {
+                statsObserver.observe(number);
+            });
+
+            // Add parallax effect to map container
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const mapContainer = document.querySelector('.map-container');
+                if (mapContainer) {
+                    const rate = scrolled * -0.2;
+                    mapContainer.style.transform = `translateY(${rate}px)`;
+                }
+            });
+
+            // Add smooth scroll for CTA button
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // You can customize this to scroll to a contact form or open a modal
+                    alert('Contact form would open here! You can customize this action.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

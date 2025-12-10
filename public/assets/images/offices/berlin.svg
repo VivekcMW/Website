@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <!-- Berlin skyline with modern architecture -->
+  <defs>
+    <linearGradient id="berlinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3F4F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E5E7EB;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="tvTowerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky -->
+  <rect width="400" height="300" fill="url(#berlinGradient)"/>
+  
+  <!-- Spree River -->
+  <rect x="0" y="260" width="400" height="40" fill="#6B7280" opacity="0.5"/>
+  
+  <!-- TV Tower (Fernsehturm) -->
+  <rect x="180" y="40" width="6" height="180" fill="#D1D5DB"/>
+  <circle cx="183" cy="70" r="18" fill="url(#tvTowerGradient)"/>
+  <rect x="180" y="30" width="6" height="15" fill="#EF4444"/>
+  
+  <!-- Modern office buildings -->
+  <rect x="120" y="120" width="30" height="140" fill="#1F2937" rx="2"/>
+  <rect x="155" y="110" width="25" height="150" fill="#374151" rx="2"/>
+  <rect x="220" y="130" width="35" height="130" fill="#4B5563" rx="2"/>
+  
+  <!-- Potsdamer Platz buildings -->
+  <rect x="260" y="100" width="40" height="160" fill="#6B7280" rx="2"/>
+  <rect x="305" y="125" width="30" height="135" fill="#374151" rx="2"/>
+  
+  <!-- Smaller buildings -->
+  <rect x="80" y="180" width="20" height="80" fill="#9CA3AF" rx="1"/>
+  <rect x="105" y="170" width="15" height="90" fill="#6B7280" rx="1"/>
+  <rect x="340" y="160" width="25" height="100" fill="#4B5563" rx="1"/>
+  
+  <!-- Windows -->
+  <g opacity="0.6">
+    <rect x="125" y="140" width="20" height="2" fill="#FFF"/>
+    <rect x="125" y="150" width="20" height="2" fill="#FFF"/>
+    <rect x="125" y="160" width="20" height="2" fill="#FFF"/>
+    
+    <rect x="160" y="130" width="15" height="2" fill="#FFF"/>
+    <rect x="160" y="140" width="15" height="2" fill="#FFF"/>
+    <rect x="160" y="150" width="15" height="2" fill="#FFF"/>
+    
+    <rect x="265" y="120" width="30" height="2" fill="#FFF"/>
+    <rect x="265" y="130" width="30" height="2" fill="#FFF"/>
+    <rect x="265" y="140" width="30" height="2" fill="#FFF"/>
+  </g>
+  
+  <!-- MWWST logo -->
+  <rect x="20" y="20" width="120" height="30" fill="#2563EB" rx="4"/>
+  <text x="80" y="40" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">MWWST BER</text>
+</svg>

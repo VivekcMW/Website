@@ -1,0 +1,16 @@
+<svg width="320" height="160" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techcrunchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="160" fill="url(#techcrunchGradient)"/>
+  <text x="160" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">TECHCRUNCH</text>
+  <g transform="translate(160, 80)">
+    <circle cx="0" cy="0" r="25" fill="white" opacity="0.2"/>
+    <path d="M-10,-10 L0,-20 L10,-10 L20,0 L10,10 L0,20 L-10,10 L-20,0 Z" fill="white" opacity="0.8"/>
+    <circle cx="0" cy="0" r="5" fill="#0284c7"/>
+  </g>
+  <text x="160" y="135" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Programmatic Ad Tech Analysis</text>
+</svg>
