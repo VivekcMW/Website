@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
+import TestimonialSection from '@/components/TestimonialSection'
 
 export default function AgenciesPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -523,68 +524,7 @@ export default function AgenciesPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by OOH Agency Leaders
-            </h2>
-            <p className="text-xl text-gray-600">
-              See what agency professionals are saying
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "The white-label options let us present everything under our brand. Clients think it's our proprietary tech.",
-                author: "Marcus Reid",
-                role: "CEO, OutdoorPlus Agency",
-                rating: 5
-              },
-              {
-                quote: "We launched 40 campaigns across 12 markets in one day. That would've taken us weeks before Moving Walls.",
-                author: "Jennifer Lee",
-                role: "Operations Director, Apex Media",
-                rating: 5
-              },
-              {
-                quote: "The automated reporting saves us 15+ hours per week. Our clients get real-time dashboards and love it.",
-                author: "Tom Anderson",
-                role: "Account Manager, Urban Reach",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.author}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialSection />
 
       {/* FAQ */}
       <section className="py-20 bg-white">
@@ -664,59 +604,6 @@ export default function AgenciesPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-mw-blue-600 to-mw-blue-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Scale Your Agency?
-            </h2>
-            <p className="text-xl mb-8 text-gray-100">
-              Join 150+ agencies managing OOH campaigns more efficiently with Moving Walls
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link
-                href="/contact"
-                className="inline-block bg-white text-mw-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
-              >
-                Become a Partner
-              </Link>
-              <button className="inline-block bg-mw-blue-500/20 border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-mw-blue-500/30 transition-all">
-                Schedule Demo
-              </button>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-200">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                White-label available
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Onboarding in 5-7 days
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Dedicated support
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

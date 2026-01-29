@@ -92,7 +92,6 @@ export default function ContactForm() {
                     <div>
                       <h4 className="font-semibold text-mw-gray-900 mb-1">Moving Walls Pte Ltd</h4>
                       <p className="text-mw-gray-600">14, Robinson Road #8-02<br />Far East Financial Building<br />Singapore 048545</p>
-                      <p className="text-xs text-mw-blue-600 mt-1">Open · Closes 6 pm</p>
                     </div>
                   </div>
 
@@ -105,8 +104,6 @@ export default function ContactForm() {
                     <div>
                       <h4 className="font-semibold text-mw-gray-900 mb-1">Direct Line</h4>
                       <p className="text-mw-gray-600 font-medium">+65 6714 6699</p>
-                      <p className="text-sm text-mw-gray-500">24/7 Support Available</p>
-                      <p className="text-xs text-emerald-600 mt-1">Average response: 2 minutes</p>
                     </div>
                   </div>
 
@@ -119,8 +116,6 @@ export default function ContactForm() {
                     <div>
                       <h4 className="font-semibold text-mw-gray-900 mb-1">Priority Email</h4>
                       <p className="text-mw-gray-600 font-medium">connect@movingwalls.com</p>
-                      <p className="text-sm text-mw-gray-500">Dedicated response team</p>
-                      <p className="text-xs text-violet-600 mt-1">Response within 2 hours</p>
                     </div>
                   </div>
                 </div>

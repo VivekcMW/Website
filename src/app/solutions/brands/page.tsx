@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
+import TestimonialSection from '@/components/TestimonialSection'
 
 export default function BrandsPage() {
   const [activeTab, setActiveTab] = useState('retail')
@@ -691,68 +692,7 @@ export default function BrandsPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Loved by Marketing Teams
-            </h2>
-            <p className="text-xl text-gray-600">
-              See what brand leaders are saying
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "Moving Walls made OOH advertising accessible and measurable. We've seen a 300% increase in campaign ROI since switching.",
-                author: "Michael Chen",
-                role: "CMO, TechCorp",
-                rating: 5
-              },
-              {
-                quote: "The platform is incredibly intuitive. We launched our first campaign in under 2 hours and saw immediate results.",
-                author: "Emily Rodriguez",
-                role: "Marketing Director, FashionHub",
-                rating: 5
-              },
-              {
-                quote: "Real-time analytics and attribution tracking have completely changed how we approach OOH. Game changer.",
-                author: "David Park",
-                role: "VP Marketing, AutoDrive",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-8 shadow-lg"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.author}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialSection />
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
@@ -832,59 +772,6 @@ export default function BrandsPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your OOH Advertising?
-            </h2>
-            <p className="text-xl mb-8 text-gray-100">
-              Join 500+ leading brands using Moving Walls to launch data-driven, high-performing OOH campaigns
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link
-                href="/contact"
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105 shadow-xl"
-              >
-                Start Your Campaign Today
-              </Link>
-              <button className="inline-block bg-blue-500/20 border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500/30 transition-all">
-                Schedule a Demo
-              </button>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-200">
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                No credit card required
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Free trial available
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Cancel anytime
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
