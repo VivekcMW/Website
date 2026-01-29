@@ -1,0 +1,13 @@
+# Moving Walls - robots.txt
+# https://www.movingwalls.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and internal pages
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.movingwalls.com/sitemap.xml

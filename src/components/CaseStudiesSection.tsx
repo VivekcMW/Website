@@ -70,8 +70,8 @@ export default function CaseStudiesSection() {
           </p>
         </motion.div>
 
-        {/* Case Studies Grid - 2x2 */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Case Studies Grid - 4 in a row */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {caseStudies.map((study, index) => (
             <motion.div
               key={study.id}
@@ -82,7 +82,7 @@ export default function CaseStudiesSection() {
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-mw-gray-100"
             >
               {/* Image Thumbnail */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-44 overflow-hidden">
                 <Image
                   src={study.image}
                   alt={study.title}
@@ -106,11 +106,11 @@ export default function CaseStudiesSection() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-mw-gray-900 mb-3 group-hover:text-mw-blue-600 transition-colors duration-300">
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-mw-gray-900 mb-2 group-hover:text-mw-blue-600 transition-colors duration-300 line-clamp-2">
                   {study.title}
                 </h3>
-                <p className="text-mw-gray-600 text-sm leading-relaxed mb-5">
+                <p className="text-mw-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
                   {study.description}
                 </p>
                 

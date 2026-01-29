@@ -143,7 +143,7 @@ export default function TestimonialSection() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-mw-gray-600 hover:text-mw-blue-600 hover:shadow-xl transition-all duration-300 hidden lg:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-mw-gray-600 hover:text-mw-blue-600 hover:shadow-xl transition-all duration-300 hidden lg:flex"
             aria-label="Previous testimonials"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +153,7 @@ export default function TestimonialSection() {
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-mw-gray-600 hover:text-mw-blue-600 hover:shadow-xl transition-all duration-300 hidden lg:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center text-mw-gray-600 hover:text-mw-blue-600 hover:shadow-xl transition-all duration-300 hidden lg:flex"
             aria-label="Next testimonials"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
