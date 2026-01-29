@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GlobalCTA from "@/components/GlobalCTA";
 import AIAssistant from "@/components/AIAssistant";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        <GlobalCTA />
         <Footer />
         <AIAssistant />
       </body>
