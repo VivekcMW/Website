@@ -1,16 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* Static export for GitHub Pages */
-  output: 'export',
-  trailingSlash: true,
-  
-  // For GitHub Pages project site deployment
-  basePath: '/Website',
-  assetPrefix: '/Website/',
-  
+  /* Vercel handles deployment automatically */
   images: {
-    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,8 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Note: Custom headers don't work with static export
-  // They need to be configured at the server/CDN level
 };
 
 export default nextConfig;
