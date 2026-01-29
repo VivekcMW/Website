@@ -1,15 +1,13 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig: NextConfig = {
   /* Static export for GitHub Pages */
   output: 'export',
   trailingSlash: true,
   
-  // For GitHub Pages deployment (uncomment if using project site)
-  // basePath: isProd ? '/Website' : '',
-  // assetPrefix: isProd ? '/Website/' : '',
+  // For GitHub Pages project site deployment
+  basePath: '/Website',
+  assetPrefix: '/Website/',
   
   images: {
     unoptimized: true, // Required for static export
