@@ -12,7 +12,7 @@ export default function LocationsPage() {
       type: "Headquarters",
       address: "123 Innovation Drive, San Francisco, CA 94105",
       phone: "+1 (555) 123-4567",
-      email: "sf@mwwst.com",
+      email: "sf@movingwalls.com",
       timezone: "PST (UTC-8)",
       employees: "85+",
       departments: ["Engineering", "Product", "Sales", "Marketing", "Operations"],
@@ -25,7 +25,7 @@ export default function LocationsPage() {
       type: "Sales & Marketing Hub",
       address: "456 Madison Avenue, New York, NY 10022",
       phone: "+1 (555) 234-5678",
-      email: "ny@mwwst.com",
+      email: "ny@movingwalls.com",
       timezone: "EST (UTC-5)",
       employees: "35+",
       departments: ["Sales", "Marketing", "Client Services", "Partnerships"],
@@ -38,7 +38,7 @@ export default function LocationsPage() {
       type: "European Headquarters",
       address: "789 Canary Wharf, London E14 5AB, UK",
       phone: "+44 20 1234 5678",
-      email: "london@mwwst.com",
+      email: "london@movingwalls.com",
       timezone: "GMT (UTC+0)",
       employees: "25+",
       departments: ["Sales", "Marketing", "Operations", "Client Services"],
@@ -51,7 +51,7 @@ export default function LocationsPage() {
       type: "Asia-Pacific Hub",
       address: "321 George Street, Sydney NSW 2000, Australia",
       phone: "+61 2 1234 5678",
-      email: "sydney@mwwst.com",
+      email: "sydney@movingwalls.com",
       timezone: "AEDT (UTC+11)",
       employees: "15+",
       departments: ["Sales", "Client Services", "Operations"],
@@ -64,7 +64,7 @@ export default function LocationsPage() {
       type: "Canadian Operations",
       address: "654 King Street West, Toronto, ON M5V 1M7, Canada",
       phone: "+1 (416) 123-4567",
-      email: "toronto@mwwst.com",
+      email: "toronto@movingwalls.com",
       timezone: "EST (UTC-5)",
       employees: "12+",
       departments: ["Sales", "Client Services", "Marketing"],
@@ -77,7 +77,7 @@ export default function LocationsPage() {
       type: "Central European Office",
       address: "987 Unter den Linden, 10117 Berlin, Germany",
       phone: "+49 30 1234 5678",
-      email: "berlin@mwwst.com",
+      email: "berlin@movingwalls.com",
       timezone: "CET (UTC+1)",
       employees: "8+",
       departments: ["Sales", "Marketing", "Client Services"],
@@ -130,7 +130,7 @@ export default function LocationsPage() {
               <span className="text-mw-blue-600 block">Worldwide Reach</span>
             </h1>
             <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              With offices across six major cities, MWWST provides local expertise 
+              With offices across six major cities, Moving Walls provides local expertise 
               and global reach to serve clients worldwide. Find the office nearest 
               you and connect with our local teams.
             </p>

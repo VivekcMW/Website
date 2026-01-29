@@ -76,7 +76,7 @@ export default function ResourcesPage() {
             </h1>
             <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
               Access expert insights, technical documentation, and learning materials to maximize 
-              your advertising performance with MWWST.
+              your advertising performance with Moving Walls.
             </p>
 
             {/* Search Bar */}

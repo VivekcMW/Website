@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MWWST - Modern Marketing & Advertising Solutions",
-  description: "MWWST delivers innovative out-of-home advertising solutions, media planning, buying, and measurement services to amplify your brand reach.",
+  title: "Moving Walls - Modern Marketing & Advertising Solutions",
+  description: "Moving Walls delivers innovative out-of-home advertising solutions, media planning, buying, and measurement services to amplify your brand reach.",
   keywords: ["marketing", "advertising", "OOH", "media planning", "brand strategy"],
 };
 

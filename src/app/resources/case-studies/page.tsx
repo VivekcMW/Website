@@ -2,27 +2,30 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function CaseStudiesPage() {
   const [selectedIndustry, setSelectedIndustry] = useState("All");
 
-  const industries = ["All", "Automotive", "Retail", "Healthcare", "Finance", "Technology"];
+  const industries = ["All", "Automotive", "Retail", "Healthcare", "Finance", "Technology", "FMCG"];
 
   const caseStudies = [
     {
       title: "Premium Automotive Brand Achieves 300% ROI in Q4",
+      slug: "automotive-dealership-traffic",
       industry: "Automotive",
       client: "Luxury Auto Group",
       challenge: "Increase dealership visits and test drive bookings during competitive holiday season",
       solution: "Multi-channel DOOH campaign with geo-targeting around dealerships and high-traffic areas",
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop",
       results: [
         { metric: "ROI Increase", value: "+300%" },
         { metric: "Dealership Visits", value: "+187%" },
         { metric: "Test Drives", value: "+245%" },
         { metric: "Campaign Reach", value: "5.2M" }
       ],
-      testimonial: "MWWST helped us completely transform our Q4 performance. The results exceeded all expectations.",
+      testimonial: "Moving Walls helped us completely transform our Q4 performance. The results exceeded all expectations.",
       author: "James Patterson",
       role: "Marketing Director",
       duration: "90 days",
@@ -31,10 +34,12 @@ export default function CaseStudiesPage() {
     },
     {
       title: "National Retail Chain Drives 45% Foot Traffic Increase",
+      slug: "global-retail-brand-340-roi",
       industry: "Retail",
       client: "FashionForward Stores",
       challenge: "Combat declining in-store visits amid shift to online shopping",
       solution: "Location-based targeting with dynamic creative showcasing real-time promotions",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
       results: [
         { metric: "Foot Traffic", value: "+45%" },
         { metric: "In-Store Sales", value: "+62%" },
@@ -49,17 +54,19 @@ export default function CaseStudiesPage() {
     },
     {
       title: "Healthcare Provider Reaches 2M Patients with Compliance",
+      slug: "healthcare-patient-reach",
       industry: "Healthcare",
       client: "MedCare Network",
       challenge: "Increase awareness of preventive care services while maintaining HIPAA compliance",
       solution: "Privacy-first targeting campaign focused on wellness messaging and appointment bookings",
+      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop",
       results: [
         { metric: "Impressions", value: "2.1M" },
         { metric: "Appointments", value: "+78%" },
         { metric: "Website Traffic", value: "+124%" },
         { metric: "Cost Per Lead", value: "-42%" }
       ],
-      testimonial: "MWWST understood our compliance needs while delivering exceptional results.",
+      testimonial: "Moving Walls understood our compliance needs while delivering exceptional results.",
       author: "Dr. Robert Chen",
       role: "Chief Marketing Officer",
       duration: "60 days",
@@ -67,10 +74,12 @@ export default function CaseStudiesPage() {
     },
     {
       title: "Fintech Startup Generates 5,000+ Quality Leads",
+      slug: "fintech-app-acquisition",
       industry: "Finance",
       client: "NextGen Financial",
       challenge: "Build brand awareness and generate qualified leads in competitive market",
       solution: "Strategic DOOH placement in financial districts with QR code integration",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
       results: [
         { metric: "Qualified Leads", value: "5,234" },
         { metric: "Brand Lift", value: "+89%" },
@@ -85,10 +94,12 @@ export default function CaseStudiesPage() {
     },
     {
       title: "Tech Company Launches Product with 10M Impressions",
+      slug: "tech-product-launch",
       industry: "Technology",
       client: "InnovateTech Corp",
       challenge: "Create buzz for new product launch in saturated market",
       solution: "Integrated campaign across major tech hubs with interactive digital displays",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
       results: [
         { metric: "Impressions", value: "10.2M" },
         { metric: "Website Visits", value: "+425%" },
@@ -103,21 +114,43 @@ export default function CaseStudiesPage() {
     },
     {
       title: "Regional Bank Increases Branch Visits by 67%",
+      slug: "bank-branch-visits",
       industry: "Finance",
       client: "Community Trust Bank",
       challenge: "Drive awareness of new branch locations and digital banking services",
       solution: "Hyperlocal targeting around new branches with financial education messaging",
+      image: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=800&h=600&fit=crop",
       results: [
         { metric: "Branch Visits", value: "+67%" },
         { metric: "New Accounts", value: "+142%" },
         { metric: "Digital Adoption", value: "+89%" },
         { metric: "Brand Recall", value: "+73%" }
       ],
-      testimonial: "MWWST helped us successfully launch 5 new branches with measurable results.",
+      testimonial: "Moving Walls helped us successfully launch 5 new branches with measurable results.",
       author: "Thomas Anderson",
       role: "Regional Marketing Director",
       duration: "90 days",
       budget: "$145K"
+    },
+    {
+      title: "FMCG Giant's Multi-Market Launch Success",
+      slug: "fmcg-multi-market-launch",
+      industry: "FMCG",
+      client: "Global Consumer Brands",
+      challenge: "Orchestrate a synchronized product launch across 8 Asian markets",
+      solution: "Real-time programmatic DOOH and audience targeting across multiple regions",
+      image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&h=600&fit=crop",
+      results: [
+        { metric: "Markets", value: "8" },
+        { metric: "Brand Awareness", value: "+156%" },
+        { metric: "Sales Lift", value: "+89%" },
+        { metric: "Impressions", value: "45M" }
+      ],
+      testimonial: "The synchronized launch across all markets was flawlessly executed.",
+      author: "Jennifer Lee",
+      role: "Regional Marketing Head",
+      duration: "60 days",
+      budget: "$350K"
     }
   ];
 
@@ -149,7 +182,7 @@ export default function CaseStudiesPage() {
               <span className="text-mw-blue-600 block">Client Success</span>
             </h1>
             <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Discover how leading brands achieve exceptional results with MWWST's advertising solutions.
+              Discover how leading brands achieve exceptional results with Moving Walls's advertising solutions.
             </p>
 
             {/* Stats */}
@@ -226,7 +259,7 @@ export default function CaseStudiesPage() {
                     </div>
 
                     <Link
-                      href="#"
+                      href={`/resources/case-studies/${featuredCase.slug}`}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-white text-mw-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
                     >
                       Read Full Story
@@ -273,50 +306,55 @@ export default function CaseStudiesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl overflow-hidden shadow-mw-sm hover:shadow-mw-lg transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-mw-gray-100"
               >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-mw-blue-100 text-mw-blue-600 text-xs font-medium rounded-full">
-                      {caseStudy.industry}
-                    </span>
-                    <div className="flex items-center gap-4 text-sm text-mw-gray-500">
-                      <span>{caseStudy.duration}</span>
-                      <span>{caseStudy.budget}</span>
+                {/* Image Thumbnail */}
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={caseStudy.image}
+                    alt={caseStudy.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  
+                  {/* Category & Key Metric overlay */}
+                  <div className="absolute inset-0 p-5 flex flex-col justify-between">
+                    <div className="flex justify-between items-start">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-mw-gray-800 text-xs font-semibold rounded-full">
+                        {caseStudy.industry}
+                      </span>
+                      <span className="px-3 py-1 bg-mw-blue-600 text-white text-xs font-bold rounded-full">
+                        {caseStudy.results[0].value}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-end">
+                      <span className="text-white/80 text-sm">{caseStudy.duration}</span>
+                      <span className="text-white/80 text-sm">{caseStudy.budget}</span>
                     </div>
                   </div>
+                </div>
 
-                  <h3 className="text-2xl font-bold text-mw-gray-900 mb-3">{caseStudy.title}</h3>
-                  <p className="text-sm text-mw-gray-600 mb-4">{caseStudy.client}</p>
-
-                  <div className="bg-mw-gray-50 rounded-lg p-4 mb-4">
-                    <p className="text-sm font-medium text-mw-gray-700 mb-2">Challenge:</p>
-                    <p className="text-sm text-mw-gray-600">{caseStudy.challenge}</p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {caseStudy.results.map((result, idx) => (
-                      <div key={idx} className="text-center p-3 bg-mw-blue-50 rounded-lg">
-                        <div className="text-2xl font-bold text-mw-blue-600 mb-1">{result.value}</div>
-                        <div className="text-xs text-mw-gray-600">{result.metric}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t border-mw-gray-200 pt-4 mb-4">
-                    <blockquote className="text-sm text-mw-gray-700 italic mb-3">"{caseStudy.testimonial}"</blockquote>
-                    <p className="text-sm font-medium text-mw-gray-900">{caseStudy.author}</p>
-                    <p className="text-xs text-mw-gray-500">{caseStudy.role}</p>
-                  </div>
-
-                  <Link
-                    href="#"
-                    className="inline-flex items-center gap-2 text-mw-blue-600 font-medium hover:gap-3 transition-all"
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-mw-gray-900 mb-2 group-hover:text-mw-blue-600 transition-colors duration-300">
+                    {caseStudy.title}
+                  </h3>
+                  <p className="text-sm text-mw-blue-600 font-medium mb-3">{caseStudy.client}</p>
+                  <p className="text-mw-gray-600 text-sm leading-relaxed mb-5">
+                    {caseStudy.challenge}
+                  </p>
+                  
+                  {/* CTA */}
+                  <Link 
+                    href={`/resources/case-studies/${caseStudy.slug}`}
+                    className="inline-flex items-center gap-2 text-mw-blue-600 font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                   >
-                    Read Full Case Study
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    View Case Study
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Link>
                 </div>

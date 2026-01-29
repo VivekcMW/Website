@@ -126,7 +126,7 @@ export default function BrandsPage() {
             >
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-2 border-blue-200">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  The MWWST Solution
+                  The Moving Walls Solution
                 </h2>
                 <div className="space-y-4">
                   {[
@@ -537,7 +537,7 @@ export default function BrandsPage() {
                   How RetailMax Increased Store Visits by 240%
                 </h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  RetailMax, a leading fashion retailer, used MWWST to launch a multi-city campaign targeting shoppers within 5 miles of their stores. Using MW-Planner for audience insights and MW-Activate for dynamic creative optimization, they achieved remarkable results.
+                  RetailMax, a leading fashion retailer, used Moving Walls to launch a multi-city campaign targeting shoppers within 5 miles of their stores. Using MW-Planner for audience insights and MW-Activate for dynamic creative optimization, they achieved remarkable results.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
@@ -592,7 +592,7 @@ export default function BrandsPage() {
                     </svg>
                   </div>
                   <blockquote className="text-xl italic mb-6">
-                    "MWWST transformed our OOH strategy. We went from weeks of planning to launching campaigns in days, with better results than ever before."
+                    "Moving Walls transformed our OOH strategy. We went from weeks of planning to launching campaigns in days, with better results than ever before."
                   </blockquote>
                   <div className="font-bold">Sarah Johnson</div>
                   <div className="text-sm text-gray-200">VP of Marketing, RetailMax</div>
@@ -710,7 +710,7 @@ export default function BrandsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                quote: "MWWST made OOH advertising accessible and measurable. We've seen a 300% increase in campaign ROI since switching.",
+                quote: "Moving Walls made OOH advertising accessible and measurable. We've seen a 300% increase in campaign ROI since switching.",
                 author: "Michael Chen",
                 role: "CMO, TechCorp",
                 rating: 5
@@ -767,7 +767,7 @@ export default function BrandsPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to know about MWWST for brands
+              Everything you need to know about Moving Walls for brands
             </p>
           </motion.div>
 
@@ -790,7 +790,7 @@ export default function BrandsPage() {
                 answer: "We provide real-time analytics including impressions, reach, frequency, attribution tracking, and foot traffic lift. Our MW-Measure platform integrates with your existing analytics tools for comprehensive reporting."
               },
               {
-                question: "Can I integrate MWWST with my existing marketing stack?",
+                question: "Can I integrate Moving Walls with my existing marketing stack?",
                 answer: "Absolutely. We offer integrations with major CRM, DSP, analytics, and creative platforms. Our API also allows for custom integrations with your proprietary systems."
               }
             ].map((faq, index) => (
@@ -851,7 +851,7 @@ export default function BrandsPage() {
               Ready to Transform Your OOH Advertising?
             </h2>
             <p className="text-xl mb-8 text-gray-100">
-              Join 500+ leading brands using MWWST to launch data-driven, high-performing OOH campaigns
+              Join 500+ leading brands using Moving Walls to launch data-driven, high-performing OOH campaigns
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link

@@ -96,7 +96,7 @@ export default function AgenciesPage() {
               From Chaos to Control
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how MWWST transforms common agency challenges into competitive advantages
+              See how Moving Walls transforms common agency challenges into competitive advantages
             </p>
           </motion.div>
 
@@ -180,7 +180,7 @@ export default function AgenciesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">MWWST Solutions</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Moving Walls Solutions</h3>
               </div>
 
               {[
@@ -456,7 +456,7 @@ export default function AgenciesPage() {
                   How Kinetic Media Scaled to 85+ Clients
                 </h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Kinetic Media, a mid-sized OOH agency, adopted MWWST to streamline their growing client portfolio. Within 8 months, they transformed their operations and client delivery capabilities.
+                  Kinetic Media, a mid-sized OOH agency, adopted Moving Walls to streamline their growing client portfolio. Within 8 months, they transformed their operations and client delivery capabilities.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
@@ -511,7 +511,7 @@ export default function AgenciesPage() {
                     </svg>
                   </div>
                   <blockquote className="text-xl italic mb-6">
-                    "MWWST gave us the infrastructure to scale without increasing headcount. We're managing 3x more clients with the same team size, and our clients love the real-time reporting."
+                    "Moving Walls gave us the infrastructure to scale without increasing headcount. We're managing 3x more clients with the same team size, and our clients love the real-time reporting."
                   </blockquote>
                   <div className="font-bold">Rachel Thompson</div>
                   <div className="text-sm text-mw-blue-200">Managing Director, Kinetic Media</div>
@@ -548,7 +548,7 @@ export default function AgenciesPage() {
                 rating: 5
               },
               {
-                quote: "We launched 40 campaigns across 12 markets in one day. That would've taken us weeks before MWWST.",
+                quote: "We launched 40 campaigns across 12 markets in one day. That would've taken us weeks before Moving Walls.",
                 author: "Jennifer Lee",
                 role: "Operations Director, Apex Media",
                 rating: 5
@@ -599,7 +599,7 @@ export default function AgenciesPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600">
-              Everything you need to know about partnering with MWWST
+              Everything you need to know about partnering with Moving Walls
             </p>
           </motion.div>
 
@@ -683,7 +683,7 @@ export default function AgenciesPage() {
               Ready to Scale Your Agency?
             </h2>
             <p className="text-xl mb-8 text-gray-100">
-              Join 150+ agencies managing OOH campaigns more efficiently with MWWST
+              Join 150+ agencies managing OOH campaigns more efficiently with Moving Walls
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link

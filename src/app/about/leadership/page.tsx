@@ -11,7 +11,7 @@ export default function LeadershipPage() {
       role: "Chief Executive Officer",
       department: "Executive Leadership",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
-      bio: "Sarah brings over 15 years of experience in advertising technology. Under her leadership, MWWST has grown to serve 500+ global brands.",
+      bio: "Sarah brings over 15 years of experience in advertising technology. Under her leadership, Moving Walls has grown to serve 500+ global brands.",
       hobbies: ["Marathon Running", "Photography", "Cooking", "Travel"],
       linkedin: "#",
       twitter: "#"
@@ -94,7 +94,7 @@ export default function LeadershipPage() {
               <span className="text-mw-blue-600 block">Visionary Expertise</span>
             </h1>
             <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Meet the experienced executives driving MWWST's innovation and growth. 
+              Meet the experienced executives driving Moving Walls's innovation and growth. 
               Our leadership team combines deep industry expertise with a shared vision 
               for transforming the future of advertising.
             </p>

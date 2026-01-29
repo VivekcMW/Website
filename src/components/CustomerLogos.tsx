@@ -35,7 +35,7 @@ export default function CustomerLogos() {
             Trusted by Global Brands
           </h2>
           <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
-            Join hundreds of leading brands that trust MWWST for their out-of-home advertising campaigns
+            Join hundreds of leading brands that trust Moving Walls for their out-of-home advertising campaigns
           </p>
         </motion.div>
 
@@ -92,11 +92,6 @@ export default function CustomerLogos() {
             <div className="text-center">
               <div className="text-3xl font-bold text-mw-blue-600">50+</div>
               <div className="text-sm text-mw-gray-600 mt-1">Countries</div>
-            </div>
-            <div className="w-px h-12 bg-mw-gray-300 hidden sm:block" />
-            <div className="text-center">
-              <div className="text-3xl font-bold text-mw-blue-600">98%</div>
-              <div className="text-sm text-mw-gray-600 mt-1">Satisfaction Rate</div>
             </div>
           </div>
         </motion.div>

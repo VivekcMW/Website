@@ -1,7 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+
+// Fade-in Counter with Typewriter Label
+function AnimatedCounter({ value, suffix, label, duration = 2 }: { value: number; suffix: string; label: string; duration?: number }) {
+  const [displayedLabel, setDisplayedLabel] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const hasAnimated = useRef(false);
+
+  const formatNumber = (num: number) => {
+    return num.toLocaleString();
+  };
+
+  // Typewriter effect for label
+  useEffect(() => {
+    if (isInView && !hasAnimated.current) {
+      hasAnimated.current = true;
+      let currentIndex = 0;
+      
+      const typeInterval = setInterval(() => {
+        currentIndex++;
+        if (currentIndex <= label.length) {
+          setDisplayedLabel(label.substring(0, currentIndex));
+        } else {
+          clearInterval(typeInterval);
+          // Hide cursor after typing is complete
+          setTimeout(() => setShowCursor(false), 1000);
+        }
+      }, 100);
+      
+      return () => clearInterval(typeInterval);
+    }
+  }, [isInView, label]);
+
+  return (
+    <div ref={ref} className="text-center">
+      {/* Number - static display */}
+      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
+        <span 
+          className="text-white"
+          style={{
+            textShadow: '0 0 30px rgba(59, 130, 246, 0.6)',
+          }}
+        >
+          {formatNumber(value)}
+        </span>
+        <span className="text-mw-blue-400">{suffix}</span>
+      </div>
+      
+      {/* Typewriter label */}
+      <div className="text-base sm:text-lg font-medium text-gray-300 h-7 flex items-center justify-center">
+        <span>{displayedLabel}</span>
+        {showCursor && (
+          <motion.span
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+            className="text-mw-blue-400 ml-0.5"
+          >
+            |
+          </motion.span>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,9 +97,9 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
         >
-          Expand Your Reach with
+          The World&apos;s Leading
           <br />
-          <span className="text-mw-blue-400">OOH Everywhere</span>
+          <span className="text-mw-blue-400">Connected Media Platform</span>
         </motion.h1>
 
         <motion.p
@@ -57,9 +122,6 @@ export default function Hero() {
           <a href="/contact" className="px-8 py-4 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-medium rounded-lg transition-all duration-200 shadow-mw-md hover:shadow-mw-lg inline-block text-center">
             Start Free Campaign Analysis
           </a>
-          <a href="#case-study" className="px-8 py-4 bg-white/90 hover:bg-white border border-white hover:border-mw-blue-600 text-mw-gray-700 hover:text-mw-blue-600 font-medium rounded-lg transition-all duration-200 shadow-mw-sm inline-block text-center">
-            View Success Stories
-          </a>
         </motion.div>
 
         {/* Stats */}
@@ -70,16 +132,17 @@ export default function Hero() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto"
         >
           {[
-            { value: "500+", label: "Brands Trust MWWST" },
-            { value: "$2.8B+", label: "Monthly Inventory" },
-            { value: "156%", label: "Average ROI Increase" },
+            { value: 40, suffix: "+", label: "Markets Covered", duration: 1.5 },
+            { value: 1500, suffix: "+", label: "Media Owners", duration: 2 },
+            { value: 1000000, suffix: "+", label: "OOH Sites", duration: 2.5 },
           ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-300">{stat.label}</div>
-            </div>
+            <AnimatedCounter 
+              key={index} 
+              value={stat.value} 
+              suffix={stat.suffix} 
+              label={stat.label}
+              duration={stat.duration} 
+            />
           ))}
         </motion.div>
       </div>

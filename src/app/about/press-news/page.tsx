@@ -9,7 +9,7 @@ export default function PressNewsPage() {
     {
       date: "November 15, 2024",
       category: "Product Launch",
-      title: "MWWST Launches AI-Powered Audience Targeting Platform",
+      title: "Moving Walls Launches AI-Powered Audience Targeting Platform",
       excerpt: "Revolutionary machine learning algorithms improve campaign performance by 40% while reducing cost per acquisition.",
       readTime: "3 min read",
       thumbnail: "/assets/images/press/ai-platform-launch.jpg"
@@ -17,7 +17,7 @@ export default function PressNewsPage() {
     {
       date: "October 28, 2024",
       category: "Funding",
-      title: "MWWST Closes $50M Series C Funding Round",
+      title: "Moving Walls Closes $50M Series C Funding Round",
       excerpt: "Investment led by top-tier VCs will fuel international expansion and product development initiatives.",
       readTime: "4 min read",
       thumbnail: "/assets/images/press/funding-announcement.jpg"
@@ -26,14 +26,14 @@ export default function PressNewsPage() {
       date: "September 12, 2024",
       category: "Partnership",
       title: "Strategic Partnership with Global Transit Authority Network",
-      excerpt: "Major partnership expands MWWST's out-of-home advertising network to 25 new metropolitan areas.",
+      excerpt: "Major partnership expands Moving Walls's out-of-home advertising network to 25 new metropolitan areas.",
       readTime: "2 min read",
       thumbnail: "/assets/images/press/transit-partnership.jpg"
     },
     {
       date: "August 5, 2024",
       category: "Recognition",
-      title: "MWWST Named 'AdTech Company of the Year' by Industry Awards",
+      title: "Moving Walls Named 'AdTech Company of the Year' by Industry Awards",
       excerpt: "Recognition highlights company's innovation in programmatic advertising and measurement solutions.",
       readTime: "3 min read",
       thumbnail: "/assets/images/press/industry-award.jpg"
@@ -49,7 +49,7 @@ export default function PressNewsPage() {
     {
       date: "June 18, 2024",
       category: "Expansion",
-      title: "MWWST Opens European Headquarters in London",
+      title: "Moving Walls Opens European Headquarters in London",
       excerpt: "New office serves as regional hub for European operations and client services expansion.",
       readTime: "2 min read",
       thumbnail: "/assets/images/press/london-office.jpg"
@@ -59,7 +59,7 @@ export default function PressNewsPage() {
   const mediaFeatures = [
     {
       outlet: "AdWeek",
-      title: "How MWWST is Revolutionizing Out-of-Home Advertising",
+      title: "How Moving Walls is Revolutionizing Out-of-Home Advertising",
       date: "November 8, 2024",
       type: "Feature Article",
       thumbnail: "/assets/images/press/adweek-feature.jpg"
@@ -80,7 +80,7 @@ export default function PressNewsPage() {
     },
     {
       outlet: "Forbes",
-      title: "MWWST Among Top 50 Most Innovative Companies",
+      title: "Moving Walls Among Top 50 Most Innovative Companies",
       date: "September 1, 2024",
       type: "Recognition",
       thumbnail: "/assets/images/press/forbes-recognition.jpg"
@@ -113,7 +113,7 @@ export default function PressNewsPage() {
               <span className="text-mw-blue-600 block">Latest Updates</span>
             </h1>
             <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Stay updated with MWWST's latest announcements, product launches, 
+              Stay updated with Moving Walls's latest announcements, product launches, 
               partnerships, and industry recognition. Access our media resources 
               and press materials.
             </p>
@@ -150,7 +150,7 @@ export default function PressNewsPage() {
               Latest Press Releases
             </h2>
             <p className="text-lg text-mw-gray-600 max-w-3xl mx-auto">
-              Get the latest news and announcements directly from MWWST.
+              Get the latest news and announcements directly from Moving Walls.
             </p>
           </motion.div>
 
@@ -247,7 +247,7 @@ export default function PressNewsPage() {
               Media Coverage
             </h2>
             <p className="text-lg text-mw-gray-600 max-w-2xl mx-auto">
-              See what industry publications are saying about MWWST and our impact on advertising technology.
+              See what industry publications are saying about Moving Walls and our impact on advertising technology.
             </p>
           </motion.div>
 

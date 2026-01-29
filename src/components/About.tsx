@@ -73,7 +73,7 @@ export default function About() {
               Redefining Out-of-Home Advertising
             </h2>
             <p className="text-mw-gray-600 text-lg mb-6">
-              MWWST is the leading technology-driven out-of-home advertising company, 
+              Moving Walls is the leading technology-driven out-of-home advertising company, 
               combining innovative platforms with deep industry expertise to deliver 
               exceptional results for brands worldwide.
             </p>

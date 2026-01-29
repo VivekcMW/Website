@@ -22,7 +22,7 @@ export default function ContactPage() {
         </svg>
       ),
       title: "Email",
-      details: "connect@mwwst.com",
+      details: "connect@movingwalls.com",
       description: "We'll respond within 2 hours"
     },
     {
@@ -51,7 +51,7 @@ export default function ContactPage() {
   const departments = [
     {
       title: "New Business & Strategy",
-      email: "growth@mwwst.com",
+      email: "growth@movingwalls.com",
       description: "Ready to scale your advertising? Connect with our growth strategists for custom campaign planning and ROI forecasting.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +62,7 @@ export default function ContactPage() {
     },
     {
       title: "Platform & Technical Support",
-      email: "platform@mwwst.com",
+      email: "platform@movingwalls.com",
       description: "Need help with MW products? Our technical specialists provide 24/7 support for all platform features and integrations.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ export default function ContactPage() {
     },
     {
       title: "Enterprise Solutions",
-      email: "enterprise@mwwst.com",
+      email: "enterprise@movingwalls.com",
       description: "Large-scale deployments and custom integrations? Our enterprise team specializes in complex, multi-market campaigns.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@ export default function ContactPage() {
     },
     {
       title: "Strategic Partnerships",
-      email: "partnerships@mwwst.com",
+      email: "partnerships@movingwalls.com",
       description: "Technology integrations, agency partnerships, or joint ventures? Let's explore how we can grow together.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ export default function ContactPage() {
     },
     {
       title: "Media & Press Relations",
-      email: "media@mwwst.com",
+      email: "media@movingwalls.com",
       description: "Journalists, analysts, and media professionals—access press releases, executive interviews, and company insights.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@ export default function ContactPage() {
     },
     {
       title: "Careers & Talent",
-      email: "talent@mwwst.com",
+      email: "talent@movingwalls.com",
       description: "Join the future of advertising technology. Explore opportunities to shape the industry with cutting-edge AI and data science.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

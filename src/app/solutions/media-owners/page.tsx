@@ -190,7 +190,7 @@ export default function MediaOwnersPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">MWWST Solutions</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Moving Walls Solutions</h3>
               </div>
 
               {[
@@ -499,7 +499,7 @@ export default function MediaOwnersPage() {
                   How Metro OOH Increased Revenue by 47%
                 </h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  Metro OOH, a regional billboard operator with 120 locations, joined MWWST to solve their low occupancy problem. Within 6 months, they saw dramatic improvements across all metrics.
+                  Metro OOH, a regional billboard operator with 120 locations, joined Moving Walls to solve their low occupancy problem. Within 6 months, they saw dramatic improvements across all metrics.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
@@ -554,7 +554,7 @@ export default function MediaOwnersPage() {
                     </svg>
                   </div>
                   <blockquote className="text-xl italic mb-6">
-                    "MWWST transformed our business. We went from manually managing bookings to having a fully automated system that sells our inventory 24/7. The revenue increase exceeded our expectations."
+                    "Moving Walls transformed our business. We went from manually managing bookings to having a fully automated system that sells our inventory 24/7. The revenue increase exceeded our expectations."
                   </blockquote>
                   <div className="font-bold">David Martinez</div>
                   <div className="text-sm text-mw-blue-200">CEO, Metro OOH</div>
@@ -726,7 +726,7 @@ export default function MediaOwnersPage() {
               Ready to Maximize Your Revenue?
             </h2>
             <p className="text-xl mb-8 text-gray-100">
-              Join 200+ media owners earning 34% more with MWWST
+              Join 200+ media owners earning 34% more with Moving Walls
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link

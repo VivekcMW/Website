@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function TestimonialSection() {
   const testimonials = [
     {
-      quote: "MWWST transformed our DOOH strategy. We saw a 156% increase in ROI within the first quarter. Their platform is incredibly intuitive and the support team is world-class.",
+      quote: "Moving Walls transformed our DOOH strategy. We saw a 156% increase in ROI within the first quarter. Their platform is incredibly intuitive and the support team is world-class.",
       author: "Sarah Johnson",
       role: "CMO",
       company: "TechVision Inc.",
@@ -19,7 +19,7 @@ export default function TestimonialSection() {
       metric: "40 Hours Saved/Month"
     },
     {
-      quote: "Moving to MWWST was the best decision we made this year. Their marketplace gave us access to premium inventory we couldn't get elsewhere, and the results speak for themselves.",
+      quote: "Moving to Moving Walls was the best decision we made this year. Their marketplace gave us access to premium inventory we couldn't get elsewhere, and the results speak for themselves.",
       author: "Emily Rodriguez",
       role: "Head of Media",
       company: "FinanceFirst",
@@ -44,7 +44,7 @@ export default function TestimonialSection() {
             Trusted by Industry Leaders
           </h2>
           <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
-            See what marketing leaders have to say about their experience with MWWST
+            See what marketing leaders have to say about their experience with Moving Walls
           </p>
         </motion.div>
 

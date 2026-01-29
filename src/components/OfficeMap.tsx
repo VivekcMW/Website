@@ -109,7 +109,7 @@ export default function OfficeMap() {
             <span className="text-mw-blue-600 block">Local Expertise</span>
           </h2>
           <p className="text-lg text-mw-gray-600 max-w-3xl mx-auto leading-relaxed">
-            With offices strategically located across six major cities, MWWST delivers 
+            With offices strategically located across six major cities, Moving Walls delivers 
             global advertising solutions with deep local market knowledge and round-the-clock support.
           </p>
         </motion.div>

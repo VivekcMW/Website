@@ -206,7 +206,7 @@ export default function PartnersPage() {
               Partnership Programs
             </h2>
             <p className="text-lg text-mw-gray-600 max-w-3xl mx-auto">
-              Explore our partnership programs designed to help you succeed and grow your business with MWWST.
+              Explore our partnership programs designed to help you succeed and grow your business with Moving Walls.
             </p>
           </motion.div>
 
@@ -273,10 +273,10 @@ export default function PartnersPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-mw-gray-900 mb-6">
-                Why Partner With MWWST?
+                Why Partner With Moving Walls?
               </h2>
               <p className="text-lg text-mw-gray-600 mb-6 leading-relaxed">
-                When you partner with MWWST, you gain access to cutting-edge advertising technology, 
+                When you partner with Moving Walls, you gain access to cutting-edge advertising technology, 
                 dedicated support, and a growing ecosystem of opportunities.
               </p>
               <div className="space-y-3">
