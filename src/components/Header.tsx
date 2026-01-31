@@ -280,11 +280,10 @@ export default function Header() {
                   {/* Featured Section */}
                   <div className="bg-mw-gray-50 rounded-xl p-6 border border-mw-gray-200">
                     <div className="h-32 bg-mw-blue-100 rounded-lg mb-4 overflow-hidden relative">
-                      <Image
+                      <img
                         src={megaMenuData[activeMegaMenu as keyof typeof megaMenuData].featured.image}
                         alt={megaMenuData[activeMegaMenu as keyof typeof megaMenuData].featured.title}
-                        fill
-                        className="object-cover"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <h4 className="font-semibold text-mw-gray-900 mb-1">
