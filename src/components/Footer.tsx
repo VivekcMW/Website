@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { openCookieSettings } from "./CookieConsent";
 
 const footerLinks = {
   company: [
     { name: "Our Story", href: "/about/our-story" },
     { name: "Leadership", href: "/about/leadership" },
+    { name: "Office Locations", href: "/locations" },
     { name: "Careers", href: "/about/careers" },
     { name: "Press & News", href: "/about/press-news" },
     { name: "Contact Us", href: "/contact" },
@@ -253,6 +255,12 @@ export default function Footer() {
                   <Link href="/cookies" className="text-mw-gray-400 hover:text-white transition-colors">
                     Cookie Policy
                   </Link>
+                  <button 
+                    onClick={openCookieSettings}
+                    className="text-mw-gray-400 hover:text-white transition-colors"
+                  >
+                    Cookie Settings
+                  </button>
                 </div>
               </div>
             </div>

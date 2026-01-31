@@ -19,10 +19,10 @@ const megaMenuData = {
       },
     ],
     featured: {
-      title: "Case Study",
-      description: "See how Brand X increased awareness by 300%",
-      image: "/placeholder.jpg",
-      href: "#",
+      title: "Case Study: Automotive",
+      description: "Premium Automotive Brand Achieves 300% ROI in Q4",
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop",
+      href: "/resources/case-studies/automotive-dealership-traffic",
     },
   },
   Products: {
@@ -46,10 +46,10 @@ const megaMenuData = {
       },
     ],
     featured: {
-      title: "New Release",
-      description: "Introducing MW-Science AI-powered insights",
-      image: "/placeholder.jpg",
-      href: "/products/mw-science",
+      title: "Case Study: Retail",
+      description: "National Retail Chain Drives 45% Foot Traffic Increase",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
+      href: "/resources/case-studies/global-retail-brand-340-roi",
     },
   },
   About: {
@@ -75,10 +75,10 @@ const megaMenuData = {
       },
     ],
     featured: {
-      title: "We're Hiring!",
-      description: "Explore open positions and join our team",
-      image: "/placeholder.jpg",
-      href: "#",
+      title: "Case Study: Finance",
+      description: "Fintech Startup Generates 5,000+ Quality Leads",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+      href: "/resources/case-studies/fintech-app-acquisition",
     },
   },
   Resources: {
@@ -103,10 +103,10 @@ const megaMenuData = {
       },
     ],
     featured: {
-      title: "2024 OOH Report",
-      description: "Download our annual industry insights report",
-      image: "/placeholder.jpg",
-      href: "#",
+      title: "Case Study: Technology",
+      description: "Tech Company Launches Product with 10M Impressions",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+      href: "/resources/case-studies/tech-product-launch",
     },
   },
 };
@@ -279,10 +279,13 @@ export default function Header() {
 
                   {/* Featured Section */}
                   <div className="bg-mw-gray-50 rounded-xl p-6 border border-mw-gray-200">
-                    <div className="h-32 bg-mw-blue-100 rounded-lg mb-4 flex items-center justify-center">
-                      <svg className="w-12 h-12 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                    <div className="h-32 bg-mw-blue-100 rounded-lg mb-4 overflow-hidden relative">
+                      <Image
+                        src={megaMenuData[activeMegaMenu as keyof typeof megaMenuData].featured.image}
+                        alt={megaMenuData[activeMegaMenu as keyof typeof megaMenuData].featured.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <h4 className="font-semibold text-mw-gray-900 mb-1">
                       {megaMenuData[activeMegaMenu as keyof typeof megaMenuData].featured.title}

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GlobalCTA from "@/components/GlobalCTA";
 import AIAssistant from "@/components/AIAssistant";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
   title: {
     default: "Moving Walls - Connected Media Platform for OOH Advertising",
     template: "%s | Moving Walls",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
   },
   description: "Moving Walls delivers innovative out-of-home advertising solutions with AI-powered media planning, programmatic buying, and real-time measurement to amplify your brand reach across 2.8B+ screens worldwide.",
   keywords: [
@@ -121,6 +130,7 @@ export default function RootLayout({
         <GlobalCTA />
         <Footer />
         <AIAssistant />
+        <CookieConsent />
       </body>
     </html>
   );
