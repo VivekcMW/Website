@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/events',
     '/locations',
     '/partners',
+    '/privacy',
+    '/cookies',
   ]
 
   // About pages

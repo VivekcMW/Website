@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GlobalCTA from "@/components/GlobalCTA";
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     description: "Transform your advertising with AI-powered OOH media planning, programmatic buying, and real-time measurement across 2.8B+ screens worldwide.",
     images: [
       {
-        url: "/assets/images/og-image.jpg",
+        url: "/assets/images/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Moving Walls - Connected Media Platform",
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Moving Walls - Connected Media Platform for OOH Advertising",
     description: "Transform your advertising with AI-powered OOH media planning, programmatic buying, and real-time measurement.",
-    images: ["/assets/images/og-image.jpg"],
+    images: ["/assets/images/og-image.svg"],
     creator: "@movingwalls",
   },
   robots: {
@@ -94,6 +95,38 @@ export const metadata: Metadata = {
   },
 };
 
+// Organization structured data for SEO
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Moving Walls",
+  url: "https://www.movingwalls.com",
+  logo: "https://www.movingwalls.com/assets/images/og-image.svg",
+  description: "Moving Walls delivers innovative out-of-home advertising solutions with AI-powered media planning, programmatic buying, and real-time measurement.",
+  foundingDate: "2014",
+  sameAs: [
+    "https://www.linkedin.com/company/movingwalls",
+    "https://twitter.com/movingwalls",
+    "https://www.facebook.com/movingwalls"
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+65-6805-8896",
+      contactType: "customer service",
+      areaServed: "Worldwide",
+      availableLanguage: ["English"]
+    }
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "71 Robinson Road, #14-01",
+    addressLocality: "Singapore",
+    postalCode: "068895",
+    addressCountry: "SG"
+  }
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -102,27 +135,71 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* 
-          Google Tag Manager & Analytics - Uncomment and replace IDs when ready:
-          
-          <Script id="gtm-script" strategy="afterInteractive">
-            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {/* Structured Data - Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-XXXXXXX');`}
-          </Script>
-          
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
-          <Script id="ga-script" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
+            })(window,document,'script','dataLayer','GTM-W8SDQPG');
+          `}
+        </Script>
+        
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LPHVR00DLC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');`}
-          </Script>
-        */}
+            gtag('config', 'G-LPHVR00DLC');
+          `}
+        </Script>
+        
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '2116798625788074');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=2116798625788074&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
       </head>
       <body className={`${poppins.variable} font-sans antialiased bg-white text-mw-gray-900`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-W8SDQPG"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Header />
         <main>
           {children}

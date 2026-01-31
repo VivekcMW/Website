@@ -1,3 +1,14 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Moving Walls. Contact our team for OOH advertising solutions, partnerships, or support. Available worldwide.',
+  openGraph: {
+    title: 'Contact Moving Walls',
+    description: 'Get in touch with our team for OOH advertising solutions, partnerships, or support.',
+  },
+}
+
 "use client";
 
 import { motion } from "framer-motion";
