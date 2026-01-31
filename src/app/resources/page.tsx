@@ -34,7 +34,7 @@ export default function ResourcesPage() {
       type: "Whitepaper",
       title: "2024 Digital Out-of-Home Advertising Report",
       description: "Comprehensive analysis of DOOH trends, consumer behavior, and ROI metrics",
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
       downloadCount: "2.5K+",
       href: "/resources/whitepapers"
     },
@@ -42,7 +42,7 @@ export default function ResourcesPage() {
       type: "Webinar",
       title: "AI-Powered Campaign Optimization Masterclass",
       description: "Learn how to leverage AI and machine learning for better campaign performance",
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=600&h=400&fit=crop",
       duration: "45 min",
       href: "/resources/webinars"
     },
@@ -50,7 +50,7 @@ export default function ResourcesPage() {
       type: "Case Study",
       title: "How Brand X Achieved 300% ROI in 90 Days",
       description: "Deep dive into a successful automotive campaign using MW-Platform",
-      image: "/placeholder.jpg",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
       readTime: "8 min",
       href: "/resources/case-studies"
     }
@@ -115,10 +115,12 @@ export default function ResourcesPage() {
               >
                 <Link href={resource.href} className="group block bg-white border border-mw-gray-200 rounded-xl overflow-hidden hover:shadow-mw-lg transition-all duration-300">
                   <div className="aspect-video bg-mw-gray-100 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-mw-blue-500 to-mw-blue-700 opacity-90"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-white text-6xl font-bold opacity-20">{resource.type[0]}</span>
-                    </div>
+                    <img
+                      src={resource.image}
+                      alt={resource.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-white text-mw-blue-600 text-xs font-medium rounded-full">
                         {resource.type}
@@ -198,39 +200,6 @@ export default function ResourcesPage() {
           </div>
         </section>
       ))}
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-mw-blue-600 to-mw-blue-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Need More Help?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Our team is here to support you. Get in touch for personalized assistance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="px-8 py-4 bg-white text-mw-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors shadow-mw-lg"
-              >
-                Contact Support
-              </Link>
-              <Link
-                href="/resources/help-center"
-                className="px-8 py-4 border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors"
-              >
-                Visit Help Center
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
