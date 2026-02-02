@@ -34,6 +34,98 @@ const CheckIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
+// Integration logos for Don't Replace. Integrate. section
+const integrations = [
+  { 
+    name: 'BigQuery', 
+    category: 'Data',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M6.63 18.96L1 15.86v-7.7L6.63 5v13.96zM14.74 22l-5.22-2.84V4.85L14.74 2v20zM23 15.86l-5.63 3.1V5l5.63 3.15v7.7z" fill="#4285F4"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Snowflake', 
+    category: 'Data',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2v4m0 12v4m8.49-14.49l-2.83 2.83m-11.32 5.66l-2.83 2.83m0-11.32l2.83 2.83m11.32 5.66l2.83 2.83M22 12h-4M6 12H2" stroke="#29B5E8" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="12" cy="12" r="3" fill="#29B5E8"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Databricks', 
+    category: 'AI/ML',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#FF3621"/>
+        <path d="M12 12L2 7m10 5l10-5m-10 5v10" stroke="white" strokeWidth="1.5"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Python', 
+    category: 'Research',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.42 3.35-3.42h5.766s3.24.052 3.24-3.148V3.202S18.28 0 11.913 0zM8.708 1.85c.578 0 1.046.47 1.046 1.052 0 .58-.468 1.051-1.046 1.051-.579 0-1.046-.47-1.046-1.051 0-.582.467-1.052 1.046-1.052z" fill="#3776AB"/>
+        <path d="M12.087 24c6.093 0 5.713-2.656 5.713-2.656l-.007-2.752h-5.814v-.826h8.121s3.9.445 3.9-5.735c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.42-3.35 3.42H9.451s-3.24-.052-3.24 3.148v5.292S5.72 24 12.087 24zm3.205-1.85c-.578 0-1.046-.47-1.046-1.052 0-.58.468-1.051 1.046-1.051.579 0 1.046.47 1.046 1.051 0 .582-.467 1.052-1.046 1.052z" fill="#FFD43B"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Tableau', 
+    category: 'BI',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M11.654 5.327V3.435h-1.09v1.892H8.672v1.09h1.892v1.891h1.09V6.417h1.891v-1.09h-1.891zM17.018 9.745V6.963h-1.636v2.782h-2.782v1.636h2.782v2.782h1.636v-2.782h2.782V9.745h-2.782zM7.036 11.927V9.691H5.945v2.236H3.709v1.091h2.236v2.236h1.091v-2.236h2.236v-1.091H7.036zM17.018 16.8v-2.236h-1.636V16.8h-2.236v1.636h2.236v2.237h1.636V18.436h2.782V16.8h-2.782zM11.654 14.564v-1.891h-1.09v1.891H8.672v1.091h1.892v1.891h1.09v-1.891h1.891v-1.091h-1.891zM5.4 17.891v-1.636H4.309v1.636H2.673v1.091h1.636v1.636H5.4v-1.636h1.636v-1.091H5.4z" fill="#E97627"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Looker', 
+    category: 'Analytics',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#4285F4"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'AWS', 
+    category: 'Cloud',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#232F3E"/>
+        <path d="M8.52 12.75c0 .25.03.46.08.63.06.17.13.35.23.54.04.07.05.13.05.19 0 .08-.05.16-.16.24l-.54.36c-.08.05-.15.08-.21.08-.08 0-.16-.04-.23-.12-.11-.12-.2-.25-.28-.39-.08-.14-.16-.3-.24-.49-.6.71-1.36 1.07-2.27 1.07-.65 0-1.17-.19-1.54-.56-.38-.37-.57-.87-.57-1.49 0-.66.23-1.19.7-1.59.47-.4 1.09-.6 1.89-.6.26 0 .53.02.81.06.28.04.57.1.88.17v-.56c0-.59-.12-.99-.36-1.23-.24-.23-.66-.35-1.25-.35-.27 0-.54.03-.83.1-.29.07-.57.15-.84.27-.13.06-.22.09-.28.11-.06.02-.1.03-.14.03-.12 0-.18-.09-.18-.27v-.42c0-.14.02-.24.07-.31.05-.06.13-.12.26-.18.27-.14.6-.26.98-.35.38-.09.79-.14 1.22-.14.93 0 1.61.21 2.04.63.43.42.64 1.06.64 1.91v2.52h.03zm-3.14 1.18c.25 0 .51-.05.78-.14.27-.09.51-.24.72-.44.13-.13.23-.27.29-.44.06-.17.09-.37.09-.62v-.3c-.23-.05-.47-.1-.72-.13-.25-.03-.5-.05-.74-.05-.51 0-.89.1-1.14.31-.25.21-.38.5-.38.87 0 .36.09.63.28.81.19.18.45.27.79.27l.03-.14zm6.2.83c-.16 0-.26-.03-.33-.08-.07-.05-.13-.16-.18-.31l-1.98-6.52c-.05-.16-.08-.26-.08-.32 0-.13.07-.2.2-.2h.77c.17 0 .28.03.34.08.07.05.12.16.17.31l1.42 5.58 1.31-5.58c.04-.16.09-.26.16-.31.07-.05.19-.08.35-.08h.63c.17 0 .29.03.35.08.07.05.13.16.17.31l1.33 5.65 1.46-5.65c.05-.16.11-.26.17-.31.07-.05.18-.08.34-.08h.73c.13 0 .21.07.21.2 0 .04-.01.08-.02.13-.01.05-.03.11-.06.2l-2.03 6.52c-.05.16-.11.26-.18.31-.07.05-.18.08-.33.08h-.68c-.17 0-.28-.03-.35-.08-.07-.06-.13-.16-.17-.32l-1.31-5.45-1.29 5.45c-.04.16-.1.26-.17.32-.07.05-.19.08-.36.08h-.68v-.01z" fill="#FF9900"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'GCP', 
+    category: 'Cloud',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12.19 5.599l3.49 2.017v4.035l-3.49 2.016-3.49-2.016V7.616l3.49-2.017z" fill="#4285F4"/>
+        <path d="M8.7 7.616l3.49 2.017-3.49 2.018-3.49-2.018 3.49-2.017z" fill="#34A853"/>
+        <path d="M15.68 7.616l3.49 2.017-3.49 2.018V7.616z" fill="#FBBC05"/>
+        <path d="M12.19 13.667l3.49 2.017v4.035l-3.49 2.016v-8.068z" fill="#EA4335"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Azure', 
+    category: 'Cloud',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M5.483 21L13.27 3h4.63L9.31 21H5.483zM14.5 7l6 10.5H10.5L14.5 7z" fill="#0089D6"/>
+      </svg>
+    )
+  },
+]
+
 export default function MWScience() {
   const features = [
     {
@@ -514,6 +606,80 @@ export default function MWScience() {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Integrations Section - Don't Replace. Integrate. */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-6">
+                <span className="text-blue-600 font-medium text-sm">50+ Integrations</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Don&apos;t Replace.
+                <span className="block text-blue-600">Integrate.</span>
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                MW-Science connects seamlessly with your existing data sources. No rip-and-replace—just instant insights from day one.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                {['Data Sources', 'Research Tools', 'AI/ML', 'Analytics'].map((category) => (
+                  <div key={category} className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-gray-700">{category}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="/integrations"
+                  className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2"
+                >
+                  View All Integrations
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="grid grid-cols-3 gap-4">
+                {integrations.map((integration, index) => (
+                  <motion.div
+                    key={integration.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-50 rounded-xl p-4 hover:bg-blue-50 hover:shadow-md transition-all text-center group cursor-pointer"
+                  >
+                    <div className="w-14 h-14 mx-auto mb-3 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:shadow-md transition-shadow">
+                      {integration.logo}
+                    </div>
+                    <div className="text-sm font-medium text-gray-700">{integration.name}</div>
+                    <div className="text-xs text-gray-400 mt-1">{integration.category}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -58,6 +58,104 @@ const ShieldCheckIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
+// Integration logos for Don't Replace. Integrate. section
+const integrations = [
+  { 
+    name: 'Adobe CC', 
+    category: 'Design',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425h-3.71zm.001 0h3.71L24 1.376H15.087l-1.12 21.248zM0 1.376l6.966 21.248h3.71L4.12 8.809l4.209-7.433H0z" fill="#FF0000"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Figma', 
+    category: 'Design',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M5 5.5A3.5 3.5 0 018.5 2H12v7H8.5A3.5 3.5 0 015 5.5z" fill="#F24E1E"/>
+        <path d="M12 2h3.5a3.5 3.5 0 110 7H12V2z" fill="#FF7262"/>
+        <path d="M12 12.5a3.5 3.5 0 117 0 3.5 3.5 0 11-7 0z" fill="#1ABCFE"/>
+        <path d="M5 19.5A3.5 3.5 0 018.5 16H12v3.5a3.5 3.5 0 11-7 0z" fill="#0ACF83"/>
+        <path d="M5 12.5A3.5 3.5 0 018.5 9H12v7H8.5A3.5 3.5 0 015 12.5z" fill="#A259FF"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Canva', 
+    category: 'Templates',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#00C4CC"/>
+        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5c1.38 0 2.63-.56 3.54-1.46l-1.41-1.41c-.56.56-1.33.87-2.13.87-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3h2c0-2.76-2.24-5-5-5z" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Bynder', 
+    category: 'DAM',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#00AAFF"/>
+        <path d="M6 8h12v2H6V8zm0 4h8v2H6v-2z" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Widen', 
+    category: 'DAM',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#6366F1"/>
+        <path d="M6 8l3 8 3-6 3 6 3-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Celtra', 
+    category: 'Creative',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#FF6B35"/>
+        <circle cx="12" cy="12" r="6" stroke="white" strokeWidth="2"/>
+        <circle cx="12" cy="12" r="2" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Google Drive', 
+    category: 'Storage',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M7.71 3.5L1.15 15l3.43 5.95h13.14L21.15 15 14.58 3.5H7.71z" fill="#4285F4"/>
+        <path d="M14.58 3.5L21.15 15l-3.43 5.95L7.71 3.5h6.87z" fill="#0F9D58"/>
+        <path d="M1.15 15l3.43 5.95h13.14l-3.43-5.95H1.15z" fill="#FFCD40"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Dropbox', 
+    category: 'Storage',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M6 2l6 4-6 4 6 4-6 4" fill="#0061FF"/>
+        <path d="M18 2l-6 4 6 4-6 4 6 4" fill="#0061FF"/>
+        <path d="M12 6l6 4-6 4-6-4 6-4z" fill="#0061FF"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Vimeo', 
+    category: 'Video',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.522 3.01 7.522c-.179 0-.806.378-1.881 1.132L0 7.197c1.185-1.044 2.351-2.084 3.501-3.128C5.08 2.701 6.266 1.984 7.055 1.91c1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.507.539 2.45 1.131 3.674 1.776 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.614-2.061-.574 0-1.167.121-1.777.391 1.186-3.868 3.434-5.757 6.762-5.637 2.473.06 3.628 1.664 3.493 4.797l-.013.01z" fill="#1AB7EA"/>
+      </svg>
+    )
+  },
+]
+
 export default function MWStudio() {
   const [activeMode, setActiveMode] = useState<'marketplace' | 'campaigns'>('marketplace')
 
@@ -597,6 +695,80 @@ export default function MWStudio() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integrations Section - Don't Replace. Integrate. */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-6">
+                <span className="text-blue-600 font-medium text-sm">50+ Integrations</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Don&apos;t Replace.
+                <span className="block text-blue-600">Integrate.</span>
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                MW-Studio connects seamlessly with your existing creative tools. No rip-and-replace—just instant creative production from day one.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                {['Design Tools', 'DAM Systems', 'Video', 'Templates'].map((category) => (
+                  <div key={category} className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-gray-700">{category}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="/integrations"
+                  className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2"
+                >
+                  View All Integrations
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="grid grid-cols-3 gap-4">
+                {integrations.map((integration, index) => (
+                  <motion.div
+                    key={integration.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-50 rounded-xl p-4 hover:bg-blue-50 hover:shadow-md transition-all text-center group cursor-pointer"
+                  >
+                    <div className="w-14 h-14 mx-auto mb-3 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:shadow-md transition-shadow">
+                      {integration.logo}
+                    </div>
+                    <div className="text-sm font-medium text-gray-700">{integration.name}</div>
+                    <div className="text-xs text-gray-400 mt-1">{integration.category}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

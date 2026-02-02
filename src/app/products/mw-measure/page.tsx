@@ -66,6 +66,102 @@ const EyeIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
+// Integration logos for Don't Replace. Integrate. section
+const integrations = [
+  { 
+    name: 'Clear Channel', 
+    category: 'OOH Vendor',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#003087"/>
+        <path d="M6 12h12M12 6v12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Lamar', 
+    category: 'Billboard',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#FF6B00"/>
+        <path d="M7 17V7h2v8h5v2H7z" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Vistar Media', 
+    category: 'Digital OOH',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#6366F1"/>
+        <path d="M12 6l6 12H6l6-12z" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'OUTFRONT', 
+    category: 'Transit',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#E31837"/>
+        <circle cx="12" cy="12" r="5" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Foursquare', 
+    category: 'Foot Traffic',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#F94877"/>
+        <path d="M12 4l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Geopath', 
+    category: 'Measurement',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#00A651"/>
+        <path d="M12 4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="white"/>
+        <circle cx="12" cy="12" r="3" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Cuebiq', 
+    category: 'Attribution',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#FF5722"/>
+        <path d="M12 4C7.58 4 4 7.58 4 12s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm-2 11l-3-3 1.41-1.41L10 12.17l4.59-4.59L16 9l-6 6z" fill="white"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'Broadsign', 
+    category: 'DOOH',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#00BCD4"/>
+        <rect x="6" y="6" width="12" height="12" rx="2" fill="white"/>
+        <rect x="9" y="9" width="6" height="6" fill="#00BCD4"/>
+      </svg>
+    )
+  },
+  { 
+    name: 'PlaceIQ', 
+    category: 'Location',
+    logo: (
+      <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="4" fill="#1E88E5"/>
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+      </svg>
+    )
+  },
+]
+
 export default function MWMeasure() {
   const [selectedLocation, setSelectedLocation] = useState('downtown')
   const [hoveredFormat, setHoveredFormat] = useState<string | null>(null)
@@ -981,61 +1077,76 @@ export default function MWMeasure() {
         </div>
       </section>
 
-      {/* Integrations */}
-      <section className="py-20 bg-gray-50">
+      {/* Integrations Section - Don't Replace. Integrate. */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              OOH Platform Integrations
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Seamlessly connect with leading OOH vendors, location data providers, 
-              and attribution platforms for unified campaign measurement.
-            </p>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full mb-6">
+                <span className="text-blue-600 font-medium text-sm">50+ Integrations</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Don&apos;t Replace.
+                <span className="block text-blue-600">Integrate.</span>
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                MW-Measure connects seamlessly with your existing OOH ecosystem. No rip-and-replace—just instant measurement value from day one.
+              </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {[
-              { name: "Clear Channel", category: "OOH Vendor" },
-              { name: "Lamar", category: "Billboard Network" },
-              { name: "Vistar Media", category: "Digital OOH" },
-              { name: "OUTFRONT", category: "Transit Advertising" },
-              { name: "PlaceIQ", category: "Location Data" },
-              { name: "Foursquare", category: "Foot Traffic" },
-              { name: "Geopath", category: "Audience Measurement" },
-              { name: "Intermx", category: "OOH Planning" },
-              { name: "Cuebiq", category: "Mobile Attribution" },
-              { name: "GroundTruth", category: "Location Intelligence" },
-              { name: "Broadsign", category: "DOOH Platform" },
-              { name: "Hivestack", category: "Programmatic OOH" }
-            ].map((integration, index) => (
-              <motion.div
-                key={integration.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: (index % 6) * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-white p-4 rounded-xl hover:shadow-lg transition-shadow text-center border border-gray-200"
-              >
-                <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center">
-                  <span className="text-xl font-bold text-blue-700">
-                    {integration.name.charAt(0)}
-                  </span>
-                </div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-1">
-                  {integration.name}
-                </h4>
-                <p className="text-xs text-gray-600">
-                  {integration.category}
-                </p>
-              </motion.div>
-            ))}
+              <div className="grid grid-cols-2 gap-4">
+                {['OOH Vendors', 'Location Data', 'Attribution', 'Analytics'].map((category) => (
+                  <div key={category} className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-gray-700">{category}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="/integrations"
+                  className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2"
+                >
+                  View All Integrations
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="grid grid-cols-3 gap-4">
+                {integrations.map((integration, index) => (
+                  <motion.div
+                    key={integration.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-50 rounded-xl p-4 hover:bg-blue-50 hover:shadow-md transition-all text-center group cursor-pointer"
+                  >
+                    <div className="w-14 h-14 mx-auto mb-3 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:shadow-md transition-shadow">
+                      {integration.logo}
+                    </div>
+                    <div className="text-sm font-medium text-gray-700">{integration.name}</div>
+                    <div className="text-xs text-gray-400 mt-1">{integration.category}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
