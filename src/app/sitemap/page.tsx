@@ -45,7 +45,7 @@ export default function SitemapPage() {
     },
     {
       name: "About",
-      href: "/about",
+      href: null,
       pages: [
         { name: "Our Story", href: "/about/our-story" },
         { name: "Our Journey", href: "/about/our-journey" },
@@ -56,7 +56,7 @@ export default function SitemapPage() {
     },
     {
       name: "Products",
-      href: "/products",
+      href: null,
       pages: [
         { name: "MW Planner", href: "/products/mw-planner" },
         { name: "MW Activate", href: "/products/mw-activate" },
@@ -69,7 +69,7 @@ export default function SitemapPage() {
     },
     {
       name: "Solutions",
-      href: "/solutions",
+      href: null,
       pages: [
         { name: "For Brands", href: "/solutions/brands" },
         { name: "For Agencies", href: "/solutions/agencies" },
@@ -95,7 +95,7 @@ export default function SitemapPage() {
     },
     {
       name: "Press Releases",
-      href: "/press",
+      href: null,
       pages: [
         { name: "Series C Funding", href: "/press/series-c-funding" },
         { name: "AdTech Company of the Year", href: "/press/adtech-company-of-year" },
@@ -112,7 +112,9 @@ export default function SitemapPage() {
         { name: "Events", href: "/events" },
         { name: "Partners", href: "/partners" },
         { name: "Locations", href: "/locations" },
+        { name: "Offices", href: "/offices" },
         { name: "Contact", href: "/contact" },
+        { name: "Integrations", href: "/integrations" },
       ]
     },
     {
@@ -121,6 +123,7 @@ export default function SitemapPage() {
       pages: [
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms & Conditions", href: "/terms" },
+        { name: "Cookie Policy", href: "/cookies" },
       ]
     },
   ]
@@ -207,7 +210,7 @@ export default function SitemapPage() {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl font-bold text-mw-blue-600 mb-2">8</div>
+                <div className="text-3xl font-bold text-mw-blue-600 mb-2">9</div>
                 <div className="text-sm text-gray-600">Main Sections</div>
               </div>
               <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -219,7 +222,7 @@ export default function SitemapPage() {
                 <div className="text-sm text-gray-600">Solutions</div>
               </div>
               <div className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl font-bold text-mw-blue-600 mb-2">40+</div>
+                <div className="text-3xl font-bold text-mw-blue-600 mb-2">45+</div>
                 <div className="text-sm text-gray-600">Total Pages</div>
               </div>
             </div>

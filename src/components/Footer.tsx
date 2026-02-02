@@ -32,6 +32,17 @@ const footerLinks = {
     { name: "Documentation", href: "https://help.movingwalls.com/" },
     { name: "API Reference", href: "#" },
   ],
+  billboardLocations: [
+    { name: "Malaysia", href: "/locations/malaysia" },
+    { name: "Singapore", href: "/locations/singapore" },
+    { name: "Indonesia", href: "/locations/indonesia" },
+    { name: "India", href: "/locations/india" },
+    { name: "Philippines", href: "/locations/philippines" },
+    { name: "Japan", href: "/locations/japan" },
+    { name: "Australia", href: "/locations/australia" },
+    { name: "Sri Lanka", href: "/locations/sri-lanka" },
+    { name: "Thailand", href: "/locations/thailand" },
+  ],
 };
 
 const socialLinks = [
@@ -162,7 +173,7 @@ export default function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
             {/* Company */}
             <div>
               <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
@@ -225,6 +236,27 @@ export default function Footer() {
                       className="text-mw-gray-300 hover:text-white transition-colors flex items-center group"
                     >
                       <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Billboard Locations */}
+            <div>
+              <h4 className="text-white font-bold mb-6 text-lg">Billboard Locations</h4>
+              <ul className="space-y-3">
+                {footerLinks.billboardLocations.map((location) => (
+                  <li key={location.name}>
+                    <Link
+                      href={location.href}
+                      className="text-mw-gray-300 hover:text-white transition-colors flex items-center group"
+                    >
+                      <svg className="w-4 h-4 mr-2 text-mw-blue-400 group-hover:text-mw-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="group-hover:translate-x-1 transition-transform">{location.name}</span>
                     </Link>
                   </li>
                 ))}
