@@ -122,17 +122,10 @@ export default function SingaporePage() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="flex items-center gap-4 mb-6"
+            className="mb-6"
           >
-            <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1>
-              <p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p>
-            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1>
+            <p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p>
           </motion.div>
           <motion.p
             initial="hidden"
@@ -355,31 +348,6 @@ export default function SingaporePage() {
           </motion.div>
         </div>
       </section>
-
-      {/* CTA */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={fadeUp}
-        className="py-16 md:py-20 bg-mw-blue-900"
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Advertise in {countryData.name}?</h2>
-          <p className="text-xl text-mw-blue-100 mb-8">Connect with our local team to explore billboard opportunities.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">
-              Get Started
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <Link href="/products/mw-planner" className="inline-flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-              Explore MW Planner
-            </Link>
-          </div>
-        </div>
-      </motion.section>
     </div>
   )
 }
