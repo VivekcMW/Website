@@ -99,6 +99,7 @@ const megaMenuData = {
           { name: "Documentation", description: "Technical guides", href: "/resources/documentation" },
           { name: "API Reference", description: "Developer resources", href: "/resources/api-reference" },
           { name: "Community", description: "Connect with peers", href: "/resources/community" },
+          { name: "Integrations", description: "Connect your tools", href: "/integrations" },
         ],
       },
     ],

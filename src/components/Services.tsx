@@ -2,22 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const solutions = [
   {
     title: "Brand",
     description: "Amplify your brand message across premium out-of-home inventory. Reach your target audience at scale with data-driven campaigns that drive awareness and engagement.",
-    bgColor: "bg-mw-blue-100",
+    bgColor: "bg-transparent",
     href: "/solutions/brands",
-    icon: <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Brand/Megaphone Illustration */}
-      <rect x="30" y="20" width="140" height="120" rx="8" fill="white" stroke="#2563eb" strokeWidth="2"/>
-      <path d="M 60 70 L 90 70 L 110 50 L 140 50 L 140 110 L 110 110 L 90 90 L 60 90 Z" fill="#2563eb"/>
-      <circle cx="150" cy="60" r="8" fill="#93c5fd"/>
-      <circle cx="155" cy="75" r="12" fill="#93c5fd" opacity="0.7"/>
-      <circle cx="160" cy="95" r="10" fill="#93c5fd" opacity="0.5"/>
-      <rect x="70" y="75" width="15" height="10" rx="2" fill="white"/>
-    </svg>,
+    image: "/assets/images/brands/Brand.png",
     features: [
       "Multi-channel campaign management",
       "Advanced audience targeting",
@@ -94,7 +87,7 @@ export default function Services() {
             Tailored Solutions for Every Stakeholder
           </h2>
           <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
-            Whether you're a brand, media owner, or agency, we provide the tools 
+            Whether you&apos;re a brand, media owner, or agency, we provide the tools 
             and technology you need to succeed in the DOOH ecosystem.
           </p>
         </motion.div>
@@ -113,9 +106,18 @@ export default function Services() {
               <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                 <div className="relative h-80 rounded-2xl overflow-hidden border border-mw-gray-200 group hover:border-mw-blue-300 transition-all duration-300 hover:shadow-mw-lg">
                   <div className={`absolute inset-0 ${solution.bgColor}`} />
-                  <div className="absolute inset-0 flex items-center justify-center p-12">
-                    <div className="w-full h-full">
-                      {solution.icon}
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="w-full h-full relative">
+                      {solution.image ? (
+                        <Image
+                          src={solution.image}
+                          alt={`${solution.title} illustration`}
+                          fill
+                          className="object-contain"
+                        />
+                      ) : (
+                        solution.icon
+                      )}
                     </div>
                   </div>
                 </div>

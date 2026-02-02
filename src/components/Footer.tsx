@@ -22,11 +22,13 @@ const footerLinks = {
     { name: "Finance", href: "/solutions/finance" },
   ],
   products: [
-    { name: "AdPlatform Pro", href: "/products/adplatform-pro" },
-    { name: "Audience Insights", href: "/products/audience-insights" },
-    { name: "Campaign Manager", href: "/products/campaign-manager" },
-    { name: "Measure360", href: "/products/measure360" },
-    { name: "Digital Billboards", href: "/products/digital-billboards" },
+    { name: "MW-Planner", href: "/products/mw-planner" },
+    { name: "MW-Measure", href: "/products/mw-measure" },
+    { name: "MW-Reach", href: "/products/mw-reach" },
+    { name: "MW-Activate", href: "/products/mw-activate" },
+    { name: "MW-Science", href: "/products/mw-science" },
+    { name: "MW-Studio", href: "/products/mw-studio" },
+    { name: "MW-Marketplace", href: "/products/mw-marketplace" },
   ],
   support: [
     { name: "Help Center", href: "#" },

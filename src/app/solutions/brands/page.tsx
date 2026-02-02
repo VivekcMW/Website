@@ -117,24 +117,14 @@ export default function BrandsPage() {
                     {/* Screenshot Placeholder */}
                     <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
                       {activePlatform === 'planner' && (
-                        <div className="w-full h-full flex flex-col">
-                          <div className="flex gap-4 mb-4">
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <div className="h-3 w-20 bg-gray-200 rounded mb-2"></div>
-                              <div className="h-8 w-full bg-blue-100 rounded"></div>
-                            </div>
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <div className="h-3 w-20 bg-gray-200 rounded mb-2"></div>
-                              <div className="h-8 w-full bg-blue-100 rounded"></div>
-                            </div>
-                          </div>
-                          <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                            <div className="h-full bg-gradient-to-r from-blue-200 to-indigo-200 rounded-lg flex items-center justify-center">
-                              <svg className="w-16 h-16 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                              </svg>
-                            </div>
-                          </div>
+                        <div className="w-full h-full flex items-center justify-center">
+                          <Image
+                            src="/assets/images/brands/brand-wheel.png"
+                            alt="Brand Planning Wheel - Planning, Tools, Metrics, Analysis"
+                            width={500}
+                            height={400}
+                            className="object-contain max-h-full"
+                          />
                         </div>
                       )}
                       {activePlatform === 'marketplace' && (

@@ -48,6 +48,73 @@ export default function ContactPage() {
     }
   ];
 
+  const offices = [
+    {
+      city: 'Singapore',
+      country: 'Singapore',
+      type: 'Global Headquarters',
+      address: '71 Robinson Road, #14-01',
+      phone: '+65 6805 8896',
+      isHeadquarters: true,
+    },
+    {
+      city: 'Kuala Lumpur',
+      country: 'Malaysia',
+      type: 'Regional Office',
+      address: 'Level 17, Menara CIMB',
+      phone: '+60 3-2242 7266',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Jakarta',
+      country: 'Indonesia',
+      type: 'Regional Office',
+      address: 'Equity Tower, 49th Floor, SCBD',
+      phone: '+62 21 2965 1500',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Mumbai',
+      country: 'India',
+      type: 'Regional Office',
+      address: 'WeWork Enam Sambhav, BKC',
+      phone: '+91 22 4890 1234',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Dubai',
+      country: 'United Arab Emirates',
+      type: 'MENA Office',
+      address: 'Dubai Internet City, Building 1',
+      phone: '+971 4 123 4567',
+      isHeadquarters: false,
+    },
+    {
+      city: 'London',
+      country: 'United Kingdom',
+      type: 'European Headquarters',
+      address: '30 Stamford Street, South Bank',
+      phone: '+44 20 7123 4567',
+      isHeadquarters: false,
+    },
+    {
+      city: 'New York',
+      country: 'United States',
+      type: 'Americas Office',
+      address: '1411 Broadway, 16th Floor',
+      phone: '+1 (212) 555-0123',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Sydney',
+      country: 'Australia',
+      type: 'ANZ Office',
+      address: '1 Martin Place, Level 12',
+      phone: '+61 2 8123 4567',
+      isHeadquarters: false,
+    },
+  ];
+
   const departments = [
     {
       title: "New Business & Strategy",
@@ -177,40 +244,74 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-20 bg-white">
+      {/* Office Locations Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-mw-gray-900 mb-4">
-              How to Reach Us
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
+              <svg className="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-blue-200 text-sm font-medium">8 Offices Worldwide</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Global Presence
             </h2>
-            <p className="text-lg text-mw-gray-600 max-w-3xl mx-auto">
-              Choose the best way to connect with our team. We're here to help you succeed.
+            <p className="text-xl text-blue-100/80 max-w-2xl mx-auto">
+              With offices across Asia, Europe, Americas, and Middle East, we're always close to our clients.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactMethods.map((method, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {offices.map((office, index) => (
               <motion.div
-                key={index}
+                key={office.city}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6"
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-mw-blue-100 rounded-full text-mw-blue-600 mb-4">
-                  {method.icon}
+                <div className="flex items-start justify-between mb-3">
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+                    <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  {office.isHeadquarters && (
+                    <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                      HQ
+                    </span>
+                  )}
                 </div>
-                <h3 className="text-xl font-bold text-mw-gray-900 mb-3">{method.title}</h3>
-                <p className="text-mw-blue-600 font-medium mb-2">{method.details}</p>
-                <p className="text-mw-gray-600 text-sm">{method.description}</p>
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-200 transition-colors">
+                  {office.city}
+                </h3>
+                <p className="text-blue-200/80 text-sm mb-3">{office.country}</p>
+                <p className="text-blue-100/60 text-xs mb-3">{office.type}</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <svg className="w-4 h-4 text-blue-300/60 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span className="text-blue-100/70">{office.address}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-blue-300/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href={`tel:${office.phone}`} className="text-blue-100/70 hover:text-blue-200 transition-colors">
+                      {office.phone}
+                    </a>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
