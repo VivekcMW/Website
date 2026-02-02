@@ -74,7 +74,7 @@ const socialLinks = [
 ];
 
 const quickStats = [
-  { label: "Global Offices", value: "6" },
+  { label: "Global Offices", value: "9" },
   { label: "Countries Served", value: "25+" },
   { label: "Active Campaigns", value: "10K+" },
   { label: "Client Satisfaction", value: "98%" },

@@ -53,64 +53,72 @@ export default function ContactPage() {
       city: 'Singapore',
       country: 'Singapore',
       type: 'Global Headquarters',
-      address: '71 Robinson Road, #14-01',
-      phone: '+65 6805 8896',
+      address: 'Far East Finance Building, #8-02, 14 Robinson Road, Singapore 048545',
+      phone: '+65 8755 6364',
       isHeadquarters: true,
     },
     {
       city: 'Kuala Lumpur',
       country: 'Malaysia',
       type: 'Regional Office',
-      address: 'Level 17, Menara CIMB',
-      phone: '+60 3-2242 7266',
+      address: 'Level 8 (Zone B), Wisma Standard Chartered, No. 2, Jalan Teknologi Taman Teknologi Malaysia, 57000 Bukit Jalil',
+      phone: '+60 3 7610 2044',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Manila',
+      country: 'Philippines',
+      type: 'Regional Office',
+      address: 'Unit 1207, Capital House, 9th Avenue, cor Lane S, Taguig',
+      phone: '+63 7527 5672',
       isHeadquarters: false,
     },
     {
       city: 'Jakarta',
       country: 'Indonesia',
+      type: 'Registered Office',
+      address: 'Tower 45th floor, Jalan Prof Dr Satrio, Kav. 18 Jakarta 12940',
+      phone: '+62 21 3005 3540',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Jakarta',
+      country: 'Indonesia',
+      type: 'Operational Office',
+      address: 'Nobel House, 29th Floor, Jl. Dr. Ide Anak Agung Gede Agung Kav. E 4.2 No. 2, Mega Kuningan, Jakarta Selatan 12950',
+      phone: '+62 21 3005 3540',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Colombo',
+      country: 'Sri Lanka',
       type: 'Regional Office',
-      address: 'Equity Tower, 49th Floor, SCBD',
-      phone: '+62 21 2965 1500',
+      address: '07 Turnour Rd, Colombo 8',
+      phone: '',
+      isHeadquarters: false,
+    },
+    {
+      city: 'Bangalore',
+      country: 'India',
+      type: 'Regional Office',
+      address: 'BHIVE Workspace, 3rd Floor, No.467/468, Shri Krishna Temple Rd, Stage 1 Indiranagar, Bengaluru, Karnataka 560038',
+      phone: '',
       isHeadquarters: false,
     },
     {
       city: 'Mumbai',
       country: 'India',
       type: 'Regional Office',
-      address: 'WeWork Enam Sambhav, BKC',
-      phone: '+91 22 4890 1234',
+      address: 'Dynasty Business Park, A wing 7th Floor, Near Metro Station, Andheri - Kurla Rd, Vijay Nagar Colony, Chakala, Andheri East, Mumbai, Maharashtra 400065',
+      phone: '',
       isHeadquarters: false,
     },
     {
-      city: 'Dubai',
-      country: 'United Arab Emirates',
-      type: 'MENA Office',
-      address: 'Dubai Internet City, Building 1',
-      phone: '+971 4 123 4567',
-      isHeadquarters: false,
-    },
-    {
-      city: 'London',
-      country: 'United Kingdom',
-      type: 'European Headquarters',
-      address: '30 Stamford Street, South Bank',
-      phone: '+44 20 7123 4567',
-      isHeadquarters: false,
-    },
-    {
-      city: 'New York',
-      country: 'United States',
-      type: 'Americas Office',
-      address: '1411 Broadway, 16th Floor',
-      phone: '+1 (212) 555-0123',
-      isHeadquarters: false,
-    },
-    {
-      city: 'Sydney',
-      country: 'Australia',
-      type: 'ANZ Office',
-      address: '1 Martin Place, Level 12',
-      phone: '+61 2 8123 4567',
+      city: 'Chennai',
+      country: 'India',
+      type: 'Regional Office',
+      address: '2nd & 3rd Floor, Block C, Adwave Towers, South Boag Road, Parthasarathi Puram, T. Nagar, Chennai 600017',
+      phone: '',
       isHeadquarters: false,
     },
   ];
@@ -236,7 +244,7 @@ export default function ContactPage() {
                 <div className="text-sm text-mw-gray-600">Client Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-mw-blue-600 mb-1">8</div>
+                <div className="text-3xl font-bold text-mw-blue-600 mb-1">9</div>
                 <div className="text-sm text-mw-gray-600">Global Offices</div>
               </div>
             </div>
@@ -245,7 +253,7 @@ export default function ContactPage() {
       </section>
 
       {/* Office Locations Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+      <section className="py-20 bg-mw-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -254,21 +262,21 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
-              <svg className="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center gap-2 bg-mw-blue-100 px-4 py-2 rounded-full mb-6">
+              <svg className="w-4 h-4 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-blue-200 text-sm font-medium">8 Offices Worldwide</span>
+              <span className="text-mw-blue-600 text-sm font-medium">9 Offices Across Asia</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-mw-gray-900 mb-4">
               Our Global Presence
             </h2>
-            <p className="text-xl text-blue-100/80 max-w-2xl mx-auto">
-              With offices across Asia, Europe, Americas, and Middle East, we're always close to our clients.
+            <p className="text-xl text-mw-gray-600 max-w-2xl mx-auto">
+              With offices strategically located across Asia, we&apos;re always close to our clients.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {offices.map((office, index) => (
               <motion.div
                 key={office.city}
@@ -276,41 +284,43 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/15 hover:border-white/20 transition-all group"
+                className="bg-white rounded-xl p-6 border border-mw-gray-200 hover:border-mw-blue-300 hover:shadow-lg transition-all group"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-                    <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-mw-blue-100 rounded-lg flex items-center justify-center group-hover:bg-mw-blue-200 transition-colors">
+                    <svg className="w-5 h-5 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                   </div>
                   {office.isHeadquarters && (
-                    <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                    <span className="bg-mw-blue-600 text-white text-xs px-2 py-1 rounded-full font-medium">
                       HQ
                     </span>
                   )}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-200 transition-colors">
+                <h3 className="text-lg font-bold text-mw-gray-900 mb-1 group-hover:text-mw-blue-600 transition-colors">
                   {office.city}
                 </h3>
-                <p className="text-blue-200/80 text-sm mb-3">{office.country}</p>
-                <p className="text-blue-100/60 text-xs mb-3">{office.type}</p>
+                <p className="text-mw-gray-600 text-sm mb-3">{office.country}</p>
+                <p className="text-mw-gray-500 text-xs mb-3">{office.type}</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start gap-2">
-                    <svg className="w-4 h-4 text-blue-300/60 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-mw-gray-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-blue-100/70">{office.address}</span>
+                    <span className="text-mw-gray-600">{office.address}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-blue-300/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <a href={`tel:${office.phone}`} className="text-blue-100/70 hover:text-blue-200 transition-colors">
-                      {office.phone}
-                    </a>
-                  </div>
+                  {office.phone && (
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-mw-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      <a href={`tel:${office.phone}`} className="text-mw-blue-600 hover:text-mw-blue-700 transition-colors">
+                        {office.phone}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

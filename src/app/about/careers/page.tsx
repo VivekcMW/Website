@@ -105,9 +105,9 @@ export default function CareersPage() {
   ];
 
   const stats = [
-    { number: "150+", label: "Team Members" },
+    { number: "200+", label: "Team Members" },
     { number: "25+", label: "Open Positions" },
-    { number: "6", label: "Global Offices" },
+    { number: "9", label: "Global Offices" },
     { number: "4.9/5", label: "Glassdoor Rating" }
   ];
 

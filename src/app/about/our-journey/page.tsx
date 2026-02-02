@@ -177,12 +177,14 @@ export default function OurJourneyPage() {
   ];
 
   const officeExpansion = [
-    { city: "San Francisco", year: 2015, type: "Headquarters", employees: "85+", milestone: "Company Founded" },
-    { city: "New York", year: 2017, type: "Sales Hub", employees: "35+", milestone: "East Coast Expansion" },
-    { city: "Toronto", year: 2019, type: "Operations", employees: "12+", milestone: "Canadian Market Entry" },
-    { city: "London", year: 2020, type: "European HQ", employees: "25+", milestone: "European Expansion" },
-    { city: "Berlin", year: 2022, type: "Central Europe", employees: "8+", milestone: "DACH Region Launch" },
-    { city: "Sydney", year: 2023, type: "APAC Hub", employees: "15+", milestone: "Asia-Pacific Growth" }
+    { city: "Singapore", year: 2014, type: "Global HQ", employees: "50+", milestone: "Company Founded" },
+    { city: "Kuala Lumpur", year: 2016, type: "Regional Office", employees: "25+", milestone: "Malaysia Expansion" },
+    { city: "Jakarta", year: 2017, type: "Regional Office", employees: "20+", milestone: "Indonesia Market Entry" },
+    { city: "Manila", year: 2018, type: "Regional Office", employees: "15+", milestone: "Philippines Expansion" },
+    { city: "Mumbai", year: 2019, type: "Regional Office", employees: "30+", milestone: "India Expansion" },
+    { city: "Bangalore", year: 2020, type: "Regional Office", employees: "20+", milestone: "India Tech Hub" },
+    { city: "Chennai", year: 2021, type: "Regional Office", employees: "15+", milestone: "South India Growth" },
+    { city: "Colombo", year: 2022, type: "Regional Office", employees: "10+", milestone: "Sri Lanka Entry" }
   ];
 
   const awards = [
@@ -255,7 +257,7 @@ export default function OurJourneyPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-center bg-white rounded-xl p-6 shadow-mw-sm border border-mw-gray-100"
               >
-                <div className="text-3xl md:text-4xl font-bold text-mw-blue-600 mb-2">6</div>
+                <div className="text-3xl md:text-4xl font-bold text-mw-blue-600 mb-2">9</div>
                 <div className="text-sm text-mw-gray-600">Global Offices</div>
               </motion.div>
               <motion.div

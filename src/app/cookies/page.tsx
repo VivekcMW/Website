@@ -294,7 +294,7 @@ export default function CookiePolicyPage() {
               <div className="bg-gray-50 rounded-xl p-6">
                 <p className="text-gray-700 mb-2"><strong>Moving Walls Pte. Ltd.</strong></p>
                 <p className="text-gray-600 mb-2">Email: privacy@movingwalls.com</p>
-                <p className="text-gray-600 mb-2">Address: 71 Robinson Road, #14-01, Singapore 068895</p>
+                <p className="text-gray-600 mb-2">Address: Far East Finance Building, #8-02, 14 Robinson Road, Singapore 048545</p>
               </div>
               <p className="text-gray-600 leading-relaxed mt-4">
                 For more information about how we handle your personal data, please see our{' '}

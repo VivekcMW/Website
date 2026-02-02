@@ -112,7 +112,7 @@ const organizationJsonLd = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+65-6805-8896",
+      telephone: "+65-8755-6364",
       contactType: "customer service",
       areaServed: "Worldwide",
       availableLanguage: ["English"]
@@ -120,9 +120,9 @@ const organizationJsonLd = {
   ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "71 Robinson Road, #14-01",
+    streetAddress: "Far East Finance Building, #8-02, 14 Robinson Road",
     addressLocality: "Singapore",
-    postalCode: "068895",
+    postalCode: "048545",
     addressCountry: "SG"
   }
 };

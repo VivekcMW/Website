@@ -7,70 +7,98 @@ import Image from "next/image";
 export default function OfficeMap() {
   const offices = [
     {
-      city: "San Francisco",
-      country: "United States",
-      type: "Headquarters",
-      position: { top: "44%", left: "15%" },
-      timezone: "PST",
-      coords: { lat: 37.7749, lng: -122.4194 },
-      image: "/assets/images/offices/san-francisco.svg",
-      address: "Market Street, Financial District"
+      city: "Singapore",
+      country: "Singapore",
+      type: "Global HQ",
+      position: { top: "56%", left: "73%" },
+      timezone: "SGT",
+      coords: { lat: 1.2840, lng: 103.8513 },
+      image: "/assets/images/offices/singapore.svg",
+      address: "Far East Finance Building, #8-02, 14 Robinson Road",
+      phone: "+65 8755 6364"
     },
     {
-      city: "New York",
-      country: "United States",
-      type: "Sales Hub",
-      position: { top: "40%", left: "23%" },
-      timezone: "EST",
-      coords: { lat: 40.7128, lng: -74.0060 },
-      image: "/assets/images/offices/new-york.svg",
-      address: "Madison Avenue, Midtown"
+      city: "Kuala Lumpur",
+      country: "Malaysia",
+      type: "Regional Office",
+      position: { top: "58%", left: "72%" },
+      timezone: "MYT",
+      coords: { lat: 3.1390, lng: 101.6869 },
+      image: "/assets/images/offices/kuala-lumpur.svg",
+      address: "Level 8 (Zone B), Wisma Standard Chartered, Bukit Jalil",
+      phone: "+60 3 7610 2044"
     },
     {
-      city: "Toronto",
-      country: "Canada",
-      type: "Operations",
-      position: { top: "35%", left: "22%" },
-      timezone: "EST",
-      coords: { lat: 43.6532, lng: -79.3832 },
-      image: "/assets/images/offices/toronto.svg",
-      address: "King Street, Financial District"
+      city: "Manila",
+      country: "Philippines",
+      type: "Regional Office",
+      position: { top: "54%", left: "78%" },
+      timezone: "PHT",
+      coords: { lat: 14.5176, lng: 121.0509 },
+      image: "/assets/images/offices/manila.svg",
+      address: "Unit 1207, Capital House, 9th Avenue, Taguig",
+      phone: "+63 7527 5672"
     },
     {
-      city: "London",
-      country: "United Kingdom",
-      type: "European HQ",
-      position: { top: "29%", left: "48%" },
-      timezone: "GMT",
-      coords: { lat: 51.5074, lng: -0.1278 },
-      image: "/assets/images/offices/london.svg",
-      address: "Canary Wharf, London"
+      city: "Jakarta",
+      country: "Indonesia",
+      type: "Regional Office",
+      position: { top: "62%", left: "74%" },
+      timezone: "WIB",
+      coords: { lat: -6.2088, lng: 106.8456 },
+      image: "/assets/images/offices/jakarta.svg",
+      address: "Nobel House, 29th Floor, Mega Kuningan",
+      phone: "+62 21 3005 3540"
     },
     {
-      city: "Berlin",
-      country: "Germany",
-      type: "Central Europe",
-      position: { top: "31%", left: "51%" },
-      timezone: "CET",
-      coords: { lat: 52.5200, lng: 13.4050 },
-      image: "/assets/images/offices/berlin.svg",
-      address: "Mitte District, Berlin"
+      city: "Colombo",
+      country: "Sri Lanka",
+      type: "Regional Office",
+      position: { top: "58%", left: "68%" },
+      timezone: "IST",
+      coords: { lat: 6.9271, lng: 79.8612 },
+      image: "/assets/images/offices/colombo.svg",
+      address: "07 Turnour Rd, Colombo 8",
+      phone: ""
     },
     {
-      city: "Sydney",
-      country: "Australia",
-      type: "APAC Hub",
-      position: { top: "67%", left: "78%" },
-      timezone: "AEDT",
-      coords: { lat: -33.8688, lng: 151.2093 },
-      image: "/assets/images/offices/sydney.svg",
-      address: "Circular Quay, Sydney CBD"
+      city: "Bangalore",
+      country: "India",
+      type: "Regional Office",
+      position: { top: "52%", left: "67%" },
+      timezone: "IST",
+      coords: { lat: 12.9716, lng: 77.5946 },
+      image: "/assets/images/offices/bangalore.svg",
+      address: "BHIVE Workspace, Indiranagar",
+      phone: ""
+    },
+    {
+      city: "Mumbai",
+      country: "India",
+      type: "Regional Office",
+      position: { top: "48%", left: "66%" },
+      timezone: "IST",
+      coords: { lat: 19.0760, lng: 72.8777 },
+      image: "/assets/images/offices/mumbai.svg",
+      address: "Dynasty Business Park, Andheri East",
+      phone: ""
+    },
+    {
+      city: "Chennai",
+      country: "India",
+      type: "Regional Office",
+      position: { top: "54%", left: "68%" },
+      timezone: "IST",
+      coords: { lat: 13.0827, lng: 80.2707 },
+      image: "/assets/images/offices/chennai.svg",
+      address: "Adwave Towers, T. Nagar",
+      phone: ""
     }
   ];
 
   const stats = [
-    { number: "6", label: "Global Offices" },
-    { number: "180+", label: "Team Members" },
+    { number: "9", label: "Global Offices" },
+    { number: "200+", label: "Team Members" },
     { number: "25+", label: "Countries Served" },
     { number: "24/7", label: "Global Support" }
   ];
@@ -109,7 +137,7 @@ export default function OfficeMap() {
             <span className="text-mw-blue-600 block">Local Expertise</span>
           </h2>
           <p className="text-lg text-mw-gray-600 max-w-3xl mx-auto leading-relaxed">
-            With offices strategically located across six major cities, Moving Walls delivers 
+            With 9 offices strategically located across Asia, Moving Walls delivers 
             global advertising solutions with deep local market knowledge and round-the-clock support.
           </p>
         </motion.div>
