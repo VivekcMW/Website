@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // About pages
   const aboutPages = [
     '/about/our-story',
-    '/about/our-journey',
+    // '/about/our-journey',
     '/about/leadership',
     '/about/careers',
     '/about/press-news',

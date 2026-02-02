@@ -14,12 +14,9 @@ const footerLinks = {
     { name: "Contact Us", href: "/contact" },
   ],
   solutions: [
-    { name: "Brand Awareness", href: "/solutions/brand-awareness" },
-    { name: "Lead Generation", href: "/solutions/lead-generation" },
-    { name: "Retail", href: "/solutions/retail" },
-    { name: "Healthcare", href: "/solutions/healthcare" },
-    { name: "Automotive", href: "/solutions/automotive" },
-    { name: "Finance", href: "/solutions/finance" },
+    { name: "Brands", href: "/solutions/brands" },
+    { name: "Media Owners", href: "/solutions/media-owners" },
+    { name: "Agencies", href: "/solutions/agencies" },
   ],
   products: [
     { name: "MW-Planner", href: "/products/mw-planner" },
@@ -31,11 +28,9 @@ const footerLinks = {
     { name: "MW-Marketplace", href: "/products/mw-marketplace" },
   ],
   support: [
-    { name: "Help Center", href: "#" },
-    { name: "Documentation", href: "#" },
+    { name: "Help Center", href: "https://help.movingwalls.com/" },
+    { name: "Documentation", href: "https://help.movingwalls.com/" },
     { name: "API Reference", href: "#" },
-    { name: "System Status", href: "#" },
-    { name: "Training", href: "/events" },
   ],
 };
 

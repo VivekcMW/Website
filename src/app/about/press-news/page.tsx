@@ -12,7 +12,7 @@ export default function PressNewsPage() {
       title: "Moving Walls Launches AI-Powered Audience Targeting Platform",
       excerpt: "Revolutionary machine learning algorithms improve campaign performance by 40% while reducing cost per acquisition.",
       readTime: "3 min read",
-      thumbnail: "/assets/images/press/ai-platform-launch.jpg"
+      thumbnail: "/assets/images/press/ai-platform-launch.svg"
     },
     {
       date: "October 28, 2024",
@@ -20,7 +20,7 @@ export default function PressNewsPage() {
       title: "Moving Walls Closes $50M Series C Funding Round",
       excerpt: "Investment led by top-tier VCs will fuel international expansion and product development initiatives.",
       readTime: "4 min read",
-      thumbnail: "/assets/images/press/funding-announcement.jpg"
+      thumbnail: "/assets/images/press/funding-announcement.svg"
     },
     {
       date: "September 12, 2024",
@@ -28,7 +28,7 @@ export default function PressNewsPage() {
       title: "Strategic Partnership with Global Transit Authority Network",
       excerpt: "Major partnership expands Moving Walls's out-of-home advertising network to 25 new metropolitan areas.",
       readTime: "2 min read",
-      thumbnail: "/assets/images/press/transit-partnership.jpg"
+      thumbnail: "/assets/images/press/transit-partnership.svg"
     },
     {
       date: "August 5, 2024",
@@ -36,7 +36,7 @@ export default function PressNewsPage() {
       title: "Moving Walls Named 'AdTech Company of the Year' by Industry Awards",
       excerpt: "Recognition highlights company's innovation in programmatic advertising and measurement solutions.",
       readTime: "3 min read",
-      thumbnail: "/assets/images/press/industry-award.jpg"
+      thumbnail: "/assets/images/press/industry-award.svg"
     },
     {
       date: "July 22, 2024",
@@ -44,7 +44,7 @@ export default function PressNewsPage() {
       title: "New Privacy-First Measurement Suite Launches",
       excerpt: "Industry-leading privacy compliance tools help brands navigate evolving data regulations while maintaining effectiveness.",
       readTime: "5 min read",
-      thumbnail: "/assets/images/press/privacy-suite.jpg"
+      thumbnail: "/assets/images/press/privacy-suite.svg"
     },
     {
       date: "June 18, 2024",
@@ -52,7 +52,7 @@ export default function PressNewsPage() {
       title: "Moving Walls Opens European Headquarters in London",
       excerpt: "New office serves as regional hub for European operations and client services expansion.",
       readTime: "2 min read",
-      thumbnail: "/assets/images/press/london-office.jpg"
+      thumbnail: "/assets/images/press/london-office.svg"
     }
   ];
 
@@ -62,28 +62,28 @@ export default function PressNewsPage() {
       title: "How Moving Walls is Revolutionizing Out-of-Home Advertising",
       date: "November 8, 2024",
       type: "Feature Article",
-      thumbnail: "/assets/images/press/adweek-feature.jpg"
+      thumbnail: "/assets/images/press/adweek-feature.svg"
     },
     {
       outlet: "TechCrunch",
       title: "The Future of Programmatic Advertising Technology",
       date: "October 15, 2024",
       type: "Industry Analysis",
-      thumbnail: "/assets/images/press/techcrunch-analysis.jpg"
+      thumbnail: "/assets/images/press/techcrunch-analysis.svg"
     },
     {
       outlet: "Marketing Land",
       title: "CEO Interview: Building the Next Generation Ad Platform",
       date: "September 30, 2024",
       type: "Executive Interview",
-      thumbnail: "/assets/images/press/ceo-interview.jpg"
+      thumbnail: "/assets/images/press/ceo-interview.svg"
     },
     {
       outlet: "Forbes",
       title: "Moving Walls Among Top 50 Most Innovative Companies",
       date: "September 1, 2024",
       type: "Recognition",
-      thumbnail: "/assets/images/press/forbes-recognition.jpg"
+      thumbnail: "/assets/images/press/forbes-recognition.svg"
     }
   ];
 

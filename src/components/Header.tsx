@@ -58,7 +58,7 @@ const megaMenuData = {
         title: "Company",
         items: [
           { name: "Our Story", description: "Learn about our journey", href: "/about/our-story" },
-          { name: "Our Journey", description: "Timeline of innovation", href: "/about/our-journey" },
+          // { name: "Our Journey", description: "Timeline of innovation", href: "/about/our-journey" },
           { name: "Leadership Team", description: "Meet our executives", href: "/about/leadership" },
           { name: "Careers", description: "Join our growing team", href: "/about/careers" },
           { name: "Press & News", description: "Latest announcements", href: "/about/press-news" },
