@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 export default function TermsAndConditionsPage() {
@@ -29,12 +26,7 @@ export default function TermsAndConditionsPage() {
       {/* Hero Section - Document Header Style */}
       <section className="relative bg-white border-b border-gray-200 py-12 md:py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
+          <div className="text-center">
             {/* Document Icon */}
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-mw-blue-50 mb-6">
               <svg className="w-8 h-8 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,22 +46,17 @@ export default function TermsAndConditionsPage() {
               <span className="text-gray-300">|</span>
               <span>Moving Walls Pte. Ltd.</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Main Content with Sidebar TOC */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
+      <section className="flex-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="lg:flex lg:gap-12">
             
             {/* Table of Contents - Sidebar */}
-            <motion.aside 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden lg:block lg:col-span-3"
-            >
+            <aside className="hidden lg:block lg:w-72 flex-shrink-0">
               <div className="sticky top-24 bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                 <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
                   Table of Contents
@@ -86,15 +73,10 @@ export default function TermsAndConditionsPage() {
                   ))}
                 </nav>
               </div>
-            </motion.aside>
+            </aside>
 
             {/* Main Document Content */}
-            <motion.main
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="lg:col-span-9"
-            >
+            <main className="flex-1 min-w-0">
               {/* Mobile TOC */}
               <div className="lg:hidden mb-8 bg-white rounded-xl border border-gray-200 shadow-sm p-6">
                 <details className="group">
@@ -814,7 +796,7 @@ export default function TermsAndConditionsPage() {
                 </a>
               </div>
 
-            </motion.main>
+            </main>
           </div>
         </div>
       </section>
