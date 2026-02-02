@@ -1251,37 +1251,37 @@ export default function MediaOwnersPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'MW-Marketplace',
+                name: 'MW Marketplace',
                 description: 'Connect your inventory to premium demand sources',
                 features: ['Programmatic Demand', 'Direct Deals', 'Global Reach'],
                 color: 'from-blue-500 to-blue-600'
               },
               {
-                name: 'MW-Reach',
+                name: 'MW Reach',
                 description: 'Manage and optimize your inventory centrally',
                 features: ['Inventory Dashboard', 'Pricing Rules', 'Availability Sync'],
                 color: 'from-green-500 to-green-600'
               },
               {
-                name: 'MW-Science',
+                name: 'MW Science',
                 description: 'AI-powered yield optimization and forecasting',
                 features: ['Dynamic Pricing', 'Demand Forecasting', 'Revenue AI'],
                 color: 'from-purple-500 to-purple-600'
               },
               {
-                name: 'MW-Activate',
+                name: 'MW Activate',
                 description: 'Automated campaign delivery and trafficking',
                 features: ['Auto Scheduling', 'Creative Delivery', 'Real-time Updates'],
                 color: 'from-indigo-500 to-indigo-600'
               },
               {
-                name: 'MW-Measure',
+                name: 'MW Measure',
                 description: 'Proof of play and performance analytics',
                 features: ['Play Verification', 'Audience Metrics', 'Revenue Reports'],
                 color: 'from-pink-500 to-pink-600'
               },
               {
-                name: 'MW-Studio',
+                name: 'MW Studio',
                 description: 'Creative management and approval tools',
                 features: ['Creative Library', 'Approval Workflows', 'Format Validation'],
                 color: 'from-cyan-500 to-cyan-600'

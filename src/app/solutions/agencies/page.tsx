@@ -1251,37 +1251,37 @@ export default function AgenciesPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'MW-Planner',
+                name: 'MW Planner',
                 description: 'AI-powered campaign planning and audience insights',
                 features: ['Audience Analysis', 'Location Planning', 'ROI Forecasting'],
                 color: 'from-blue-500 to-blue-600'
               },
               {
-                name: 'MW-Marketplace',
+                name: 'MW Marketplace',
                 description: 'Access 250,000+ premium billboard locations',
                 features: ['Instant Booking', 'Real-time Availability', 'Agency Pricing'],
                 color: 'from-green-500 to-green-600'
               },
               {
-                name: 'MW-Studio',
+                name: 'MW Studio',
                 description: 'Creative design and optimization tools',
                 features: ['Template Library', 'Auto-resize', 'A/B Testing'],
                 color: 'from-purple-500 to-purple-600'
               },
               {
-                name: 'MW-Activate',
+                name: 'MW Activate',
                 description: 'Campaign activation and automation',
                 features: ['One-click Launch', 'Automated Rules', 'Multi-client Support'],
                 color: 'from-indigo-500 to-indigo-600'
               },
               {
-                name: 'MW-Measure',
+                name: 'MW Measure',
                 description: 'Real-time analytics and attribution',
                 features: ['White-label Reports', 'Attribution Tracking', 'Client Dashboards'],
                 color: 'from-pink-500 to-pink-600'
               },
               {
-                name: 'MW-Science',
+                name: 'MW Science',
                 description: 'Data science and predictive analytics',
                 features: ['Predictive Models', 'Audience Insights', 'Market Intelligence'],
                 color: 'from-cyan-500 to-cyan-600'

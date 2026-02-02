@@ -30,18 +30,18 @@ const megaMenuData = {
       {
         title: "MW Platform Suite",
         items: [
-          { name: "MW-Planner", description: "Strategic campaign planning & optimization", href: "/products/mw-planner" },
-          { name: "MW-Measure", description: "Advanced analytics & performance tracking", href: "/products/mw-measure" },
-          { name: "MW-Reach", description: "Multi-channel audience targeting", href: "/products/mw-reach" },
-          { name: "MW-Activate", description: "Real-time campaign activation & optimization", href: "/products/mw-activate" },
+          { name: "MW Planner", description: "Strategic campaign planning & optimization", href: "/products/mw-planner" },
+          { name: "MW Measure", description: "Advanced analytics & performance tracking", href: "/products/mw-measure" },
+          { name: "MW Reach", description: "Multi-channel audience targeting", href: "/products/mw-reach" },
+          { name: "MW Activate", description: "Real-time campaign activation & optimization", href: "/products/mw-activate" },
         ],
       },
       {
         title: "MW Intelligence Suite",
         items: [
-          { name: "MW-Science", description: "AI-powered audience insights & research", href: "/products/mw-science" },
-          { name: "MW-Studio", description: "Creative content management platform", href: "/products/mw-studio" },
-          { name: "MW-Marketplace", description: "Premium inventory & partnership ecosystem", href: "/products/mw-marketplace" },
+          { name: "MW Science", description: "AI-powered audience insights & research", href: "/products/mw-science" },
+          { name: "MW Studio", description: "Creative content management platform", href: "/products/mw-studio" },
+          { name: "MW Marketplace", description: "Premium inventory & partnership ecosystem", href: "/products/mw-marketplace" },
         ],
       },
     ],

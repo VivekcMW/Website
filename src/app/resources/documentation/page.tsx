@@ -86,7 +86,7 @@ export default function DocumentationPage() {
                   <h4 className="text-xl font-bold text-mw-gray-900 mt-6 mb-3">Step 2: Create Your First Campaign</h4>
                   <div className="bg-mw-gray-50 rounded-lg p-6 mb-6">
                     <ol className="list-decimal list-inside space-y-2 text-mw-gray-700">
-                      <li>Navigate to MW-Planner</li>
+                      <li>Navigate to MW Planner</li>
                       <li>Click "New Campaign"</li>
                       <li>Set campaign objectives and budget</li>
                       <li>Define your target audience</li>
@@ -97,7 +97,7 @@ export default function DocumentationPage() {
 
                   <h4 className="text-xl font-bold text-mw-gray-900 mt-6 mb-3">Step 3: Monitor Performance</h4>
                   <p className="text-mw-gray-600 mb-4">
-                    Use MW-Measure to track your campaign performance in real-time. Access detailed analytics including:
+                    Use MW Measure to track your campaign performance in real-time. Access detailed analytics including:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-mw-gray-700 mb-6">
                     <li>Impressions and reach</li>

@@ -20,6 +20,27 @@ const staggerItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 }
 
+// Icons for FAQ
+const Icons = {
+  plus: <svg className="w-5 h-5 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>,
+  minus: <svg className="w-5 h-5 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" /></svg>,
+}
+
+// FAQ Accordion Component
+const FAQItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) => (
+  <motion.div variants={staggerItem} className="border border-gray-200 rounded-lg overflow-hidden">
+    <button onClick={onClick} className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+      <span className="font-semibold text-gray-900">{question}</span>
+      {isOpen ? Icons.minus : Icons.plus}
+    </button>
+    {isOpen && (
+      <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+        <p className="text-gray-600">{answer}</p>
+      </div>
+    )}
+  </motion.div>
+)
+
 // SVG Icons for media types
 const MediaIcons: Record<string, React.ReactElement> = {
   digital: (
@@ -55,6 +76,35 @@ const MediaIcons: Record<string, React.ReactElement> = {
 }
 
 export default function IndonesiaPage() {
+  const [openFAQ, setOpenFAQ] = React.useState<number | null>(0)
+
+  const faqs = [
+    {
+      question: "What is DOOH advertising in Indonesia?",
+      answer: "DOOH (Digital Out-of-Home) advertising in Indonesia uses digital screens in malls, toll roads, airports, and urban centers across the archipelago to deliver dynamic, engaging ads that can be updated in real time.",
+    },
+    {
+      question: "Why invest in OOH advertising in Indonesia?",
+      answer: "Indonesia's 270+ million population, growing middle class, and rapid urbanization make it one of Southeast Asia's most attractive OOH markets. Reach diverse audiences in Jakarta, Surabaya, Bandung, and emerging cities.",
+    },
+    {
+      question: "What types of OOH advertising are available in Indonesia?",
+      answer: "Large format billboards, LED screens, toll road advertising, TransJakarta bus ads, airport displays, mall digital networks, and programmatic DOOH across major Indonesian cities.",
+    },
+    {
+      question: "How can I measure OOH campaign effectiveness in Indonesia?",
+      answer: "Track impressions using traffic data, mobile attribution, engagement analytics, and real-time reporting through programmatic DOOH platforms like Moving Audiences.",
+    },
+    {
+      question: "What are the key OOH markets in Indonesia?",
+      answer: "Major markets include Jakarta (Greater Jakarta area), Surabaya, Bandung, Medan, Semarang, and Makassar. The Jabodetabek region offers the highest concentration of premium inventory.",
+    },
+    {
+      question: "How does Moving Walls help advertisers in Indonesia?",
+      answer: "Moving Walls provides access to 8,000+ billboard sites across Indonesia, with precise audience targeting, real-time analytics, and programmatic buying through our Moving Audiences platform.",
+    },
+  ]
+
   const countryData = {
     name: "Indonesia",
     description: "Indonesia's vast archipelago and rapidly growing economy present massive opportunities for OOH advertising across diverse urban and regional markets.",
@@ -88,14 +138,31 @@ export default function IndonesiaPage() {
           <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1>
-            <p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p>
-          </motion.div>
-          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1>
+                <p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p>
+              </motion.div>
+              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+              </motion.div>
+            </div>
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
+                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                    </div>
+                    <p className="text-white/80 text-sm">Watch OOH Advertising in {countryData.name}</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -170,6 +237,20 @@ export default function IndonesiaPage() {
                   </div>
                 </Link>
               </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">FAQs – OOH Advertising in Indonesia</h2>
+          </motion.div>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="space-y-4">
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} question={faq.question} answer={faq.answer} isOpen={openFAQ === index} onClick={() => setOpenFAQ(openFAQ === index ? null : index)} />
             ))}
           </motion.div>
         </div>

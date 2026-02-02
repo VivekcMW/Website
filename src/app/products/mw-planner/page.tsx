@@ -258,7 +258,7 @@ const features = [
 // Testimonials
 const testimonials = [
   {
-    quote: "MW-Planner's AI recommendations saved us from a $400K budget misallocation. The predictive insights are game-changing.",
+    quote: "MW Planner's AI recommendations saved us from a $400K budget misallocation. The predictive insights are game-changing.",
     author: 'Sarah Chen',
     role: 'CMO',
     company: 'TechFlow Solutions',
@@ -266,7 +266,7 @@ const testimonials = [
     image: '/assets/images/testimonials/sarah.jpg',
   },
   {
-    quote: "We went from reactive to predictive. MW-Planner anticipated our Black Friday surge and optimized our spend perfectly.",
+    quote: "We went from reactive to predictive. MW Planner anticipated our Black Friday surge and optimized our spend perfectly.",
     author: 'Marcus Johnson',
     role: 'VP Marketing',
     company: 'RetailMax Group',
@@ -414,7 +414,7 @@ export default function MWPlanner() {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
-                  <div className="text-xs text-white/40">MW-Planner Dashboard</div>
+                  <div className="text-xs text-white/40">MW Planner Dashboard</div>
                 </div>
 
                 {/* Mock Dashboard Content */}
@@ -516,7 +516,7 @@ export default function MWPlanner() {
                 <span className="block text-blue-600">Start Predicting.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Traditional campaign planning relies on historical data and gut instinct. MW-Planner uses AI to forecast performance, optimize allocation, and maximize ROI—in real time.
+                Traditional campaign planning relies on historical data and gut instinct. MW Planner uses AI to forecast performance, optimize allocation, and maximize ROI—in real time.
               </p>
 
               <div className="space-y-4">
@@ -779,7 +779,7 @@ export default function MWPlanner() {
                 <span className="block text-blue-600">Integrate.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                MW-Planner connects seamlessly with your existing tech stack. No rip-and-replace—just instant value from day one.
+                MW Planner connects seamlessly with your existing tech stack. No rip-and-replace—just instant value from day one.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

@@ -30,7 +30,7 @@ export default function BlogPage() {
       image: "/placeholder.jpg"
     },
     {
-      title: "Introducing MW-Science: AI-Powered Audience Insights",
+      title: "Introducing MW Science: AI-Powered Audience Insights",
       excerpt: "Discover how our new AI-powered platform helps you understand and target audiences better.",
       category: "Product Updates",
       author: "Emily Rodriguez",

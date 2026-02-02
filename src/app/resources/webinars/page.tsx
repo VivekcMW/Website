@@ -48,8 +48,8 @@ export default function WebinarsPage() {
 
   const onDemandWebinars = [
     {
-      title: "Maximizing ROI with MW-Planner: Complete Workshop",
-      description: "Deep dive into campaign planning and optimization strategies using MW-Planner platform.",
+      title: "Maximizing ROI with MW Planner: Complete Workshop",
+      description: "Deep dive into campaign planning and optimization strategies using MW Planner platform.",
       duration: "75 min",
       speaker: "James Wilson",
       role: "Senior Solutions Architect",
@@ -88,7 +88,7 @@ export default function WebinarsPage() {
       level: "All Levels"
     },
     {
-      title: "Data-Driven Audience Insights with MW-Science",
+      title: "Data-Driven Audience Insights with MW Science",
       description: "Unlock the power of AI-driven audience analysis for better targeting.",
       duration: "55 min",
       speaker: "David Park",

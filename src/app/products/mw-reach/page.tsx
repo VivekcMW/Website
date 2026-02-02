@@ -225,7 +225,7 @@ export default function MWReach() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                MW-Reach
+                MW Reach
                 <span className="block text-3xl md:text-4xl font-light mt-3 text-cyan-200">
                   Global Audience at Scale
                 </span>
@@ -648,7 +648,7 @@ export default function MWReach() {
                 <span className="block text-blue-600">Integrate.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                MW-Reach connects seamlessly with your existing tech stack. No rip-and-replace—just instant audience reach from day one.
+                MW Reach connects seamlessly with your existing tech stack. No rip-and-replace—just instant audience reach from day one.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

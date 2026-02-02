@@ -355,7 +355,7 @@ export default function MWMarketplacePage() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
             >
-              MW-Marketplace
+              MW Marketplace
             </motion.h1>
             
             <motion.h2
@@ -713,7 +713,7 @@ export default function MWMarketplacePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Choose MW-Marketplace?
+              Why Choose MW Marketplace?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See how we compare to traditional agencies and direct billboard owners
@@ -732,7 +732,7 @@ export default function MWMarketplacePage() {
                 <thead className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
                   <tr>
                     <th className="px-6 py-6 text-left text-lg font-bold">Feature</th>
-                    <th className="px-6 py-6 text-center text-lg font-bold">MW-Marketplace</th>
+                    <th className="px-6 py-6 text-center text-lg font-bold">MW Marketplace</th>
                     <th className="px-6 py-6 text-center text-lg font-bold opacity-70">Traditional Agencies</th>
                     <th className="px-6 py-6 text-center text-lg font-bold opacity-70">Direct Owners</th>
                   </tr>
@@ -889,7 +889,7 @@ export default function MWMarketplacePage() {
               Performance That Speaks For Itself
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Real numbers from real campaigns on MW-Marketplace
+              Real numbers from real campaigns on MW Marketplace
             </p>
           </motion.div>
 
@@ -959,7 +959,7 @@ export default function MWMarketplacePage() {
                 Book Your Free Demo
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                See how MW-Marketplace can transform your OOH advertising strategy in just 15 minutes
+                See how MW Marketplace can transform your OOH advertising strategy in just 15 minutes
               </p>
               
               <div className="space-y-4">
@@ -1091,7 +1091,7 @@ export default function MWMarketplacePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why MW-Marketplace?
+              Why MW Marketplace?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The world&apos;s most trusted platform for OOH billboard advertising
@@ -1140,7 +1140,7 @@ export default function MWMarketplacePage() {
                 <span className="block text-blue-600">Integrate.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                MW-Marketplace connects seamlessly with your existing buying platforms. No rip-and-replace—just instant global inventory access from day one.
+                MW Marketplace connects seamlessly with your existing buying platforms. No rip-and-replace—just instant global inventory access from day one.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -1210,7 +1210,7 @@ export default function MWMarketplacePage() {
               Ready to Go Global?
             </h2>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Join thousands of advertisers reaching audiences worldwide with MW-Marketplace
+              Join thousands of advertisers reaching audiences worldwide with MW Marketplace
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button

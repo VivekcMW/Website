@@ -20,6 +20,27 @@ const staggerItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 }
 
+// Icons for FAQ
+const Icons = {
+  plus: <svg className="w-5 h-5 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>,
+  minus: <svg className="w-5 h-5 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" /></svg>,
+}
+
+// FAQ Accordion Component
+const FAQItem = ({ question, answer, isOpen, onClick }: { question: string; answer: string; isOpen: boolean; onClick: () => void }) => (
+  <motion.div variants={staggerItem} className="border border-gray-200 rounded-lg overflow-hidden">
+    <button onClick={onClick} className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+      <span className="font-semibold text-gray-900">{question}</span>
+      {isOpen ? Icons.minus : Icons.plus}
+    </button>
+    {isOpen && (
+      <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+        <p className="text-gray-600">{answer}</p>
+      </div>
+    )}
+  </motion.div>
+)
+
 // SVG Icons for media types
 const MediaIcons: Record<string, React.ReactElement> = {
   digital: (
@@ -55,6 +76,35 @@ const MediaIcons: Record<string, React.ReactElement> = {
 }
 
 export default function SriLankaPage() {
+  const [openFAQ, setOpenFAQ] = React.useState<number | null>(0)
+
+  const faqs = [
+    {
+      question: "What is DOOH advertising in Sri Lanka?",
+      answer: "DOOH (Digital Out-of-Home) advertising in Sri Lanka uses digital screens in Colombo, shopping malls, and urban centers to deliver dynamic ads that can be updated in real time across the island's growing digital network.",
+    },
+    {
+      question: "Why invest in OOH advertising in Sri Lanka?",
+      answer: "Sri Lanka's 22 million population, growing economy, and increasing urbanization create excellent OOH opportunities. Colombo's development and tourism recovery offer strong advertising potential.",
+    },
+    {
+      question: "What types of OOH advertising are available in Sri Lanka?",
+      answer: "Static and digital billboards, street furniture, mall advertising, airport displays, bus shelter ads, highway billboards, and emerging programmatic DOOH in Colombo and key cities.",
+    },
+    {
+      question: "How can I measure OOH campaign effectiveness in Sri Lanka?",
+      answer: "Track impressions using traffic data, mobile attribution, engagement analytics, and reporting through our Moving Audiences platform for campaign optimization.",
+    },
+    {
+      question: "What are the key OOH markets in Sri Lanka?",
+      answer: "Major markets include Colombo (including CBD and suburbs), Kandy, Galle, Negombo, and growing urban centers. Colombo Fort and Galle Road offer premium billboard locations.",
+    },
+    {
+      question: "How does Moving Walls help advertisers in Sri Lanka?",
+      answer: "Moving Walls provides access to 1,800+ billboard sites across Sri Lanka, with audience targeting, analytics, and programmatic capabilities through our Moving Audiences platform.",
+    },
+  ]
+
   const countryData = {
     name: "Sri Lanka",
     description: "Sri Lanka's growing economy and strategic location make it an emerging hub for OOH advertising, with increasing digital adoption across major urban centers.",
@@ -86,11 +136,28 @@ export default function SriLankaPage() {
       <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-900 py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-10"><div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6"><h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1><p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p></motion.div>
-          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6"><h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1><p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p></motion.div>
+              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
+              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
+              </motion.div>
+            </div>
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
+                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                    </div>
+                    <p className="text-white/80 text-sm">Watch OOH Advertising in {countryData.name}</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -106,6 +173,9 @@ export default function SriLankaPage() {
 
       {/* Explore Other Markets */}
       <section className="py-16 md:py-20 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore Other Markets</h2><p className="text-lg text-gray-600 max-w-2xl mx-auto">Discover OOH advertising opportunities across Asia Pacific</p></motion.div><motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-4">{[{ name: "Malaysia", flag: "🇲🇾", href: "/locations/malaysia" },{ name: "Singapore", flag: "🇸🇬", href: "/locations/singapore" },{ name: "Indonesia", flag: "🇮🇩", href: "/locations/indonesia" },{ name: "India", flag: "🇮🇳", href: "/locations/india" },{ name: "Philippines", flag: "🇵🇭", href: "/locations/philippines" },{ name: "Japan", flag: "🇯🇵", href: "/locations/japan" },{ name: "Australia", flag: "🇦🇺", href: "/locations/australia" },{ name: "Thailand", flag: "🇹🇭", href: "/locations/thailand" }].map((country) => (<motion.div key={country.name} variants={staggerItem}><Link href={country.href} className="block bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-mw-blue-400 transition-all group"><div className="flex items-center gap-4"><span className="text-4xl">{country.flag}</span><div><h3 className="font-semibold text-gray-900 group-hover:text-mw-blue-600 transition-colors">{country.name}</h3><p className="text-sm text-gray-500">View billboards →</p></div></div></Link></motion.div>))}</motion.div></div></section>
+
+      {/* FAQs */}
+      <section className="py-16 md:py-20"><div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"><motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">FAQs – OOH Advertising in Sri Lanka</h2></motion.div><motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="space-y-4">{faqs.map((faq, index) => (<FAQItem key={index} question={faq.question} answer={faq.answer} isOpen={openFAQ === index} onClick={() => setOpenFAQ(openFAQ === index ? null : index)} />))}</motion.div></div></section>
 
     </div>
   )

@@ -313,7 +313,7 @@ export default function MWStudio() {
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                MW-Studio
+                MW Studio
                 <span className="block text-3xl md:text-4xl font-light mt-3 text-blue-200">
                   Build Marketplaces & Create Campaigns
                 </span>
@@ -717,7 +717,7 @@ export default function MWStudio() {
                 <span className="block text-blue-600">Integrate.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                MW-Studio connects seamlessly with your existing creative tools. No rip-and-replace—just instant creative production from day one.
+                MW Studio connects seamlessly with your existing creative tools. No rip-and-replace—just instant creative production from day one.
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -786,7 +786,7 @@ export default function MWStudio() {
               Start Building OOH Campaigns Today
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Join 1,200+ media owners using MW-Studio to create professional 
+              Join 1,200+ media owners using MW Studio to create professional 
               OOH campaigns without designers or developers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

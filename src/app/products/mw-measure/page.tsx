@@ -310,7 +310,7 @@ export default function MWMeasure() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                MW-Measure
+                MW Measure
                 <span className="block text-3xl md:text-4xl font-light mt-3 text-blue-200">
                   OOH Analytics Dashboard
                 </span>
@@ -1095,7 +1095,7 @@ export default function MWMeasure() {
                 <span className="block text-blue-600">Integrate.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                MW-Measure connects seamlessly with your existing OOH ecosystem. No rip-and-replace—just instant measurement value from day one.
+                MW Measure connects seamlessly with your existing OOH ecosystem. No rip-and-replace—just instant measurement value from day one.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

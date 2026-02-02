@@ -55,7 +55,7 @@ const workflowStages = [
 const mwProducts = [
   {
     id: 1,
-    name: "MW-Planner",
+    name: "MW Planner",
     stage: "plan",
     stageLabel: "Strategic Planning",
     description: "Transform your marketing strategy with AI-driven campaign planning, competitive analysis, and ROI forecasting.",
@@ -72,7 +72,7 @@ const mwProducts = [
   },
   {
     id: 2,
-    name: "MW-Studio",
+    name: "MW Studio",
     stage: "create",
     stageLabel: "Creative Services",
     description: "Scale creative production with intelligent asset management, brand compliance, and cross-format optimization.",
@@ -88,7 +88,7 @@ const mwProducts = [
   },
   {
     id: 3,
-    name: "MW-Marketplace",
+    name: "MW Marketplace",
     stage: "buy",
     stageLabel: "Media Buying",
     description: "Access premium inventory and verified publisher partnerships across all channels with transparent pricing.",
@@ -104,7 +104,7 @@ const mwProducts = [
   },
   {
     id: 4,
-    name: "MW-Reach",
+    name: "MW Reach",
     stage: "buy",
     stageLabel: "Audience Targeting",
     description: "Execute precision targeting across 3.5B+ users with advanced audience segmentation and cross-device linking.",
@@ -122,7 +122,7 @@ const mwProducts = [
   },
   {
     id: 5,
-    name: "MW-Activate",
+    name: "MW Activate",
     stage: "activate",
     stageLabel: "Campaign Management",
     description: "Automate campaign optimization with real-time AI decisions, budget pacing, and performance enhancement.",
@@ -138,7 +138,7 @@ const mwProducts = [
   },
   {
     id: 6,
-    name: "MW-Measure",
+    name: "MW Measure",
     stage: "measure",
     stageLabel: "Analytics & Insights",
     description: "Unlock actionable insights with advanced attribution modeling, cross-channel analytics, and predictive forecasting.",

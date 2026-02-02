@@ -14,7 +14,7 @@ export default function TestimonialSection() {
       industry: "Technology"
     },
     {
-      quote: "The MW-Planner tool alone saved us 40 hours per month in campaign planning. The AI recommendations are spot-on, and the attribution reporting finally gives us the visibility we needed.",
+      quote: "The MW Planner tool alone saved us 40 hours per month in campaign planning. The AI recommendations are spot-on, and the attribution reporting finally gives us the visibility we needed.",
       author: "Michael Chen",
       role: "VP of Marketing",
       company: "RetailCo Global",

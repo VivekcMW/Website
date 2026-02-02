@@ -13,7 +13,7 @@ export default function HelpCenterPage() {
     {
       category: "Getting Started",
       question: "How do I create my first campaign?",
-      answer: "Navigate to the MW-Planner dashboard, click 'New Campaign', and follow the step-by-step wizard to set up your campaign objectives, budget, targeting, and creative assets."
+      answer: "Navigate to the MW Planner dashboard, click 'New Campaign', and follow the step-by-step wizard to set up your campaign objectives, budget, targeting, and creative assets."
     },
     {
       category: "Getting Started",
@@ -33,12 +33,12 @@ export default function HelpCenterPage() {
     {
       category: "Platform Features",
       question: "How do I set up geo-targeting?",
-      answer: "In MW-Reach, select the 'Location Targeting' option and either draw custom shapes on the map, upload location lists, or use predefined market areas (DMAs). You can also set radius targeting around specific addresses."
+      answer: "In MW Reach, select the 'Location Targeting' option and either draw custom shapes on the map, upload location lists, or use predefined market areas (DMAs). You can also set radius targeting around specific addresses."
     },
     {
       category: "Platform Features",
       question: "What analytics are available?",
-      answer: "MW-Measure provides real-time analytics including impressions, reach, frequency, CTR, conversions, and ROI. You can create custom dashboards and schedule automated reports."
+      answer: "MW Measure provides real-time analytics including impressions, reach, frequency, CTR, conversions, and ROI. You can create custom dashboards and schedule automated reports."
     },
     {
       category: "Troubleshooting",

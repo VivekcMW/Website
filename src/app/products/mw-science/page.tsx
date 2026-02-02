@@ -198,7 +198,7 @@ export default function MWScience() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                MW-Science
+                MW Science
                 <span className="block text-3xl md:text-4xl font-light mt-3 text-purple-200">
                   AI-Powered Audience Intelligence
                 </span>
@@ -628,7 +628,7 @@ export default function MWScience() {
                 <span className="block text-blue-600">Integrate.</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                MW-Science connects seamlessly with your existing data sources. No rip-and-replace—just instant insights from day one.
+                MW Science connects seamlessly with your existing data sources. No rip-and-replace—just instant insights from day one.
               </p>
 
               <div className="grid grid-cols-2 gap-4">

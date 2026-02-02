@@ -102,9 +102,9 @@ export default function CaseStudySection() {
                   <div className="flex items-center gap-2">
                     <span className="text-xs text-mw-gray-500">Powered by</span>
                     <div className="flex gap-1">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">MW-Planner</span>
-                      <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">MW-Reach</span>
-                      <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded">MW-Measure</span>
+                      <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">MW Planner</span>
+                      <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">MW Reach</span>
+                      <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded">MW Measure</span>
                     </div>
                   </div>
                 </div>

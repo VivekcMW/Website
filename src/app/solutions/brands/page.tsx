@@ -1003,22 +1003,22 @@ export default function BrandsPage() {
               {[
                 {
                   title: 'Plan & Target',
-                  description: 'Use MW-Planner to define your audience, select locations, and forecast campaign performance',
+                  description: 'Use MW Planner to define your audience, select locations, and forecast campaign performance',
                   icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
                 },
                 {
                   title: 'Book Inventory',
-                  description: 'Browse MW-Marketplace to find and instantly book premium billboard locations worldwide',
+                  description: 'Browse MW Marketplace to find and instantly book premium billboard locations worldwide',
                   icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
                   title: 'Create & Optimize',
-                  description: 'Design engaging creatives with MW-Studio and optimize for each screen format automatically',
+                  description: 'Design engaging creatives with MW Studio and optimize for each screen format automatically',
                   icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
                 },
                 {
                   title: 'Launch & Measure',
-                  description: 'Activate with MW-Activate and track real-time performance with MW-Measure analytics',
+                  description: 'Activate with MW Activate and track real-time performance with MW Measure analytics',
                   icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                 }
               ].map((item, index) => (
@@ -1186,7 +1186,7 @@ export default function BrandsPage() {
                   How RetailMax Increased Store Visits by 240%
                 </h3>
                 <p className="text-lg text-gray-700 mb-6">
-                  RetailMax, a leading fashion retailer, used Moving Walls to launch a multi-city campaign targeting shoppers within 5 miles of their stores. Using MW-Planner for audience insights and MW-Activate for dynamic creative optimization, they achieved remarkable results.
+                  RetailMax, a leading fashion retailer, used Moving Walls to launch a multi-city campaign targeting shoppers within 5 miles of their stores. Using MW Planner for audience insights and MW Activate for dynamic creative optimization, they achieved remarkable results.
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
@@ -1268,37 +1268,37 @@ export default function BrandsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'MW-Planner',
+                name: 'MW Planner',
                 description: 'AI-powered campaign planning and audience insights',
                 features: ['Audience Analysis', 'Location Planning', 'ROI Forecasting'],
                 color: 'from-blue-500 to-blue-600'
               },
               {
-                name: 'MW-Marketplace',
+                name: 'MW Marketplace',
                 description: 'Access 250,000+ premium billboard locations',
                 features: ['Instant Booking', 'Real-time Availability', 'Transparent Pricing'],
                 color: 'from-green-500 to-green-600'
               },
               {
-                name: 'MW-Studio',
+                name: 'MW Studio',
                 description: 'Creative design and optimization tools',
                 features: ['Template Library', 'Auto-resize', 'A/B Testing'],
                 color: 'from-purple-500 to-purple-600'
               },
               {
-                name: 'MW-Activate',
+                name: 'MW Activate',
                 description: 'Campaign activation and automation',
                 features: ['One-click Launch', 'Automated Rules', 'Dynamic Optimization'],
                 color: 'from-indigo-500 to-indigo-600'
               },
               {
-                name: 'MW-Measure',
+                name: 'MW Measure',
                 description: 'Real-time analytics and attribution',
                 features: ['Live Dashboards', 'Attribution Tracking', 'Custom Reports'],
                 color: 'from-pink-500 to-pink-600'
               },
               {
-                name: 'MW-Science',
+                name: 'MW Science',
                 description: 'Data science and predictive analytics',
                 features: ['Predictive Models', 'Audience Insights', 'Market Intelligence'],
                 color: 'from-cyan-500 to-cyan-600'
@@ -1371,7 +1371,7 @@ export default function BrandsPage() {
               },
               {
                 question: "How do you measure campaign performance?",
-                answer: "We provide real-time analytics including impressions, reach, frequency, attribution tracking, and foot traffic lift. Our MW-Measure platform integrates with your existing analytics tools for comprehensive reporting."
+                answer: "We provide real-time analytics including impressions, reach, frequency, attribution tracking, and foot traffic lift. Our MW Measure platform integrates with your existing analytics tools for comprehensive reporting."
               },
               {
                 question: "Can I integrate Moving Walls with my existing marketing stack?",
