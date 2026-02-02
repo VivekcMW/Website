@@ -171,7 +171,7 @@ export default function IndonesiaPage() {
                 </Link>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
