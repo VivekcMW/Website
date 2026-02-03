@@ -61,7 +61,6 @@ const megaMenuData = {
           // { name: "Our Journey", description: "Timeline of innovation", href: "/about/our-journey" },
           { name: "Leadership Team", description: "Meet our executives", href: "/about/leadership" },
           { name: "Careers", description: "Join our growing team", href: "/about/careers" },
-          { name: "Press & News", description: "Latest announcements", href: "/about/press-news" },
         ],
       },
       {
@@ -89,7 +88,7 @@ const megaMenuData = {
           { name: "Blog", description: "Industry insights and tips", href: "/resources/blog" },
           { name: "Webinars", description: "On-demand learning", href: "/resources/webinars" },
           { name: "Case Studies", description: "Success stories", href: "/resources/case-studies" },
-          { name: "Whitepapers", description: "In-depth research", href: "/resources/whitepapers" },
+          { name: "Press & News", description: "Latest announcements", href: "/about/press-news" },
         ],
       },
       {

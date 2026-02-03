@@ -21,20 +21,9 @@ const solutions = [
   {
     title: "Media Owners",
     description: "Maximize your inventory value with our advanced programmatic platform. Connect with premium advertisers and optimize yield across all your digital and traditional OOH assets.",
-    bgColor: "bg-mw-blue-50",
+    bgColor: "bg-transparent",
     href: "/solutions/media-owners",
-    icon: <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Billboard/Screen Illustration */}
-      <rect x="30" y="20" width="140" height="120" rx="8" fill="white" stroke="#2563eb" strokeWidth="2"/>
-      <rect x="50" y="40" width="100" height="70" rx="4" fill="#2563eb"/>
-      <rect x="60" y="50" width="35" height="25" rx="2" fill="#93c5fd"/>
-      <rect x="60" y="80" width="35" height="4" rx="2" fill="#93c5fd"/>
-      <rect x="60" y="88" width="25" height="4" rx="2" fill="#93c5fd"/>
-      <rect x="105" y="50" width="35" height="50" rx="2" fill="#93c5fd"/>
-      <line x1="75" y1="120" x2="75" y2="135" stroke="#2563eb" strokeWidth="3"/>
-      <line x1="125" y1="120" x2="125" y2="135" stroke="#2563eb" strokeWidth="3"/>
-      <line x1="60" y1="135" x2="140" y2="135" stroke="#2563eb" strokeWidth="3"/>
-    </svg>,
+    image: "/assets/images/brands/Media-Owners.png",
     features: [
       "Programmatic marketplace access",
       "Inventory management system",
@@ -45,21 +34,9 @@ const solutions = [
   {
     title: "Agencies",
     description: "Streamline your DOOH operations with enterprise-grade tools. Manage multiple client campaigns, access premium inventory, and deliver exceptional results with our agency platform.",
-    bgColor: "bg-mw-gray-100",
+    bgColor: "bg-transparent",
     href: "/solutions/agencies",
-    icon: <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Team/Agency Illustration */}
-      <rect x="30" y="20" width="140" height="120" rx="8" fill="white" stroke="#4b5563" strokeWidth="2"/>
-      <circle cx="70" cy="60" r="15" fill="#93c5fd"/>
-      <path d="M 70 75 Q 70 80 75 85 L 65 85 Q 70 80 70 75" fill="#2563eb"/>
-      <rect x="50" y="85" width="40" height="30" rx="4" fill="#2563eb"/>
-      <circle cx="100" cy="55" r="18" fill="#2563eb"/>
-      <path d="M 100 73 Q 100 78 105 83 L 95 83 Q 100 78 100 73" fill="#2563eb"/>
-      <rect x="77" y="83" width="46" height="35" rx="4" fill="#2563eb"/>
-      <circle cx="130" cy="60" r="15" fill="#93c5fd"/>
-      <path d="M 130 75 Q 130 80 135 85 L 125 85 Q 130 80 130 75" fill="#2563eb"/>
-      <rect x="110" y="85" width="40" height="30" rx="4" fill="#2563eb"/>
-    </svg>,
+    image: "/assets/images/brands/Agencies.png",
     features: [
       "Multi-client campaign management",
       "White-label reporting",
@@ -104,22 +81,13 @@ export default function Services() {
             >
               {/* Illustration */}
               <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="relative h-80 rounded-2xl overflow-hidden border border-mw-gray-200 group hover:border-mw-blue-300 transition-all duration-300 hover:shadow-mw-lg">
-                  <div className={`absolute inset-0 ${solution.bgColor}`} />
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
-                    <div className="w-full h-full relative">
-                      {solution.image ? (
-                        <Image
-                          src={solution.image}
-                          alt={`${solution.title} illustration`}
-                          fill
-                          className="object-contain"
-                        />
-                      ) : (
-                        solution.icon
-                      )}
-                    </div>
-                  </div>
+                <div className="relative h-[500px] w-full">
+                  <Image
+                    src={solution.image}
+                    alt={`${solution.title} illustration`}
+                    fill
+                    className="object-contain object-left"
+                  />
                 </div>
               </div>
 
