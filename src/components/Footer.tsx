@@ -34,6 +34,7 @@ const footerLinks = {
   ],
   resources: [
     { name: "OOH Formats", href: "/ooh-formats" },
+    { name: "E-Books", href: "/ebooks" },
     { name: "Blog", href: "/resources/blog" },
     { name: "Case Studies", href: "/resources/case-studies" },
     { name: "Whitepapers", href: "/resources/whitepapers" },
