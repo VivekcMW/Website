@@ -32,6 +32,17 @@ const footerLinks = {
     { name: "Documentation", href: "https://help.movingwalls.com/" },
     { name: "API Reference", href: "#" },
   ],
+  resources: [
+    { name: "OOH Formats", href: "/ooh-formats" },
+    { name: "Blog", href: "/resources/blog" },
+    { name: "Case Studies", href: "/resources/case-studies" },
+    { name: "Whitepapers", href: "/resources/whitepapers" },
+    { name: "Webinars", href: "/resources/webinars" },
+    { name: "Help Center", href: "/resources/help-center" },
+    { name: "Documentation", href: "/resources/documentation" },
+    { name: "API Reference", href: "/resources/api-reference" },
+    { name: "Community", href: "/resources/community" },
+  ],
   billboardLocations: [
     { name: "Malaysia", href: "/locations/malaysia" },
     { name: "Singapore", href: "/locations/singapore" },
@@ -173,7 +184,7 @@ export default function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
             {/* Company */}
             <div>
               <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
@@ -230,6 +241,23 @@ export default function Footer() {
               <h4 className="text-white font-bold mb-6 text-lg">Support</h4>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-mw-gray-300 hover:text-white transition-colors flex items-center group"
+                    >
+                      <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="text-white font-bold mb-6 text-lg">Resources</h4>
+              <ul className="space-y-3">
+                {footerLinks.resources.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
