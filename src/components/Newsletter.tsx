@@ -28,14 +28,6 @@ export default function Newsletter() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-mw-blue-100 rounded-full mb-6">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-mw-blue-600 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-mw-blue-600"></span>
-                </span>
-                <span className="text-mw-blue-600 text-sm font-medium">Join 50,000+ Subscribers</span>
-              </div>
-
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mb-6 leading-tight">
                 Get Industry Insights
                 <span className="block text-mw-blue-600">Delivered Weekly</span>

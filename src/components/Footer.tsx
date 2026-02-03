@@ -10,7 +10,6 @@ const footerLinks = {
     { name: "Leadership", href: "/about/leadership" },
     { name: "Office Locations", href: "/locations" },
     { name: "Careers", href: "/about/careers" },
-    { name: "Press & News", href: "/about/press-news" },
     { name: "Contact Us", href: "/contact" },
   ],
   solutions: [
@@ -37,7 +36,7 @@ const footerLinks = {
     { name: "E-Books", href: "/ebooks" },
     { name: "Blog", href: "/resources/blog" },
     { name: "Case Studies", href: "/resources/case-studies" },
-    { name: "Whitepapers", href: "/resources/whitepapers" },
+    { name: "Press & News", href: "/about/press-news" },
     { name: "Webinars", href: "/resources/webinars" },
     { name: "Help Center", href: "/resources/help-center" },
     { name: "Documentation", href: "/resources/documentation" },

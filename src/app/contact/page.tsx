@@ -279,7 +279,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {offices.map((office, index) => (
               <motion.div
-                key={office.city}
+                key={`${office.city}-${office.type}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

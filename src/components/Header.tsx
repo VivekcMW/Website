@@ -68,7 +68,6 @@ const megaMenuData = {
         items: [
           { name: "Contact Us", description: "Get in touch with us", href: "/contact" },
           { name: "Partners", description: "Partner ecosystem", href: "/partners" },
-          { name: "Locations", description: "Find us worldwide", href: "/locations" },
           { name: "Events", description: "Upcoming events", href: "/events" },
         ],
       },
@@ -88,6 +87,8 @@ const megaMenuData = {
           { name: "Blog", description: "Industry insights and tips", href: "/resources/blog" },
           { name: "Webinars", description: "On-demand learning", href: "/resources/webinars" },
           { name: "Case Studies", description: "Success stories", href: "/resources/case-studies" },
+          { name: "E-Books", description: "In-depth guides & reports", href: "/resources/ebooks" },
+          { name: "OOH 101", description: "Out-of-home advertising basics", href: "/resources/ooh-101" },
           { name: "Press & News", description: "Latest announcements", href: "/about/press-news" },
         ],
       },
