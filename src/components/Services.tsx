@@ -81,12 +81,12 @@ export default function Services() {
             >
               {/* Illustration */}
               <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="relative h-[500px] w-full">
+                <div className="relative h-[280px] sm:h-[350px] md:h-[420px] lg:h-[500px] w-full">
                   <Image
                     src={solution.image}
                     alt={`${solution.title} illustration`}
                     fill
-                    className="object-contain object-left"
+                    className="object-contain object-center lg:object-left"
                   />
                 </div>
               </div>

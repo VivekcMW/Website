@@ -19,7 +19,7 @@ export default function Newsletter() {
   return (
     <section className="py-24 bg-mw-blue-600">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl p-8 md:p-12 lg:p-16 shadow-mw-xl">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-mw-xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <motion.div

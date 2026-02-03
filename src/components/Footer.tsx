@@ -300,10 +300,10 @@ export default function Footer() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-                <p className="text-mw-gray-400 text-sm">
+                <p className="text-mw-gray-400 text-sm text-center md:text-left">
                   © {new Date().getFullYear()} Moving Walls. All rights reserved.
                 </p>
-                <div className="flex items-center gap-6 text-sm">
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-sm">
                   <Link href="/privacy" className="text-mw-gray-400 hover:text-white transition-colors">
                     Privacy Policy
                   </Link>

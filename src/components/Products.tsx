@@ -209,7 +209,7 @@ export default function Products() {
             />
 
             {/* Stage Nodes */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 relative z-10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 relative z-10">
               {workflowStages.map((stage, index) => {
                 const isActive = activeStage === stage.id;
                 const hasProducts = mwProducts.some(p => p.stage === stage.id);
