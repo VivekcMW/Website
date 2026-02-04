@@ -390,6 +390,164 @@
           "monthlyImpressions": "Impresiones Mensuales",
           "uptimeSLA": "SLA de Disponibilidad"
         }
+      },
+      "platform": {
+        "title": "Nuestra Plataforma",
+        "description": "Un conjunto completo de herramientas para planificar, comprar y medir tus campañas OOH",
+        "tabs": {
+          "planner": "Planificación de Campañas",
+          "marketplace": "Acceso a Inventario",
+          "activate": "Activación de Campañas",
+          "measure": "Análisis y Medición",
+          "studio": "Herramientas Creativas"
+        },
+        "planner": {
+          "title": "Planificación de Campañas Impulsada por IA",
+          "description": "Planifica campañas más inteligentes con información basada en datos. Usa IA para analizar patrones de audiencia, pronosticar rendimiento y recomendar ubicaciones óptimas.",
+          "features": [
+            "Información de audiencia basada en demografía y comportamiento",
+            "Recomendaciones inteligentes de ubicación",
+            "Optimización de presupuesto y pronóstico de ROI"
+          ],
+          "learnMore": "Más información"
+        },
+        "marketplace": {
+          "title": "Accede a Inventario Premium en Todo el Mundo",
+          "description": "Navega y reserva desde más de 250,000 ubicaciones de vallas publicitarias en más de 180 países con precios transparentes y reserva instantánea.",
+          "features": [
+            "250,000+ ubicaciones OOH premium a nivel mundial",
+            "Disponibilidad de inventario en tiempo real",
+            "Precios transparentes sin tarifas ocultas"
+          ],
+          "learnMore": "Más información"
+        },
+        "activate": {
+          "title": "Lanza Campañas en Minutos",
+          "description": "Pasa de la planificación a campañas en vivo en minutos, no en semanas. Agiliza la activación con flujos de trabajo automatizados y optimización en tiempo real.",
+          "features": [
+            "Activación de campaña con un clic",
+            "Control automático del presupuesto",
+            "Optimización dinámica de creativos"
+          ],
+          "learnMore": "Más información"
+        },
+        "measure": {
+          "title": "Análisis y Atribución en Tiempo Real",
+          "description": "Rastrea cada impresión, mide el impacto del mundo real y demuestra el ROI con análisis completos y paneles personalizados.",
+          "features": [
+            "Seguimiento de impresiones en tiempo real",
+            "Atribución de tráfico peatonal",
+            "Medición de elevación de marca"
+          ],
+          "learnMore": "Más información"
+        },
+        "studio": {
+          "title": "Diseño y Optimización Creativos",
+          "description": "Crea creativos OOH impresionantes con herramientas de diseño intuitivas. Adapta automáticamente los diseños a cualquier formato de pantalla y ejecuta pruebas A/B.",
+          "features": [
+            "Constructor creativo de arrastrar y soltar",
+            "Cambio de tamaño automático para todos los formatos de pantalla",
+            "Pruebas A/B y optimización creativa"
+          ],
+          "learnMore": "Más información"
+        }
+      },
+      "trustBar": "CONFIADO POR LAS PRINCIPALES MARCAS DEL MUNDO",
+      "journey": {
+        "oldWay": {
+          "badge": "El Camino Anterior",
+          "title": "Desafíos",
+          "items": [
+            { "text": "Compra fragmentada a través de vendedores" },
+            { "text": "Sin datos de rendimiento en tiempo real" },
+            { "text": "Segmentación de audiencia difícil" },
+            { "text": "Semanas para lanzar campañas" },
+            { "text": "Flexibilidad creativa limitada" }
+          ]
+        },
+        "transformation": {
+          "badge": "Transformación",
+          "title": "Plataforma Moving Walls",
+          "subtitle": "Tu solución OOH completa",
+          "features": [
+            "Planificación Impulsada por IA",
+            "Análisis en Tiempo Real",
+            "Activación Instantánea",
+            "Optimización Dinámica"
+          ],
+          "cta": "Inicia Tu Transformación"
+        },
+        "newWay": {
+          "badge": "El Nuevo Camino",
+          "title": "Resultados",
+          "items": [
+            { "text": "Plataforma unificada, todo el inventario", "metric": "250K+ pantallas" },
+            { "text": "Seguimiento de rendimiento en tiempo real", "metric": "Datos en vivo" },
+            { "text": "Segmentación de audiencia impulsada por IA", "metric": "99% precisión" },
+            { "text": "Lanza en minutos, no en semanas", "metric": "< 5 mins" },
+            { "text": "Optimización dinámica de creativos", "metric": "+40% engagement" }
+          ]
+        }
+      },
+      "features": {
+        "title": "Todo lo que las Marcas Necesitan para Tener Éxito",
+        "description": "Herramientas poderosas diseñadas específicamente para especialistas en marketing de marca para crear, lanzar y optimizar campañas OOH",
+        "items": [
+          {
+            "title": "Campañas Multicanal",
+            "description": "Gestiona campañas sin problemas en vallas publicitarias digitales, anuncios de tránsito y OOH tradicional desde una plataforma unificada"
+          },
+          {
+            "title": "Segmentación Avanzada",
+            "description": "Llega a tu audiencia exacta usando demografía, datos de ubicación, patrones de comportamiento e información impulsada por IA"
+          },
+          {
+            "title": "Análisis en Tiempo Real",
+            "description": "Rastrea impresiones, engagement y métricas de atribución mientras suceden con paneles completos"
+          },
+          {
+            "title": "Optimización Creativa",
+            "description": "Herramientas impulsadas por IA para probar, optimizar y personalizar activos creativos para máximo impacto y engagement"
+          },
+          {
+            "title": "Automatización de Campañas",
+            "description": "Configura reglas y desencadenadores automatizados para optimizar la asignación de presupuesto y rotación creativa en tiempo real"
+          },
+          {
+            "title": "Controles de Seguridad de Marca",
+            "description": "Asegura que tus anuncios aparezcan en entornos seguros para la marca con filtrado de contenido avanzado y controles de ubicación"
+          },
+          {
+            "title": "Mercado de Inventario",
+            "description": "Accede a más de 250,000 ubicaciones de vallas publicitarias premium en todo el mundo con precios transparentes y reserva instantánea"
+          },
+          {
+            "title": "Suite de Integración",
+            "description": "Conéctate con tus herramientas existentes incluyendo CRM, análisis, DSPs y plataformas de gestión creativa"
+          }
+        ]
+      },
+      "howItWorks": {
+        "title": "Lanza Tu Campaña en 4 Simples Pasos",
+        "description": "De la planificación a la activación en minutos, no en semanas",
+        "steps": [
+          {
+            "title": "Planifica y Segmenta",
+            "description": "Usa MW Planner para definir tu audiencia, seleccionar ubicaciones y pronosticar el rendimiento de la campaña"
+          },
+          {
+            "title": "Reserva Inventario",
+            "description": "Navega MW Marketplace para encontrar y reservar instantáneamente ubicaciones premium de vallas publicitarias en todo el mundo"
+          },
+          {
+            "title": "Crea y Optimiza",
+            "description": "Diseña creativos atractivos con MW Studio y optimiza para cada formato de pantalla automáticamente"
+          },
+          {
+            "title": "Lanza y Mide",
+            "description": "Activa con MW Activate y rastrea el rendimiento en tiempo real con análisis de MW Measure"
+          }
+        ]
       }
     },
     "clients": {

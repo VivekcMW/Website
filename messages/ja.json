@@ -376,7 +376,8 @@
         },
         "cta": "代理店ソリューションを探索"
       }
-    },    "brandsPage": {
+    },
+    "brandsPage": {
       "hero": {
         "title": "結果重視のOOHプランニング",
         "titleHighlight": "と数クリックでの購入",
@@ -389,8 +390,192 @@
           "monthlyImpressions": "月間インプレッション",
           "uptimeSLA": "稼働率SLA"
         }
+      },
+      "platform": {
+        "title": "Our Platform",
+        "description": "A complete suite of tools to plan, buy, and measure your OOH campaigns",
+        "tabs": {
+          "planner": "Campaign Planning",
+          "marketplace": "Inventory Access",
+          "activate": "Campaign Activation",
+          "measure": "Analytics & Measurement",
+          "studio": "Creative Tools"
+        },
+        "planner": {
+          "title": "AI-Powered Campaign Planning",
+          "description": "Plan smarter campaigns with data-driven insights. Use AI to analyze audience patterns, forecast performance, and recommend optimal locations.",
+          "features": [
+            "Audience insights based on demographics & behavior",
+            "Smart location recommendations",
+            "Budget optimization & ROI forecasting"
+          ],
+          "learnMore": "Learn more"
+        },
+        "marketplace": {
+          "title": "Access Premium Inventory Worldwide",
+          "description": "Browse and book from 250,000+ billboard locations across 180+ countries with transparent pricing and instant booking.",
+          "features": [
+            "250,000+ premium OOH locations globally",
+            "Real-time inventory availability",
+            "Transparent pricing with no hidden fees"
+          ],
+          "learnMore": "Learn more"
+        },
+        "activate": {
+          "title": "Launch Campaigns in Minutes",
+          "description": "Go from planning to live campaigns in minutes, not weeks. Streamline activation with automated workflows and real-time optimization.",
+          "features": [
+            "One-click campaign activation",
+            "Automated budget pacing",
+            "Dynamic creative optimization"
+          ],
+          "learnMore": "Learn more"
+        },
+        "measure": {
+          "title": "Real-Time Analytics & Attribution",
+          "description": "Track every impression, measure real-world impact, and prove ROI with comprehensive analytics and custom dashboards.",
+          "features": [
+            "Real-time impression tracking",
+            "Foot traffic attribution",
+            "Brand lift measurement"
+          ],
+          "learnMore": "Learn more"
+        },
+        "studio": {
+          "title": "Creative Design & Optimization",
+          "description": "Create stunning OOH creatives with intuitive design tools. Auto-adapt designs to any screen format and run A/B tests.",
+          "features": [
+            "Drag-and-drop creative builder",
+            "Auto-resize for all screen formats",
+            "A/B testing & creative optimization"
+          ],
+          "learnMore": "Learn more"
+        }
+      },
+      "trustBar": "TRUSTED BY LEADING BRANDS WORLDWIDE",
+      "journey": {
+        "oldWay": {
+          "badge": "The Old Way",
+          "title": "Challenges",
+          "items": [
+            {
+              "text": "Fragmented buying across vendors"
+            },
+            {
+              "text": "No real-time performance data"
+            },
+            {
+              "text": "Difficult audience targeting"
+            },
+            {
+              "text": "Weeks to launch campaigns"
+            },
+            {
+              "text": "Limited creative flexibility"
+            }
+          ]
+        },
+        "transformation": {
+          "badge": "Transformation",
+          "title": "Moving Walls Platform",
+          "subtitle": "Your complete OOH solution",
+          "features": [
+            "AI-Powered Planning",
+            "Real-Time Analytics",
+            "Instant Activation",
+            "Dynamic Optimization"
+          ],
+          "cta": "Start Your Transformation"
+        },
+        "newWay": {
+          "badge": "The New Way",
+          "title": "Results",
+          "items": [
+            {
+              "text": "Unified platform, all inventory",
+              "metric": "250K+ screens"
+            },
+            {
+              "text": "Real-time performance tracking",
+              "metric": "Live data"
+            },
+            {
+              "text": "AI-powered audience targeting",
+              "metric": "99% accuracy"
+            },
+            {
+              "text": "Launch in minutes, not weeks",
+              "metric": "< 5 mins"
+            },
+            {
+              "text": "Dynamic creative optimization",
+              "metric": "+40% engagement"
+            }
+          ]
+        }
+      },
+      "features": {
+        "title": "Everything Brands Need to Succeed",
+        "description": "Powerful tools designed specifically for brand marketers to create, launch, and optimize OOH campaigns",
+        "items": [
+          {
+            "title": "Multi-Channel Campaigns",
+            "description": "Seamlessly manage campaigns across digital billboards, transit ads, and traditional OOH from one unified platform"
+          },
+          {
+            "title": "Advanced Targeting",
+            "description": "Reach your exact audience using demographics, location data, behavior patterns, and AI-powered insights"
+          },
+          {
+            "title": "Real-Time Analytics",
+            "description": "Track impressions, engagement, and attribution metrics as they happen with comprehensive dashboards"
+          },
+          {
+            "title": "Creative Optimization",
+            "description": "AI-powered tools to test, optimize, and personalize creative assets for maximum impact and engagement"
+          },
+          {
+            "title": "Campaign Automation",
+            "description": "Set up automated rules and triggers to optimize budget allocation and creative rotation in real-time"
+          },
+          {
+            "title": "Brand Safety Controls",
+            "description": "Ensure your ads appear in brand-safe environments with advanced content filtering and location controls"
+          },
+          {
+            "title": "Inventory Marketplace",
+            "description": "Access 250,000+ premium billboard locations worldwide with transparent pricing and instant booking"
+          },
+          {
+            "title": "Integration Suite",
+            "description": "Connect with your existing tools including CRM, analytics, DSPs, and creative management platforms"
+          }
+        ]
+      },
+      "howItWorks": {
+        "title": "Launch Your Campaign in 4 Simple Steps",
+        "description": "From planning to activation in minutes, not weeks",
+        "steps": [
+          {
+            "title": "Plan & Target",
+            "description": "Use MW Planner to define your audience, select locations, and forecast campaign performance"
+          },
+          {
+            "title": "Book Inventory",
+            "description": "Browse MW Marketplace to find and instantly book premium billboard locations worldwide"
+          },
+          {
+            "title": "Create & Optimize",
+            "description": "Design engaging creatives with MW Studio and optimize for each screen format automatically"
+          },
+          {
+            "title": "Launch & Measure",
+            "description": "Activate with MW Activate and track real-time performance with MW Measure analytics"
+          }
+        ]
       }
-    },    "clients": {
+    },
+    "clients": {
       "title": "主要プラットフォームとの統合",
       "description": "既存のマーケティングスタックとシームレスに統合"
     },

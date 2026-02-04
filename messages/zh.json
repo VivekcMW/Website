@@ -390,6 +390,164 @@
           "monthlyImpressions": "月度展示量",
           "uptimeSLA": "运行时间SLA"
         }
+      },
+      "platform": {
+        "title": "我们的平台",
+        "description": "一套完整的工具来计划、购买和衡量您的OOH活动",
+        "tabs": {
+          "planner": "活动计划",
+          "marketplace": "库存访问",
+          "activate": "活动激活",
+          "measure": "分析与测量",
+          "studio": "创意工具"
+        },
+        "planner": {
+          "title": "AI驱动的活动计划",
+          "description": "使用数据驱动的洞察规划更智能的活动。使用AI分析受众模式、预测性能并推荐最佳位置。",
+          "features": [
+            "基于人口统计和行为的受众洞察",
+            "智能位置推荐",
+            "预算优化和ROI预测"
+          ],
+          "learnMore": "了解更多"
+        },
+        "marketplace": {
+          "title": "访问全球优质库存",
+          "description": "在180多个国家浏览和预订250,000多个广告牌位置，价格透明，即时预订。",
+          "features": [
+            "全球250,000多个优质OOH位置",
+            "实时库存可用性",
+            "透明定价，无隐藏费用"
+          ],
+          "learnMore": "了解更多"
+        },
+        "activate": {
+          "title": "在几分钟内启动活动",
+          "description": "从计划到实时活动只需几分钟，而不是几周。通过自动化工作流程和实时优化简化激活。",
+          "features": [
+            "一键活动激活",
+            "自动预算控制",
+            "动态创意优化"
+          ],
+          "learnMore": "了解更多"
+        },
+        "measure": {
+          "title": "实时分析和归因",
+          "description": "跟踪每一次展示，衡量真实世界的影响，并通过全面的分析和自定义仪表板证明ROI。",
+          "features": [
+            "实时展示跟踪",
+            "客流归因",
+            "品牌提升测量"
+          ],
+          "learnMore": "了解更多"
+        },
+        "studio": {
+          "title": "创意设计和优化",
+          "description": "使用直观的设计工具创建令人惊叹的OOH创意。自动适应任何屏幕格式并运行A/B测试。",
+          "features": [
+            "拖放式创意构建器",
+            "自动调整所有屏幕格式",
+            "A/B测试和创意优化"
+          ],
+          "learnMore": "了解更多"
+        }
+      },
+      "trustBar": "全球领先品牌的信任",
+      "journey": {
+        "oldWay": {
+          "badge": "旧方式",
+          "title": "挑战",
+          "items": [
+            { "text": "跨供应商的分散购买" },
+            { "text": "没有实时性能数据" },
+            { "text": "困难的受众定位" },
+            { "text": "启动活动需要数周" },
+            { "text": "有限的创意灵活性" }
+          ]
+        },
+        "transformation": {
+          "badge": "转型",
+          "title": "Moving Walls平台",
+          "subtitle": "您完整的OOH解决方案",
+          "features": [
+            "AI驱动的计划",
+            "实时分析",
+            "即时激活",
+            "动态优化"
+          ],
+          "cta": "开始您的转型"
+        },
+        "newWay": {
+          "badge": "新方式",
+          "title": "结果",
+          "items": [
+            { "text": "统一平台，所有库存", "metric": "250K+ 屏幕" },
+            { "text": "实时性能跟踪", "metric": "实时数据" },
+            { "text": "AI驱动的受众定位", "metric": "99% 准确性" },
+            { "text": "几分钟内启动，而不是几周", "metric": "< 5 分钟" },
+            { "text": "动态创意优化", "metric": "+40% 参与度" }
+          ]
+        }
+      },
+      "features": {
+        "title": "品牌成功所需的一切",
+        "description": "专为品牌营销人员设计的强大工具，用于创建、启动和优化OOH活动",
+        "items": [
+          {
+            "title": "多渠道活动",
+            "description": "从一个统一平台无缝管理数字广告牌、交通广告和传统OOH的活动"
+          },
+          {
+            "title": "高级定位",
+            "description": "使用人口统计、位置数据、行为模式和AI驱动的洞察触达您的确切受众"
+          },
+          {
+            "title": "实时分析",
+            "description": "通过全面的仪表板实时跟踪展示、参与度和归因指标"
+          },
+          {
+            "title": "创意优化",
+            "description": "AI驱动的工具，用于测试、优化和个性化创意资产，以获得最大影响和参与度"
+          },
+          {
+            "title": "活动自动化",
+            "description": "设置自动化规则和触发器，实时优化预算分配和创意轮播"
+          },
+          {
+            "title": "品牌安全控制",
+            "description": "通过高级内容过滤和位置控制确保您的广告出现在品牌安全的环境中"
+          },
+          {
+            "title": "库存市场",
+            "description": "访问全球250,000多个优质广告牌位置，价格透明，即时预订"
+          },
+          {
+            "title": "集成套件",
+            "description": "连接您现有的工具，包括CRM、分析、DSP和创意管理平台"
+          }
+        ]
+      },
+      "howItWorks": {
+        "title": "通过4个简单步骤启动您的活动",
+        "description": "从计划到激活只需几分钟，而不是几周",
+        "steps": [
+          {
+            "title": "计划和定位",
+            "description": "使用MW Planner定义您的受众、选择位置并预测活动性能"
+          },
+          {
+            "title": "预订库存",
+            "description": "浏览MW Marketplace查找并即时预订全球优质广告牌位置"
+          },
+          {
+            "title": "创建和优化",
+            "description": "使用MW Studio设计引人入胜的创意，并自动优化每种屏幕格式"
+          },
+          {
+            "title": "启动和测量",
+            "description": "使用MW Activate激活并使用MW Measure分析跟踪实时性能"
+          }
+        ]
       }
     },
     "clients": {

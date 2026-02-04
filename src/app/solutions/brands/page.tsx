@@ -30,33 +30,33 @@ export default function BrandsPage() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t('brandsPage.hero.title')}<br/>
+              {t('landingPage.brandsPage.hero.title')}<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">
-                {t('brandsPage.hero.titleHighlight')}
+                {t('landingPage.brandsPage.hero.titleHighlight')}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
-              {t('brandsPage.hero.description')}
+              {t('landingPage.brandsPage.hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105"
               >
-                {t('brandsPage.hero.ctaPrimary')}
+                {t('landingPage.brandsPage.hero.ctaPrimary')}
               </Link>
               <button className="inline-block bg-blue-500/20 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500/30 transition-all">
-                {t('brandsPage.hero.ctaSecondary')}
+                {t('landingPage.brandsPage.hero.ctaSecondary')}
               </button>
             </div>
             
             {/* Hero Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
               {[
-                { value: '500+', label: t('brandsPage.hero.stats.activeBrands') },
-                { value: '385%', label: t('brandsPage.hero.stats.averageROI') },
-                { value: '12M+', label: t('brandsPage.hero.stats.monthlyImpressions') },
-                { value: '99.8%', label: t('brandsPage.hero.stats.uptimeSLA') }
+                { value: '500+', label: t('landingPage.brandsPage.hero.stats.activeBrands') },
+                { value: '385%', label: t('landingPage.brandsPage.hero.stats.averageROI') },
+                { value: '12M+', label: t('landingPage.brandsPage.hero.stats.monthlyImpressions') },
+                { value: '99.8%', label: t('landingPage.brandsPage.hero.stats.uptimeSLA') }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -84,10 +84,10 @@ export default function BrandsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Platform
+              {t('landingPage.brandsPage.platform.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A complete suite of tools to plan, buy, and measure your OOH campaigns
+              {t('landingPage.brandsPage.platform.description')}
             </p>
           </motion.div>
 
@@ -224,11 +224,11 @@ export default function BrandsPage() {
               {/* Tabs */}
               <div className="flex flex-col gap-2 mb-8">
                 {[
-                  { id: 'planner', name: 'Campaign Planning' },
-                  { id: 'marketplace', name: 'Inventory Access' },
-                  { id: 'activate', name: 'Campaign Activation' },
-                  { id: 'measure', name: 'Analytics & Measurement' },
-                  { id: 'studio', name: 'Creative Tools' },
+                  { id: 'planner', name: t('landingPage.brandsPage.platform.tabs.planner') },
+                  { id: 'marketplace', name: t('landingPage.brandsPage.platform.tabs.marketplace') },
+                  { id: 'activate', name: t('landingPage.brandsPage.platform.tabs.activate') },
+                  { id: 'measure', name: t('landingPage.brandsPage.platform.tabs.measure') },
+                  { id: 'studio', name: t('landingPage.brandsPage.platform.tabs.studio') },
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -254,17 +254,13 @@ export default function BrandsPage() {
                 {activePlatform === 'planner' && (
                   <>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      AI-Powered Campaign Planning
+                      {t('landingPage.brandsPage.platform.planner.title')}
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      Plan smarter campaigns with data-driven insights. Use AI to analyze audience patterns, forecast performance, and recommend optimal locations.
+                      {t('landingPage.brandsPage.platform.planner.description')}
                     </p>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        'Audience insights based on demographics & behavior',
-                        'Smart location recommendations',
-                        'Budget optimization & ROI forecasting',
-                      ].map((feature, i) => (
+                      {t('landingPage.brandsPage.platform.planner.features').map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-3">
                           <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                             <svg className="w-3 h-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -276,7 +272,7 @@ export default function BrandsPage() {
                       ))}
                     </ul>
                     <Link href="/products/mw-planner" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
+                      {t('landingPage.brandsPage.platform.planner.learnMore')}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -286,17 +282,13 @@ export default function BrandsPage() {
                 {activePlatform === 'marketplace' && (
                   <>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Access Premium Inventory Worldwide
+                      {t('landingPage.brandsPage.platform.marketplace.title')}
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      Browse and book from 250,000+ billboard locations across 180+ countries with transparent pricing and instant booking.
+                      {t('landingPage.brandsPage.platform.marketplace.description')}
                     </p>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        '250,000+ premium OOH locations globally',
-                        'Real-time inventory availability',
-                        'Transparent pricing with no hidden fees',
-                      ].map((feature, i) => (
+                      {t('landingPage.brandsPage.platform.marketplace.features').map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-3">
                           <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                             <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -308,7 +300,7 @@ export default function BrandsPage() {
                       ))}
                     </ul>
                     <Link href="/products/mw-marketplace" className="inline-flex items-center gap-2 text-green-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
+                      {t('landingPage.brandsPage.platform.marketplace.learnMore')}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -318,17 +310,13 @@ export default function BrandsPage() {
                 {activePlatform === 'activate' && (
                   <>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Launch Campaigns in Minutes
+                      {t('landingPage.brandsPage.platform.activate.title')}
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      Go from planning to live campaigns in minutes, not weeks. Streamline activation with automated workflows and real-time optimization.
+                      {t('landingPage.brandsPage.platform.activate.description')}
                     </p>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        'One-click campaign activation',
-                        'Automated budget pacing',
-                        'Dynamic creative optimization',
-                      ].map((feature, i) => (
+                      {t('landingPage.brandsPage.platform.activate.features').map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-3">
                           <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <svg className="w-3 h-3 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -340,7 +328,7 @@ export default function BrandsPage() {
                       ))}
                     </ul>
                     <Link href="/products/mw-activate" className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
+                      {t('landingPage.brandsPage.platform.activate.learnMore')}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -350,17 +338,13 @@ export default function BrandsPage() {
                 {activePlatform === 'measure' && (
                   <>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Real-Time Analytics & Attribution
+                      {t('landingPage.brandsPage.platform.measure.title')}
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      Track every impression, measure real-world impact, and prove ROI with comprehensive analytics and custom dashboards.
+                      {t('landingPage.brandsPage.platform.measure.description')}
                     </p>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        'Real-time impression tracking',
-                        'Foot traffic attribution',
-                        'Brand lift measurement',
-                      ].map((feature, i) => (
+                      {t('landingPage.brandsPage.platform.measure.features').map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-3">
                           <div className="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
                             <svg className="w-3 h-3 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -372,7 +356,7 @@ export default function BrandsPage() {
                       ))}
                     </ul>
                     <Link href="/products/mw-measure" className="inline-flex items-center gap-2 text-pink-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
+                      {t('landingPage.brandsPage.platform.measure.learnMore')}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -382,17 +366,13 @@ export default function BrandsPage() {
                 {activePlatform === 'studio' && (
                   <>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Creative Design & Optimization
+                      {t('landingPage.brandsPage.platform.studio.title')}
                     </h3>
                     <p className="text-gray-600 mb-6">
-                      Create stunning OOH creatives with intuitive design tools. Auto-adapt designs to any screen format and run A/B tests.
+                      {t('landingPage.brandsPage.platform.studio.description')}
                     </p>
                     <ul className="space-y-3 mb-6">
-                      {[
-                        'Drag-and-drop creative builder',
-                        'Auto-resize for all screen formats',
-                        'A/B testing & creative optimization',
-                      ].map((feature, i) => (
+                      {t('landingPage.brandsPage.platform.studio.features').map((feature: string, i: number) => (
                         <li key={i} className="flex items-center gap-3">
                           <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
                             <svg className="w-3 h-3 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -404,7 +384,7 @@ export default function BrandsPage() {
                       ))}
                     </ul>
                     <Link href="/products/mw-studio" className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
+                      {t('landingPage.brandsPage.platform.studio.learnMore')}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -420,7 +400,7 @@ export default function BrandsPage() {
       {/* Trust Bar */}
       <section className="py-12 bg-gray-50 border-b overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-600 mb-8 font-semibold">TRUSTED BY LEADING BRANDS WORLDWIDE</p>
+          <p className="text-center text-gray-600 mb-8 font-semibold">{t('landingPage.brandsPage.trustBar')}</p>
         </div>
         <div className="relative">
           {/* Gradient overlays for smooth fade effect */}
@@ -702,18 +682,12 @@ export default function BrandsPage() {
                       </svg>
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-red-500 uppercase tracking-wider">The Old Way</span>
-                      <h3 className="text-xl font-bold text-gray-800">Challenges</h3>
+                      <span className="text-xs font-bold text-red-500 uppercase tracking-wider">{t('landingPage.brandsPage.journey.oldWay.badge')}</span>
+                      <h3 className="text-xl font-bold text-gray-800">{t('landingPage.brandsPage.journey.oldWay.title')}</h3>
                     </div>
                   </div>
                   <div className="space-y-4">
-                    {[
-                      { icon: <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>, text: 'Fragmented buying across vendors' },
-                      { icon: <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>, text: 'No real-time performance data' },
-                      { icon: <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>, text: 'Difficult audience targeting' },
-                      { icon: <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, text: 'Weeks to launch campaigns' },
-                      { icon: <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>, text: 'Limited creative flexibility' },
-                    ].map((item, index) => (
+                    {t('landingPage.brandsPage.journey.oldWay.items').map((item: { text: string }, index: number) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, x: -10 }}
@@ -722,7 +696,13 @@ export default function BrandsPage() {
                         transition={{ delay: index * 0.1 }}
                         className="flex items-center gap-3 bg-white/60 rounded-lg p-3"
                       >
-                        <div className="flex-shrink-0">{item.icon}</div>
+                        <div className="flex-shrink-0">
+                          {index === 0 && <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>}
+                          {index === 1 && <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>}
+                          {index === 2 && <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
+                          {index === 3 && <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                          {index === 4 && <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>}
+                        </div>
                         <span className="text-gray-700 text-sm">{item.text}</span>
                       </motion.div>
                     ))}
@@ -749,7 +729,7 @@ export default function BrandsPage() {
                 <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 shadow-2xl h-full transform lg:-translate-y-4">
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <span className="bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-                      Transformation
+                      {t('landingPage.brandsPage.journey.transformation.badge')}
                     </span>
                   </div>
                   <div className="text-center mb-6 pt-4">
@@ -758,16 +738,11 @@ export default function BrandsPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Moving Walls Platform</h3>
-                    <p className="text-blue-200 text-sm">Your complete OOH solution</p>
+                    <h3 className="text-2xl font-bold text-white mb-2">{t('landingPage.brandsPage.journey.transformation.title')}</h3>
+                    <p className="text-blue-200 text-sm">{t('landingPage.brandsPage.journey.transformation.subtitle')}</p>
                   </div>
                   <div className="space-y-3">
-                    {[
-                      'AI-Powered Planning',
-                      'Real-Time Analytics',
-                      'Instant Activation',
-                      'Dynamic Optimization',
-                    ].map((feature, index) => (
+                    {t('landingPage.brandsPage.journey.transformation.features').map((feature: string, index: number) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -787,7 +762,7 @@ export default function BrandsPage() {
                   </div>
                   <div className="mt-6 text-center">
                     <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all text-sm">
-                      Start Your Transformation
+                      {t('landingPage.brandsPage.journey.transformation.cta')}
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -820,18 +795,12 @@ export default function BrandsPage() {
                       </svg>
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-green-600 uppercase tracking-wider">The New Way</span>
-                      <h3 className="text-xl font-bold text-gray-800">Results</h3>
+                      <span className="text-xs font-bold text-green-600 uppercase tracking-wider">{t('landingPage.brandsPage.journey.newWay.badge')}</span>
+                      <h3 className="text-xl font-bold text-gray-800">{t('landingPage.brandsPage.journey.newWay.title')}</h3>
                     </div>
                   </div>
                   <div className="space-y-4">
-                    {[
-                      { icon: <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, text: 'Unified platform, all inventory', metric: '250K+ screens' },
-                      { icon: <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>, text: 'Real-time performance tracking', metric: 'Live data' },
-                      { icon: <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>, text: 'AI-powered audience targeting', metric: '99% accuracy' },
-                      { icon: <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>, text: 'Launch in minutes, not weeks', metric: '< 5 mins' },
-                      { icon: <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>, text: 'Dynamic creative optimization', metric: '+40% engagement' },
-                    ].map((item, index) => (
+                    {t('landingPage.brandsPage.journey.newWay.items').map((item: { text: string; metric: string }, index: number) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, x: 10 }}
@@ -840,7 +809,13 @@ export default function BrandsPage() {
                         transition={{ delay: 0.5 + index * 0.1 }}
                         className="flex items-center gap-3 bg-white/80 rounded-lg p-3"
                       >
-                        <div className="flex-shrink-0">{item.icon}</div>
+                        <div className="flex-shrink-0">
+                          {index === 0 && <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                          {index === 1 && <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>}
+                          {index === 2 && <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
+                          {index === 3 && <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
+                          {index === 4 && <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>}
+                        </div>
                         <div className="flex-1">
                           <span className="text-gray-700 text-sm block">{item.text}</span>
                           <span className="text-green-600 text-xs font-bold">{item.metric}</span>
@@ -872,95 +847,35 @@ export default function BrandsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Everything Brands Need to Succeed
+              {t('landingPage.brandsPage.features.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Powerful tools designed specifically for brand marketers to create, launch, and optimize OOH campaigns
+              {t('landingPage.brandsPage.features.description')}
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Multi-Channel Campaigns',
-                description: 'Seamlessly manage campaigns across digital billboards, transit ads, and traditional OOH from one unified platform',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                ),
-                color: 'from-blue-500 to-blue-600'
-              },
-              {
-                title: 'Advanced Targeting',
-                description: 'Reach your exact audience using demographics, location data, behavior patterns, and AI-powered insights',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                ),
-                color: 'from-indigo-500 to-indigo-600'
-              },
-              {
-                title: 'Real-Time Analytics',
-                description: 'Track impressions, engagement, and attribution metrics as they happen with comprehensive dashboards',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                ),
-                color: 'from-purple-500 to-purple-600'
-              },
-              {
-                title: 'Creative Optimization',
-                description: 'AI-powered tools to test, optimize, and personalize creative assets for maximum impact and engagement',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                ),
-                color: 'from-pink-500 to-pink-600'
-              },
-              {
-                title: 'Campaign Automation',
-                description: 'Set up automated rules and triggers to optimize budget allocation and creative rotation in real-time',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                ),
-                color: 'from-yellow-500 to-yellow-600'
-              },
-              {
-                title: 'Brand Safety Controls',
-                description: 'Ensure your ads appear in brand-safe environments with advanced content filtering and location controls',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                ),
-                color: 'from-green-500 to-green-600'
-              },
-              {
-                title: 'Inventory Marketplace',
-                description: 'Access 250,000+ premium billboard locations worldwide with transparent pricing and instant booking',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-                color: 'from-cyan-500 to-cyan-600'
-              },
-              {
-                title: 'Integration Suite',
-                description: 'Connect with your existing tools including CRM, analytics, DSPs, and creative management platforms',
-                icon: (
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                  </svg>
-                ),
-                color: 'from-teal-500 to-teal-600'
-              }
-            ].map((feature, index) => (
+            {t('landingPage.brandsPage.features.items').map((feature: { title: string; description: string }, index: number) => {
+              const colors = [
+                'from-blue-500 to-blue-600',
+                'from-indigo-500 to-indigo-600',
+                'from-purple-500 to-purple-600',
+                'from-pink-500 to-pink-600',
+                'from-yellow-500 to-yellow-600',
+                'from-green-500 to-green-600',
+                'from-cyan-500 to-cyan-600',
+                'from-teal-500 to-teal-600'
+              ];
+              const icons = [
+                <svg key="icon-0" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+                <svg key="icon-1" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>,
+                <svg key="icon-2" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+                <svg key="icon-3" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>,
+                <svg key="icon-4" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+                <svg key="icon-5" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+                <svg key="icon-6" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+                <svg key="icon-7" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+              ];
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -969,13 +884,14 @@ export default function BrandsPage() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1"
               >
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} p-3 text-white mb-6 group-hover:scale-110 transition-transform`}>
-                  {feature.icon}
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colors[index]} p-3 text-white mb-6 group-hover:scale-110 transition-transform`}>
+                  {icons[index]}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -990,10 +906,10 @@ export default function BrandsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Launch Your Campaign in 4 Simple Steps
+              {t('landingPage.brandsPage.howItWorks.title')}
             </h2>
             <p className="text-xl text-gray-600">
-              From planning to activation in minutes, not weeks
+              {t('landingPage.brandsPage.howItWorks.description')}
             </p>
           </motion.div>
           
@@ -1002,28 +918,14 @@ export default function BrandsPage() {
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200 transform -translate-y-1/2"></div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-              {[
-                {
-                  title: 'Plan & Target',
-                  description: 'Use MW Planner to define your audience, select locations, and forecast campaign performance',
-                  icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-                },
-                {
-                  title: 'Book Inventory',
-                  description: 'Browse MW Marketplace to find and instantly book premium billboard locations worldwide',
-                  icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                },
-                {
-                  title: 'Create & Optimize',
-                  description: 'Design engaging creatives with MW Studio and optimize for each screen format automatically',
-                  icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
-                },
-                {
-                  title: 'Launch & Measure',
-                  description: 'Activate with MW Activate and track real-time performance with MW Measure analytics',
-                  icon: <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                }
-              ].map((item, index) => (
+              {t('landingPage.brandsPage.howItWorks.steps').map((item: { title: string; description: string }, index: number) => {
+                const icons = [
+                  <svg key="step-0" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>,
+                  <svg key="step-1" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+                  <svg key="step-2" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>,
+                  <svg key="step-3" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                ];
+                return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -1033,12 +935,13 @@ export default function BrandsPage() {
                   className="relative h-full"
                 >
                   <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100 hover:border-blue-200 transition-all h-full flex flex-col">
-                    <div className="w-16 h-16 mb-4 text-blue-600">{item.icon}</div>
+                    <div className="w-16 h-16 mb-4 text-blue-600">{icons[index]}</div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
                     <p className="text-gray-600 flex-1">{item.description}</p>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
