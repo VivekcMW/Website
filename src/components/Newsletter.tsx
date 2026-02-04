@@ -102,9 +102,9 @@ export default function Newsletter() {
 
                   <p className="text-mw-gray-500 text-xs text-center mt-6">
                     {t('newsletter.agreementText')}{" "}
-                    <a href="#" className="text-mw-blue-600 hover:underline">{t('newsletter.privacyPolicy')}</a>
+                    <a href="/privacy" className="text-mw-blue-600 hover:underline">{t('newsletter.privacyPolicy')}</a>
                     {" "}{t('newsletter.and')}{" "}
-                    <a href="#" className="text-mw-blue-600 hover:underline">{t('newsletter.termsOfService')}</a>
+                    <a href="/terms" className="text-mw-blue-600 hover:underline">{t('newsletter.termsOfService')}</a>
                   </p>
                 </div>
               </div>
