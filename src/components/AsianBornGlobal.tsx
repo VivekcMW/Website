@@ -3,6 +3,22 @@
 import { motion } from "framer-motion";
 import { useLocale } from "@/i18n/LocaleContext";
 
+// Helper function to parse translation text with {{highlight}} markers
+function parseHighlightedText(text: string): React.ReactNode[] {
+  const parts = text.split(/{{highlight}}|{{\/highlight}}/);
+  return parts.map((part, index) => {
+    // Odd indices are the highlighted parts
+    if (index % 2 === 1) {
+      return (
+        <span key={index} className="font-bold text-mw-blue-400">
+          {part}
+        </span>
+      );
+    }
+    return part;
+  });
+}
+
 export default function AsianBornGlobal() {
   const { t } = useLocale();
   // Dots along continent borders
@@ -242,7 +258,7 @@ export default function AsianBornGlobal() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Asian Born, <span className="text-mw-blue-400">Global Footprint</span>
+            {t('landingPage.asianBornGlobal.title')} <span className="text-mw-blue-400">{t('landingPage.asianBornGlobal.titleHighlight')}</span>
           </h2>
         </motion.div>
 
@@ -257,7 +273,7 @@ export default function AsianBornGlobal() {
             className="text-center"
           >
             <p className="text-lg lg:text-xl text-white leading-relaxed">
-              Out of Home is no longer static media. It is <span className="font-bold text-mw-blue-400">&apos;The World&apos;s Leading Connected Media Platform&apos;</span> powering real world influence. From Times Square to Orchard Road, every screen, sign, and space becomes a measurable touchpoint that brands can activate with digital precision.
+              {parseHighlightedText(t('landingPage.asianBornGlobal.paragraph1'))}
             </p>
           </motion.div>
 
@@ -270,7 +286,7 @@ export default function AsianBornGlobal() {
             className="text-center"
           >
             <p className="text-lg lg:text-xl text-white leading-relaxed">
-              Born in Asia and built for the world, our technology unifies fragmented outdoor inventory into a single ecosystem where advertisers can <span className="font-bold text-mw-blue-400">plan, buy, measure, reach, and influence</span> campaigns in real time.
+              {parseHighlightedText(t('landingPage.asianBornGlobal.paragraph2'))}
             </p>
           </motion.div>
 
@@ -283,7 +299,7 @@ export default function AsianBornGlobal() {
             className="text-center"
           >
             <p className="text-lg lg:text-xl text-white leading-relaxed">
-              We do not just place advertisements outside, we transform cities into intelligent media networks that deliver <span className="font-bold text-mw-blue-400">attention, relevance, and impact</span> everywhere audiences move.
+              {parseHighlightedText(t('landingPage.asianBornGlobal.paragraph3'))}
             </p>
           </motion.div>
         </div>

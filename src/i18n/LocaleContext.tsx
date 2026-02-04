@@ -43,7 +43,7 @@ const messagesMap: Record<Locale, Messages> = {
 interface LocaleContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: (key: string) => string;
+  t: (key: string) => any; // Changed from string to any to support arrays
   locales: readonly Locale[];
   localeNames: Record<Locale, string>;
   localeCodes: Record<Locale, string>;
@@ -52,7 +52,7 @@ interface LocaleContextType {
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
 // Helper function to get nested value from object using dot notation
-function getNestedValue(obj: Record<string, unknown>, path: string): string {
+function getNestedValue(obj: Record<string, unknown>, path: string): any {
   const keys = path.split('.');
   let current: unknown = obj;
   
@@ -64,7 +64,8 @@ function getNestedValue(obj: Record<string, unknown>, path: string): string {
     }
   }
   
-  return typeof current === 'string' ? current : path;
+  // Return whatever type it is - string, array, object, etc.
+  return current !== undefined ? current : path;
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {

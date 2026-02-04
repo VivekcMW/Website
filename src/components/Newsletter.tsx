@@ -56,22 +56,22 @@ export default function Newsletter() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-mw-gray-900 mb-2">Subscribe Now</h3>
-                    <p className="text-mw-gray-500 text-sm">No spam, unsubscribe anytime</p>
+                    <h3 className="text-xl font-bold text-mw-gray-900 mb-2">{t('newsletter.subscribeNow')}</h3>
+                    <p className="text-mw-gray-500 text-sm">{t('newsletter.noSpam')}</p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <input
                         type="text"
-                        placeholder="Your name"
+                        placeholder={t('newsletter.namePlaceholder')}
                         className="w-full px-5 py-4 bg-white border border-mw-gray-300 rounded-xl text-mw-gray-900 placeholder-mw-gray-400 focus:outline-none focus:border-mw-blue-500 focus:ring-2 focus:ring-mw-blue-100 transition-all"
                       />
                     </div>
                     <div>
                       <input
                         type="email"
-                        placeholder="Your email address"
+                        placeholder={t('newsletter.emailPlaceholder')}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="w-full px-5 py-4 bg-white border border-mw-gray-300 rounded-xl text-mw-gray-900 placeholder-mw-gray-400 focus:outline-none focus:border-mw-blue-500 focus:ring-2 focus:ring-mw-blue-100 transition-all"
@@ -87,11 +87,11 @@ export default function Newsletter() {
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          Subscribed Successfully!
+                          {t('newsletter.subscribedSuccess')}
                         </span>
                       ) : (
                         <span className="flex items-center justify-center gap-2">
-                          Get Free Insights
+                          {t('newsletter.getFreeInsights')}
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
@@ -101,10 +101,10 @@ export default function Newsletter() {
                   </form>
 
                   <p className="text-mw-gray-500 text-xs text-center mt-6">
-                    By subscribing, you agree to our{" "}
-                    <a href="#" className="text-mw-blue-600 hover:underline">Privacy Policy</a>
-                    {" "}and{" "}
-                    <a href="#" className="text-mw-blue-600 hover:underline">Terms of Service</a>
+                    {t('newsletter.agreementText')}{" "}
+                    <a href="#" className="text-mw-blue-600 hover:underline">{t('newsletter.privacyPolicy')}</a>
+                    {" "}{t('newsletter.and')}{" "}
+                    <a href="#" className="text-mw-blue-600 hover:underline">{t('newsletter.termsOfService')}</a>
                   </p>
                 </div>
               </div>

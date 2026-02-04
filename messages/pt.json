@@ -90,9 +90,16 @@
     "title": "Receba Insights da Indústria",
     "titleHighlight": "Semanalmente",
     "description": "Fique à frente com nossa newsletter apresentando as últimas tendências, estratégias e casos de sucesso.",
-    "placeholder": "Digite seu email",
-    "subscribe": "Inscrever-se",
-    "privacy": "Respeitamos sua privacidade. Cancele quando quiser."
+    "subscribeNow": "Assine agora",
+    "noSpam": "Sem spam, cancele a qualquer momento",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "Seu endereço de e-mail",
+    "subscribedSuccess": "Inscrito com sucesso!",
+    "getFreeInsights": "Obter insights gratuitos",
+    "agreementText": "Ao se inscrever, você concorda com nossa",
+    "privacyPolicy": "Política de Privacidade",
+    "and": "e",
+    "termsOfService": "Termos de Serviço"
   },
   "footer": {
     "description": "Moving Walls unifica todo o ecossistema de publicidade exterior através de uma única plataforma de nuvem inteligente.",
@@ -317,9 +324,12 @@
     },
     "asianBornGlobal": {
       "badge": "Nascido na Ásia, Visão Global",
-      "title": "Conectando Marcas com",
-      "titleHighlight": "Audiências em Todo o Mundo",
+      "title": "Nascido na Ásia,",
+      "titleHighlight": "Pegada Global",
       "description": "De nossas raízes no Sudeste Asiático, crescemos para impulsionar campanhas publicitárias em mais de 30 países, atendendo mais de 10.000 clientes globalmente.",
+      "paragraph1": "Out of Home não é mais mídia estática. É {{highlight}}'A Principal Plataforma de Mídia Conectada do Mundo'{{/highlight}} que alimenta influência no mundo real. De Times Square a Orchard Road, cada tela, placa e espaço se torna um ponto de contato mensurável que as marcas podem ativar com precisão digital.",
+      "paragraph2": "Nascida na Ásia e construída para o mundo, nossa tecnologia unifica inventário externo fragmentado em um único ecossistema onde anunciantes podem {{highlight}}planejar, comprar, medir, alcançar e influenciar{{/highlight}} campanhas em tempo real.",
+      "paragraph3": "Não apenas colocamos anúncios do lado de fora, transformamos cidades em redes de mídia inteligentes que entregam {{highlight}}atenção, relevância e impacto{{/highlight}} onde quer que as audiências se movam.",
       "stats": {
         "countries": "30+",
         "countriesLabel": "Países",
@@ -434,7 +444,81 @@
       "badge": "Sucesso de Clientes",
       "title": "O Que Nossos Clientes",
       "titleHighlight": "Dizem Sobre Nós",
-      "description": "Ouça das marcas e agências que estão transformando sua publicidade com Moving Walls."
+      "description": "Ouça das marcas e agências que estão transformando sua publicidade com Moving Walls.",
+      "reviews": [
+        {
+          "quote": "Moving Walls transformou nossa estratégia DOOH. Vimos um aumento de 156% no ROI no primeiro trimestre. A plataforma é incrivelmente intuitiva e a equipe de suporte é de classe mundial.",
+          "author": "Sarah Johnson",
+          "role": "CMO",
+          "company": "TechVision Inc.",
+          "metric": "156% Aumento ROI",
+          "industry": "Tecnologia"
+        },
+        {
+          "quote": "A ferramenta MW Planner sozinha nos economizou 40 horas por mês no planejamento de campanhas. As recomendações de IA são precisas e os relatórios de atribuição finalmente nos dão a visibilidade que precisávamos.",
+          "author": "Michael Chen",
+          "role": "VP de Marketing",
+          "company": "RetailCo Global",
+          "metric": "40 Horas Economizadas/Mês",
+          "industry": "Varejo"
+        },
+        {
+          "quote": "Mudar para Moving Walls foi a melhor decisão que tomamos este ano. O marketplace nos deu acesso a inventário premium que não conseguíamos em outro lugar, e os resultados falam por si.",
+          "author": "Emily Rodriguez",
+          "role": "Diretora de Mídia",
+          "company": "FinanceFirst",
+          "metric": "2.8B+ Acesso Inventário",
+          "industry": "Finanças"
+        },
+        {
+          "quote": "A análise em tempo real mudou tudo para nós. Agora podemos otimizar campanhas em tempo real e ver resultados imediatos. Nosso custo por aquisição caiu 45% em apenas dois meses.",
+          "author": "David Park",
+          "role": "Diretor Marketing Digital",
+          "company": "AutoMax Group",
+          "metric": "45% Menor CPA",
+          "industry": "Automotivo"
+        },
+        {
+          "quote": "Como proprietário de mídia, a parceria com Moving Walls aumentou nossas taxas de preenchimento dramaticamente. As capacidades programáticas trouxeram anunciantes aos quais nunca tivemos acesso antes.",
+          "author": "Amanda Foster",
+          "role": "Diretora de Receita",
+          "company": "CityScreen Media",
+          "metric": "78% Aumento Taxa Preenchimento",
+          "industry": "Mídia"
+        },
+        {
+          "quote": "A orquestração de campanhas entre mercados é fenomenal. Lançamos em 12 países simultaneamente com criativos localizados, algo que teria levado meses antes.",
+          "author": "Raj Patel",
+          "role": "Gerente Global de Marca",
+          "company": "Unilever APAC",
+          "metric": "12 Mercados em 1 Semana",
+          "industry": "FMCG"
+        },
+        {
+          "quote": "A publicidade em saúde requer precisão e conformidade. Moving Walls entregou ambos enquanto nos ajudava a alcançar 2 milhões de pacientes com nossas campanhas de bem-estar.",
+          "author": "Dr. Lisa Wang",
+          "role": "Diretora de Marketing",
+          "company": "HealthFirst Network",
+          "metric": "2M Alcance Pacientes",
+          "industry": "Saúde"
+        },
+        {
+          "quote": "As capacidades de segmentação de audiência são incomparáveis. Alcançamos viajantes premium nos momentos exatos, gerando um aumento de 320% em reservas de luxo.",
+          "author": "James Morrison",
+          "role": "CMO",
+          "company": "Wanderlust Travel",
+          "metric": "320% Aumento Reservas",
+          "industry": "Viagem"
+        },
+        {
+          "quote": "Moving Walls nos ajudou a provar o ROI de OOH pela primeira vez. Os dados de atribuição convenceram nosso CFO a triplicar nosso orçamento de publicidade externa.",
+          "author": "Patricia Lee",
+          "role": "Chefe Marketing Performance",
+          "company": "TechStartup Asia",
+          "metric": "3x Aumento Orçamento",
+          "industry": "Tecnologia"
+        }
+      ]
     },
     "about": {
       "title": "Redefinindo a Publicidade Exterior",

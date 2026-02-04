@@ -90,9 +90,16 @@
     "title": "Get Industry Insights",
     "titleHighlight": "Delivered Weekly",
     "description": "Stay ahead of the curve with our curated newsletter featuring the latest trends, strategies, and success stories in advertising.",
-    "placeholder": "Enter your email",
-    "subscribe": "Subscribe",
-    "privacy": "We respect your privacy. Unsubscribe anytime."
+    "subscribeNow": "Subscribe Now",
+    "noSpam": "No spam, unsubscribe anytime",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email address",
+    "subscribedSuccess": "Subscribed Successfully!",
+    "getFreeInsights": "Get Free Insights",
+    "agreementText": "By subscribing, you agree to our",
+    "privacyPolicy": "Privacy Policy",
+    "and": "and",
+    "termsOfService": "Terms of Service"
   },
   "footer": {
     "description": "Moving Walls unifies the entire Out-of-Home ecosystem through a single, intelligent cloud platform. From audience discovery to booking, activation, measurement, and optimisation, we streamline every step with data-driven precision.",
@@ -317,9 +324,12 @@
     },
     "asianBornGlobal": {
       "badge": "Asian-Born, Global Vision",
-      "title": "Connecting Brands with",
-      "titleHighlight": "Audiences Worldwide",
+      "title": "Asian Born,",
+      "titleHighlight": "Global Footprint",
       "description": "From our roots in Southeast Asia, we've grown to power advertising campaigns across 30+ countries, serving over 10,000 clients globally.",
+      "paragraph1": "Out of Home is no longer static media. It is {{highlight}}'The World's Leading Connected Media Platform'{{/highlight}} powering real world influence. From Times Square to Orchard Road, every screen, sign, and space becomes a measurable touchpoint that brands can activate with digital precision.",
+      "paragraph2": "Born in Asia and built for the world, our technology unifies fragmented outdoor inventory into a single ecosystem where advertisers can {{highlight}}plan, buy, measure, reach, and influence{{/highlight}} campaigns in real time.",
+      "paragraph3": "We do not just place advertisements outside, we transform cities into intelligent media networks that deliver {{highlight}}attention, relevance, and impact{{/highlight}} everywhere audiences move.",
       "stats": {
         "countries": "30+",
         "countriesLabel": "Countries",
@@ -434,7 +444,81 @@
       "badge": "Client Success",
       "title": "What Our Clients",
       "titleHighlight": "Say About Us",
-      "description": "Hear from the brands and agencies transforming their advertising with Moving Walls."
+      "description": "Hear from the brands and agencies transforming their advertising with Moving Walls.",
+      "reviews": [
+        {
+          "quote": "Moving Walls transformed our DOOH strategy. We saw a 156% increase in ROI within the first quarter. Their platform is incredibly intuitive and the support team is world-class.",
+          "author": "Sarah Johnson",
+          "role": "CMO",
+          "company": "TechVision Inc.",
+          "metric": "156% ROI Increase",
+          "industry": "Technology"
+        },
+        {
+          "quote": "The MW Planner tool alone saved us 40 hours per month in campaign planning. The AI recommendations are spot-on, and the attribution reporting finally gives us the visibility we needed.",
+          "author": "Michael Chen",
+          "role": "VP of Marketing",
+          "company": "RetailCo Global",
+          "metric": "40 Hours Saved/Month",
+          "industry": "Retail"
+        },
+        {
+          "quote": "Moving to Moving Walls was the best decision we made this year. Their marketplace gave us access to premium inventory we couldn't get elsewhere, and the results speak for themselves.",
+          "author": "Emily Rodriguez",
+          "role": "Head of Media",
+          "company": "FinanceFirst",
+          "metric": "2.8B+ Inventory Access",
+          "industry": "Finance"
+        },
+        {
+          "quote": "The real-time analytics changed everything for us. We can now optimize campaigns on the fly and see immediate results. Our cost per acquisition dropped by 45% in just two months.",
+          "author": "David Park",
+          "role": "Digital Marketing Director",
+          "company": "AutoMax Group",
+          "metric": "45% Lower CPA",
+          "industry": "Automotive"
+        },
+        {
+          "quote": "As a media owner, partnering with Moving Walls increased our fill rates dramatically. The programmatic capabilities brought in advertisers we never had access to before.",
+          "author": "Amanda Foster",
+          "role": "Chief Revenue Officer",
+          "company": "CityScreen Media",
+          "metric": "78% Fill Rate Increase",
+          "industry": "Media"
+        },
+        {
+          "quote": "The cross-market campaign orchestration is phenomenal. We launched across 12 countries simultaneously with localized creative, something that would have taken months before.",
+          "author": "Raj Patel",
+          "role": "Global Brand Manager",
+          "company": "Unilever APAC",
+          "metric": "12 Markets in 1 Week",
+          "industry": "FMCG"
+        },
+        {
+          "quote": "Healthcare advertising requires precision and compliance. Moving Walls delivered both while helping us reach 2 million patients with our wellness campaigns.",
+          "author": "Dr. Lisa Wang",
+          "role": "Marketing Director",
+          "company": "HealthFirst Network",
+          "metric": "2M Patient Reach",
+          "industry": "Healthcare"
+        },
+        {
+          "quote": "The audience targeting capabilities are unmatched. We reached premium travelers at exactly the right moments, driving a 320% increase in luxury bookings.",
+          "author": "James Morrison",
+          "role": "CMO",
+          "company": "Wanderlust Travel",
+          "metric": "320% Booking Increase",
+          "industry": "Travel"
+        },
+        {
+          "quote": "Moving Walls helped us prove the ROI of OOH for the first time. The attribution data convinced our CFO to triple our outdoor advertising budget.",
+          "author": "Patricia Lee",
+          "role": "Head of Performance Marketing",
+          "company": "TechStartup Asia",
+          "metric": "3x Budget Increase",
+          "industry": "Technology"
+        }
+      ]
     },
     "about": {
       "title": "Redefining Out-of-Home Advertising",

@@ -90,9 +90,16 @@
     "title": "업계 인사이트를",
     "titleHighlight": "매주 받아보세요",
     "description": "최신 트렌드, 전략, 성공 사례를 담은 뉴스레터로 앞서 나가세요.",
-    "placeholder": "이메일 입력",
-    "subscribe": "구독하기",
-    "privacy": "개인정보를 존중합니다. 언제든지 구독 취소 가능합니다."
+    "subscribeNow": "지금 구독하기",
+    "noSpam": "스팸 없음, 언제든지 구독 취소",
+    "namePlaceholder": "이름",
+    "emailPlaceholder": "이메일 주소",
+    "subscribedSuccess": "구독이 완료되었습니다!",
+    "getFreeInsights": "무료 인사이트 받기",
+    "agreementText": "구독하면",
+    "privacyPolicy": "개인정보 보호정책",
+    "and": "및",
+    "termsOfService": "서비스 약관"
   },
   "footer": {
     "description": "Moving Walls는 단일 지능형 클라우드 플랫폼을 통해 전체 OOH 생태계를 통합합니다.",
@@ -317,9 +324,12 @@
     },
     "asianBornGlobal": {
       "badge": "아시아에서 태어나 글로벌 비전으로",
-      "title": "브랜드를",
-      "titleHighlight": "전 세계 오디언스와 연결",
-      "description": "동남아시아에서 시작하여 30개국 이상에서 광고 캠페인을 운영하며 전 세계 10,000개 이상의 고객에게 서비스를 제공하고 있습니다.",
+      "title": "아시아 출신,",
+      "titleHighlight": "글로벌 발자국",
+      "description": "동남아시아에서 시작하여 30개 이상의 국가에서 광고 캠페인을 운영하고 전 세계적으로 10,000명 이상의 고객에게 서비스를 제공하고 있습니다.",
+      "paragraph1": "옥외 광고는 더 이상 정적 미디어가 아닙니다. 그것은 현실 세계의 영향력을 촉진하는 {{highlight}}'세계 최고의 커넥티드 미디어 플랫폼'{{/highlight}}입니다. 타임스퀘어에서 오차드 로드까지 모든 화면, 표지판, 공간은 브랜드가 디지털 정밀도로 활성화할 수 있는 측정 가능한 접점이 됩니다.",
+      "paragraph2": "아시아에서 탄생하여 전 세계를 위해 구축된 당사의 기술은 단편화된 옥외 인벤토리를 단일 생태계로 통합하여 광고주가 {{highlight}}실시간으로 캠페인을 계획, 구매, 측정, 도달 및 영향{{/highlight}}을 미칠 수 있도록 합니다.",
+      "paragraph3": "우리는 단순히 외부에 광고를 게재하는 것이 아니라 도시를 지능형 미디어 네트워크로 변환하여 청중이 이동하는 모든 곳에서 {{highlight}}주목, 관련성 및 영향력{{/highlight}}을 제공합니다.",
       "stats": {
         "countries": "30+",
         "countriesLabel": "국가",
@@ -434,7 +444,81 @@
       "badge": "고객 성공",
       "title": "고객들이",
       "titleHighlight": "말하는 것",
-      "description": "Moving Walls로 광고를 혁신하고 있는 브랜드와 에이전시의 이야기를 들어보세요."
+      "description": "Moving Walls로 광고를 혁신하고 있는 브랜드와 에이전시의 이야기를 들어보세요.",
+      "reviews": [
+        {
+          "quote": "Moving Walls는 우리의 DOOH 전략을 변화시켰습니다. 첫 분기에 ROI가 156% 증가했습니다. 플랫폼은 매우 직관적이고 지원팀은 세계 최고 수준입니다.",
+          "author": "Sarah Johnson",
+          "role": "CMO",
+          "company": "TechVision Inc.",
+          "metric": "156% ROI 증가",
+          "industry": "기술"
+        },
+        {
+          "quote": "MW Planner 도구만으로도 캠페인 계획에서 월 40시간을 절약했습니다. AI 추천은 정확하고 어트리뷰션 리포팅은 마침내 우리가 필요했던 가시성을 제공합니다.",
+          "author": "Michael Chen",
+          "role": "마케팅 부사장",
+          "company": "RetailCo Global",
+          "metric": "월 40시간 절약",
+          "industry": "소매"
+        },
+        {
+          "quote": "Moving Walls로의 전환은 올해 내린 최고의 결정이었습니다. 그들의 마켓플레이스는 다른 곳에서는 얻을 수 없는 프리미엄 인벤토리에 대한 액세스를 제공했으며 결과가 모든 것을 말해줍니다.",
+          "author": "Emily Rodriguez",
+          "role": "미디어 책임자",
+          "company": "FinanceFirst",
+          "metric": "28억 이상 인벤토리 액세스",
+          "industry": "금융"
+        },
+        {
+          "quote": "실시간 분석이 우리에게 모든 것을 바꿨습니다. 이제 즉시 캠페인을 최적화하고 즉각적인 결과를 볼 수 있습니다. 획득당 비용이 단 두 달 만에 45% 감소했습니다.",
+          "author": "David Park",
+          "role": "디지털 마케팅 디렉터",
+          "company": "AutoMax Group",
+          "metric": "45% 낮은 CPA",
+          "industry": "자동차"
+        },
+        {
+          "quote": "미디어 소유자로서 Moving Walls와의 파트너십은 충전율을 극적으로 증가시켰습니다. 프로그래매틱 기능은 이전에는 접근할 수 없었던 광고주를 유치했습니다.",
+          "author": "Amanda Foster",
+          "role": "최고 수익 책임자",
+          "company": "CityScreen Media",
+          "metric": "78% 충전율 증가",
+          "industry": "미디어"
+        },
+        {
+          "quote": "크로스 마켓 캠페인 오케스트레이션은 경이롭습니다. 현지화된 크리에이티브로 12개국에서 동시에 출시했으며, 이전에는 몇 달이 걸렸을 일입니다.",
+          "author": "Raj Patel",
+          "role": "글로벌 브랜드 매니저",
+          "company": "Unilever APAC",
+          "metric": "1주일에 12개 시장",
+          "industry": "FMCG"
+        },
+        {
+          "quote": "의료 광고는 정밀성과 규정 준수가 필요합니다. Moving Walls는 두 가지를 모두 제공하면서 웰니스 캠페인으로 200만 명의 환자에게 도달하도록 도왔습니다.",
+          "author": "Dr. Lisa Wang",
+          "role": "마케팅 디렉터",
+          "company": "HealthFirst Network",
+          "metric": "200만 환자 도달",
+          "industry": "의료"
+        },
+        {
+          "quote": "청중 타겟팅 기능은 비교할 수 없습니다. 정확한 순간에 프리미엄 여행자에게 도달하여 럭셔리 예약이 320% 증가했습니다.",
+          "author": "James Morrison",
+          "role": "CMO",
+          "company": "Wanderlust Travel",
+          "metric": "320% 예약 증가",
+          "industry": "여행"
+        },
+        {
+          "quote": "Moving Walls는 처음으로 OOH의 ROI를 입증하는 데 도움을 주었습니다. 어트리뷰션 데이터는 CFO를 설득하여 옥외 광고 예산을 3배로 늘렸습니다.",
+          "author": "Patricia Lee",
+          "role": "퍼포먼스 마케팅 책임자",
+          "company": "TechStartup Asia",
+          "metric": "3배 예산 증가",
+          "industry": "기술"
+        }
+      ]
     },
     "about": {
       "title": "옥외 광고 재정의",

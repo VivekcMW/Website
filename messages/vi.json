@@ -90,9 +90,16 @@
     "title": "Nhận Thông Tin Ngành",
     "titleHighlight": "Hàng Tuần",
     "description": "Đi trước với bản tin của chúng tôi về các xu hướng, chiến lược và câu chuyện thành công mới nhất.",
-    "placeholder": "Nhập email của bạn",
-    "subscribe": "Đăng Ký",
-    "privacy": "Chúng tôi tôn trọng quyền riêng tư của bạn. Hủy đăng ký bất cứ lúc nào."
+    "subscribeNow": "Đăng ký ngay",
+    "noSpam": "Không spam, hủy đăng ký bất cứ lúc nào",
+    "namePlaceholder": "Tên của bạn",
+    "emailPlaceholder": "Địa chỉ email của bạn",
+    "subscribedSuccess": "Đã đăng ký thành công!",
+    "getFreeInsights": "Nhận thông tin miễn phí",
+    "agreementText": "Bằng cách đăng ký, bạn đồng ý với",
+    "privacyPolicy": "Chính sách Bảo mật",
+    "and": "và",
+    "termsOfService": "Điều khoản Dịch vụ"
   },
   "footer": {
     "description": "Moving Walls hợp nhất toàn bộ hệ sinh thái quảng cáo ngoài trời thông qua một nền tảng đám mây thông minh duy nhất.",
@@ -317,9 +324,12 @@
     },
     "asianBornGlobal": {
       "badge": "Sinh ra tại Châu Á, Tầm nhìn Toàn cầu",
-      "title": "Chúng tôi Kết nối Thương hiệu với",
-      "titleHighlight": "Khán giả Trên Toàn Thế Giới",
-      "description": "Từ gốc rễ của chúng tôi ở Đông Nam Á, chúng tôi đã mở rộng để chạy các chiến dịch quảng cáo ở hơn 30 quốc gia, phục vụ hơn 10.000 khách hàng trên toàn cầu.",
+      "title": "Sinh ra tại Châu Á,",
+      "titleHighlight": "Dấu ấn Toàn cầu",
+      "description": "Từ nguồn gốc của chúng tôi ở Đông Nam Á, chúng tôi đã phát triển để thúc đẩy các chiến dịch quảng cáo tại hơn 30 quốc gia, phục vụ hơn 10.000 khách hàng trên toàn cầu.",
+      "paragraph1": "Quảng cáo ngoài trời không còn là phương tiện tĩnh nữa. Đó là {{highlight}}'Nền tảng Truyền thông Kết nối Hàng đầu Thế giới'{{/highlight}} thúc đẩy ảnh hưởng trong thế giới thực. Từ Quảng trường Thời đại đến Đường Orchard, mọi màn hình, biển báo và không gian đều trở thành điểm tiếp xúc có thể đo lường mà các thương hiệu có thể kích hoạt với độ chính xác kỹ thuật số.",
+      "paragraph2": "Sinh ra tại Châu Á và được xây dựng cho thế giới, công nghệ của chúng tôi hợp nhất hàng tồn kho ngoài trời phân mảnh thành một hệ sinh thái duy nhất nơi các nhà quảng cáo có thể {{highlight}}lên kế hoạch, mua, đo lường, tiếp cận và tác động{{/highlight}} các chiến dịch theo thời gian thực.",
+      "paragraph3": "Chúng tôi không chỉ đặt quảng cáo bên ngoài, chúng tôi biến đổi các thành phố thành mạng lưới truyền thông thông minh mang lại {{highlight}}sự chú ý, liên quan và tác động{{/highlight}} ở mọi nơi khán giả di chuyển.",
       "stats": {
         "countries": "30+",
         "countriesLabel": "Quốc gia",
@@ -434,7 +444,81 @@
       "badge": "Thành công của Khách hàng",
       "title": "Khách hàng của Chúng tôi",
       "titleHighlight": "Nói gì",
-      "description": "Lắng nghe từ các thương hiệu và agency đang chuyển đổi quảng cáo của họ với Moving Walls."
+      "description": "Lắng nghe từ các thương hiệu và agency đang chuyển đổi quảng cáo của họ với Moving Walls.",
+      "reviews": [
+        {
+          "quote": "Moving Walls đã chuyển đổi chiến lược DOOH của chúng tôi. Chúng tôi thấy tăng 156% ROI trong quý đầu tiên. Nền tảng của họ cực kỳ trực quan và đội ngũ hỗ trợ đẳng cấp thế giới.",
+          "author": "Sarah Johnson",
+          "role": "CMO",
+          "company": "TechVision Inc.",
+          "metric": "Tăng 156% ROI",
+          "industry": "Công nghệ"
+        },
+        {
+          "quote": "Công cụ MW Planner một mình đã tiết kiệm cho chúng tôi 40 giờ mỗi tháng trong lập kế hoạch chiến dịch. Các đề xuất AI rất chính xác và báo cáo phân bổ cuối cùng mang lại cho chúng tôi khả năng hiển thị mà chúng tôi cần.",
+          "author": "Michael Chen",
+          "role": "Phó Chủ tịch Marketing",
+          "company": "RetailCo Global",
+          "metric": "Tiết kiệm 40 Giờ/Tháng",
+          "industry": "Bán lẻ"
+        },
+        {
+          "quote": "Chuyển sang Moving Walls là quyết định tốt nhất chúng tôi đã làm trong năm nay. Thị trường của họ cung cấp cho chúng tôi quyền truy cập vào kho hàng cao cấp mà chúng tôi không thể có được ở nơi khác, và kết quả tự nói lên điều đó.",
+          "author": "Emily Rodriguez",
+          "role": "Trưởng phòng Truyền thông",
+          "company": "FinanceFirst",
+          "metric": "Truy cập Kho hàng 2.8B+",
+          "industry": "Tài chính"
+        },
+        {
+          "quote": "Phân tích thời gian thực đã thay đổi mọi thứ đối với chúng tôi. Bây giờ chúng tôi có thể tối ưu hóa chiến dịch ngay lập tức và thấy kết quả tức thì. Chi phí mỗi khách hàng mới của chúng tôi giảm 45% chỉ trong hai tháng.",
+          "author": "David Park",
+          "role": "Giám đốc Marketing Kỹ thuật số",
+          "company": "AutoMax Group",
+          "metric": "CPA Thấp hơn 45%",
+          "industry": "Ô tô"
+        },
+        {
+          "quote": "Là chủ sở hữu phương tiện, hợp tác với Moving Walls đã tăng tỷ lệ lấp đầy của chúng tôi một cách đáng kể. Khả năng lập trình mang đến các nhà quảng cáo mà chúng tôi chưa bao giờ tiếp cận trước đây.",
+          "author": "Amanda Foster",
+          "role": "Giám đốc Doanh thu",
+          "company": "CityScreen Media",
+          "metric": "Tăng 78% Tỷ lệ Lấp đầy",
+          "industry": "Truyền thông"
+        },
+        {
+          "quote": "Điều phối chiến dịch xuyên thị trường thật tuyệt vời. Chúng tôi ra mắt ở 12 quốc gia cùng lúc với nội dung sáng tạo được bản địa hóa, điều gì đó sẽ mất hàng tháng trước đây.",
+          "author": "Raj Patel",
+          "role": "Quản lý Thương hiệu Toàn cầu",
+          "company": "Unilever APAC",
+          "metric": "12 Thị trường trong 1 Tuần",
+          "industry": "FMCG"
+        },
+        {
+          "quote": "Quảng cáo chăm sóc sức khỏe đòi hỏi độ chính xác và tuân thủ. Moving Walls cung cấp cả hai trong khi giúp chúng tôi tiếp cận 2 triệu bệnh nhân với các chiến dịch chăm sóc sức khỏe của chúng tôi.",
+          "author": "Dr. Lisa Wang",
+          "role": "Giám đốc Marketing",
+          "company": "HealthFirst Network",
+          "metric": "Tiếp cận 2M Bệnh nhân",
+          "industry": "Chăm sóc sức khỏe"
+        },
+        {
+          "quote": "Khả năng nhắm mục tiêu đối tượng không thể sánh kịp. Chúng tôi tiếp cận khách du lịch cao cấp vào đúng thời điểm, thúc đẩy tăng 320% trong đặt phòng xa xỉ.",
+          "author": "James Morrison",
+          "role": "CMO",
+          "company": "Wanderlust Travel",
+          "metric": "Tăng 320% Đặt phòng",
+          "industry": "Du lịch"
+        },
+        {
+          "quote": "Moving Walls đã giúp chúng tôi chứng minh ROI của OOH lần đầu tiên. Dữ liệu phân bổ đã thuyết phục CFO của chúng tôi tăng gấp ba ngân sách quảng cáo ngoài trời của chúng tôi.",
+          "author": "Patricia Lee",
+          "role": "Trưởng phòng Performance Marketing",
+          "company": "TechStartup Asia",
+          "metric": "Tăng 3x Ngân sách",
+          "industry": "Công nghệ"
+        }
+      ]
     },
     "about": {
       "title": "Định nghĩa lại Quảng cáo Ngoài trời",

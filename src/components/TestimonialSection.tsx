@@ -4,82 +4,21 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import { useLocale } from "@/i18n/LocaleContext";
 
+// Define testimonial type
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  metric: string;
+  industry: string;
+}
+
 export default function TestimonialSection() {
   const { t } = useLocale();
-  const testimonials = [
-    {
-      quote: "Moving Walls transformed our DOOH strategy. We saw a 156% increase in ROI within the first quarter. Their platform is incredibly intuitive and the support team is world-class.",
-      author: "Sarah Johnson",
-      role: "CMO",
-      company: "TechVision Inc.",
-      metric: "156% ROI Increase",
-      industry: "Technology"
-    },
-    {
-      quote: "The MW Planner tool alone saved us 40 hours per month in campaign planning. The AI recommendations are spot-on, and the attribution reporting finally gives us the visibility we needed.",
-      author: "Michael Chen",
-      role: "VP of Marketing",
-      company: "RetailCo Global",
-      metric: "40 Hours Saved/Month",
-      industry: "Retail"
-    },
-    {
-      quote: "Moving to Moving Walls was the best decision we made this year. Their marketplace gave us access to premium inventory we couldn't get elsewhere, and the results speak for themselves.",
-      author: "Emily Rodriguez",
-      role: "Head of Media",
-      company: "FinanceFirst",
-      metric: "2.8B+ Inventory Access",
-      industry: "Finance"
-    },
-    {
-      quote: "The real-time analytics changed everything for us. We can now optimize campaigns on the fly and see immediate results. Our cost per acquisition dropped by 45% in just two months.",
-      author: "David Park",
-      role: "Digital Marketing Director",
-      company: "AutoMax Group",
-      metric: "45% Lower CPA",
-      industry: "Automotive"
-    },
-    {
-      quote: "As a media owner, partnering with Moving Walls increased our fill rates dramatically. The programmatic capabilities brought in advertisers we never had access to before.",
-      author: "Amanda Foster",
-      role: "Chief Revenue Officer",
-      company: "CityScreen Media",
-      metric: "78% Fill Rate Increase",
-      industry: "Media"
-    },
-    {
-      quote: "The cross-market campaign orchestration is phenomenal. We launched across 12 countries simultaneously with localized creative, something that would have taken months before.",
-      author: "Raj Patel",
-      role: "Global Brand Manager",
-      company: "Unilever APAC",
-      metric: "12 Markets in 1 Week",
-      industry: "FMCG"
-    },
-    {
-      quote: "Healthcare advertising requires precision and compliance. Moving Walls delivered both while helping us reach 2 million patients with our wellness campaigns.",
-      author: "Dr. Lisa Wang",
-      role: "Marketing Director",
-      company: "HealthFirst Network",
-      metric: "2M Patient Reach",
-      industry: "Healthcare"
-    },
-    {
-      quote: "The audience targeting capabilities are unmatched. We reached premium travelers at exactly the right moments, driving a 320% increase in luxury bookings.",
-      author: "James Morrison",
-      role: "CMO",
-      company: "Wanderlust Travel",
-      metric: "320% Booking Increase",
-      industry: "Travel"
-    },
-    {
-      quote: "Moving Walls helped us prove the ROI of OOH for the first time. The attribution data convinced our CFO to triple our outdoor advertising budget.",
-      author: "Patricia Lee",
-      role: "Head of Performance Marketing",
-      company: "TechStartup Asia",
-      metric: "3x Budget Increase",
-      industry: "Technology"
-    }
-  ];
+  
+  // Get testimonials from translations
+  const testimonials: Testimonial[] = t('landingPage.testimonials.reviews');
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -194,7 +133,7 @@ export default function TestimonialSection() {
                   {/* Author */}
                   <div className="flex items-center gap-4 pt-6 border-t border-mw-gray-200">
                     <div className="w-12 h-12 bg-gradient-to-br from-mw-blue-600 to-mw-blue-700 rounded-full flex items-center justify-center text-white font-bold shadow-md">
-                      {testimonial.author.split(' ').map(n => n[0]).join('')}
+                      {testimonial.author.split(' ').map((n: string) => n[0]).join('')}
                     </div>
                     <div>
                       <div className="font-semibold text-mw-gray-900">{testimonial.author}</div>
