@@ -377,6 +377,21 @@
         "cta": "探索代理商解决方案"
       }
     },
+    "brandsPage": {
+      "hero": {
+        "title": "以结果为导向的OOH计划",
+        "titleHighlight": "和只需几次点击的购买",
+        "description": "启动数据驱动的活动，通过实时分析和AI驱动的优化大规模触达您的目标受众",
+        "ctaPrimary": "启动您的活动",
+        "ctaSecondary": "观看演示",
+        "stats": {
+          "activeBrands": "活跃品牌",
+          "averageROI": "平均ROI",
+          "monthlyImpressions": "月度展示量",
+          "uptimeSLA": "运行时间SLA"
+        }
+      }
+    },
     "clients": {
       "title": "与领先平台集成",
       "description": "与您现有的营销技术栈无缝集成"

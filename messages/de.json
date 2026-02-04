@@ -376,8 +376,21 @@
         },
         "cta": "Agenturlösungen Erkunden"
       }
-    },
-    "clients": {
+    },    "brandsPage": {
+      "hero": {
+        "title": "Ergebnisorientierte OOH-Planung",
+        "titleHighlight": "und Kauf in nur wenigen Klicks",
+        "description": "Starten Sie datengesteuerte Kampagnen, die Ihre Zielgruppe in großem Maßstab erreichen, mit Echtzeit-Analysen und KI-gestützter Optimierung",
+        "ctaPrimary": "Kampagne Starten",
+        "ctaSecondary": "Demo Ansehen",
+        "stats": {
+          "activeBrands": "Aktive Marken",
+          "averageROI": "Durchschnittlicher ROI",
+          "monthlyImpressions": "Monatliche Impressionen",
+          "uptimeSLA": "Verfügbarkeits-SLA"
+        }
+      }
+    },    "clients": {
       "title": "Integriert mit Führenden Plattformen",
       "description": "Nahtlose Integration mit Ihrem bestehenden Marketing-Stack"
     },

@@ -5,8 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import TestimonialSection from '@/components/TestimonialSection'
+import { useLocale } from '@/i18n/LocaleContext'
 
 export default function BrandsPage() {
+  const { t } = useLocale()
   const [activeTab, setActiveTab] = useState('retail')
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [activePlatform, setActivePlatform] = useState('planner')
@@ -28,33 +30,33 @@ export default function BrandsPage() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Result-Driven OOH Planning<br/>
+              {t('brandsPage.hero.title')}<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">
-                and Buying in Just a Few Clicks
+                {t('brandsPage.hero.titleHighlight')}
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Launch data-driven campaigns that reach your target audience at scale with real-time analytics and AI-powered optimization
+              {t('brandsPage.hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105"
               >
-                Start Your Campaign
+                {t('brandsPage.hero.ctaPrimary')}
               </Link>
               <button className="inline-block bg-blue-500/20 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500/30 transition-all">
-                Watch Demo
+                {t('brandsPage.hero.ctaSecondary')}
               </button>
             </div>
             
             {/* Hero Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
               {[
-                { value: '500+', label: 'Active Brands' },
-                { value: '385%', label: 'Average ROI' },
-                { value: '12M+', label: 'Monthly Impressions' },
-                { value: '99.8%', label: 'Uptime SLA' }
+                { value: '500+', label: t('brandsPage.hero.stats.activeBrands') },
+                { value: '385%', label: t('brandsPage.hero.stats.averageROI') },
+                { value: '12M+', label: t('brandsPage.hero.stats.monthlyImpressions') },
+                { value: '99.8%', label: t('brandsPage.hero.stats.uptimeSLA') }
               ].map((stat, index) => (
                 <motion.div
                   key={index}

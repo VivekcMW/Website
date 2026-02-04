@@ -376,8 +376,21 @@
         },
         "cta": "代理店ソリューションを探索"
       }
-    },
-    "clients": {
+    },    "brandsPage": {
+      "hero": {
+        "title": "結果重視のOOHプランニング",
+        "titleHighlight": "と数クリックでの購入",
+        "description": "リアルタイム分析とAIパワー最適化でターゲットオーディエンスに大規模にリーチするデータ駆動キャンペーンを開始",
+        "ctaPrimary": "キャンペーンを開始",
+        "ctaSecondary": "デモを視聴",
+        "stats": {
+          "activeBrands": "アクティブブランド",
+          "averageROI": "平均ROI",
+          "monthlyImpressions": "月間インプレッション",
+          "uptimeSLA": "稼働率SLA"
+        }
+      }
+    },    "clients": {
       "title": "主要プラットフォームとの統合",
       "description": "既存のマーケティングスタックとシームレスに統合"
     },

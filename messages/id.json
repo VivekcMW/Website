@@ -377,6 +377,21 @@
         "cta": "Jelajahi Solusi Agensi"
       }
     },
+    "brandsPage": {
+      "hero": {
+        "title": "Perencanaan OOH Berorientasi Hasil",
+        "titleHighlight": "dan Pembelian Hanya dalam Beberapa Klik",
+        "description": "Luncurkan kampanye berbasis data yang menjangkau audiens target Anda dalam skala besar dengan analitik real-time dan optimasi bertenaga AI",
+        "ctaPrimary": "Mulai Kampanye Anda",
+        "ctaSecondary": "Tonton Demo",
+        "stats": {
+          "activeBrands": "Merek Aktif",
+          "averageROI": "ROI Rata-rata",
+          "monthlyImpressions": "Tayangan Bulanan",
+          "uptimeSLA": "SLA Waktu Aktif"
+        }
+      }
+    },
     "clients": {
       "title": "Terintegrasi dengan Platform Terkemuka",
       "description": "Integrasi mulus dengan alat pemasaran Anda yang sudah ada"

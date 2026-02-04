@@ -377,6 +377,21 @@
         "cta": "Explorar Soluções para Agências"
       }
     },
+    "brandsPage": {
+      "hero": {
+        "title": "Planejamento OOH Orientado a Resultados",
+        "titleHighlight": "e Compra em Apenas Alguns Cliques",
+        "description": "Lance campanhas baseadas em dados que alcançam seu público-alvo em escala com análises em tempo real e otimização alimentada por IA",
+        "ctaPrimary": "Iniciar Sua Campanha",
+        "ctaSecondary": "Assistir Demo",
+        "stats": {
+          "activeBrands": "Marcas Ativas",
+          "averageROI": "ROI Médio",
+          "monthlyImpressions": "Impressões Mensais",
+          "uptimeSLA": "SLA de Disponibilidade"
+        }
+      }
+    },
     "clients": {
       "title": "Integrado com Plataformas Líderes",
       "description": "Integre perfeitamente com sua stack de marketing existente"

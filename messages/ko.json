@@ -376,8 +376,21 @@
         },
         "cta": "에이전시 솔루션 탐색"
       }
-    },
-    "clients": {
+    },    "brandsPage": {
+      "hero": {
+        "title": "결과 중심 OOH 계획",
+        "titleHighlight": "및 몇 번의 클릭으로 구매",
+        "description": "실시간 분석 및 AI 기반 최적화로 대규모 타겟 오디언스에 도달하는 데이터 기반 캐페인 시작",
+        "ctaPrimary": "캐페인 시작하기",
+        "ctaSecondary": "데모 보기",
+        "stats": {
+          "activeBrands": "활성 브랜드",
+          "averageROI": "평균 ROI",
+          "monthlyImpressions": "월간 노출",
+          "uptimeSLA": "가동 시간 SLA"
+        }
+      }
+    },    "clients": {
       "title": "주요 플랫폼과 통합",
       "description": "기존 마케팅 스택과 원활하게 통합"
     },

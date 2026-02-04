@@ -376,8 +376,21 @@
         },
         "cta": "Explorer les Solutions Agences"
       }
-    },
-    "clients": {
+    },    "brandsPage": {
+      "hero": {
+        "title": "Planification OOH Axée sur les Résultats",
+        "titleHighlight": "et Achat en Quelques Clics",
+        "description": "Lancez des campagnes basées sur les données qui atteignent votre public cible à grande échelle avec des analyses en temps réel et une optimisation alimentée par l'IA",
+        "ctaPrimary": "Démarrer Votre Campagne",
+        "ctaSecondary": "Voir la Démo",
+        "stats": {
+          "activeBrands": "Marques Actives",
+          "averageROI": "ROI Moyen",
+          "monthlyImpressions": "Impressions Mensuelles",
+          "uptimeSLA": "SLA de Disponibilité"
+        }
+      }
+    },    "clients": {
       "title": "Intégré aux Principales Plateformes",
       "description": "Intégrez parfaitement avec votre stack marketing existant"
     },

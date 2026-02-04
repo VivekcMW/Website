@@ -377,6 +377,21 @@
         "cta": "Khám phá Giải pháp Agency"
       }
     },
+    "brandsPage": {
+      "hero": {
+        "title": "Lập Kế Hoạch OOH Hướng Đến Kết Quả",
+        "titleHighlight": "và Mua Chỉ Với Vài Cú Nhấp Chuột",
+        "description": "Triển khai các chiến dịch dựa trên dữ liệu tiếp cận khán giả mục tiêu của bạn ở quy mô lớn với phân tích thời gian thực và tối ưu hóa bằng AI",
+        "ctaPrimary": "Bắt Đầu Chiến Dịch",
+        "ctaSecondary": "Xem Demo",
+        "stats": {
+          "activeBrands": "Thương Hiệu Hoạt Động",
+          "averageROI": "ROI Trung Bình",
+          "monthlyImpressions": "Lượt Hiển Thị Hàng Tháng",
+          "uptimeSLA": "SLA Thời Gian Hoạt Động"
+        }
+      }
+    },
     "clients": {
       "title": "Tích hợp với Các Nền tảng Hàng đầu",
       "description": "Tích hợp liền mạch với các công cụ marketing hiện có của bạn"

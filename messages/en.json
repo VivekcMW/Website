@@ -377,6 +377,21 @@
         "cta": "Explore Agency Solutions"
       }
     },
+    "brandsPage": {
+      "hero": {
+        "title": "Result-Driven OOH Planning",
+        "titleHighlight": "and Buying in Just a Few Clicks",
+        "description": "Launch data-driven campaigns that reach your target audience at scale with real-time analytics and AI-powered optimization",
+        "ctaPrimary": "Start Your Campaign",
+        "ctaSecondary": "Watch Demo",
+        "stats": {
+          "activeBrands": "Active Brands",
+          "averageROI": "Average ROI",
+          "monthlyImpressions": "Monthly Impressions",
+          "uptimeSLA": "Uptime SLA"
+        }
+      }
+    },
     "clients": {
       "title": "Integrated With Leading Platforms",
       "description": "Seamlessly integrate with your existing marketing stack"

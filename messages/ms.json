@@ -376,8 +376,21 @@
         },
         "cta": "Teroka Penyelesaian Agensi"
       }
-    },
-    "clients": {
+    },    "brandsPage": {
+      "hero": {
+        "title": "Perancangan OOH Berorientasikan Hasil",
+        "titleHighlight": "dan Pembelian dalam Beberapa Klik Sahaja",
+        "description": "Lancarkan kempen berasaskan data yang menjangkau khalayak sasaran anda pada skala dengan analitik masa nyata dan pengoptimuman dikuasakan AI",
+        "ctaPrimary": "Mulakan Kempen Anda",
+        "ctaSecondary": "Tonton Demo",
+        "stats": {
+          "activeBrands": "Jenama Aktif",
+          "averageROI": "Purata ROI",
+          "monthlyImpressions": "Tera Bulanan",
+          "uptimeSLA": "SLA Masa Operasi"
+        }
+      }
+    },    "clients": {
       "title": "Berintegrasi dengan Platform Terkemuka",
       "description": "Integrasi lancar dengan alat pemasaran sedia ada anda"
     },
