@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { openCookieSettings } from "./CookieConsent";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const footerLinks = {
   company: [
@@ -103,6 +104,8 @@ const quickStats = [
 ];
 
 export default function Footer() {
+  const { t } = useLocale();
+  
   return (
     <footer className="bg-mw-gray-900 relative overflow-hidden">
       {/* Background Pattern */}
@@ -135,10 +138,10 @@ export default function Footer() {
                   />
                 </Link>
                 <p className="text-mw-gray-300 text-lg mb-6 leading-relaxed">
-                  Moving Walls unifies the entire Out-of-Home ecosystem through a single, intelligent cloud platform. From audience discovery to booking, activation, measurement, and optimisation, we streamline every step with data-driven precision.
+                  {t('footer.description')}
                 </p>
                 <div className="mb-8">
-                  <h4 className="text-white font-semibold mb-4">Follow Us</h4>
+                  <h4 className="text-white font-semibold mb-4">{t('footer.followUs')}</h4>
                   <div className="flex space-x-4">
                     {socialLinks.map((social) => (
                       <a

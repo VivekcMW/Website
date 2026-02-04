@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 // Fade-in Counter with Typewriter Label
 function AnimatedCounter({ value, suffix, label, duration = 2 }: { value: number; suffix: string; label: string; duration?: number }) {
@@ -70,6 +71,7 @@ function AnimatedCounter({ value, suffix, label, duration = 2 }: { value: number
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t } = useLocale();
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden pt-20" style={{ minHeight: '90vh' }}>
@@ -97,9 +99,9 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}
         >
-          The World&apos;s Leading
+          {t('hero.title')}
           <br />
-          <span className="text-mw-blue-400">Connected Media Platform</span>
+          <span className="text-mw-blue-400">{t('hero.titleHighlight')}</span>
         </motion.h1>
 
         <motion.p
@@ -109,8 +111,7 @@ export default function Hero() {
           className="text-lg sm:text-xl text-gray-100 mb-10 max-w-3xl mx-auto"
           style={{ textShadow: '0 1px 5px rgba(0,0,0,0.3)' }}
         >
-          Transform your advertising with data-driven DOOH solutions trusted by 500+ brands. 
-          Plan smarter, buy better, measure everything.
+          {t('hero.description')}
         </motion.p>
 
         <motion.div
@@ -120,7 +121,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a href="/contact" className="px-8 py-4 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-medium rounded-lg transition-all duration-200 shadow-mw-md hover:shadow-mw-lg inline-block text-center">
-            Start Free Campaign Analysis
+            {t('hero.cta.primary')}
           </a>
         </motion.div>
 

@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "Moving Walls - Platform Iklan Luar Ruang",
+    "description": "Moving Walls menyatukan seluruh ekosistem periklanan luar ruang melalui satu platform cloud cerdas."
+  },
+  "nav": {
+    "solutions": "Solusi",
+    "products": "Produk",
+    "about": "Tentang Kami",
+    "resources": "Sumber Daya",
+    "contact": "Hubungi Kami",
+    "getStarted": "Mulai"
+  },
+  "hero": {
+    "badge": "Iklan OOH Bertenaga AI",
+    "title": "Transformasi",
+    "titleHighlight": "Strategi Iklan Anda",
+    "description": "Moving Walls menyatukan seluruh ekosistem periklanan luar ruang melalui satu platform cloud cerdas. Dari penemuan audiens hingga pemesanan, aktivasi, pengukuran, dan optimalisasi.",
+    "cta": {
+      "primary": "Coba Gratis",
+      "secondary": "Lihat Demo"
+    },
+    "stats": {
+      "screens": "500K+ Layar",
+      "countries": "25+ Negara",
+      "impressions": "1M+ Tayangan Harian",
+      "clients": "10K+ Klien"
+    }
+  },
+  "services": {
+    "badge": "Layanan Kami",
+    "title": "Solusi Iklan OOH",
+    "titleHighlight": "End-to-End",
+    "description": "Dari perencanaan hingga pengukuran, kami menyediakan solusi komprehensif untuk kebutuhan periklanan luar ruang Anda."
+  },
+  "products": {
+    "badge": "Suite Produk",
+    "title": "Alat Canggih untuk",
+    "titleHighlight": "Setiap Kebutuhan",
+    "description": "Platform terintegrasi kami menyediakan semua yang Anda butuhkan untuk merencanakan, menjalankan, dan mengukur kampanye OOH yang sukses.",
+    "planner": {
+      "title": "MW Planner",
+      "description": "Perencanaan kampanye strategis & optimalisasi"
+    },
+    "measure": {
+      "title": "MW Measure",
+      "description": "Analitik lanjutan & pelacakan performa"
+    },
+    "reach": {
+      "title": "MW Reach",
+      "description": "Penargetan audiens multi-channel"
+    },
+    "activate": {
+      "title": "MW Activate",
+      "description": "Aktivasi & optimalisasi kampanye real-time"
+    },
+    "science": {
+      "title": "MW Science",
+      "description": "Wawasan audiens bertenaga AI"
+    },
+    "studio": {
+      "title": "MW Studio",
+      "description": "Platform manajemen konten kreatif"
+    },
+    "marketplace": {
+      "title": "MW Marketplace",
+      "description": "Inventori premium & ekosistem mitra"
+    }
+  },
+  "clients": {
+    "title": "Terintegrasi dengan Platform Terkemuka",
+    "description": "Terhubung dengan mulus ke alat yang sudah Anda gunakan"
+  },
+  "trustedBy": {
+    "title": "Dipercaya oleh Merek Global",
+    "description": "Bergabunglah dengan ribuan perusahaan yang mencapai hasil lebih baik"
+  },
+  "testimonials": {
+    "badge": "Testimoni",
+    "title": "Apa Kata",
+    "titleHighlight": "Klien Kami"
+  },
+  "caseStudies": {
+    "badge": "Studi Kasus",
+    "title": "Kisah Sukses",
+    "titleHighlight": "yang Menginspirasi",
+    "description": "Temukan bagaimana merek terkemuka mencapai hasil luar biasa dengan Moving Walls."
+  },
+  "newsletter": {
+    "title": "Dapatkan Wawasan Industri",
+    "titleHighlight": "Setiap Minggu",
+    "description": "Tetap terdepan dengan newsletter kami yang menampilkan tren, strategi, dan kisah sukses terbaru.",
+    "placeholder": "Masukkan email Anda",
+    "subscribe": "Berlangganan",
+    "privacy": "Kami menghormati privasi Anda. Berhenti berlangganan kapan saja."
+  },
+  "footer": {
+    "description": "Moving Walls menyatukan seluruh ekosistem periklanan luar ruang melalui satu platform cloud cerdas.",
+    "followUs": "Ikuti Kami",
+    "company": "Perusahaan",
+    "solutions": "Solusi",
+    "products": "Produk",
+    "resources": "Sumber Daya",
+    "support": "Dukungan",
+    "billboardLocations": "Lokasi Billboard",
+    "copyright": "© 2024 Moving Walls. Hak cipta dilindungi.",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Ketentuan Layanan",
+    "cookies": "Pengaturan Cookie"
+  },
+  "contact": {
+    "badge": "Hubungi Kami",
+    "title": "Terhubung dengan",
+    "titleHighlight": "Tim Kami",
+    "description": "Ada pertanyaan? Kami ingin mendengar dari Anda. Kirim pesan dan kami akan membalas sesegera mungkin.",
+    "form": {
+      "firstName": "Nama Depan",
+      "lastName": "Nama Belakang",
+      "email": "Alamat Email",
+      "company": "Nama Perusahaan",
+      "phone": "Telepon",
+      "message": "Pesan",
+      "submit": "Kirim Pesan",
+      "sending": "Mengirim..."
+    }
+  },
+  "events": {
+    "badge": "Pembelajaran & Networking",
+    "title": "Acara & Pelatihan",
+    "titleHighlight": "Belajar & Terhubung",
+    "description": "Bergabunglah dengan kami untuk webinar, workshop, konferensi, dan sesi pelatihan.",
+    "upcoming": "Acara Mendatang",
+    "register": "Daftar",
+    "registerFree": "Pendaftaran Gratis",
+    "requestInvite": "Minta Undangan"
+  },
+  "about": {
+    "ourStory": {
+      "badge": "Kisah Kami",
+      "title": "Mentransformasi Iklan OOH",
+      "titleHighlight": "Secara Global",
+      "description": "Sejak 2015, Moving Walls telah berada di garis depan merevolusi industri periklanan luar ruang."
+    },
+    "leadership": {
+      "badge": "Kepemimpinan",
+      "title": "Kenali",
+      "titleHighlight": "Tim Kepemimpinan Kami",
+      "description": "Tim berpengalaman kami menggabungkan keahlian dalam teknologi, periklanan, dan ilmu data."
+    },
+    "careers": {
+      "badge": "Karir",
+      "title": "Bangun Karir Anda",
+      "titleHighlight": "Bersama Kami",
+      "description": "Bergabunglah dengan tim inovator yang sedang mengubah industri periklanan."
+    }
+  },
+  "common": {
+    "learnMore": "Pelajari Lebih Lanjut",
+    "viewAll": "Lihat Semua",
+    "readMore": "Baca Selengkapnya",
+    "contactUs": "Hubungi Kami",
+    "getStarted": "Mulai",
+    "bookDemo": "Jadwalkan Demo",
+    "watchVideo": "Tonton Video",
+    "downloadNow": "Unduh Sekarang",
+    "startFreeTrial": "Mulai Uji Coba Gratis",
+    "seeAllFeatures": "Lihat Semua Fitur",
+    "explorePlatform": "Jelajahi Platform"
+  },
+  "megaMenu": {
+    "solutions": {
+      "byIndustry": "Berdasarkan Industri",
+      "brand": {
+        "name": "Merek",
+        "description": "Jangkau pembeli di setiap tahap"
+      },
+      "mediaOwners": {
+        "name": "Pemilik Media",
+        "description": "Terhubung dengan pasien secara efektif"
+      },
+      "agencies": {
+        "name": "Agensi",
+        "description": "Bangun kepercayaan dan kesadaran"
+      },
+      "featured": {
+        "title": "Studi Kasus: Otomotif",
+        "description": "Merek Otomotif Premium Mencapai 300% ROI di Q4"
+      }
+    },
+    "products": {
+      "platformSuite": "Suite Platform MW",
+      "intelligenceSuite": "Suite Kecerdasan MW",
+      "planner": {
+        "name": "MW Planner",
+        "description": "Perencanaan kampanye strategis dan optimasi"
+      },
+      "measure": {
+        "name": "MW Measure",
+        "description": "Analitik lanjutan dan pelacakan kinerja"
+      },
+      "reach": {
+        "name": "MW Reach",
+        "description": "Penargetan audiens multi-saluran"
+      },
+      "activate": {
+        "name": "MW Activate",
+        "description": "Aktivasi dan optimasi kampanye real-time"
+      },
+      "science": {
+        "name": "MW Science",
+        "description": "Wawasan audiens bertenaga AI dan riset"
+      },
+      "studio": {
+        "name": "MW Studio",
+        "description": "Platform manajemen konten kreatif"
+      },
+      "marketplace": {
+        "name": "MW Marketplace",
+        "description": "Inventaris premium dan ekosistem kemitraan"
+      },
+      "featured": {
+        "title": "Studi Kasus: Ritel",
+        "description": "Jaringan Ritel Nasional Meningkatkan Trafik 45%"
+      }
+    },
+    "about": {
+      "company": "Perusahaan",
+      "connect": "Hubungkan",
+      "ourStory": {
+        "name": "Cerita Kami",
+        "description": "Pelajari tentang perjalanan kami"
+      },
+      "leadership": {
+        "name": "Tim Kepemimpinan",
+        "description": "Kenali eksekutif kami"
+      },
+      "careers": {
+        "name": "Karir",
+        "description": "Bergabung dengan tim kami yang berkembang"
+      },
+      "contact": {
+        "name": "Hubungi Kami",
+        "description": "Hubungi kami"
+      },
+      "partners": {
+        "name": "Mitra",
+        "description": "Ekosistem mitra"
+      },
+      "events": {
+        "name": "Acara",
+        "description": "Acara mendatang"
+      },
+      "featured": {
+        "title": "Studi Kasus: Keuangan",
+        "description": "Startup Fintech Menghasilkan 5.000+ Lead Berkualitas"
+      }
+    },
+    "resources": {
+      "learn": "Belajar",
+      "support": "Dukungan",
+      "blog": {
+        "name": "Blog",
+        "description": "Wawasan dan tips industri"
+      },
+      "webinars": {
+        "name": "Webinar",
+        "description": "Pembelajaran sesuai permintaan"
+      },
+      "caseStudies": {
+        "name": "Studi Kasus",
+        "description": "Kisah sukses"
+      },
+      "ebooks": {
+        "name": "E-Book",
+        "description": "Panduan dan laporan mendalam"
+      },
+      "ooh101": {
+        "name": "OOH 101",
+        "description": "Dasar-dasar iklan luar ruang"
+      },
+      "pressNews": {
+        "name": "Berita Pers",
+        "description": "Pengumuman terbaru"
+      },
+      "helpCenter": {
+        "name": "Pusat Bantuan",
+        "description": "Dapatkan jawaban cepat"
+      },
+      "documentation": {
+        "name": "Dokumentasi",
+        "description": "Panduan teknis"
+      },
+      "apiReference": {
+        "name": "Referensi API",
+        "description": "Sumber daya pengembang"
+      },
+      "community": {
+        "name": "Komunitas",
+        "description": "Terhubung dengan rekan"
+      },
+      "integrations": {
+        "name": "Integrasi",
+        "description": "Hubungkan alat Anda"
+      },
+      "featured": {
+        "title": "Studi Kasus: Teknologi",
+        "description": "Perusahaan Tech Meluncurkan Produk dengan 10 Juta Tayangan"
+      }
+    }
+  },
+  "landingPage": {
+    "trustBar": {
+      "soc2": "Bersertifikat SOC 2",
+      "googlePartner": "Mitra Premier Google",
+      "iabMember": "Anggota IAB",
+      "gdprCompliant": "Sesuai GDPR"
+    },
+    "asianBornGlobal": {
+      "badge": "Lahir di Asia, Visi Global",
+      "title": "Kami Menghubungkan Brand dengan",
+      "titleHighlight": "Audiens di Seluruh Dunia",
+      "description": "Dari akar kami di Asia Tenggara, kami telah berkembang untuk menjalankan kampanye iklan di lebih dari 30 negara, melayani 10.000+ klien secara global.",
+      "stats": {
+        "countries": "30+",
+        "countriesLabel": "Negara",
+        "screens": "2,8M+",
+        "screensLabel": "Layar",
+        "clients": "10RB+",
+        "clientsLabel": "Klien"
+      }
+    },
+    "solutions": {
+      "badge": "Solusi Kami",
+      "title": "Solusi Khusus untuk Setiap Pemangku Kepentingan",
+      "description": "Baik Anda brand, pemilik media, atau agensi, kami menyediakan alat dan teknologi yang diperlukan untuk sukses dalam ekosistem DOOH.",
+      "brand": {
+        "title": "Brand",
+        "description": "Perkuat pesan brand Anda di seluruh inventaris out-of-home premium. Jangkau audiens target Anda dalam skala besar melalui kampanye berbasis data yang mendorong kesadaran dan keterlibatan.",
+        "features": {
+          "0": "Manajemen Kampanye Lintas Saluran",
+          "1": "Penargetan Audiens Lanjutan",
+          "2": "Analitik Performa Real-time",
+          "3": "Alat Optimalisasi Kreatif"
+        },
+        "cta": "Jelajahi Solusi Brand"
+      },
+      "mediaOwners": {
+        "title": "Pemilik Media",
+        "description": "Maksimalkan nilai inventaris Anda melalui platform programatik canggih kami. Terhubung dengan pengiklan premium dan optimalkan yield di seluruh aset OOH digital dan tradisional Anda.",
+        "features": {
+          "0": "Akses Pasar Programatik",
+          "1": "Sistem Manajemen Inventaris",
+          "2": "Optimalisasi Harga Dinamis",
+          "3": "Dashboard Analitik Publisher"
+        },
+        "cta": "Jelajahi Solusi Pemilik Media"
+      },
+      "agencies": {
+        "title": "Agensi",
+        "description": "Sederhanakan operasi DOOH dengan alat kelas enterprise. Kelola kampanye multi-klien, akses inventaris premium, dan sampaikan hasil luar biasa melalui platform agensi kami.",
+        "features": {
+          "0": "Manajemen Kampanye Multi-Klien",
+          "1": "Pelaporan White-Label",
+          "2": "Penagihan Terkonsolidasi",
+          "3": "Dukungan Akun Khusus"
+        },
+        "cta": "Jelajahi Solusi Agensi"
+      }
+    },
+    "clients": {
+      "title": "Terintegrasi dengan Platform Terkemuka",
+      "description": "Integrasi mulus dengan alat pemasaran Anda yang sudah ada"
+    },
+    "products": {
+      "badge": "Ekosistem MW Lengkap",
+      "title": "Solusi Periklanan End-to-End",
+      "description": "Transformasi strategi periklanan Anda dengan suite platform terintegrasi kami. Setiap produk terhubung dengan mulus untuk memberikan hasil terukur di seluruh alur kerja pemasaran Anda.",
+      "stages": {
+        "plan": "Rencanakan",
+        "create": "Buat",
+        "buy": "Beli",
+        "activate": "Aktifkan",
+        "measure": "Ukur"
+      },
+      "productsLabel": "Produk",
+      "learnMore": "Pelajari Lebih Lanjut",
+      "mwPlanner": {
+        "stageLabel": "Perencanaan Strategis",
+        "description": "Transformasi strategi pemasaran Anda dengan perencanaan kampanye berbasis AI, analisis kompetitif, dan peramalan ROI.",
+        "outcome": "Peningkatan ROI 156%"
+      },
+      "mwStudio": {
+        "stageLabel": "Layanan Kreatif",
+        "description": "Skalakan produksi kreatif dengan manajemen aset cerdas, kepatuhan brand, dan optimalisasi multi-format.",
+        "outcome": "Pengiriman 5x Lebih Cepat"
+      },
+      "mwMarketplace": {
+        "stageLabel": "Pembelian Media",
+        "description": "Akses inventaris premium dan kemitraan publisher terverifikasi di semua saluran dengan harga transparan.",
+        "outcome": "Inventaris $2,8M+"
+      },
+      "mwReach": {
+        "stageLabel": "Penargetan Audiens",
+        "description": "Eksekusi penargetan presisi di 3,5M+ pengguna melalui segmentasi audiens lanjutan dan linking lintas perangkat.",
+        "outcome": "Tingkat Kecocokan 94,7%"
+      },
+      "mwActivate": {
+        "stageLabel": "Manajemen Kampanye",
+        "description": "Otomatisasi optimalisasi kampanye dengan pengambilan keputusan AI real-time, pacing anggaran, dan peningkatan performa.",
+        "outcome": "Deployment 95% Lebih Cepat"
+      },
+      "mwMeasure": {
+        "stageLabel": "Analitik & Wawasan",
+        "description": "Buka wawasan yang dapat ditindaklanjuti melalui pemodelan atribusi lanjutan, analitik lintas saluran, dan peramalan prediktif.",
+        "outcome": "Visibilitas Full Funnel"
+      },
+      "cta": {
+        "buildCustomStack": "Bangun Stack Kustom Anda",
+        "productsSelected": "Produk Dipilih",
+        "readyToTransform": "Siap Transformasi Periklanan Anda?",
+        "getPersonalizedDemo": "Dapatkan demo dan harga yang dipersonalisasi untuk produk yang dipilih",
+        "selectProducts": "Pilih produk di atas atau mulai dengan solusi platform lengkap",
+        "getCustomQuote": "Dapatkan Penawaran Kustom",
+        "startFreeTrial": "Mulai Uji Coba Gratis",
+        "scheduleDemo": "Jadwalkan Demo",
+        "clearSelection": "Hapus Pilihan"
+      }
+    },
+    "customerLogos": {
+      "title": "Dipercaya oleh Brand Terkemuka",
+      "description": "Bergabunglah dengan ribuan perusahaan yang mencapai hasil lebih baik"
+    },
+    "testimonials": {
+      "badge": "Kesuksesan Pelanggan",
+      "title": "Apa Kata",
+      "titleHighlight": "Klien Kami",
+      "description": "Dengarkan dari brand dan agensi yang mentransformasi periklanan mereka dengan Moving Walls."
+    },
+    "about": {
+      "title": "Mendefinisikan Ulang Periklanan Luar Ruang",
+      "description1": "Moving Walls adalah pemimpin dalam periklanan out-of-home berbasis teknologi, menggabungkan platform inovatif dengan keahlian industri yang mendalam untuk memberikan hasil luar biasa bagi brand di seluruh dunia.",
+      "description2": "Misi kami adalah membuat periklanan outdoor sama tertargetkan, terukur, dan efektifnya dengan periklanan digital—membawa yang terbaik dari kedua dunia untuk membantu brand terhubung dengan audiens secara bermakna.",
+      "features": {
+        "yearsOfExcellence": "Tahun Keunggulan",
+        "dailyImpressions": "Impresi Harian",
+        "markets": "Pasar",
+        "dataDriven": {
+          "label": "Berbasis Data",
+          "desc": "Wawasan yang mendorong keputusan"
+        },
+        "fullService": {
+          "label": "Layanan Lengkap",
+          "desc": "Solusi komprehensif"
+        },
+        "globalReach": {
+          "label": "Jangkauan Global",
+          "desc": "100+ pasar di seluruh dunia"
+        },
+        "innovation": {
+          "label": "Inovasi",
+          "desc": "Teknologi mutakhir"
+        }
+      },
+      "cta": "Kenali Cerita Kami"
+    },
+    "caseStudy": {
+      "badge": "Cerita Sukses",
+      "title": "Studi Kasus Unggulan",
+      "industry": "Industri Otomotif",
+      "roasIncrease": "Peningkatan ROAS",
+      "headline": "Bagaimana AutoBrand Mentransformasi Strategi DOOH Mereka",
+      "description": "Brand otomotif terkemuka mentransformasi strategi digital out-of-home mereka menggunakan platform berbasis AI MW. Pelajari bagaimana mereka mencapai performa kampanye rekor, pangsa pasar yang berkembang, dan visibilitas atribusi penuh di 15 pasar.",
+      "readTime": "6 menit baca",
+      "date": "Desember 2024",
+      "dailyReach": "Jangkauan Harian",
+      "lowerCPA": "CPA Lebih Rendah",
+      "readFullCaseStudy": "Baca Studi Kasus Lengkap",
+      "viewAllCaseStudies": "Lihat Semua Studi Kasus"
+    },
+    "contactForm": {
+      "badge": "Mari Diskusikan Visi Anda",
+      "title": "Cerita Sukses Anda Dimulai di Sini",
+      "description": "Bagikan tantangan dan tujuan periklanan Anda. Para ahli kami akan merancang strategi kustom yang mentransformasi visi Anda menjadi hasil bisnis yang terukur.",
+      "form": {
+        "name": "Nama Lengkap",
+        "email": "Alamat Email",
+        "company": "Perusahaan",
+        "phone": "Nomor Telepon",
+        "service": "Layanan yang Diminati",
+        "budget": "Anggaran Bulanan",
+        "message": "Ceritakan tentang proyek Anda",
+        "submit": "Mulai Perjalanan Anda",
+        "submitting": "Mengirim...",
+        "success": "Pesan Terkirim!",
+        "successDesc": "Kami akan menghubungi Anda dalam 24 jam."
+      },
+      "selectService": "Pilih layanan",
+      "selectBudget": "Pilih rentang anggaran",
+      "services": {
+        "brandAdvertising": "Periklanan Brand",
+        "mediaOwnerSolutions": "Solusi Pemilik Media",
+        "agencyServices": "Layanan Agensi",
+        "programmaticDOOH": "DOOH Programatik",
+        "customSolution": "Solusi Kustom"
+      },
+      "budgets": {
+        "under10k": "Di bawah $10K",
+        "10k50k": "$10K - $50K",
+        "50k100k": "$50K - $100K",
+        "100k500k": "$100K - $500K",
+        "over500k": "Di atas $500K"
+      },
+      "benefits": {
+        "title": "Mengapa Bermitra dengan Kami?",
+        "freeConsultation": "Konsultasi Strategi Gratis",
+        "freeConsultationDesc": "Dapatkan wawasan ahli yang disesuaikan dengan tujuan Anda",
+        "customProposal": "Proposal Kustom",
+        "customProposalDesc": "Terima rencana detail dalam 48 jam",
+        "noCommitment": "Tanpa Komitmen",
+        "noCommitmentDesc": "Jelajahi opsi sebelum memutuskan"
+      },
+      "contact": {
+        "title": "Kontak Langsung",
+        "email": "hello@movingwalls.com",
+        "phone": "+1 (888) MW-WALLS"
+      }
+    }
+  }
+}

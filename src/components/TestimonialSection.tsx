@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function TestimonialSection() {
+  const { t } = useLocale();
   const testimonials = [
     {
       quote: "Moving Walls transformed our DOOH strategy. We saw a 156% increase in ROI within the first quarter. Their platform is incredibly intuitive and the support team is world-class.",
@@ -124,13 +126,13 @@ export default function TestimonialSection() {
           className="text-center mb-16"
         >
           <span className="text-mw-blue-600 text-sm font-medium uppercase tracking-wider">
-            Client Success Stories
+            {t('landingPage.testimonials.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mt-4 mb-6">
-            Trusted by Industry Leaders
+            {t('landingPage.testimonials.title')} <span className="text-mw-blue-600">{t('landingPage.testimonials.titleHighlight')}</span>
           </h2>
           <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
-            See what marketing leaders have to say about their experience with Moving Walls
+            {t('landingPage.testimonials.description')}
           </p>
         </motion.div>
 

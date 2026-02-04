@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { t } = useLocale();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,13 +31,12 @@ export default function Newsletter() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mb-6 leading-tight">
-                Get Industry Insights
-                <span className="block text-mw-blue-600">Delivered Weekly</span>
+                {t('newsletter.title')}
+                <span className="block text-mw-blue-600">{t('newsletter.titleHighlight')}</span>
               </h2>
               
               <p className="text-mw-gray-600 text-lg">
-                Stay ahead of the curve with our curated newsletter featuring the latest 
-                trends, strategies, and success stories in advertising.
+                {t('newsletter.description')}
               </p>
             </motion.div>
 

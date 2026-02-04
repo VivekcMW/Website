@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function AsianBornGlobal() {
+  const { t } = useLocale();
   // Dots along continent borders
   const continentDots = [
     // North America border dots

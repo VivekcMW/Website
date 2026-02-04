@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "Moving Walls - OOH Advertising Platform",
+    "description": "Moving Walls unifies the entire Out-of-Home ecosystem through a single, intelligent cloud platform."
+  },
+  "nav": {
+    "solutions": "Solutions",
+    "products": "Products",
+    "about": "About",
+    "resources": "Resources",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "AI-Powered OOH Advertising",
+    "title": "The World's Leading",
+    "titleHighlight": "Connected Media Platform",
+    "description": "Transform your advertising with data-driven DOOH solutions trusted by 500+ brands. Plan smarter, buy better, measure everything.",
+    "cta": {
+      "primary": "Start Free Campaign Analysis",
+      "secondary": "Watch Demo"
+    },
+    "stats": {
+      "screens": "500K+ Screens",
+      "countries": "25+ Countries",
+      "impressions": "1B+ Daily Impressions",
+      "clients": "10K+ Clients"
+    }
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "End-to-End OOH",
+    "titleHighlight": "Advertising Solutions",
+    "description": "From planning to measurement, we provide comprehensive solutions for your out-of-home advertising needs."
+  },
+  "products": {
+    "badge": "Product Suite",
+    "title": "Powerful Tools for",
+    "titleHighlight": "Every Need",
+    "description": "Our integrated platform provides everything you need to plan, execute, and measure successful OOH campaigns.",
+    "planner": {
+      "title": "MW Planner",
+      "description": "Strategic campaign planning & optimization"
+    },
+    "measure": {
+      "title": "MW Measure",
+      "description": "Advanced analytics & performance tracking"
+    },
+    "reach": {
+      "title": "MW Reach",
+      "description": "Multi-channel audience targeting"
+    },
+    "activate": {
+      "title": "MW Activate",
+      "description": "Real-time campaign activation & optimization"
+    },
+    "science": {
+      "title": "MW Science",
+      "description": "AI-powered audience insights & research"
+    },
+    "studio": {
+      "title": "MW Studio",
+      "description": "Creative content management platform"
+    },
+    "marketplace": {
+      "title": "MW Marketplace",
+      "description": "Premium inventory & partnership ecosystem"
+    }
+  },
+  "clients": {
+    "title": "Integrated With Leading Platforms",
+    "description": "Seamlessly connect with the tools you already use"
+  },
+  "trustedBy": {
+    "title": "Trusted by Global Brands",
+    "description": "Join thousands of companies achieving better results"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What Our Clients",
+    "titleHighlight": "Say About Us"
+  },
+  "caseStudies": {
+    "badge": "Case Studies",
+    "title": "Success Stories",
+    "titleHighlight": "That Inspire",
+    "description": "See how leading brands achieved extraordinary results with Moving Walls."
+  },
+  "newsletter": {
+    "title": "Get Industry Insights",
+    "titleHighlight": "Delivered Weekly",
+    "description": "Stay ahead of the curve with our curated newsletter featuring the latest trends, strategies, and success stories in advertising.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "privacy": "We respect your privacy. Unsubscribe anytime."
+  },
+  "footer": {
+    "description": "Moving Walls unifies the entire Out-of-Home ecosystem through a single, intelligent cloud platform. From audience discovery to booking, activation, measurement, and optimisation, we streamline every step with data-driven precision.",
+    "followUs": "Follow Us",
+    "company": "Company",
+    "solutions": "Solutions",
+    "products": "Products",
+    "resources": "Resources",
+    "support": "Support",
+    "billboardLocations": "Billboard Locations",
+    "copyright": "© 2024 Moving Walls. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings"
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Get in Touch",
+    "titleHighlight": "With Our Team",
+    "description": "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    }
+  },
+  "events": {
+    "badge": "Learning & Networking",
+    "title": "Events & Training",
+    "titleHighlight": "Learn & Connect",
+    "description": "Join us for webinars, workshops, conferences, and training sessions.",
+    "upcoming": "Upcoming Events",
+    "register": "Register",
+    "registerFree": "Register Free",
+    "requestInvite": "Request Invite"
+  },
+  "about": {
+    "ourStory": {
+      "badge": "Our Story",
+      "title": "Transforming OOH",
+      "titleHighlight": "Advertising Globally",
+      "description": "Since 2015, Moving Walls has been at the forefront of revolutionizing the out-of-home advertising industry."
+    },
+    "leadership": {
+      "badge": "Leadership",
+      "title": "Meet Our",
+      "titleHighlight": "Leadership Team",
+      "description": "Our experienced team brings together expertise from technology, advertising, and data science."
+    },
+    "careers": {
+      "badge": "Join Our Team",
+      "title": "Build Your",
+      "titleHighlight": "Career With Us",
+      "description": "Join a team of innovators, dreamers, and doers who are transforming the advertising industry."
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "bookDemo": "Book a Demo",
+    "watchVideo": "Watch Video",
+    "downloadNow": "Download Now",
+    "startFreeTrial": "Start Free Trial",
+    "seeAllFeatures": "See All Features",
+    "explorePlatform": "Explore Platform"
+  },
+  "megaMenu": {
+    "solutions": {
+      "byIndustry": "By Industry",
+      "brand": {
+        "name": "Brand",
+        "description": "Reach buyers at every stage"
+      },
+      "mediaOwners": {
+        "name": "Media Owners",
+        "description": "Connect with patients effectively"
+      },
+      "agencies": {
+        "name": "Agencies",
+        "description": "Build trust and awareness"
+      },
+      "featured": {
+        "title": "Case Study: Automotive",
+        "description": "Premium Automotive Brand Achieves 300% ROI in Q4"
+      }
+    },
+    "products": {
+      "platformSuite": "MW Platform Suite",
+      "intelligenceSuite": "MW Intelligence Suite",
+      "planner": {
+        "name": "MW Planner",
+        "description": "Strategic campaign planning & optimization"
+      },
+      "measure": {
+        "name": "MW Measure",
+        "description": "Advanced analytics & performance tracking"
+      },
+      "reach": {
+        "name": "MW Reach",
+        "description": "Multi-channel audience targeting"
+      },
+      "activate": {
+        "name": "MW Activate",
+        "description": "Real-time campaign activation & optimization"
+      },
+      "science": {
+        "name": "MW Science",
+        "description": "AI-powered audience insights & research"
+      },
+      "studio": {
+        "name": "MW Studio",
+        "description": "Creative content management platform"
+      },
+      "marketplace": {
+        "name": "MW Marketplace",
+        "description": "Premium inventory & partnership ecosystem"
+      },
+      "featured": {
+        "title": "Case Study: Retail",
+        "description": "National Retail Chain Drives 45% Foot Traffic Increase"
+      }
+    },
+    "about": {
+      "company": "Company",
+      "connect": "Connect",
+      "ourStory": {
+        "name": "Our Story",
+        "description": "Learn about our journey"
+      },
+      "leadership": {
+        "name": "Leadership Team",
+        "description": "Meet our executives"
+      },
+      "careers": {
+        "name": "Careers",
+        "description": "Join our growing team"
+      },
+      "contact": {
+        "name": "Contact Us",
+        "description": "Get in touch with us"
+      },
+      "partners": {
+        "name": "Partners",
+        "description": "Partner ecosystem"
+      },
+      "events": {
+        "name": "Events",
+        "description": "Upcoming events"
+      },
+      "featured": {
+        "title": "Case Study: Finance",
+        "description": "Fintech Startup Generates 5,000+ Quality Leads"
+      }
+    },
+    "resources": {
+      "learn": "Learn",
+      "support": "Support",
+      "blog": {
+        "name": "Blog",
+        "description": "Industry insights and tips"
+      },
+      "webinars": {
+        "name": "Webinars",
+        "description": "On-demand learning"
+      },
+      "caseStudies": {
+        "name": "Case Studies",
+        "description": "Success stories"
+      },
+      "ebooks": {
+        "name": "E-Books",
+        "description": "In-depth guides & reports"
+      },
+      "ooh101": {
+        "name": "OOH 101",
+        "description": "Out-of-home advertising basics"
+      },
+      "pressNews": {
+        "name": "Press & News",
+        "description": "Latest announcements"
+      },
+      "helpCenter": {
+        "name": "Help Center",
+        "description": "Get answers fast"
+      },
+      "documentation": {
+        "name": "Documentation",
+        "description": "Technical guides"
+      },
+      "apiReference": {
+        "name": "API Reference",
+        "description": "Developer resources"
+      },
+      "community": {
+        "name": "Community",
+        "description": "Connect with peers"
+      },
+      "integrations": {
+        "name": "Integrations",
+        "description": "Connect your tools"
+      },
+      "featured": {
+        "title": "Case Study: Technology",
+        "description": "Tech Company Launches Product with 10M Impressions"
+      }
+    }
+  },
+  "landingPage": {
+    "trustBar": {
+      "soc2": "SOC 2 Certified",
+      "googlePartner": "Google Premier Partner",
+      "iabMember": "IAB Member",
+      "gdprCompliant": "GDPR Compliant"
+    },
+    "asianBornGlobal": {
+      "badge": "Asian-Born, Global Vision",
+      "title": "Connecting Brands with",
+      "titleHighlight": "Audiences Worldwide",
+      "description": "From our roots in Southeast Asia, we've grown to power advertising campaigns across 30+ countries, serving over 10,000 clients globally.",
+      "stats": {
+        "countries": "30+",
+        "countriesLabel": "Countries",
+        "screens": "2.8B+",
+        "screensLabel": "Screens",
+        "clients": "10K+",
+        "clientsLabel": "Clients"
+      }
+    },
+    "solutions": {
+      "badge": "Our Solutions",
+      "title": "Tailored Solutions for Every Stakeholder",
+      "description": "Whether you're a brand, media owner, or agency, we provide the tools and technology you need to succeed in the DOOH ecosystem.",
+      "brand": {
+        "title": "Brand",
+        "description": "Amplify your brand message across premium out-of-home inventory. Reach your target audience at scale with data-driven campaigns that drive awareness and engagement.",
+        "features": {
+          "0": "Multi-channel campaign management",
+          "1": "Advanced audience targeting",
+          "2": "Real-time performance analytics",
+          "3": "Creative optimization tools"
+        },
+        "cta": "Explore Brand Solutions"
+      },
+      "mediaOwners": {
+        "title": "Media Owners",
+        "description": "Maximize your inventory value with our advanced programmatic platform. Connect with premium advertisers and optimize yield across all your digital and traditional OOH assets.",
+        "features": {
+          "0": "Programmatic marketplace access",
+          "1": "Inventory management system",
+          "2": "Dynamic pricing optimization",
+          "3": "Publisher analytics dashboard"
+        },
+        "cta": "Explore Media Owner Solutions"
+      },
+      "agencies": {
+        "title": "Agencies",
+        "description": "Streamline your DOOH operations with enterprise-grade tools. Manage multiple client campaigns, access premium inventory, and deliver exceptional results with our agency platform.",
+        "features": {
+          "0": "Multi-client campaign management",
+          "1": "White-label reporting",
+          "2": "Consolidated billing & invoicing",
+          "3": "Dedicated account support"
+        },
+        "cta": "Explore Agency Solutions"
+      }
+    },
+    "clients": {
+      "title": "Integrated With Leading Platforms",
+      "description": "Seamlessly integrate with your existing marketing stack"
+    },
+    "products": {
+      "badge": "Complete MW Ecosystem",
+      "title": "End-to-End Advertising Solutions",
+      "description": "Transform your advertising strategy with our integrated platform. Each product connects seamlessly to deliver measurable results across your entire marketing workflow.",
+      "stages": {
+        "plan": "Plan",
+        "create": "Create",
+        "buy": "Buy",
+        "activate": "Activate",
+        "measure": "Measure"
+      },
+      "productsLabel": "Products",
+      "learnMore": "Learn More",
+      "mwPlanner": {
+        "stageLabel": "Strategic Planning",
+        "description": "Transform your marketing strategy with AI-driven campaign planning, competitive analysis, and ROI forecasting.",
+        "outcome": "156% ROI Increase"
+      },
+      "mwStudio": {
+        "stageLabel": "Creative Services",
+        "description": "Scale creative production with intelligent asset management, brand compliance, and cross-format optimization.",
+        "outcome": "5x Faster Delivery"
+      },
+      "mwMarketplace": {
+        "stageLabel": "Media Buying",
+        "description": "Access premium inventory and verified publisher partnerships across all channels with transparent pricing.",
+        "outcome": "$2.8B+ Inventory"
+      },
+      "mwReach": {
+        "stageLabel": "Audience Targeting",
+        "description": "Execute precision targeting across 3.5B+ users with advanced audience segmentation and cross-device linking.",
+        "outcome": "94.7% Match Rate"
+      },
+      "mwActivate": {
+        "stageLabel": "Campaign Management",
+        "description": "Automate campaign optimization with real-time AI decisions, budget pacing, and performance enhancement.",
+        "outcome": "95% Faster Deploy"
+      },
+      "mwMeasure": {
+        "stageLabel": "Analytics & Insights",
+        "description": "Unlock actionable insights with advanced attribution modeling, cross-channel analytics, and predictive forecasting.",
+        "outcome": "Complete Visibility"
+      },
+      "cta": {
+        "buildCustomStack": "Build Your Custom Stack",
+        "productsSelected": "Products Selected",
+        "readyToTransform": "Ready to Transform Your Advertising?",
+        "getPersonalizedDemo": "Get a personalized demo and pricing for your selected products",
+        "selectProducts": "Select products above or start with our complete platform solution",
+        "getCustomQuote": "Get Custom Quote",
+        "startFreeTrial": "Start Free Trial",
+        "scheduleDemo": "Schedule Demo",
+        "clearSelection": "Clear Selection"
+      }
+    },
+    "customerLogos": {
+      "title": "Trusted by Leading Brands",
+      "description": "Join thousands of companies achieving better results"
+    },
+    "testimonials": {
+      "badge": "Client Success",
+      "title": "What Our Clients",
+      "titleHighlight": "Say About Us",
+      "description": "Hear from the brands and agencies transforming their advertising with Moving Walls."
+    },
+    "about": {
+      "title": "Redefining Out-of-Home Advertising",
+      "description1": "Moving Walls is the leading technology-driven out-of-home advertising company, combining innovative platforms with deep industry expertise to deliver exceptional results for brands worldwide.",
+      "description2": "Our mission is to make out-of-home advertising as targetable, measurable, and effective as digital advertising—bringing the best of both worlds to help brands connect with audiences in meaningful ways.",
+      "features": {
+        "yearsOfExcellence": "Years of Excellence",
+        "dailyImpressions": "Daily Impressions",
+        "markets": "Markets",
+        "dataDriven": {
+          "label": "Data-Driven",
+          "desc": "Insights that power decisions"
+        },
+        "fullService": {
+          "label": "Full Service",
+          "desc": "End-to-end solutions"
+        },
+        "globalReach": {
+          "label": "Global Reach",
+          "desc": "100+ markets worldwide"
+        },
+        "innovation": {
+          "label": "Innovation",
+          "desc": "Cutting-edge technology"
+        }
+      },
+      "cta": "Learn Our Story"
+    },
+    "caseStudy": {
+      "badge": "Success Stories",
+      "title": "Featured Case Study",
+      "industry": "Automotive Industry",
+      "roasIncrease": "ROAS Increase",
+      "headline": "How AutoBrand Transformed DOOH Strategy",
+      "description": "Leading automotive brand transformed their digital out-of-home advertising strategy using MW's AI-powered platform. Discover how they achieved record-breaking campaign performance, expanded market share, and gained complete attribution visibility across 15 markets.",
+      "readTime": "6 min read",
+      "date": "December 2024",
+      "dailyReach": "Daily Reach",
+      "lowerCPA": "Lower CPA",
+      "readFullCaseStudy": "Read Full Case Study",
+      "viewAllCaseStudies": "View All Case Studies"
+    },
+    "contactForm": {
+      "badge": "Let's Discuss Your Vision",
+      "title": "Your Success Story Starts Here",
+      "description": "Share your advertising challenges and goals. Our experts will craft a tailored strategy that transforms your vision into measurable business results.",
+      "form": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "company": "Company",
+        "phone": "Phone",
+        "service": "Service of Interest",
+        "budget": "Monthly Budget",
+        "message": "Tell us about your project",
+        "submit": "Start Your Journey",
+        "submitting": "Sending...",
+        "success": "Message Sent!",
+        "successDesc": "We'll be in touch within 24 hours."
+      },
+      "selectService": "Select a service",
+      "selectBudget": "Select budget range",
+      "services": {
+        "brandAdvertising": "Brand Advertising",
+        "mediaOwnerSolutions": "Media Owner Solutions",
+        "agencyServices": "Agency Services",
+        "programmaticDOOH": "Programmatic DOOH",
+        "customSolution": "Custom Solution"
+      },
+      "budgets": {
+        "under10k": "Under $10,000",
+        "10k50k": "$10,000 - $50,000",
+        "50k100k": "$50,000 - $100,000",
+        "100k500k": "$100,000 - $500,000",
+        "over500k": "$500,000+"
+      },
+      "benefits": {
+        "title": "Why Partner with Us?",
+        "freeConsultation": "Free Strategy Consultation",
+        "freeConsultationDesc": "Get expert insights tailored to your goals",
+        "customProposal": "Custom Proposal",
+        "customProposalDesc": "Receive a detailed plan within 48 hours",
+        "noCommitment": "No Commitment Required",
+        "noCommitmentDesc": "Explore options before deciding"
+      },
+      "contact": {
+        "title": "Direct Contact",
+        "email": "hello@movingwalls.com",
+        "phone": "+1 (888) MW-WALLS"
+      }
+    }
+  }
+}

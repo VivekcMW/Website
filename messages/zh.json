@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "Moving Walls - 户外广告平台",
+    "description": "Moving Walls通过单一智能云平台统一整个户外广告生态系统。"
+  },
+  "nav": {
+    "solutions": "解决方案",
+    "products": "产品",
+    "about": "关于我们",
+    "resources": "资源",
+    "contact": "联系我们",
+    "getStarted": "开始使用"
+  },
+  "hero": {
+    "badge": "AI驱动的户外广告",
+    "title": "全球领先的",
+    "titleHighlight": "互联媒体平台",
+    "description": "通过500多个品牌信赖的数据驱动DOOH解决方案转变您的广告。更智能地规划，更好地购买，全面衡量。",
+    "cta": {
+      "primary": "免费广告活动分析",
+      "secondary": "观看演示"
+    },
+    "stats": {
+      "screens": "50万+屏幕",
+      "countries": "25+国家",
+      "impressions": "日均10亿+展示",
+      "clients": "1万+客户"
+    }
+  },
+  "services": {
+    "badge": "我们的服务",
+    "title": "端到端",
+    "titleHighlight": "户外广告解决方案",
+    "description": "从规划到测量，我们为您的户外广告需求提供全面的解决方案。"
+  },
+  "products": {
+    "badge": "产品套件",
+    "title": "满足各种需求的",
+    "titleHighlight": "强大工具",
+    "description": "我们的集成平台提供规划、执行和测量成功户外广告活动所需的一切。",
+    "planner": {
+      "title": "MW Planner",
+      "description": "战略性活动规划与优化"
+    },
+    "measure": {
+      "title": "MW Measure",
+      "description": "高级分析与绩效跟踪"
+    },
+    "reach": {
+      "title": "MW Reach",
+      "description": "多渠道受众定位"
+    },
+    "activate": {
+      "title": "MW Activate",
+      "description": "实时活动激活与优化"
+    },
+    "science": {
+      "title": "MW Science",
+      "description": "AI驱动的受众洞察"
+    },
+    "studio": {
+      "title": "MW Studio",
+      "description": "创意内容管理平台"
+    },
+    "marketplace": {
+      "title": "MW Marketplace",
+      "description": "优质库存与合作伙伴生态系统"
+    }
+  },
+  "clients": {
+    "title": "与领先平台集成",
+    "description": "无缝连接您已使用的工具"
+  },
+  "trustedBy": {
+    "title": "全球品牌的信赖之选",
+    "description": "加入数千家取得更好成果的企业"
+  },
+  "testimonials": {
+    "badge": "客户评价",
+    "title": "客户",
+    "titleHighlight": "怎么说"
+  },
+  "caseStudies": {
+    "badge": "案例研究",
+    "title": "鼓舞人心的",
+    "titleHighlight": "成功故事",
+    "description": "了解领先品牌如何通过Moving Walls取得卓越成果。"
+  },
+  "newsletter": {
+    "title": "获取行业洞察",
+    "titleHighlight": "每周送达",
+    "description": "通过我们精心策划的时事通讯，了解最新趋势、策略和成功案例，保持领先。",
+    "placeholder": "输入您的邮箱",
+    "subscribe": "订阅",
+    "privacy": "我们尊重您的隐私。随时可以取消订阅。"
+  },
+  "footer": {
+    "description": "Moving Walls通过单一智能云平台统一整个OOH生态系统。从受众发现到预订、激活、测量和优化，我们通过数据驱动的精确度简化每个步骤。",
+    "followUs": "关注我们",
+    "company": "公司",
+    "solutions": "解决方案",
+    "products": "产品",
+    "resources": "资源",
+    "support": "支持",
+    "billboardLocations": "广告牌位置",
+    "copyright": "© 2024 Moving Walls. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "cookies": "Cookie设置"
+  },
+  "contact": {
+    "badge": "联系我们",
+    "title": "与我们的团队",
+    "titleHighlight": "取得联系",
+    "description": "有问题？我们很乐意听取您的意见。发送消息，我们会尽快回复。",
+    "form": {
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "电子邮件地址",
+      "company": "公司名称",
+      "phone": "电话号码",
+      "message": "留言",
+      "submit": "发送消息",
+      "sending": "发送中..."
+    }
+  },
+  "events": {
+    "badge": "学习与社交",
+    "title": "活动与培训",
+    "titleHighlight": "学习与连接",
+    "description": "参加我们的网络研讨会、工作坊、会议和培训课程。",
+    "upcoming": "即将举行的活动",
+    "register": "注册",
+    "registerFree": "免费注册",
+    "requestInvite": "申请邀请"
+  },
+  "about": {
+    "ourStory": {
+      "badge": "我们的故事",
+      "title": "全球变革",
+      "titleHighlight": "户外广告",
+      "description": "自2015年以来，Moving Walls一直走在革新户外广告行业的前沿。"
+    },
+    "leadership": {
+      "badge": "领导团队",
+      "title": "认识我们的",
+      "titleHighlight": "领导团队",
+      "description": "我们经验丰富的团队汇集了技术、广告和数据科学领域的专业知识。"
+    },
+    "careers": {
+      "badge": "加入我们",
+      "title": "与我们一起",
+      "titleHighlight": "发展职业",
+      "description": "加入正在变革广告行业的创新者团队。"
+    }
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "viewAll": "查看全部",
+    "readMore": "阅读更多",
+    "contactUs": "联系我们",
+    "getStarted": "开始使用",
+    "bookDemo": "预约演示",
+    "watchVideo": "观看视频",
+    "downloadNow": "立即下载",
+    "startFreeTrial": "开始免费试用",
+    "seeAllFeatures": "查看所有功能",
+    "explorePlatform": "探索平台"
+  },
+  "megaMenu": {
+    "solutions": {
+      "byIndustry": "按行业",
+      "brand": {
+        "name": "品牌",
+        "description": "在每个阶段触达买家"
+      },
+      "mediaOwners": {
+        "name": "媒体主",
+        "description": "有效连接患者"
+      },
+      "agencies": {
+        "name": "代理商",
+        "description": "建立信任和知名度"
+      },
+      "featured": {
+        "title": "案例研究：汽车行业",
+        "description": "高端汽车品牌在第四季度实现300%投资回报率"
+      }
+    },
+    "products": {
+      "platformSuite": "MW平台套件",
+      "intelligenceSuite": "MW智能套件",
+      "planner": {
+        "name": "MW Planner",
+        "description": "战略活动规划与优化"
+      },
+      "measure": {
+        "name": "MW Measure",
+        "description": "高级分析与性能跟踪"
+      },
+      "reach": {
+        "name": "MW Reach",
+        "description": "多渠道受众定向"
+      },
+      "activate": {
+        "name": "MW Activate",
+        "description": "实时活动激活与优化"
+      },
+      "science": {
+        "name": "MW Science",
+        "description": "AI驱动的受众洞察与研究"
+      },
+      "studio": {
+        "name": "MW Studio",
+        "description": "创意内容管理平台"
+      },
+      "marketplace": {
+        "name": "MW Marketplace",
+        "description": "优质库存与合作生态系统"
+      },
+      "featured": {
+        "title": "案例研究：零售",
+        "description": "全国零售连锁店客流量增长45%"
+      }
+    },
+    "about": {
+      "company": "公司",
+      "connect": "联系",
+      "ourStory": {
+        "name": "我们的故事",
+        "description": "了解我们的历程"
+      },
+      "leadership": {
+        "name": "领导团队",
+        "description": "认识我们的高管"
+      },
+      "careers": {
+        "name": "职业机会",
+        "description": "加入我们成长中的团队"
+      },
+      "contact": {
+        "name": "联系我们",
+        "description": "与我们取得联系"
+      },
+      "partners": {
+        "name": "合作伙伴",
+        "description": "合作伙伴生态系统"
+      },
+      "events": {
+        "name": "活动",
+        "description": "即将举办的活动"
+      },
+      "featured": {
+        "title": "案例研究：金融",
+        "description": "金融科技初创公司产生5000+优质线索"
+      }
+    },
+    "resources": {
+      "learn": "学习",
+      "support": "支持",
+      "blog": {
+        "name": "博客",
+        "description": "行业洞察和技巧"
+      },
+      "webinars": {
+        "name": "网络研讨会",
+        "description": "按需学习"
+      },
+      "caseStudies": {
+        "name": "案例研究",
+        "description": "成功故事"
+      },
+      "ebooks": {
+        "name": "电子书",
+        "description": "深度指南和报告"
+      },
+      "ooh101": {
+        "name": "户外广告101",
+        "description": "户外广告基础知识"
+      },
+      "pressNews": {
+        "name": "新闻媒体",
+        "description": "最新公告"
+      },
+      "helpCenter": {
+        "name": "帮助中心",
+        "description": "快速获得答案"
+      },
+      "documentation": {
+        "name": "文档",
+        "description": "技术指南"
+      },
+      "apiReference": {
+        "name": "API参考",
+        "description": "开发者资源"
+      },
+      "community": {
+        "name": "社区",
+        "description": "与同行连接"
+      },
+      "integrations": {
+        "name": "集成",
+        "description": "连接您的工具"
+      },
+      "featured": {
+        "title": "案例研究：科技",
+        "description": "科技公司产品发布获得1000万曝光"
+      }
+    }
+  },
+  "landingPage": {
+    "trustBar": {
+      "soc2": "SOC 2 认证",
+      "googlePartner": "Google 首席合作伙伴",
+      "iabMember": "IAB 会员",
+      "gdprCompliant": "GDPR 合规"
+    },
+    "asianBornGlobal": {
+      "badge": "亚洲诞生，全球视野",
+      "title": "连接品牌与",
+      "titleHighlight": "全球受众",
+      "description": "从我们在东南亚的根基出发，我们已发展成为在30多个国家开展广告活动的平台，服务超过10,000个全球客户。",
+      "stats": {
+        "countries": "30+",
+        "countriesLabel": "国家",
+        "screens": "28亿+",
+        "screensLabel": "屏幕",
+        "clients": "1万+",
+        "clientsLabel": "客户"
+      }
+    },
+    "solutions": {
+      "badge": "我们的解决方案",
+      "title": "为每个利益相关者量身定制的解决方案",
+      "description": "无论您是品牌、媒体所有者还是代理商，我们都提供您在DOOH生态系统中取得成功所需的工具和技术。",
+      "brand": {
+        "title": "品牌",
+        "description": "在优质户外广告库存中放大您的品牌信息。通过数据驱动的活动大规模触达目标受众，提升品牌知名度和参与度。",
+        "features": {
+          "0": "多渠道活动管理",
+          "1": "高级受众定向",
+          "2": "实时效果分析",
+          "3": "创意优化工具"
+        },
+        "cta": "探索品牌解决方案"
+      },
+      "mediaOwners": {
+        "title": "媒体所有者",
+        "description": "通过我们先进的程序化平台最大化您的库存价值。与优质广告商建立联系，优化所有数字和传统OOH资产的收益。",
+        "features": {
+          "0": "程序化市场准入",
+          "1": "库存管理系统",
+          "2": "动态定价优化",
+          "3": "发布商分析仪表板"
+        },
+        "cta": "探索媒体所有者解决方案"
+      },
+      "agencies": {
+        "title": "代理商",
+        "description": "使用企业级工具简化您的DOOH运营。管理多个客户活动，访问优质库存，并通过我们的代理商平台交付出色结果。",
+        "features": {
+          "0": "多客户活动管理",
+          "1": "白标报告",
+          "2": "统一计费",
+          "3": "专属客户支持"
+        },
+        "cta": "探索代理商解决方案"
+      }
+    },
+    "clients": {
+      "title": "与领先平台集成",
+      "description": "与您现有的营销技术栈无缝集成"
+    },
+    "products": {
+      "badge": "完整的MW生态系统",
+      "title": "端到端广告解决方案",
+      "description": "通过我们的集成平台转型您的广告策略。每个产品无缝连接，在您的整个营销工作流程中提供可衡量的结果。",
+      "stages": {
+        "plan": "计划",
+        "create": "创建",
+        "buy": "购买",
+        "activate": "激活",
+        "measure": "测量"
+      },
+      "productsLabel": "产品",
+      "learnMore": "了解更多",
+      "mwPlanner": {
+        "stageLabel": "战略规划",
+        "description": "通过AI驱动的活动规划、竞争分析和ROI预测转型您的营销策略。",
+        "outcome": "ROI提升156%"
+      },
+      "mwStudio": {
+        "stageLabel": "创意服务",
+        "description": "通过智能资产管理、品牌合规性和多格式优化扩展创意生产。",
+        "outcome": "交付速度提升5倍"
+      },
+      "mwMarketplace": {
+        "stageLabel": "媒体采购",
+        "description": "通过透明定价获取优质库存和经过验证的发布商合作伙伴关系。",
+        "outcome": "28亿美元以上库存"
+      },
+      "mwReach": {
+        "stageLabel": "受众定向",
+        "description": "通过高级受众细分和跨设备链接，对35亿以上用户执行精准定向。",
+        "outcome": "94.7%匹配率"
+      },
+      "mwActivate": {
+        "stageLabel": "活动管理",
+        "description": "通过实时AI决策、预算节奏和效果提升自动化活动优化。",
+        "outcome": "部署速度提升95%"
+      },
+      "mwMeasure": {
+        "stageLabel": "分析与洞察",
+        "description": "通过高级归因模型、跨渠道分析和预测性预测解锁可执行的洞察。",
+        "outcome": "完整可见性"
+      },
+      "cta": {
+        "buildCustomStack": "构建您的自定义堆栈",
+        "productsSelected": "已选产品",
+        "readyToTransform": "准备好转型您的广告了吗？",
+        "getPersonalizedDemo": "为您选择的产品获取个性化演示和定价",
+        "selectProducts": "在上方选择产品或开始使用我们的完整平台解决方案",
+        "getCustomQuote": "获取定制报价",
+        "startFreeTrial": "开始免费试用",
+        "scheduleDemo": "预约演示",
+        "clearSelection": "清除选择"
+      }
+    },
+    "customerLogos": {
+      "title": "受领先品牌信赖",
+      "description": "加入数千家获得更好结果的公司"
+    },
+    "testimonials": {
+      "badge": "客户成功",
+      "title": "我们的客户",
+      "titleHighlight": "如是说",
+      "description": "听听正在使用Moving Walls转型其广告的品牌和代理商的声音。"
+    },
+    "about": {
+      "title": "重新定义户外广告",
+      "description1": "Moving Walls是领先的技术驱动型户外广告公司，将创新平台与深厚的行业专业知识相结合，为全球品牌提供卓越的结果。",
+      "description2": "我们的使命是让户外广告像数字广告一样可定向、可衡量、有效——融合两个世界的优势，帮助品牌以有意义的方式与受众建立联系。",
+      "features": {
+        "yearsOfExcellence": "卓越年份",
+        "dailyImpressions": "日均曝光",
+        "markets": "市场",
+        "dataDriven": {
+          "label": "数据驱动",
+          "desc": "推动决策的洞察"
+        },
+        "fullService": {
+          "label": "全方位服务",
+          "desc": "端到端解决方案"
+        },
+        "globalReach": {
+          "label": "全球覆盖",
+          "desc": "100多个全球市场"
+        },
+        "innovation": {
+          "label": "创新",
+          "desc": "尖端技术"
+        }
+      },
+      "cta": "了解我们的故事"
+    },
+    "caseStudy": {
+      "badge": "成功案例",
+      "title": "精选案例研究",
+      "industry": "汽车行业",
+      "roasIncrease": "ROAS提升",
+      "headline": "AutoBrand如何转型其DOOH策略",
+      "description": "领先的汽车品牌使用MW的AI驱动平台转型了其数字户外广告策略。了解他们如何实现创纪录的活动表现，扩大市场份额，并在15个市场获得完整的归因可见性。",
+      "readTime": "6分钟阅读",
+      "date": "2024年12月",
+      "dailyReach": "日均触达",
+      "lowerCPA": "更低的CPA",
+      "readFullCaseStudy": "阅读完整案例研究",
+      "viewAllCaseStudies": "查看所有案例研究"
+    },
+    "contactForm": {
+      "badge": "让我们讨论您的愿景",
+      "title": "您的成功故事从这里开始",
+      "description": "分享您的广告挑战和目标。我们的专家将制定量身定制的策略，将您的愿景转化为可衡量的业务成果。",
+      "form": {
+        "name": "全名",
+        "email": "电子邮件地址",
+        "company": "公司",
+        "phone": "电话",
+        "service": "感兴趣的服务",
+        "budget": "月度预算",
+        "message": "告诉我们您的项目",
+        "submit": "开始您的旅程",
+        "submitting": "发送中...",
+        "success": "消息已发送！",
+        "successDesc": "我们将在24小时内与您联系。"
+      },
+      "selectService": "选择服务",
+      "selectBudget": "选择预算范围",
+      "services": {
+        "brandAdvertising": "品牌广告",
+        "mediaOwnerSolutions": "媒体所有者解决方案",
+        "agencyServices": "代理商服务",
+        "programmaticDOOH": "程序化DOOH",
+        "customSolution": "定制解决方案"
+      },
+      "budgets": {
+        "under10k": "低于10,000美元",
+        "10k50k": "10,000 - 50,000美元",
+        "50k100k": "50,000 - 100,000美元",
+        "100k500k": "100,000 - 500,000美元",
+        "over500k": "500,000美元以上"
+      },
+      "benefits": {
+        "title": "为什么与我们合作？",
+        "freeConsultation": "免费策略咨询",
+        "freeConsultationDesc": "获取针对您目标量身定制的专家见解",
+        "customProposal": "定制提案",
+        "customProposalDesc": "48小时内收到详细计划",
+        "noCommitment": "无需承诺",
+        "noCommitmentDesc": "在决定之前探索选项"
+      },
+      "contact": {
+        "title": "直接联系",
+        "email": "hello@movingwalls.com",
+        "phone": "+1 (888) MW-WALLS"
+      }
+    }
+  }
+}

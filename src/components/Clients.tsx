@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const clients = [
   { 
@@ -85,6 +86,8 @@ const clients = [
 ];
 
 export default function Clients() {
+  const { t } = useLocale();
+  
   return (
     <section className="py-16 bg-white border-y border-mw-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +99,7 @@ export default function Clients() {
           className="text-center mb-12"
         >
           <span className="text-mw-gray-500 text-sm font-medium uppercase tracking-wider">
-            Integrated With Leading Platforms
+            {t('landingPage.clients.title')}
           </span>
         </motion.div>
 
@@ -130,7 +133,7 @@ export default function Clients() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center text-mw-gray-500 mt-12 text-sm"
         >
-          Seamlessly integrate with your existing marketing stack
+          {t('landingPage.clients.description')}
         </motion.p>
       </div>
     </section>

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import GlobalCTA from "@/components/GlobalCTA";
 import AIAssistant from "@/components/AIAssistant";
 import CookieConsent from "@/components/CookieConsent";
+import { LocaleProvider } from "@/i18n/LocaleContext";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -200,14 +201,16 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <GlobalCTA />
-        <Footer />
-        <AIAssistant />
-        <CookieConsent />
+        <LocaleProvider>
+          <Header />
+          <main>
+            {children}
+          </main>
+          <GlobalCTA />
+          <Footer />
+          <AIAssistant />
+          <CookieConsent />
+        </LocaleProvider>
       </body>
     </html>
   );

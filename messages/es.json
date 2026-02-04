@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "Moving Walls - Plataforma de Publicidad Exterior",
+    "description": "Moving Walls unifica todo el ecosistema de publicidad exterior a través de una única plataforma inteligente en la nube."
+  },
+  "nav": {
+    "solutions": "Soluciones",
+    "products": "Productos",
+    "about": "Nosotros",
+    "resources": "Recursos",
+    "contact": "Contacto",
+    "getStarted": "Comenzar"
+  },
+  "hero": {
+    "badge": "Publicidad Exterior con IA",
+    "title": "La Plataforma de Medios",
+    "titleHighlight": "Conectados Líder Mundial",
+    "description": "Transforma tu publicidad con soluciones DOOH basadas en datos en las que confían más de 500 marcas. Planifica más inteligente, compra mejor, mide todo.",
+    "cta": {
+      "primary": "Análisis de Campaña Gratis",
+      "secondary": "Ver Demo"
+    },
+    "stats": {
+      "screens": "500K+ Pantallas",
+      "countries": "25+ Países",
+      "impressions": "1B+ Impresiones Diarias",
+      "clients": "10K+ Clientes"
+    }
+  },
+  "services": {
+    "badge": "Nuestros Servicios",
+    "title": "Soluciones Integrales de",
+    "titleHighlight": "Publicidad Exterior",
+    "description": "Desde la planificación hasta la medición, ofrecemos soluciones completas para sus necesidades de publicidad exterior."
+  },
+  "products": {
+    "badge": "Suite de Productos",
+    "title": "Herramientas Potentes para",
+    "titleHighlight": "Cada Necesidad",
+    "description": "Nuestra plataforma integrada proporciona todo lo necesario para planificar, ejecutar y medir campañas OOH exitosas.",
+    "planner": {
+      "title": "MW Planner",
+      "description": "Planificación estratégica de campañas y optimización"
+    },
+    "measure": {
+      "title": "MW Measure",
+      "description": "Análisis avanzado y seguimiento de rendimiento"
+    },
+    "reach": {
+      "title": "MW Reach",
+      "description": "Segmentación de audiencias multicanal"
+    },
+    "activate": {
+      "title": "MW Activate",
+      "description": "Activación y optimización de campañas en tiempo real"
+    },
+    "science": {
+      "title": "MW Science",
+      "description": "Insights de audiencia impulsados por IA"
+    },
+    "studio": {
+      "title": "MW Studio",
+      "description": "Plataforma de gestión de contenido creativo"
+    },
+    "marketplace": {
+      "title": "MW Marketplace",
+      "description": "Inventario premium y ecosistema de socios"
+    }
+  },
+  "clients": {
+    "title": "Integrado con Plataformas Líderes",
+    "description": "Conéctate sin problemas con las herramientas que ya usas"
+  },
+  "trustedBy": {
+    "title": "Marcas Globales Confían en Nosotros",
+    "description": "Únete a miles de empresas que logran mejores resultados"
+  },
+  "testimonials": {
+    "badge": "Testimonios",
+    "title": "Lo Que Dicen",
+    "titleHighlight": "Nuestros Clientes"
+  },
+  "caseStudies": {
+    "badge": "Casos de Éxito",
+    "title": "Historias de Éxito",
+    "titleHighlight": "Que Inspiran",
+    "description": "Descubre cómo las marcas líderes lograron resultados extraordinarios con Moving Walls."
+  },
+  "newsletter": {
+    "title": "Recibe Insights de la Industria",
+    "titleHighlight": "Semanalmente",
+    "description": "Mantente a la vanguardia con nuestro boletín curado con las últimas tendencias, estrategias e historias de éxito en publicidad.",
+    "placeholder": "Ingresa tu email",
+    "subscribe": "Suscribirse",
+    "privacy": "Respetamos tu privacidad. Cancela cuando quieras."
+  },
+  "footer": {
+    "description": "Moving Walls unifica todo el ecosistema de publicidad exterior a través de una única plataforma en la nube inteligente. Desde el descubrimiento de audiencias hasta la reserva, activación, medición y optimización, optimizamos cada paso con precisión basada en datos.",
+    "followUs": "Síguenos",
+    "company": "Empresa",
+    "solutions": "Soluciones",
+    "products": "Productos",
+    "resources": "Recursos",
+    "support": "Soporte",
+    "billboardLocations": "Ubicaciones de Vallas",
+    "copyright": "© 2024 Moving Walls. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cookies": "Configuración de Cookies"
+  },
+  "contact": {
+    "badge": "Contáctanos",
+    "title": "Ponte en Contacto",
+    "titleHighlight": "Con Nuestro Equipo",
+    "description": "¿Tienes preguntas? Nos encantaría saber de ti. Envíanos un mensaje y responderemos lo antes posible.",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "company": "Nombre de la Empresa",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    }
+  },
+  "events": {
+    "badge": "Aprendizaje y Networking",
+    "title": "Eventos y Capacitación",
+    "titleHighlight": "Aprende y Conecta",
+    "description": "Únete a nuestros webinars, talleres, conferencias y sesiones de capacitación.",
+    "upcoming": "Próximos Eventos",
+    "register": "Registrarse",
+    "registerFree": "Registro Gratuito",
+    "requestInvite": "Solicitar Invitación"
+  },
+  "about": {
+    "ourStory": {
+      "badge": "Nuestra Historia",
+      "title": "Transformando la Publicidad",
+      "titleHighlight": "Exterior Globalmente",
+      "description": "Desde 2015, Moving Walls ha estado a la vanguardia de la revolución de la industria de publicidad exterior."
+    },
+    "leadership": {
+      "badge": "Liderazgo",
+      "title": "Conoce a Nuestro",
+      "titleHighlight": "Equipo Directivo",
+      "description": "Nuestro equipo experimentado reúne experiencia en tecnología, publicidad y ciencia de datos."
+    },
+    "careers": {
+      "badge": "Únete a Nuestro Equipo",
+      "title": "Construye Tu",
+      "titleHighlight": "Carrera Con Nosotros",
+      "description": "Únete a un equipo de innovadores y soñadores que están transformando la industria publicitaria."
+    }
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "viewAll": "Ver Todo",
+    "readMore": "Leer Más",
+    "contactUs": "Contáctanos",
+    "getStarted": "Comenzar",
+    "bookDemo": "Reservar Demo",
+    "watchVideo": "Ver Video",
+    "downloadNow": "Descargar Ahora",
+    "startFreeTrial": "Prueba Gratuita",
+    "seeAllFeatures": "Ver Todas las Funciones",
+    "explorePlatform": "Explorar Plataforma"
+  },
+  "megaMenu": {
+    "solutions": {
+      "byIndustry": "Por Industria",
+      "brand": {
+        "name": "Marcas",
+        "description": "Alcanza compradores en cada etapa"
+      },
+      "mediaOwners": {
+        "name": "Propietarios de Medios",
+        "description": "Conecta con pacientes efectivamente"
+      },
+      "agencies": {
+        "name": "Agencias",
+        "description": "Construye confianza y reconocimiento"
+      },
+      "featured": {
+        "title": "Caso de Éxito: Automotriz",
+        "description": "Marca Automotriz Premium Logra 300% ROI en Q4"
+      }
+    },
+    "products": {
+      "platformSuite": "Suite de Plataforma MW",
+      "intelligenceSuite": "Suite de Inteligencia MW",
+      "planner": {
+        "name": "MW Planner",
+        "description": "Planificación estratégica y optimización de campañas"
+      },
+      "measure": {
+        "name": "MW Measure",
+        "description": "Análisis avanzado y seguimiento de rendimiento"
+      },
+      "reach": {
+        "name": "MW Reach",
+        "description": "Segmentación de audiencias multicanal"
+      },
+      "activate": {
+        "name": "MW Activate",
+        "description": "Activación y optimización de campañas en tiempo real"
+      },
+      "science": {
+        "name": "MW Science",
+        "description": "Insights de audiencia impulsados por IA"
+      },
+      "studio": {
+        "name": "MW Studio",
+        "description": "Plataforma de gestión de contenido creativo"
+      },
+      "marketplace": {
+        "name": "MW Marketplace",
+        "description": "Inventario premium y ecosistema de socios"
+      },
+      "featured": {
+        "title": "Caso de Éxito: Retail",
+        "description": "Cadena Nacional de Retail Aumenta 45% el Tráfico"
+      }
+    },
+    "about": {
+      "company": "Empresa",
+      "connect": "Conectar",
+      "ourStory": {
+        "name": "Nuestra Historia",
+        "description": "Conoce nuestro recorrido"
+      },
+      "leadership": {
+        "name": "Equipo Directivo",
+        "description": "Conoce a nuestros ejecutivos"
+      },
+      "careers": {
+        "name": "Carreras",
+        "description": "Únete a nuestro equipo en crecimiento"
+      },
+      "contact": {
+        "name": "Contáctanos",
+        "description": "Ponte en contacto con nosotros"
+      },
+      "partners": {
+        "name": "Socios",
+        "description": "Ecosistema de socios"
+      },
+      "events": {
+        "name": "Eventos",
+        "description": "Próximos eventos"
+      },
+      "featured": {
+        "title": "Caso de Éxito: Finanzas",
+        "description": "Startup Fintech Genera 5,000+ Leads de Calidad"
+      }
+    },
+    "resources": {
+      "learn": "Aprender",
+      "support": "Soporte",
+      "blog": {
+        "name": "Blog",
+        "description": "Insights y consejos de la industria"
+      },
+      "webinars": {
+        "name": "Webinars",
+        "description": "Aprendizaje bajo demanda"
+      },
+      "caseStudies": {
+        "name": "Casos de Éxito",
+        "description": "Historias de éxito"
+      },
+      "ebooks": {
+        "name": "E-Books",
+        "description": "Guías e informes detallados"
+      },
+      "ooh101": {
+        "name": "OOH 101",
+        "description": "Fundamentos de publicidad exterior"
+      },
+      "pressNews": {
+        "name": "Prensa y Noticias",
+        "description": "Últimos anuncios"
+      },
+      "helpCenter": {
+        "name": "Centro de Ayuda",
+        "description": "Obtén respuestas rápidas"
+      },
+      "documentation": {
+        "name": "Documentación",
+        "description": "Guías técnicas"
+      },
+      "apiReference": {
+        "name": "Referencia API",
+        "description": "Recursos para desarrolladores"
+      },
+      "community": {
+        "name": "Comunidad",
+        "description": "Conecta con colegas"
+      },
+      "integrations": {
+        "name": "Integraciones",
+        "description": "Conecta tus herramientas"
+      },
+      "featured": {
+        "title": "Caso de Éxito: Tecnología",
+        "description": "Empresa Tech Lanza Producto con 10M Impresiones"
+      }
+    }
+  },
+  "landingPage": {
+    "trustBar": {
+      "soc2": "Certificado SOC 2",
+      "googlePartner": "Partner Premier de Google",
+      "iabMember": "Miembro de IAB",
+      "gdprCompliant": "Compatible con GDPR"
+    },
+    "asianBornGlobal": {
+      "badge": "Nacido en Asia, Visión Global",
+      "title": "Conectando Marcas con",
+      "titleHighlight": "Audiencias en Todo el Mundo",
+      "description": "Desde nuestras raíces en el Sudeste Asiático, hemos crecido para impulsar campañas publicitarias en más de 30 países, sirviendo a más de 10,000 clientes globalmente.",
+      "stats": {
+        "countries": "30+",
+        "countriesLabel": "Países",
+        "screens": "2.8B+",
+        "screensLabel": "Pantallas",
+        "clients": "10K+",
+        "clientsLabel": "Clientes"
+      }
+    },
+    "solutions": {
+      "badge": "Nuestras Soluciones",
+      "title": "Soluciones Personalizadas para Cada Parte Interesada",
+      "description": "Ya sea que seas una marca, propietario de medios o agencia, proporcionamos las herramientas y tecnología que necesitas para tener éxito en el ecosistema DOOH.",
+      "brand": {
+        "title": "Marca",
+        "description": "Amplifica el mensaje de tu marca en inventario premium de publicidad exterior. Alcanza tu audiencia objetivo a escala con campañas basadas en datos que impulsan el reconocimiento y el engagement.",
+        "features": {
+          "0": "Gestión de campañas multicanal",
+          "1": "Segmentación avanzada de audiencia",
+          "2": "Análisis de rendimiento en tiempo real",
+          "3": "Herramientas de optimización creativa"
+        },
+        "cta": "Explorar Soluciones para Marcas"
+      },
+      "mediaOwners": {
+        "title": "Propietarios de Medios",
+        "description": "Maximiza el valor de tu inventario con nuestra plataforma programática avanzada. Conéctate con anunciantes premium y optimiza el rendimiento en todos tus activos OOH digitales y tradicionales.",
+        "features": {
+          "0": "Acceso al marketplace programático",
+          "1": "Sistema de gestión de inventario",
+          "2": "Optimización dinámica de precios",
+          "3": "Dashboard de análisis para publishers"
+        },
+        "cta": "Explorar Soluciones para Propietarios de Medios"
+      },
+      "agencies": {
+        "title": "Agencias",
+        "description": "Optimiza tus operaciones DOOH con herramientas de nivel empresarial. Gestiona múltiples campañas de clientes, accede a inventario premium y entrega resultados excepcionales con nuestra plataforma para agencias.",
+        "features": {
+          "0": "Gestión de campañas multi-cliente",
+          "1": "Reportes de marca blanca",
+          "2": "Facturación consolidada",
+          "3": "Soporte de cuenta dedicado"
+        },
+        "cta": "Explorar Soluciones para Agencias"
+      }
+    },
+    "clients": {
+      "title": "Integrado con Plataformas Líderes",
+      "description": "Integra sin problemas con tu stack de marketing existente"
+    },
+    "products": {
+      "badge": "Ecosistema MW Completo",
+      "title": "Soluciones Publicitarias de Extremo a Extremo",
+      "description": "Transforma tu estrategia publicitaria con nuestra plataforma integrada. Cada producto se conecta sin problemas para entregar resultados medibles en todo tu flujo de trabajo de marketing.",
+      "stages": {
+        "plan": "Planificar",
+        "create": "Crear",
+        "buy": "Comprar",
+        "activate": "Activar",
+        "measure": "Medir"
+      },
+      "productsLabel": "Productos",
+      "learnMore": "Más Información",
+      "mwPlanner": {
+        "stageLabel": "Planificación Estratégica",
+        "description": "Transforma tu estrategia de marketing con planificación de campañas impulsada por IA, análisis competitivo y pronóstico de ROI.",
+        "outcome": "156% Aumento de ROI"
+      },
+      "mwStudio": {
+        "stageLabel": "Servicios Creativos",
+        "description": "Escala la producción creativa con gestión inteligente de activos, cumplimiento de marca y optimización multi-formato.",
+        "outcome": "5x Entrega Más Rápida"
+      },
+      "mwMarketplace": {
+        "stageLabel": "Compra de Medios",
+        "description": "Accede a inventario premium y asociaciones verificadas de publishers en todos los canales con precios transparentes.",
+        "outcome": "$2.8B+ Inventario"
+      },
+      "mwReach": {
+        "stageLabel": "Segmentación de Audiencia",
+        "description": "Ejecuta segmentación de precisión en más de 3.5B usuarios con segmentación avanzada y vinculación entre dispositivos.",
+        "outcome": "94.7% Tasa de Coincidencia"
+      },
+      "mwActivate": {
+        "stageLabel": "Gestión de Campañas",
+        "description": "Automatiza la optimización de campañas con decisiones de IA en tiempo real, ritmo de presupuesto y mejora del rendimiento.",
+        "outcome": "95% Despliegue Más Rápido"
+      },
+      "mwMeasure": {
+        "stageLabel": "Análisis e Insights",
+        "description": "Desbloquea insights accionables con modelado de atribución avanzado, análisis multicanal y pronóstico predictivo.",
+        "outcome": "Visibilidad Completa"
+      },
+      "cta": {
+        "buildCustomStack": "Construye Tu Stack Personalizado",
+        "productsSelected": "Productos Seleccionados",
+        "readyToTransform": "¿Listo para Transformar Tu Publicidad?",
+        "getPersonalizedDemo": "Obtén una demo personalizada y precios para tus productos seleccionados",
+        "selectProducts": "Selecciona productos arriba o comienza con nuestra solución de plataforma completa",
+        "getCustomQuote": "Obtener Cotización Personalizada",
+        "startFreeTrial": "Iniciar Prueba Gratuita",
+        "scheduleDemo": "Programar Demo",
+        "clearSelection": "Limpiar Selección"
+      }
+    },
+    "customerLogos": {
+      "title": "Confiado por Marcas Líderes",
+      "description": "Únete a miles de empresas que logran mejores resultados"
+    },
+    "testimonials": {
+      "badge": "Éxito de Clientes",
+      "title": "Lo Que Dicen",
+      "titleHighlight": "Nuestros Clientes",
+      "description": "Escucha de las marcas y agencias que están transformando su publicidad con Moving Walls."
+    },
+    "about": {
+      "title": "Redefiniendo la Publicidad Exterior",
+      "description1": "Moving Walls es la empresa líder de publicidad exterior impulsada por tecnología, combinando plataformas innovadoras con profunda experiencia en la industria para entregar resultados excepcionales para marcas en todo el mundo.",
+      "description2": "Nuestra misión es hacer que la publicidad exterior sea tan segmentable, medible y efectiva como la publicidad digital—trayendo lo mejor de ambos mundos para ayudar a las marcas a conectar con audiencias de maneras significativas.",
+      "features": {
+        "yearsOfExcellence": "Años de Excelencia",
+        "dailyImpressions": "Impresiones Diarias",
+        "markets": "Mercados",
+        "dataDriven": {
+          "label": "Basado en Datos",
+          "desc": "Insights que impulsan decisiones"
+        },
+        "fullService": {
+          "label": "Servicio Completo",
+          "desc": "Soluciones de extremo a extremo"
+        },
+        "globalReach": {
+          "label": "Alcance Global",
+          "desc": "100+ mercados en todo el mundo"
+        },
+        "innovation": {
+          "label": "Innovación",
+          "desc": "Tecnología de vanguardia"
+        }
+      },
+      "cta": "Conoce Nuestra Historia"
+    },
+    "caseStudy": {
+      "badge": "Historias de Éxito",
+      "title": "Caso de Estudio Destacado",
+      "industry": "Industria Automotriz",
+      "roasIncrease": "Aumento de ROAS",
+      "headline": "Cómo AutoBrand Transformó su Estrategia DOOH",
+      "description": "Una marca automotriz líder transformó su estrategia de publicidad digital exterior usando la plataforma impulsada por IA de MW. Descubre cómo lograron un rendimiento récord de campaña, expandieron su participación de mercado y obtuvieron visibilidad completa de atribución en 15 mercados.",
+      "readTime": "6 min de lectura",
+      "date": "Diciembre 2024",
+      "dailyReach": "Alcance Diario",
+      "lowerCPA": "CPA Más Bajo",
+      "readFullCaseStudy": "Leer Caso de Estudio Completo",
+      "viewAllCaseStudies": "Ver Todos los Casos de Estudio"
+    },
+    "contactForm": {
+      "badge": "Hablemos de Tu Visión",
+      "title": "Tu Historia de Éxito Comienza Aquí",
+      "description": "Comparte tus desafíos y objetivos publicitarios. Nuestros expertos crearán una estrategia personalizada que transforme tu visión en resultados de negocio medibles.",
+      "form": {
+        "name": "Nombre Completo",
+        "email": "Correo Electrónico",
+        "company": "Empresa",
+        "phone": "Teléfono",
+        "service": "Servicio de Interés",
+        "budget": "Presupuesto Mensual",
+        "message": "Cuéntanos sobre tu proyecto",
+        "submit": "Comienza Tu Viaje",
+        "submitting": "Enviando...",
+        "success": "¡Mensaje Enviado!",
+        "successDesc": "Te contactaremos en 24 horas."
+      },
+      "selectService": "Selecciona un servicio",
+      "selectBudget": "Selecciona rango de presupuesto",
+      "services": {
+        "brandAdvertising": "Publicidad de Marca",
+        "mediaOwnerSolutions": "Soluciones para Propietarios de Medios",
+        "agencyServices": "Servicios para Agencias",
+        "programmaticDOOH": "DOOH Programático",
+        "customSolution": "Solución Personalizada"
+      },
+      "budgets": {
+        "under10k": "Menos de $10,000",
+        "10k50k": "$10,000 - $50,000",
+        "50k100k": "$50,000 - $100,000",
+        "100k500k": "$100,000 - $500,000",
+        "over500k": "$500,000+"
+      },
+      "benefits": {
+        "title": "¿Por Qué Asociarte con Nosotros?",
+        "freeConsultation": "Consulta de Estrategia Gratuita",
+        "freeConsultationDesc": "Obtén insights de expertos adaptados a tus objetivos",
+        "customProposal": "Propuesta Personalizada",
+        "customProposalDesc": "Recibe un plan detallado en 48 horas",
+        "noCommitment": "Sin Compromiso Requerido",
+        "noCommitmentDesc": "Explora opciones antes de decidir"
+      },
+      "contact": {
+        "title": "Contacto Directo",
+        "email": "hello@movingwalls.com",
+        "phone": "+1 (888) MW-WALLS"
+      }
+    }
+  }
+}

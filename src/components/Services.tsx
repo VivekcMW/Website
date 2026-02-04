@@ -3,50 +3,56 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-
-const solutions = [
-  {
-    title: "Brand",
-    description: "Amplify your brand message across premium out-of-home inventory. Reach your target audience at scale with data-driven campaigns that drive awareness and engagement.",
-    bgColor: "bg-transparent",
-    href: "/solutions/brands",
-    image: "/assets/images/brands/Brand.png",
-    features: [
-      "Multi-channel campaign management",
-      "Advanced audience targeting",
-      "Real-time performance analytics",
-      "Creative optimization tools"
-    ]
-  },
-  {
-    title: "Media Owners",
-    description: "Maximize your inventory value with our advanced programmatic platform. Connect with premium advertisers and optimize yield across all your digital and traditional OOH assets.",
-    bgColor: "bg-transparent",
-    href: "/solutions/media-owners",
-    image: "/assets/images/brands/Media-Owners.png",
-    features: [
-      "Programmatic marketplace access",
-      "Inventory management system",
-      "Dynamic pricing optimization",
-      "Publisher analytics dashboard"
-    ]
-  },
-  {
-    title: "Agencies",
-    description: "Streamline your DOOH operations with enterprise-grade tools. Manage multiple client campaigns, access premium inventory, and deliver exceptional results with our agency platform.",
-    bgColor: "bg-transparent",
-    href: "/solutions/agencies",
-    image: "/assets/images/brands/Agencies.png",
-    features: [
-      "Multi-client campaign management",
-      "White-label reporting",
-      "Consolidated billing & invoicing",
-      "Dedicated account support"
-    ]
-  },
-];
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function Services() {
+  const { t } = useLocale();
+  
+  const solutions = [
+    {
+      titleKey: "landingPage.solutions.brand.title",
+      descriptionKey: "landingPage.solutions.brand.description",
+      bgColor: "bg-transparent",
+      href: "/solutions/brands",
+      image: "/assets/images/brands/Brand.png",
+      featureKeys: [
+        "landingPage.solutions.brand.features.0",
+        "landingPage.solutions.brand.features.1",
+        "landingPage.solutions.brand.features.2",
+        "landingPage.solutions.brand.features.3"
+      ],
+      ctaKey: "landingPage.solutions.brand.cta"
+    },
+    {
+      titleKey: "landingPage.solutions.mediaOwners.title",
+      descriptionKey: "landingPage.solutions.mediaOwners.description",
+      bgColor: "bg-transparent",
+      href: "/solutions/media-owners",
+      image: "/assets/images/brands/Media-Owners.png",
+      featureKeys: [
+        "landingPage.solutions.mediaOwners.features.0",
+        "landingPage.solutions.mediaOwners.features.1",
+        "landingPage.solutions.mediaOwners.features.2",
+        "landingPage.solutions.mediaOwners.features.3"
+      ],
+      ctaKey: "landingPage.solutions.mediaOwners.cta"
+    },
+    {
+      titleKey: "landingPage.solutions.agencies.title",
+      descriptionKey: "landingPage.solutions.agencies.description",
+      bgColor: "bg-transparent",
+      href: "/solutions/agencies",
+      image: "/assets/images/brands/Agencies.png",
+      featureKeys: [
+        "landingPage.solutions.agencies.features.0",
+        "landingPage.solutions.agencies.features.1",
+        "landingPage.solutions.agencies.features.2",
+        "landingPage.solutions.agencies.features.3"
+      ],
+      ctaKey: "landingPage.solutions.agencies.cta"
+    },
+  ];
+
   return (
     <section id="solutions" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,21 +64,20 @@ export default function Services() {
           className="text-center mb-16"
         >
           <span className="text-mw-blue-600 text-sm font-medium uppercase tracking-wider">
-            Our Solutions
+            {t('landingPage.solutions.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mt-4 mb-6">
-            Tailored Solutions for Every Stakeholder
+            {t('landingPage.solutions.title')}
           </h2>
           <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
-            Whether you&apos;re a brand, media owner, or agency, we provide the tools 
-            and technology you need to succeed in the DOOH ecosystem.
+            {t('landingPage.solutions.description')}
           </p>
         </motion.div>
 
         <div className="space-y-16">
           {solutions.map((solution, index) => (
             <motion.div
-              key={solution.title}
+              key={solution.titleKey}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -84,7 +89,7 @@ export default function Services() {
                 <div className="relative h-[280px] sm:h-[350px] md:h-[420px] lg:h-[500px] w-full">
                   <Image
                     src={solution.image}
-                    alt={`${solution.title} illustration`}
+                    alt={`${t(solution.titleKey)} illustration`}
                     fill
                     className="object-contain object-center lg:object-left"
                   />
@@ -94,20 +99,20 @@ export default function Services() {
               {/* Content */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                 <h3 className="text-3xl font-bold text-mw-gray-900 mb-4">
-                  {solution.title}
+                  {t(solution.titleKey)}
                 </h3>
                 <p className="text-lg text-mw-gray-600 mb-6 leading-relaxed">
-                  {solution.description}
+                  {t(solution.descriptionKey)}
                 </p>
 
                 {/* Features List */}
                 <ul className="space-y-3 mb-8">
-                  {solution.features.map((feature, idx) => (
+                  {solution.featureKeys.map((featureKey, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-base text-mw-gray-700">
                       <svg className="w-6 h-6 text-mw-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-                      <span>{feature}</span>
+                      <span>{t(featureKey)}</span>
                     </li>
                   ))}
                 </ul>
@@ -117,7 +122,7 @@ export default function Services() {
                   href={solution.href}
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-medium rounded-lg transition-all duration-200 shadow-mw-md hover:shadow-mw-lg"
                 >
-                  Explore {solution.title} Solutions
+                  {t(solution.ctaKey)}
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

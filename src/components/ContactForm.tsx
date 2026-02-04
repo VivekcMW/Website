@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function ContactForm() {
+  const { t } = useLocale();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,14 +61,13 @@ export default function ContactForm() {
               <svg className="w-4 h-4 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
-              <span className="text-mw-blue-600 text-sm font-medium">Let's Discuss Your Vision</span>
+              <span className="text-mw-blue-600 text-sm font-medium">{t('landingPage.contactForm.badge')}</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-mw-gray-900 mb-4">
-              Your Success Story Starts Here
+              {t('landingPage.contactForm.title')}
             </h2>
             <p className="text-lg text-mw-gray-600 max-w-3xl mx-auto">
-              Share your advertising challenges and goals. Our experts will craft a tailored strategy 
-              that transforms your vision into measurable business results.
+              {t('landingPage.contactForm.description')}
             </p>
           </motion.div>
 
@@ -135,7 +136,7 @@ export default function ContactForm() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                          Full Name *
+                          {t('landingPage.contactForm.form.name')} *
                         </label>
                         <input
                           type="text"
@@ -150,7 +151,7 @@ export default function ContactForm() {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                          Email Address *
+                          {t('landingPage.contactForm.form.email')} *
                         </label>
                         <input
                           type="email"
@@ -168,7 +169,7 @@ export default function ContactForm() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="company" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                          Company Name
+                          {t('landingPage.contactForm.form.company')}
                         </label>
                         <input
                           type="text"
@@ -182,7 +183,7 @@ export default function ContactForm() {
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                          Phone Number
+                          {t('landingPage.contactForm.form.phone')}
                         </label>
                         <input
                           type="tel"
@@ -199,7 +200,7 @@ export default function ContactForm() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="service" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                          Primary Interest
+                          {t('landingPage.contactForm.form.service')}
                         </label>
                         <select
                           id="service"
@@ -208,22 +209,17 @@ export default function ContactForm() {
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-mw-gray-300 rounded-lg focus:ring-2 focus:ring-mw-blue-500 focus:border-mw-blue-500 transition-colors"
                         >
-                          <option value="">What's your primary goal?</option>
-                          <option value="mw-planner">Strategic Planning & Campaign Optimization</option>
-                          <option value="mw-studio">Creative Production & Asset Management</option>
-                          <option value="mw-marketplace">Premium Inventory & Media Buying</option>
-                          <option value="mw-reach">Audience Targeting & Reach Expansion</option>
-                          <option value="mw-activate">Campaign Automation & Management</option>
-                          <option value="mw-measure">Analytics & Performance Measurement</option>
-                          <option value="mw-science">Market Research & Consumer Insights</option>
-                          <option value="enterprise">Enterprise Solution & Custom Integration</option>
-                          <option value="partnership">Strategic Partnership Discussion</option>
-                          <option value="demo">Platform Demo & Product Walkthrough</option>
+                          <option value="">{t('landingPage.contactForm.selectService')}</option>
+                          <option value="brandAdvertising">{t('landingPage.contactForm.services.brandAdvertising')}</option>
+                          <option value="mediaOwnerSolutions">{t('landingPage.contactForm.services.mediaOwnerSolutions')}</option>
+                          <option value="agencyServices">{t('landingPage.contactForm.services.agencyServices')}</option>
+                          <option value="programmaticDOOH">{t('landingPage.contactForm.services.programmaticDOOH')}</option>
+                          <option value="customSolution">{t('landingPage.contactForm.services.customSolution')}</option>
                         </select>
                       </div>
                       <div>
                         <label htmlFor="budget" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                          Monthly Ad Budget (Optional)
+                          {t('landingPage.contactForm.form.budget')}
                         </label>
                         <select
                           id="budget"
@@ -232,21 +228,19 @@ export default function ContactForm() {
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-mw-gray-300 rounded-lg focus:ring-2 focus:ring-mw-blue-500 focus:border-mw-blue-500 transition-colors"
                         >
-                          <option value="">Select budget range</option>
-                          <option value="under-10k">Under $10,000</option>
-                          <option value="10k-50k">$10,000 - $50,000</option>
-                          <option value="50k-100k">$50,000 - $100,000</option>
-                          <option value="100k-500k">$100,000 - $500,000</option>
-                          <option value="500k-1m">$500,000 - $1,000,000</option>
-                          <option value="over-1m">Over $1,000,000</option>
-                          <option value="flexible">Flexible/To be discussed</option>
+                          <option value="">{t('landingPage.contactForm.selectBudget')}</option>
+                          <option value="under10k">{t('landingPage.contactForm.budgets.under10k')}</option>
+                          <option value="10k50k">{t('landingPage.contactForm.budgets.10k50k')}</option>
+                          <option value="50k100k">{t('landingPage.contactForm.budgets.50k100k')}</option>
+                          <option value="100k500k">{t('landingPage.contactForm.budgets.100k500k')}</option>
+                          <option value="over500k">{t('landingPage.contactForm.budgets.over500k')}</option>
                         </select>
                       </div>
                     </div>
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-mw-gray-700 mb-2">
-                        Message *
+                        {t('landingPage.contactForm.form.message')} *
                       </label>
                       <textarea
                         id="message"
@@ -256,7 +250,7 @@ export default function ContactForm() {
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-mw-gray-300 rounded-lg focus:ring-2 focus:ring-mw-blue-500 focus:border-mw-blue-500 transition-colors resize-vertical"
-                        placeholder="Share your advertising challenges, current performance metrics, and what success looks like for your business. The more details you provide, the better we can tailor our recommendations..."
+                        placeholder="Share your advertising challenges, current performance metrics, and what success looks like for your business..."
                       />
                     </div>
 
@@ -268,7 +262,7 @@ export default function ContactForm() {
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                         </svg>
-                        Send Message & Get Strategy Insights
+                        {t('landingPage.contactForm.form.submit')}
                       </span>
                     </button>
                   </form>
@@ -279,21 +273,10 @@ export default function ContactForm() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-mw-gray-900 mb-4">Message Received!</h3>
+                    <h3 className="text-2xl font-bold text-mw-gray-900 mb-4">{t('landingPage.contactForm.form.success')}</h3>
                     <p className="text-mw-gray-600 mb-4">
-                      Thank you for sharing your advertising goals with us. Our strategy team is already reviewing your requirements.
+                      {t('landingPage.contactForm.form.successDesc')}
                     </p>
-                    <div className="bg-mw-blue-50 rounded-lg p-4 max-w-md mx-auto">
-                      <div className="flex items-center gap-2 text-mw-blue-600 text-sm font-medium mb-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clipRule="evenodd" />
-                        </svg>
-                        Next Steps:
-                      </div>
-                      <p className="text-mw-gray-700 text-sm">
-                        Expect a personalized response within 2 hours with strategy recommendations tailored to your goals.
-                      </p>
-                    </div>
                   </div>
                 )}
               </div>

@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function CustomerLogos() {
+  const { t } = useLocale();
   const customers = [
     { 
       name: "Coca-Cola", 
@@ -129,13 +131,13 @@ export default function CustomerLogos() {
           className="text-center mb-12"
         >
           <span className="text-mw-blue-600 text-sm font-medium uppercase tracking-wider">
-            Our Customers
+            {t('landingPage.customerLogos.title')}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mt-4 mb-6">
-            Trusted by Global Brands
+            {t('landingPage.customerLogos.title')}
           </h2>
           <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
-            Join hundreds of leading brands that trust Moving Walls for their out-of-home advertising campaigns
+            {t('landingPage.customerLogos.description')}
           </p>
         </motion.div>
 

@@ -3,160 +3,162 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
-
-const workflowStages = [
-  { 
-    id: "plan", 
-    label: "Plan", 
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    )
-  },
-  { 
-    id: "create", 
-    label: "Create", 
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    )
-  },
-  { 
-    id: "buy", 
-    label: "Buy", 
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    )
-  },
-  { 
-    id: "activate", 
-    label: "Activate", 
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    )
-  },
-  { 
-    id: "measure", 
-    label: "Measure", 
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    )
-  }
-];
-
-const mwProducts = [
-  {
-    id: 1,
-    name: "MW Planner",
-    stage: "plan",
-    stageLabel: "Strategic Planning",
-    description: "Transform your marketing strategy with AI-driven campaign planning, competitive analysis, and ROI forecasting.",
-    outcome: "156% ROI Increase",
-    bgColor: "from-blue-500 to-blue-700",
-    borderColor: "border-blue-500",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
-    href: "/products/mw-planner",
-    popular: true
-  },
-  {
-    id: 2,
-    name: "MW Studio",
-    stage: "create",
-    stageLabel: "Creative Services",
-    description: "Scale creative production with intelligent asset management, brand compliance, and cross-format optimization.",
-    outcome: "5x Faster Delivery",
-    bgColor: "from-purple-500 to-purple-700",
-    borderColor: "border-purple-500",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    ),
-    href: "/products/mw-studio"
-  },
-  {
-    id: 3,
-    name: "MW Marketplace",
-    stage: "buy",
-    stageLabel: "Media Buying",
-    description: "Access premium inventory and verified publisher partnerships across all channels with transparent pricing.",
-    outcome: "$2.8B+ Inventory",
-    bgColor: "from-slate-500 to-slate-700",
-    borderColor: "border-slate-500",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-    href: "/products/mw-marketplace"
-  },
-  {
-    id: 4,
-    name: "MW Reach",
-    stage: "buy",
-    stageLabel: "Audience Targeting",
-    description: "Execute precision targeting across 3.5B+ users with advanced audience segmentation and cross-device linking.",
-    outcome: "94.7% Match Rate",
-    bgColor: "from-indigo-500 to-indigo-700",
-    borderColor: "border-indigo-500",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-      </svg>
-    ),
-    href: "/products/mw-reach",
-    popular: true
-  },
-  {
-    id: 5,
-    name: "MW Activate",
-    stage: "activate",
-    stageLabel: "Campaign Management",
-    description: "Automate campaign optimization with real-time AI decisions, budget pacing, and performance enhancement.",
-    outcome: "95% Faster Deploy",
-    bgColor: "from-cyan-500 to-cyan-700",
-    borderColor: "border-cyan-500",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    href: "/products/mw-activate"
-  },
-  {
-    id: 6,
-    name: "MW Measure",
-    stage: "measure",
-    stageLabel: "Analytics & Insights",
-    description: "Unlock actionable insights with advanced attribution modeling, cross-channel analytics, and predictive forecasting.",
-    outcome: "Complete Visibility",
-    bgColor: "from-emerald-500 to-emerald-700",
-    borderColor: "border-emerald-500",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-    href: "/products/mw-measure",
-  }
-];
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function Products() {
+  const { t } = useLocale();
   const [activeStage, setActiveStage] = useState<string | null>(null);
   const [selectedProducts, setSelectedProducts] = useState<number[]>([]);
+
+  const workflowStages = [
+    { 
+      id: "plan", 
+      label: t('landingPage.products.stages.plan'), 
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+      )
+    },
+    { 
+      id: "create", 
+      label: t('landingPage.products.stages.create'), 
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg>
+      )
+    },
+    { 
+      id: "buy", 
+      label: t('landingPage.products.stages.buy'), 
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      )
+    },
+    { 
+      id: "activate", 
+      label: t('landingPage.products.stages.activate'), 
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      )
+    },
+    { 
+      id: "measure", 
+      label: t('landingPage.products.stages.measure'), 
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      )
+    }
+  ];
+
+  const mwProducts = [
+    {
+      id: 1,
+      name: "MW Planner",
+      stage: "plan",
+      stageLabel: t('landingPage.products.mwPlanner.stageLabel'),
+      description: t('landingPage.products.mwPlanner.description'),
+      outcome: t('landingPage.products.mwPlanner.outcome'),
+      bgColor: "from-blue-500 to-blue-700",
+      borderColor: "border-blue-500",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+      ),
+      href: "/products/mw-planner",
+      popular: true
+    },
+    {
+      id: 2,
+      name: "MW Studio",
+      stage: "create",
+      stageLabel: t('landingPage.products.mwStudio.stageLabel'),
+      description: t('landingPage.products.mwStudio.description'),
+      outcome: t('landingPage.products.mwStudio.outcome'),
+      bgColor: "from-purple-500 to-purple-700",
+      borderColor: "border-purple-500",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg>
+      ),
+      href: "/products/mw-studio"
+    },
+    {
+      id: 3,
+      name: "MW Marketplace",
+      stage: "buy",
+      stageLabel: t('landingPage.products.mwMarketplace.stageLabel'),
+      description: t('landingPage.products.mwMarketplace.description'),
+      outcome: t('landingPage.products.mwMarketplace.outcome'),
+      bgColor: "from-slate-500 to-slate-700",
+      borderColor: "border-slate-500",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      href: "/products/mw-marketplace"
+    },
+    {
+      id: 4,
+      name: "MW Reach",
+      stage: "buy",
+      stageLabel: t('landingPage.products.mwReach.stageLabel'),
+      description: t('landingPage.products.mwReach.description'),
+      outcome: t('landingPage.products.mwReach.outcome'),
+      bgColor: "from-indigo-500 to-indigo-700",
+      borderColor: "border-indigo-500",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+        </svg>
+      ),
+      href: "/products/mw-reach",
+      popular: true
+    },
+    {
+      id: 5,
+      name: "MW Activate",
+      stage: "activate",
+      stageLabel: t('landingPage.products.mwActivate.stageLabel'),
+      description: t('landingPage.products.mwActivate.description'),
+      outcome: t('landingPage.products.mwActivate.outcome'),
+      bgColor: "from-cyan-500 to-cyan-700",
+      borderColor: "border-cyan-500",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      href: "/products/mw-activate"
+    },
+    {
+      id: 6,
+      name: "MW Measure",
+      stage: "measure",
+      stageLabel: t('landingPage.products.mwMeasure.stageLabel'),
+      description: t('landingPage.products.mwMeasure.description'),
+      outcome: t('landingPage.products.mwMeasure.outcome'),
+      bgColor: "from-emerald-500 to-emerald-700",
+      borderColor: "border-emerald-500",
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      ),
+      href: "/products/mw-measure",
+    }
+  ];
 
   const toggleProduct = (id: number) => {
     setSelectedProducts(prev =>
@@ -176,14 +178,13 @@ export default function Products() {
           className="text-center mb-16"
         >
           <span className="text-mw-blue-600 text-sm font-medium uppercase tracking-wider">
-            Complete MW Ecosystem
+            {t('landingPage.products.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mt-4 mb-6">
-            End-to-End Advertising Solutions
+            {t('landingPage.products.title')}
           </h2>
           <p className="text-mw-gray-600 text-lg mb-8 max-w-4xl mx-auto">
-            Transform your advertising strategy with our integrated platform. 
-            Each product connects seamlessly to deliver measurable results across your entire marketing workflow.
+            {t('landingPage.products.description')}
           </p>
         </motion.div>
 
@@ -243,7 +244,7 @@ export default function Products() {
                       <span className={`text-xs ${
                         isActive ? 'text-blue-100' : 'text-mw-gray-500'
                       }`}>
-                        {mwProducts.filter(p => p.stage === stage.id).length} Products
+                        {mwProducts.filter(p => p.stage === stage.id).length} {t('landingPage.products.productsLabel')}
                       </span>
                     )}
                   </motion.button>
@@ -293,7 +294,7 @@ export default function Products() {
                       {/* CTA Arrow */}
                       <div className="flex items-center justify-between">
                         <span className="text-mw-gray-900 font-medium text-sm group-hover:translate-x-2 transition-transform">
-                          Learn More
+                          {t('landingPage.products.learnMore')}
                         </span>
                         <svg className="w-5 h-5 text-mw-gray-900 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -317,14 +318,14 @@ export default function Products() {
         >
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
             {selectedProducts.length > 0 
-              ? `Build Your Custom Stack (${selectedProducts.length} Products Selected)`
-              : 'Ready to Transform Your Advertising?'
+              ? `${t('landingPage.products.cta.buildCustomStack')} (${selectedProducts.length} ${t('landingPage.products.cta.productsSelected')})`
+              : t('landingPage.products.cta.readyToTransform')
             }
           </h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             {selectedProducts.length > 0
-              ? 'Get a personalized demo and pricing for your selected products'
-              : 'Select products above or start with our complete platform solution'
+              ? t('landingPage.products.cta.getPersonalizedDemo')
+              : t('landingPage.products.cta.selectProducts')
             }
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -332,13 +333,13 @@ export default function Products() {
               href="/contact"
               className="px-8 py-4 bg-white text-mw-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all shadow-mw-md hover:shadow-mw-lg inline-flex items-center justify-center gap-2"
             >
-              {selectedProducts.length > 0 ? 'Get Custom Quote' : 'Start Free Trial'}
+              {selectedProducts.length > 0 ? t('landingPage.products.cta.getCustomQuote') : t('landingPage.products.cta.startFreeTrial')}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border-2 border-white/30">
-              Schedule Demo
+              {t('landingPage.products.cta.scheduleDemo')}
             </button>
           </div>
           {selectedProducts.length > 0 && (
@@ -346,7 +347,7 @@ export default function Products() {
               onClick={() => setSelectedProducts([])}
               className="mt-4 text-white/80 hover:text-white text-sm underline"
             >
-              Clear Selection
+              {t('landingPage.products.cta.clearSelection')}
             </button>
           )}
         </motion.div>

@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function CaseStudySection() {
+  const { t } = useLocale();
+  
   return (
     <section id="case-study" className="py-24 bg-mw-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,10 +18,10 @@ export default function CaseStudySection() {
           className="text-center mb-12"
         >
           <span className="text-mw-blue-600 text-sm font-medium uppercase tracking-wider">
-            Success Stories
+            {t('landingPage.caseStudy.badge')}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mt-4">
-            Featured Case Study
+            {t('landingPage.caseStudy.title')}
           </h2>
         </motion.div>
 
@@ -38,13 +41,13 @@ export default function CaseStudySection() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white p-8">
                     <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-                      Automotive Industry
+                      {t('landingPage.caseStudy.industry')}
                     </div>
                     <h3 className="text-3xl sm:text-4xl font-bold mb-2">
-                      300% ROAS Increase
+                      300% {t('landingPage.caseStudy.roasIncrease')}
                     </h3>
                     <p className="text-blue-100 text-lg">
-                      How AutoBrand Transformed DOOH Strategy
+                      {t('landingPage.caseStudy.headline')}
                     </p>
                   </div>
                 </div>
@@ -57,44 +60,41 @@ export default function CaseStudySection() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    6 min read
+                    {t('landingPage.caseStudy.readTime')}
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    December 2024
+                    {t('landingPage.caseStudy.date')}
                   </span>
                 </div>
 
                 <p className="text-mw-gray-700 text-lg leading-relaxed mb-8">
-                  Leading automotive brand transformed their digital out-of-home advertising strategy 
-                  using MW's AI-powered platform. Discover how they achieved record-breaking campaign 
-                  performance, expanded market share, and gained complete attribution visibility across 
-                  15 markets.
+                  {t('landingPage.caseStudy.description')}
                 </p>
 
                 {/* Key Results Grid */}
                 <div className="grid sm:grid-cols-3 gap-6 mb-8 p-6 bg-mw-gray-50 rounded-xl">
                   <div>
                     <div className="text-3xl font-bold text-mw-blue-600 mb-1">300%</div>
-                    <div className="text-sm text-mw-gray-600">ROAS Increase</div>
+                    <div className="text-sm text-mw-gray-600">{t('landingPage.caseStudy.roasIncrease')}</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-mw-blue-600 mb-1">2.4M</div>
-                    <div className="text-sm text-mw-gray-600">Daily Reach</div>
+                    <div className="text-sm text-mw-gray-600">{t('landingPage.caseStudy.dailyReach')}</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-mw-blue-600 mb-1">47%</div>
-                    <div className="text-sm text-mw-gray-600">Lower CPA</div>
+                    <div className="text-sm text-mw-gray-600">{t('landingPage.caseStudy.lowerCPA')}</div>
                   </div>
                 </div>
 
                 {/* Read More CTA */}
                 <div className="flex items-center justify-between pt-6 border-t border-mw-gray-200">
                   <span className="text-mw-blue-600 font-semibold group-hover:gap-3 flex items-center gap-2 transition-all">
-                    Read Full Case Study
+                    {t('landingPage.caseStudy.readFullCaseStudy')}
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

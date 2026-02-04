@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "Moving Walls - Nền Tảng Quảng Cáo Ngoài Trời",
+    "description": "Moving Walls hợp nhất toàn bộ hệ sinh thái quảng cáo ngoài trời thông qua một nền tảng đám mây thông minh duy nhất."
+  },
+  "nav": {
+    "solutions": "Giải Pháp",
+    "products": "Sản Phẩm",
+    "about": "Về Chúng Tôi",
+    "resources": "Tài Nguyên",
+    "contact": "Liên Hệ",
+    "getStarted": "Bắt Đầu"
+  },
+  "hero": {
+    "badge": "Quảng Cáo OOH Hỗ Trợ AI",
+    "title": "Chuyển Đổi",
+    "titleHighlight": "Chiến Lược Quảng Cáo Của Bạn",
+    "description": "Moving Walls hợp nhất toàn bộ hệ sinh thái quảng cáo ngoài trời thông qua một nền tảng đám mây thông minh duy nhất. Từ khám phá đối tượng đến đặt chỗ, kích hoạt, đo lường và tối ưu hóa.",
+    "cta": {
+      "primary": "Dùng Thử Miễn Phí",
+      "secondary": "Xem Demo"
+    },
+    "stats": {
+      "screens": "500K+ Màn Hình",
+      "countries": "25+ Quốc Gia",
+      "impressions": "1 Tỷ+ Lượt Hiển Thị/Ngày",
+      "clients": "10K+ Khách Hàng"
+    }
+  },
+  "services": {
+    "badge": "Dịch Vụ Của Chúng Tôi",
+    "title": "Giải Pháp Quảng Cáo OOH",
+    "titleHighlight": "Toàn Diện",
+    "description": "Từ lập kế hoạch đến đo lường, chúng tôi cung cấp giải pháp toàn diện cho nhu cầu quảng cáo ngoài trời của bạn."
+  },
+  "products": {
+    "badge": "Bộ Sản Phẩm",
+    "title": "Công Cụ Mạnh Mẽ Cho",
+    "titleHighlight": "Mọi Nhu Cầu",
+    "description": "Nền tảng tích hợp của chúng tôi cung cấp mọi thứ bạn cần để lập kế hoạch, thực hiện và đo lường các chiến dịch OOH thành công.",
+    "planner": {
+      "title": "MW Planner",
+      "description": "Lập kế hoạch chiến dịch chiến lược & tối ưu hóa"
+    },
+    "measure": {
+      "title": "MW Measure",
+      "description": "Phân tích nâng cao & theo dõi hiệu suất"
+    },
+    "reach": {
+      "title": "MW Reach",
+      "description": "Nhắm mục tiêu đối tượng đa kênh"
+    },
+    "activate": {
+      "title": "MW Activate",
+      "description": "Kích hoạt & tối ưu hóa chiến dịch theo thời gian thực"
+    },
+    "science": {
+      "title": "MW Science",
+      "description": "Thông tin chi tiết đối tượng hỗ trợ AI"
+    },
+    "studio": {
+      "title": "MW Studio",
+      "description": "Nền tảng quản lý nội dung sáng tạo"
+    },
+    "marketplace": {
+      "title": "MW Marketplace",
+      "description": "Kho hàng cao cấp & hệ sinh thái đối tác"
+    }
+  },
+  "clients": {
+    "title": "Tích Hợp Với Các Nền Tảng Hàng Đầu",
+    "description": "Kết nối liền mạch với các công cụ bạn đã sử dụng"
+  },
+  "trustedBy": {
+    "title": "Được Các Thương Hiệu Toàn Cầu Tin Tưởng",
+    "description": "Tham gia cùng hàng nghìn công ty đạt kết quả tốt hơn"
+  },
+  "testimonials": {
+    "badge": "Đánh Giá",
+    "title": "Khách Hàng",
+    "titleHighlight": "Nói Gì"
+  },
+  "caseStudies": {
+    "badge": "Nghiên Cứu Điển Hình",
+    "title": "Câu Chuyện Thành Công",
+    "titleHighlight": "Truyền Cảm Hứng",
+    "description": "Khám phá cách các thương hiệu hàng đầu đạt được kết quả phi thường với Moving Walls."
+  },
+  "newsletter": {
+    "title": "Nhận Thông Tin Ngành",
+    "titleHighlight": "Hàng Tuần",
+    "description": "Đi trước với bản tin của chúng tôi về các xu hướng, chiến lược và câu chuyện thành công mới nhất.",
+    "placeholder": "Nhập email của bạn",
+    "subscribe": "Đăng Ký",
+    "privacy": "Chúng tôi tôn trọng quyền riêng tư của bạn. Hủy đăng ký bất cứ lúc nào."
+  },
+  "footer": {
+    "description": "Moving Walls hợp nhất toàn bộ hệ sinh thái quảng cáo ngoài trời thông qua một nền tảng đám mây thông minh duy nhất.",
+    "followUs": "Theo Dõi Chúng Tôi",
+    "company": "Công Ty",
+    "solutions": "Giải Pháp",
+    "products": "Sản Phẩm",
+    "resources": "Tài Nguyên",
+    "support": "Hỗ Trợ",
+    "billboardLocations": "Vị Trí Bảng Quảng Cáo",
+    "copyright": "© 2024 Moving Walls. Đã đăng ký bản quyền.",
+    "privacy": "Chính Sách Bảo Mật",
+    "terms": "Điều Khoản Dịch Vụ",
+    "cookies": "Cài Đặt Cookie"
+  },
+  "contact": {
+    "badge": "Liên Hệ Chúng Tôi",
+    "title": "Kết Nối Với",
+    "titleHighlight": "Đội Ngũ Của Chúng Tôi",
+    "description": "Có câu hỏi? Chúng tôi muốn nghe từ bạn. Gửi tin nhắn và chúng tôi sẽ phản hồi sớm nhất có thể.",
+    "form": {
+      "firstName": "Tên",
+      "lastName": "Họ",
+      "email": "Địa Chỉ Email",
+      "company": "Tên Công Ty",
+      "phone": "Điện Thoại",
+      "message": "Tin Nhắn",
+      "submit": "Gửi Tin Nhắn",
+      "sending": "Đang gửi..."
+    }
+  },
+  "events": {
+    "badge": "Học Tập & Kết Nối",
+    "title": "Sự Kiện & Đào Tạo",
+    "titleHighlight": "Học Hỏi & Kết Nối",
+    "description": "Tham gia webinar, workshop, hội nghị và các buổi đào tạo của chúng tôi.",
+    "upcoming": "Sự Kiện Sắp Tới",
+    "register": "Đăng Ký",
+    "registerFree": "Đăng Ký Miễn Phí",
+    "requestInvite": "Yêu Cầu Lời Mời"
+  },
+  "about": {
+    "ourStory": {
+      "badge": "Câu Chuyện Của Chúng Tôi",
+      "title": "Chuyển Đổi Quảng Cáo OOH",
+      "titleHighlight": "Toàn Cầu",
+      "description": "Từ năm 2015, Moving Walls đã đi đầu trong việc cách mạng hóa ngành quảng cáo ngoài trời."
+    },
+    "leadership": {
+      "badge": "Lãnh Đạo",
+      "title": "Gặp Gỡ",
+      "titleHighlight": "Đội Ngũ Lãnh Đạo",
+      "description": "Đội ngũ giàu kinh nghiệm của chúng tôi kết hợp chuyên môn về công nghệ, quảng cáo và khoa học dữ liệu."
+    },
+    "careers": {
+      "badge": "Nghề Nghiệp",
+      "title": "Xây Dựng Sự Nghiệp",
+      "titleHighlight": "Cùng Chúng Tôi",
+      "description": "Tham gia đội ngũ những người đổi mới đang thay đổi ngành quảng cáo."
+    }
+  },
+  "common": {
+    "learnMore": "Tìm Hiểu Thêm",
+    "viewAll": "Xem Tất Cả",
+    "readMore": "Đọc Thêm",
+    "contactUs": "Liên Hệ Chúng Tôi",
+    "getStarted": "Bắt Đầu",
+    "bookDemo": "Đặt Demo",
+    "watchVideo": "Xem Video",
+    "downloadNow": "Tải Ngay",
+    "startFreeTrial": "Bắt Đầu Dùng Thử Miễn Phí",
+    "seeAllFeatures": "Xem Tất Cả Tính Năng",
+    "explorePlatform": "Khám Phá Nền Tảng"
+  },
+  "megaMenu": {
+    "solutions": {
+      "byIndustry": "Theo Ngành",
+      "brand": {
+        "name": "Thương Hiệu",
+        "description": "Tiếp cận người mua ở mọi giai đoạn"
+      },
+      "mediaOwners": {
+        "name": "Chủ Sở Hữu Phương Tiện",
+        "description": "Kết nối hiệu quả với bệnh nhân"
+      },
+      "agencies": {
+        "name": "Đại Lý",
+        "description": "Xây dựng niềm tin và nhận thức"
+      },
+      "featured": {
+        "title": "Nghiên Cứu Điển Hình: Ô Tô",
+        "description": "Thương hiệu ô tô cao cấp đạt 300% ROI trong Q4"
+      }
+    },
+    "products": {
+      "platformSuite": "Bộ Nền Tảng MW",
+      "intelligenceSuite": "Bộ Trí Tuệ MW",
+      "planner": {
+        "name": "MW Planner",
+        "description": "Lập kế hoạch chiến dịch chiến lược và tối ưu hóa"
+      },
+      "measure": {
+        "name": "MW Measure",
+        "description": "Phân tích nâng cao và theo dõi hiệu suất"
+      },
+      "reach": {
+        "name": "MW Reach",
+        "description": "Nhắm mục tiêu đối tượng đa kênh"
+      },
+      "activate": {
+        "name": "MW Activate",
+        "description": "Kích hoạt và tối ưu hóa chiến dịch thời gian thực"
+      },
+      "science": {
+        "name": "MW Science",
+        "description": "Thông tin chi tiết đối tượng được hỗ trợ bởi AI và nghiên cứu"
+      },
+      "studio": {
+        "name": "MW Studio",
+        "description": "Nền tảng quản lý nội dung sáng tạo"
+      },
+      "marketplace": {
+        "name": "MW Marketplace",
+        "description": "Kho hàng cao cấp và hệ sinh thái đối tác"
+      },
+      "featured": {
+        "title": "Nghiên Cứu Điển Hình: Bán Lẻ",
+        "description": "Chuỗi bán lẻ quốc gia tăng 45% lưu lượng truy cập"
+      }
+    },
+    "about": {
+      "company": "Công Ty",
+      "connect": "Kết Nối",
+      "ourStory": {
+        "name": "Câu Chuyện Của Chúng Tôi",
+        "description": "Tìm hiểu về hành trình của chúng tôi"
+      },
+      "leadership": {
+        "name": "Đội Ngũ Lãnh Đạo",
+        "description": "Gặp gỡ các giám đốc điều hành của chúng tôi"
+      },
+      "careers": {
+        "name": "Nghề Nghiệp",
+        "description": "Tham gia đội ngũ đang phát triển của chúng tôi"
+      },
+      "contact": {
+        "name": "Liên Hệ Chúng Tôi",
+        "description": "Liên lạc với chúng tôi"
+      },
+      "partners": {
+        "name": "Đối Tác",
+        "description": "Hệ sinh thái đối tác"
+      },
+      "events": {
+        "name": "Sự Kiện",
+        "description": "Các sự kiện sắp tới"
+      },
+      "featured": {
+        "title": "Nghiên Cứu Điển Hình: Tài Chính",
+        "description": "Startup Fintech tạo ra 5.000+ khách hàng tiềm năng chất lượng"
+      }
+    },
+    "resources": {
+      "learn": "Học Hỏi",
+      "support": "Hỗ Trợ",
+      "blog": {
+        "name": "Blog",
+        "description": "Thông tin chi tiết và mẹo ngành"
+      },
+      "webinars": {
+        "name": "Hội Thảo Trực Tuyến",
+        "description": "Học tập theo yêu cầu"
+      },
+      "caseStudies": {
+        "name": "Nghiên Cứu Điển Hình",
+        "description": "Câu chuyện thành công"
+      },
+      "ebooks": {
+        "name": "Sách Điện Tử",
+        "description": "Hướng dẫn và báo cáo chuyên sâu"
+      },
+      "ooh101": {
+        "name": "OOH 101",
+        "description": "Cơ bản về quảng cáo ngoài trời"
+      },
+      "pressNews": {
+        "name": "Báo Chí và Tin Tức",
+        "description": "Thông báo mới nhất"
+      },
+      "helpCenter": {
+        "name": "Trung Tâm Trợ Giúp",
+        "description": "Nhận câu trả lời nhanh chóng"
+      },
+      "documentation": {
+        "name": "Tài Liệu",
+        "description": "Hướng dẫn kỹ thuật"
+      },
+      "apiReference": {
+        "name": "Tham Chiếu API",
+        "description": "Tài nguyên nhà phát triển"
+      },
+      "community": {
+        "name": "Cộng Đồng",
+        "description": "Kết nối với đồng nghiệp"
+      },
+      "integrations": {
+        "name": "Tích Hợp",
+        "description": "Kết nối công cụ của bạn"
+      },
+      "featured": {
+        "title": "Nghiên Cứu Điển Hình: Công Nghệ",
+        "description": "Công ty công nghệ ra mắt sản phẩm với 10 triệu lượt hiển thị"
+      }
+    }
+  },
+  "landingPage": {
+    "trustBar": {
+      "soc2": "Chứng nhận SOC 2",
+      "googlePartner": "Đối tác Cao cấp Google",
+      "iabMember": "Thành viên IAB",
+      "gdprCompliant": "Tuân thủ GDPR"
+    },
+    "asianBornGlobal": {
+      "badge": "Sinh ra tại Châu Á, Tầm nhìn Toàn cầu",
+      "title": "Chúng tôi Kết nối Thương hiệu với",
+      "titleHighlight": "Khán giả Trên Toàn Thế Giới",
+      "description": "Từ gốc rễ của chúng tôi ở Đông Nam Á, chúng tôi đã mở rộng để chạy các chiến dịch quảng cáo ở hơn 30 quốc gia, phục vụ hơn 10.000 khách hàng trên toàn cầu.",
+      "stats": {
+        "countries": "30+",
+        "countriesLabel": "Quốc gia",
+        "screens": "2.8T+",
+        "screensLabel": "Màn hình",
+        "clients": "10K+",
+        "clientsLabel": "Khách hàng"
+      }
+    },
+    "solutions": {
+      "badge": "Giải pháp của Chúng tôi",
+      "title": "Giải pháp Tùy chỉnh cho Mọi Bên Liên quan",
+      "description": "Dù bạn là thương hiệu, chủ sở hữu phương tiện truyền thông hay agency, chúng tôi cung cấp công cụ và công nghệ bạn cần để thành công trong hệ sinh thái DOOH.",
+      "brand": {
+        "title": "Thương hiệu",
+        "description": "Khuếch đại thông điệp thương hiệu của bạn trên khoảng không quảng cáo ngoài trời cao cấp. Tiếp cận đối tượng mục tiêu của bạn ở quy mô lớn thông qua các chiến dịch dựa trên dữ liệu thúc đẩy nhận thức và tương tác.",
+        "features": {
+          "0": "Quản lý Chiến dịch Đa kênh",
+          "1": "Nhắm mục tiêu Đối tượng Nâng cao",
+          "2": "Phân tích Hiệu suất Thời gian thực",
+          "3": "Công cụ Tối ưu hóa Sáng tạo"
+        },
+        "cta": "Khám phá Giải pháp Thương hiệu"
+      },
+      "mediaOwners": {
+        "title": "Chủ sở hữu Media",
+        "description": "Tối đa hóa giá trị khoảng không quảng cáo của bạn thông qua nền tảng programmatic tiên tiến của chúng tôi. Kết nối với nhà quảng cáo cao cấp và tối ưu hóa doanh thu trên toàn bộ tài sản OOH kỹ thuật số và truyền thống.",
+        "features": {
+          "0": "Truy cập Thị trường Programmatic",
+          "1": "Hệ thống Quản lý Khoảng không",
+          "2": "Tối ưu hóa Giá Động",
+          "3": "Dashboard Phân tích Publisher"
+        },
+        "cta": "Khám phá Giải pháp Chủ sở hữu Media"
+      },
+      "agencies": {
+        "title": "Agency",
+        "description": "Hợp lý hóa hoạt động DOOH với các công cụ cấp doanh nghiệp. Quản lý chiến dịch đa khách hàng, truy cập khoảng không quảng cáo cao cấp và mang lại kết quả xuất sắc thông qua nền tảng agency của chúng tôi.",
+        "features": {
+          "0": "Quản lý Chiến dịch Đa Khách hàng",
+          "1": "Báo cáo White-Label",
+          "2": "Thanh toán Hợp nhất",
+          "3": "Hỗ trợ Tài khoản Chuyên dụng"
+        },
+        "cta": "Khám phá Giải pháp Agency"
+      }
+    },
+    "clients": {
+      "title": "Tích hợp với Các Nền tảng Hàng đầu",
+      "description": "Tích hợp liền mạch với các công cụ marketing hiện có của bạn"
+    },
+    "products": {
+      "badge": "Hệ sinh thái MW Hoàn chỉnh",
+      "title": "Giải pháp Quảng cáo Toàn diện",
+      "description": "Chuyển đổi chiến lược quảng cáo của bạn với bộ nền tảng tích hợp của chúng tôi. Mỗi sản phẩm kết nối liền mạch để mang lại kết quả có thể đo lường trên toàn bộ quy trình marketing của bạn.",
+      "stages": {
+        "plan": "Lập kế hoạch",
+        "create": "Sáng tạo",
+        "buy": "Mua",
+        "activate": "Kích hoạt",
+        "measure": "Đo lường"
+      },
+      "productsLabel": "Sản phẩm",
+      "learnMore": "Tìm hiểu thêm",
+      "mwPlanner": {
+        "stageLabel": "Lập kế hoạch Chiến lược",
+        "description": "Chuyển đổi chiến lược marketing của bạn với lập kế hoạch chiến dịch được hỗ trợ bởi AI, phân tích cạnh tranh và dự báo ROI.",
+        "outcome": "Tăng ROI 156%"
+      },
+      "mwStudio": {
+        "stageLabel": "Dịch vụ Sáng tạo",
+        "description": "Mở rộng sản xuất sáng tạo với quản lý tài sản thông minh, tuân thủ thương hiệu và tối ưu hóa đa định dạng.",
+        "outcome": "Giao hàng Nhanh hơn 5 lần"
+      },
+      "mwMarketplace": {
+        "stageLabel": "Mua Media",
+        "description": "Truy cập khoảng không quảng cáo cao cấp và quan hệ đối tác publisher đã xác minh trên tất cả các kênh với giá minh bạch.",
+        "outcome": "Khoảng không $2.8T+"
+      },
+      "mwReach": {
+        "stageLabel": "Nhắm mục tiêu Đối tượng",
+        "description": "Thực hiện nhắm mục tiêu chính xác trên 3.5T+ người dùng thông qua phân khúc đối tượng nâng cao và liên kết đa thiết bị.",
+        "outcome": "Tỷ lệ khớp 94.7%"
+      },
+      "mwActivate": {
+        "stageLabel": "Quản lý Chiến dịch",
+        "description": "Tự động hóa tối ưu hóa chiến dịch với quyết định AI thời gian thực, phân bổ ngân sách và tăng cường hiệu suất.",
+        "outcome": "Triển khai Nhanh hơn 95%"
+      },
+      "mwMeasure": {
+        "stageLabel": "Phân tích & Insights",
+        "description": "Mở khóa insights có thể hành động thông qua mô hình attribution nâng cao, phân tích đa kênh và dự báo dự đoán.",
+        "outcome": "Khả năng hiển thị Full Funnel"
+      },
+      "cta": {
+        "buildCustomStack": "Xây dựng Stack Tùy chỉnh của Bạn",
+        "productsSelected": "Sản phẩm Đã chọn",
+        "readyToTransform": "Sẵn sàng Chuyển đổi Quảng cáo của Bạn?",
+        "getPersonalizedDemo": "Nhận demo và báo giá cá nhân hóa cho các sản phẩm đã chọn",
+        "selectProducts": "Chọn sản phẩm ở trên hoặc bắt đầu với giải pháp nền tảng đầy đủ",
+        "getCustomQuote": "Nhận Báo giá Tùy chỉnh",
+        "startFreeTrial": "Bắt đầu Dùng thử Miễn phí",
+        "scheduleDemo": "Đặt lịch Demo",
+        "clearSelection": "Xóa Lựa chọn"
+      }
+    },
+    "customerLogos": {
+      "title": "Được Tin dùng bởi Các Thương hiệu Hàng đầu",
+      "description": "Tham gia cùng hàng ngàn công ty đạt được kết quả tốt hơn"
+    },
+    "testimonials": {
+      "badge": "Thành công của Khách hàng",
+      "title": "Khách hàng của Chúng tôi",
+      "titleHighlight": "Nói gì",
+      "description": "Lắng nghe từ các thương hiệu và agency đang chuyển đổi quảng cáo của họ với Moving Walls."
+    },
+    "about": {
+      "title": "Định nghĩa lại Quảng cáo Ngoài trời",
+      "description1": "Moving Walls là công ty dẫn đầu trong quảng cáo ngoài trời được hỗ trợ bởi công nghệ, kết hợp các nền tảng đổi mới với chuyên môn ngành sâu sắc để mang lại kết quả xuất sắc cho các thương hiệu trên toàn thế giới.",
+      "description2": "Sứ mệnh của chúng tôi là làm cho quảng cáo ngoài trời có thể nhắm mục tiêu, đo lường và hiệu quả như quảng cáo kỹ thuật số—mang lại điều tốt nhất của cả hai thế giới để giúp thương hiệu kết nối với khán giả theo cách có ý nghĩa.",
+      "features": {
+        "yearsOfExcellence": "Năm Xuất sắc",
+        "dailyImpressions": "Lượt hiển thị Hàng ngày",
+        "markets": "Thị trường",
+        "dataDriven": {
+          "label": "Dựa trên Dữ liệu",
+          "desc": "Insights thúc đẩy quyết định"
+        },
+        "fullService": {
+          "label": "Dịch vụ Toàn diện",
+          "desc": "Giải pháp toàn diện"
+        },
+        "globalReach": {
+          "label": "Phạm vi Toàn cầu",
+          "desc": "100+ thị trường trên toàn thế giới"
+        },
+        "innovation": {
+          "label": "Đổi mới",
+          "desc": "Công nghệ tiên tiến"
+        }
+      },
+      "cta": "Tìm hiểu Câu chuyện của Chúng tôi"
+    },
+    "caseStudy": {
+      "badge": "Câu chuyện Thành công",
+      "title": "Nghiên cứu Điển hình Nổi bật",
+      "industry": "Ngành Ô tô",
+      "roasIncrease": "Tăng ROAS",
+      "headline": "AutoBrand Đã Chuyển đổi Chiến lược DOOH Như thế nào",
+      "description": "Một thương hiệu ô tô hàng đầu đã chuyển đổi chiến lược digital out-of-home của họ bằng nền tảng được hỗ trợ AI của MW. Tìm hiểu cách họ đạt được hiệu suất chiến dịch phá kỷ lục, mở rộng thị phần và khả năng hiển thị attribution đầy đủ trên 15 thị trường.",
+      "readTime": "Đọc 6 phút",
+      "date": "Tháng 12 năm 2024",
+      "dailyReach": "Tiếp cận Hàng ngày",
+      "lowerCPA": "CPA Thấp hơn",
+      "readFullCaseStudy": "Đọc Nghiên cứu Điển hình Đầy đủ",
+      "viewAllCaseStudies": "Xem Tất cả Nghiên cứu Điển hình"
+    },
+    "contactForm": {
+      "badge": "Hãy Thảo luận về Tầm nhìn của Bạn",
+      "title": "Câu chuyện Thành công của Bạn Bắt đầu Từ đây",
+      "description": "Chia sẻ thách thức và mục tiêu quảng cáo của bạn. Các chuyên gia của chúng tôi sẽ thiết kế chiến lược tùy chỉnh chuyển đổi tầm nhìn của bạn thành kết quả kinh doanh có thể đo lường.",
+      "form": {
+        "name": "Họ và Tên",
+        "email": "Địa chỉ Email",
+        "company": "Công ty",
+        "phone": "Số Điện thoại",
+        "service": "Dịch vụ Quan tâm",
+        "budget": "Ngân sách Hàng tháng",
+        "message": "Cho chúng tôi biết về dự án của bạn",
+        "submit": "Bắt đầu Hành trình của Bạn",
+        "submitting": "Đang gửi...",
+        "success": "Tin nhắn Đã gửi!",
+        "successDesc": "Chúng tôi sẽ liên hệ trong vòng 24 giờ."
+      },
+      "selectService": "Chọn dịch vụ",
+      "selectBudget": "Chọn phạm vi ngân sách",
+      "services": {
+        "brandAdvertising": "Quảng cáo Thương hiệu",
+        "mediaOwnerSolutions": "Giải pháp Chủ sở hữu Media",
+        "agencyServices": "Dịch vụ Agency",
+        "programmaticDOOH": "DOOH Programmatic",
+        "customSolution": "Giải pháp Tùy chỉnh"
+      },
+      "budgets": {
+        "under10k": "Dưới $10K",
+        "10k50k": "$10K - $50K",
+        "50k100k": "$50K - $100K",
+        "100k500k": "$100K - $500K",
+        "over500k": "Trên $500K"
+      },
+      "benefits": {
+        "title": "Tại sao Hợp tác với Chúng tôi?",
+        "freeConsultation": "Tư vấn Chiến lược Miễn phí",
+        "freeConsultationDesc": "Nhận insights chuyên gia phù hợp với mục tiêu của bạn",
+        "customProposal": "Đề xuất Tùy chỉnh",
+        "customProposalDesc": "Nhận kế hoạch chi tiết trong 48 giờ",
+        "noCommitment": "Không Cam kết",
+        "noCommitmentDesc": "Khám phá các lựa chọn trước khi quyết định"
+      },
+      "contact": {
+        "title": "Liên hệ Trực tiếp",
+        "email": "hello@movingwalls.com",
+        "phone": "+1 (888) MW-WALLS"
+      }
+    }
+  }
+}

@@ -1,26 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useLocale, Locale } from "@/i18n/LocaleContext";
 
-// Mega menu data
-const megaMenuData = {
+// Function to create translated mega menu data
+const createMegaMenuData = (t: (key: string) => string) => ({
   Solutions: {
     sections: [
       {
-        title: "By Industry",
+        title: t('megaMenu.solutions.byIndustry'),
         items: [
-          { name: "Brand", description: "Reach buyers at every stage", href: "/solutions/brands" },
-          { name: "Media Owners", description: "Connect with patients effectively", href: "/solutions/media-owners" },
-          { name: "Agencies", description: "Build trust and awareness", href: "/solutions/agencies" },
+          { name: t('megaMenu.solutions.brand.name'), description: t('megaMenu.solutions.brand.description'), href: "/solutions/brands" },
+          { name: t('megaMenu.solutions.mediaOwners.name'), description: t('megaMenu.solutions.mediaOwners.description'), href: "/solutions/media-owners" },
+          { name: t('megaMenu.solutions.agencies.name'), description: t('megaMenu.solutions.agencies.description'), href: "/solutions/agencies" },
         ],
       },
     ],
     featured: {
-      title: "Case Study: Automotive",
-      description: "Premium Automotive Brand Achieves 300% ROI in Q4",
+      title: t('megaMenu.solutions.featured.title'),
+      description: t('megaMenu.solutions.featured.description'),
       image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop",
       href: "/resources/case-studies/automotive-dealership-traffic",
     },
@@ -28,26 +29,26 @@ const megaMenuData = {
   Products: {
     sections: [
       {
-        title: "MW Platform Suite",
+        title: t('megaMenu.products.platformSuite'),
         items: [
-          { name: "MW Planner", description: "Strategic campaign planning & optimization", href: "/products/mw-planner" },
-          { name: "MW Measure", description: "Advanced analytics & performance tracking", href: "/products/mw-measure" },
-          { name: "MW Reach", description: "Multi-channel audience targeting", href: "/products/mw-reach" },
-          { name: "MW Activate", description: "Real-time campaign activation & optimization", href: "/products/mw-activate" },
+          { name: t('megaMenu.products.planner.name'), description: t('megaMenu.products.planner.description'), href: "/products/mw-planner" },
+          { name: t('megaMenu.products.measure.name'), description: t('megaMenu.products.measure.description'), href: "/products/mw-measure" },
+          { name: t('megaMenu.products.reach.name'), description: t('megaMenu.products.reach.description'), href: "/products/mw-reach" },
+          { name: t('megaMenu.products.activate.name'), description: t('megaMenu.products.activate.description'), href: "/products/mw-activate" },
         ],
       },
       {
-        title: "MW Intelligence Suite",
+        title: t('megaMenu.products.intelligenceSuite'),
         items: [
-          { name: "MW Science", description: "AI-powered audience insights & research", href: "/products/mw-science" },
-          { name: "MW Studio", description: "Creative content management platform", href: "/products/mw-studio" },
-          { name: "MW Marketplace", description: "Premium inventory & partnership ecosystem", href: "/products/mw-marketplace" },
+          { name: t('megaMenu.products.science.name'), description: t('megaMenu.products.science.description'), href: "/products/mw-science" },
+          { name: t('megaMenu.products.studio.name'), description: t('megaMenu.products.studio.description'), href: "/products/mw-studio" },
+          { name: t('megaMenu.products.marketplace.name'), description: t('megaMenu.products.marketplace.description'), href: "/products/mw-marketplace" },
         ],
       },
     ],
     featured: {
-      title: "Case Study: Retail",
-      description: "National Retail Chain Drives 45% Foot Traffic Increase",
+      title: t('megaMenu.products.featured.title'),
+      description: t('megaMenu.products.featured.description'),
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
       href: "/resources/case-studies/global-retail-brand-340-roi",
     },
@@ -55,26 +56,25 @@ const megaMenuData = {
   About: {
     sections: [
       {
-        title: "Company",
+        title: t('megaMenu.about.company'),
         items: [
-          { name: "Our Story", description: "Learn about our journey", href: "/about/our-story" },
-          // { name: "Our Journey", description: "Timeline of innovation", href: "/about/our-journey" },
-          { name: "Leadership Team", description: "Meet our executives", href: "/about/leadership" },
-          { name: "Careers", description: "Join our growing team", href: "/about/careers" },
+          { name: t('megaMenu.about.ourStory.name'), description: t('megaMenu.about.ourStory.description'), href: "/about/our-story" },
+          { name: t('megaMenu.about.leadership.name'), description: t('megaMenu.about.leadership.description'), href: "/about/leadership" },
+          { name: t('megaMenu.about.careers.name'), description: t('megaMenu.about.careers.description'), href: "/about/careers" },
         ],
       },
       {
-        title: "Connect",
+        title: t('megaMenu.about.connect'),
         items: [
-          { name: "Contact Us", description: "Get in touch with us", href: "/contact" },
-          { name: "Partners", description: "Partner ecosystem", href: "/partners" },
-          { name: "Events", description: "Upcoming events", href: "/events" },
+          { name: t('megaMenu.about.contact.name'), description: t('megaMenu.about.contact.description'), href: "/contact" },
+          { name: t('megaMenu.about.partners.name'), description: t('megaMenu.about.partners.description'), href: "/partners" },
+          { name: t('megaMenu.about.events.name'), description: t('megaMenu.about.events.description'), href: "/events" },
         ],
       },
     ],
     featured: {
-      title: "Case Study: Finance",
-      description: "Fintech Startup Generates 5,000+ Quality Leads",
+      title: t('megaMenu.about.featured.title'),
+      description: t('megaMenu.about.featured.description'),
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
       href: "/resources/case-studies/fintech-app-acquisition",
     },
@@ -82,48 +82,69 @@ const megaMenuData = {
   Resources: {
     sections: [
       {
-        title: "Learn",
+        title: t('megaMenu.resources.learn'),
         items: [
-          { name: "Blog", description: "Industry insights and tips", href: "/resources/blog" },
-          { name: "Webinars", description: "On-demand learning", href: "/resources/webinars" },
-          { name: "Case Studies", description: "Success stories", href: "/resources/case-studies" },
-          { name: "E-Books", description: "In-depth guides & reports", href: "/resources/ebooks" },
-          { name: "OOH 101", description: "Out-of-home advertising basics", href: "/resources/ooh-101" },
-          { name: "Press & News", description: "Latest announcements", href: "/about/press-news" },
+          { name: t('megaMenu.resources.blog.name'), description: t('megaMenu.resources.blog.description'), href: "/resources/blog" },
+          { name: t('megaMenu.resources.webinars.name'), description: t('megaMenu.resources.webinars.description'), href: "/resources/webinars" },
+          { name: t('megaMenu.resources.caseStudies.name'), description: t('megaMenu.resources.caseStudies.description'), href: "/resources/case-studies" },
+          { name: t('megaMenu.resources.ebooks.name'), description: t('megaMenu.resources.ebooks.description'), href: "/resources/ebooks" },
+          { name: t('megaMenu.resources.ooh101.name'), description: t('megaMenu.resources.ooh101.description'), href: "/resources/ooh-101" },
+          { name: t('megaMenu.resources.pressNews.name'), description: t('megaMenu.resources.pressNews.description'), href: "/about/press-news" },
         ],
       },
       {
-        title: "Support",
+        title: t('megaMenu.resources.support'),
         items: [
-          { name: "Help Center", description: "Get answers fast", href: "/resources/help-center" },
-          { name: "Documentation", description: "Technical guides", href: "/resources/documentation" },
-          { name: "API Reference", description: "Developer resources", href: "/resources/api-reference" },
-          { name: "Community", description: "Connect with peers", href: "/resources/community" },
-          { name: "Integrations", description: "Connect your tools", href: "/integrations" },
+          { name: t('megaMenu.resources.helpCenter.name'), description: t('megaMenu.resources.helpCenter.description'), href: "/resources/help-center" },
+          { name: t('megaMenu.resources.documentation.name'), description: t('megaMenu.resources.documentation.description'), href: "/resources/documentation" },
+          { name: t('megaMenu.resources.apiReference.name'), description: t('megaMenu.resources.apiReference.description'), href: "/resources/api-reference" },
+          { name: t('megaMenu.resources.community.name'), description: t('megaMenu.resources.community.description'), href: "/resources/community" },
+          { name: t('megaMenu.resources.integrations.name'), description: t('megaMenu.resources.integrations.description'), href: "/integrations" },
         ],
       },
     ],
     featured: {
-      title: "Case Study: Technology",
-      description: "Tech Company Launches Product with 10M Impressions",
+      title: t('megaMenu.resources.featured.title'),
+      description: t('megaMenu.resources.featured.description'),
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
       href: "/resources/case-studies/tech-product-launch",
     },
   },
-};
+});
 
-const navLinks = [
-  { name: "Solutions", href: "#solutions", hasMegaMenu: true },
-  { name: "Products", href: "#products", hasMegaMenu: true },
-  { name: "About", href: "#about", hasMegaMenu: true },
-  { name: "Resources", href: "#resources", hasMegaMenu: true },
-  { name: "Contact", href: "/contact", hasMegaMenu: false },
+// Navigation links with translation keys
+const navLinkKeys = [
+  { key: "nav.solutions", name: "Solutions", href: "#solutions", hasMegaMenu: true },
+  { key: "nav.products", name: "Products", href: "#products", hasMegaMenu: true },
+  { key: "nav.about", name: "About", href: "#about", hasMegaMenu: true },
+  { key: "nav.resources", name: "Resources", href: "#resources", hasMegaMenu: true },
+  { key: "nav.contact", name: "Contact", href: "/contact", hasMegaMenu: false },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [mobileExpandedMenu, setMobileExpandedMenu] = useState<string | null>(null);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  
+  // Use the locale context
+  const { locale, setLocale, localeNames, localeCodes, locales, t } = useLocale();
+  
+  // Create translated mega menu data
+  const megaMenuData = useMemo(() => createMegaMenuData(t), [t]);
+  
+  // Create translated nav links
+  const navLinks = useMemo(() => navLinkKeys.map(link => ({
+    ...link,
+    translatedName: t(link.key)
+  })), [t]);
+  
+  // Build languages array from locale context
+  const languages = locales.map((loc) => ({
+    locale: loc,
+    code: localeCodes[loc],
+    name: localeNames[loc],
+  }));
 
   const handleMouseEnter = (name: string) => {
     if (megaMenuData[name as keyof typeof megaMenuData]) {
@@ -173,7 +194,7 @@ export default function Header() {
                   <button
                     className="flex items-center gap-1 text-mw-gray-600 hover:text-mw-blue-600 transition-colors duration-200 text-sm font-medium py-2"
                   >
-                    {link.name}
+                    {link.translatedName}
                     <svg
                       className={`w-4 h-4 transition-transform duration-200 ${
                         activeMegaMenu === link.name ? "rotate-180" : ""
@@ -190,11 +211,67 @@ export default function Header() {
                     href={link.href}
                     className="flex items-center gap-1 text-mw-gray-600 hover:text-mw-blue-600 transition-colors duration-200 text-sm font-medium py-2"
                   >
-                    {link.name}
+                    {link.translatedName}
                   </Link>
                 )}
               </motion.div>
             ))}
+            
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                onBlur={() => setTimeout(() => setIsLanguageOpen(false), 150)}
+                className="flex items-center gap-2 px-3 py-2 text-mw-gray-600 hover:text-mw-blue-600 transition-colors duration-200 text-sm font-medium rounded-lg hover:bg-mw-gray-50"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{localeCodes[locale]}</span>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <AnimatePresence>
+                {isLanguageOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-lg border border-mw-gray-200 py-2 z-50 max-h-80 overflow-y-auto"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.locale}
+                        onClick={() => {
+                          setLocale(lang.locale);
+                          setIsLanguageOpen(false);
+                        }}
+                        className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-mw-blue-50 transition-colors ${
+                          locale === lang.locale ? 'bg-mw-blue-50 text-mw-blue-600' : 'text-mw-gray-700'
+                        }`}
+                      >
+                        <span className="font-medium text-xs bg-mw-gray-100 px-2 py-0.5 rounded">{lang.code}</span>
+                        <span>{lang.name}</span>
+                        {locale === lang.locale && (
+                          <svg className="w-4 h-4 ml-auto text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <motion.button
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -332,7 +409,7 @@ export default function Header() {
                             )
                           }
                         >
-                          {link.name}
+                          {link.translatedName}
                           <svg
                             className={`w-4 h-4 transition-transform duration-200 ${
                               mobileExpandedMenu === link.name ? "rotate-180" : ""
@@ -388,11 +465,43 @@ export default function Header() {
                         className="block text-mw-gray-600 hover:text-mw-blue-600 transition-colors duration-200 text-sm font-medium py-2"
                         onClick={() => setIsOpen(false)}
                       >
-                        {link.name}
+                        {link.translatedName}
                       </Link>
                     )}
                   </div>
                 ))}
+                
+                {/* Mobile Language Selector */}
+                <div className="pt-4 border-t border-mw-gray-200">
+                  <p className="text-xs font-semibold text-mw-gray-400 uppercase tracking-wider mb-3">Language</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {languages.slice(0, 8).map((lang) => (
+                      <button
+                        key={lang.locale}
+                        onClick={() => {
+                          setLocale(lang.locale);
+                        }}
+                        className={`flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors ${
+                          locale === lang.locale 
+                            ? 'bg-mw-blue-100 text-mw-blue-600' 
+                            : 'bg-mw-gray-50 text-mw-gray-700 hover:bg-mw-gray-100'
+                        }`}
+                      >
+                        <span className="font-medium text-xs bg-mw-gray-200 px-1.5 py-0.5 rounded">{lang.code}</span>
+                        <span className="truncate text-xs">{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <button 
+                    className="w-full mt-2 text-sm text-mw-blue-600 hover:text-mw-blue-700 py-2"
+                    onClick={() => {
+                      // Could open a full language modal
+                    }}
+                  >
+                    View all languages →
+                  </button>
+                </div>
+
                 <button className="w-full bg-mw-blue-600 hover:bg-mw-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200 mt-4">
                   Get Started
                 </button>

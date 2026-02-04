@@ -1,0 +1,529 @@
+{
+  "metadata": {
+    "title": "Moving Walls - 屋外広告プラットフォーム",
+    "description": "Moving Wallsは、単一のインテリジェントなクラウドプラットフォームを通じて、OOHエコシステム全体を統合します。"
+  },
+  "nav": {
+    "solutions": "ソリューション",
+    "products": "製品",
+    "about": "会社概要",
+    "resources": "リソース",
+    "contact": "お問い合わせ",
+    "getStarted": "始める"
+  },
+  "hero": {
+    "badge": "AI駆動のOOH広告",
+    "title": "世界をリードする",
+    "titleHighlight": "コネクテッドメディアプラットフォーム",
+    "description": "500以上のブランドに信頼されているデータドリブンなDOOHソリューションで広告を変革。よりスマートに計画、より良く購入、すべてを測定。",
+    "cta": {
+      "primary": "無料キャンペーン分析",
+      "secondary": "デモを見る"
+    },
+    "stats": {
+      "screens": "50万以上のスクリーン",
+      "countries": "25以上の国",
+      "impressions": "10億以上の日次インプレッション",
+      "clients": "1万以上のクライアント"
+    }
+  },
+  "services": {
+    "badge": "サービス",
+    "title": "エンドツーエンドの",
+    "titleHighlight": "OOH広告ソリューション",
+    "description": "プランニングから測定まで、屋外広告のニーズに対応する包括的なソリューションを提供します。"
+  },
+  "products": {
+    "badge": "製品スイート",
+    "title": "あらゆるニーズに対応する",
+    "titleHighlight": "パワフルなツール",
+    "description": "統合プラットフォームで、成功するOOHキャンペーンの計画、実行、測定に必要なすべてを提供します。",
+    "planner": {
+      "title": "MW Planner",
+      "description": "戦略的キャンペーン計画と最適化"
+    },
+    "measure": {
+      "title": "MW Measure",
+      "description": "高度な分析とパフォーマンス追跡"
+    },
+    "reach": {
+      "title": "MW Reach",
+      "description": "マルチチャネルオーディエンスターゲティング"
+    },
+    "activate": {
+      "title": "MW Activate",
+      "description": "リアルタイムキャンペーンのアクティベーションと最適化"
+    },
+    "science": {
+      "title": "MW Science",
+      "description": "AI駆動のオーディエンスインサイト"
+    },
+    "studio": {
+      "title": "MW Studio",
+      "description": "クリエイティブコンテンツ管理プラットフォーム"
+    },
+    "marketplace": {
+      "title": "MW Marketplace",
+      "description": "プレミアム在庫とパートナーエコシステム"
+    }
+  },
+  "clients": {
+    "title": "主要プラットフォームと連携",
+    "description": "既にお使いのツールとシームレスに接続"
+  },
+  "trustedBy": {
+    "title": "グローバルブランドに信頼されています",
+    "description": "より良い結果を達成している数千の企業に参加"
+  },
+  "testimonials": {
+    "badge": "お客様の声",
+    "title": "お客様からの",
+    "titleHighlight": "評価"
+  },
+  "caseStudies": {
+    "badge": "事例紹介",
+    "title": "インスピレーションを与える",
+    "titleHighlight": "成功事例",
+    "description": "Moving Wallsで卓越した成果を達成した主要ブランドの事例をご覧ください。"
+  },
+  "newsletter": {
+    "title": "業界インサイトを",
+    "titleHighlight": "毎週お届け",
+    "description": "最新のトレンド、戦略、成功事例を特集したニュースレターで一歩先を行きましょう。",
+    "placeholder": "メールアドレスを入力",
+    "subscribe": "購読する",
+    "privacy": "プライバシーを尊重します。いつでも解除可能です。"
+  },
+  "footer": {
+    "description": "Moving Wallsは、単一のインテリジェントなクラウドプラットフォームを通じて、OOHエコシステム全体を統合します。オーディエンスの発見から予約、アクティベーション、測定、最適化まで、データ駆動の精度ですべてのステップを合理化します。",
+    "followUs": "フォローする",
+    "company": "会社情報",
+    "solutions": "ソリューション",
+    "products": "製品",
+    "resources": "リソース",
+    "support": "サポート",
+    "billboardLocations": "看板設置場所",
+    "copyright": "© 2024 Moving Walls. All rights reserved.",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "cookies": "Cookie設定"
+  },
+  "contact": {
+    "badge": "お問い合わせ",
+    "title": "チームと",
+    "titleHighlight": "つながる",
+    "description": "ご質問がありますか？お気軽にメッセージをお送りください。できるだけ早くお返事いたします。",
+    "form": {
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "メールアドレス",
+      "company": "会社名",
+      "phone": "電話番号",
+      "message": "メッセージ",
+      "submit": "メッセージを送信",
+      "sending": "送信中..."
+    }
+  },
+  "events": {
+    "badge": "学習とネットワーキング",
+    "title": "イベント＆トレーニング",
+    "titleHighlight": "学び、つながる",
+    "description": "ウェビナー、ワークショップ、カンファレンス、トレーニングセッションにご参加ください。",
+    "upcoming": "今後のイベント",
+    "register": "登録する",
+    "registerFree": "無料登録",
+    "requestInvite": "招待をリクエスト"
+  },
+  "about": {
+    "ourStory": {
+      "badge": "私たちの物語",
+      "title": "OOH広告を",
+      "titleHighlight": "グローバルに変革",
+      "description": "2015年以来、Moving Wallsは屋外広告業界の革命の最前線に立っています。"
+    },
+    "leadership": {
+      "badge": "リーダーシップ",
+      "title": "リーダーシップ",
+      "titleHighlight": "チームのご紹介",
+      "description": "経験豊富なチームが、テクノロジー、広告、データサイエンスの専門知識を結集しています。"
+    },
+    "careers": {
+      "badge": "採用情報",
+      "title": "私たちと共に",
+      "titleHighlight": "キャリアを築く",
+      "description": "広告業界を変革するイノベーターのチームに参加しませんか。"
+    }
+  },
+  "common": {
+    "learnMore": "詳細を見る",
+    "viewAll": "すべて見る",
+    "readMore": "続きを読む",
+    "contactUs": "お問い合わせ",
+    "getStarted": "始める",
+    "bookDemo": "デモを予約",
+    "watchVideo": "動画を見る",
+    "downloadNow": "今すぐダウンロード",
+    "startFreeTrial": "無料トライアル開始",
+    "seeAllFeatures": "すべての機能を見る",
+    "explorePlatform": "プラットフォームを探索"
+  },
+  "megaMenu": {
+    "solutions": {
+      "byIndustry": "業界別",
+      "brand": {
+        "name": "ブランド",
+        "description": "あらゆる段階で購入者にリーチ"
+      },
+      "mediaOwners": {
+        "name": "メディアオーナー",
+        "description": "患者と効果的に接続"
+      },
+      "agencies": {
+        "name": "エージェンシー",
+        "description": "信頼と認知度を構築"
+      },
+      "featured": {
+        "title": "ケーススタディ：自動車",
+        "description": "プレミアム自動車ブランドがQ4で300%のROIを達成"
+      }
+    },
+    "products": {
+      "platformSuite": "MWプラットフォームスイート",
+      "intelligenceSuite": "MWインテリジェンススイート",
+      "planner": {
+        "name": "MW Planner",
+        "description": "戦略的キャンペーン計画と最適化"
+      },
+      "measure": {
+        "name": "MW Measure",
+        "description": "高度な分析とパフォーマンス追跡"
+      },
+      "reach": {
+        "name": "MW Reach",
+        "description": "マルチチャネルオーディエンスターゲティング"
+      },
+      "activate": {
+        "name": "MW Activate",
+        "description": "リアルタイムキャンペーン活性化と最適化"
+      },
+      "science": {
+        "name": "MW Science",
+        "description": "AI駆動のオーディエンスインサイトと調査"
+      },
+      "studio": {
+        "name": "MW Studio",
+        "description": "クリエイティブコンテンツ管理プラットフォーム"
+      },
+      "marketplace": {
+        "name": "MW Marketplace",
+        "description": "プレミアム在庫とパートナーシップエコシステム"
+      },
+      "featured": {
+        "title": "ケーススタディ：小売",
+        "description": "全国小売チェーンが来店客数45%増加を実現"
+      }
+    },
+    "about": {
+      "company": "会社",
+      "connect": "つながる",
+      "ourStory": {
+        "name": "私たちのストーリー",
+        "description": "私たちの歩みについて"
+      },
+      "leadership": {
+        "name": "リーダーシップチーム",
+        "description": "経営陣をご紹介"
+      },
+      "careers": {
+        "name": "採用情報",
+        "description": "成長するチームに参加"
+      },
+      "contact": {
+        "name": "お問い合わせ",
+        "description": "ご連絡ください"
+      },
+      "partners": {
+        "name": "パートナー",
+        "description": "パートナーエコシステム"
+      },
+      "events": {
+        "name": "イベント",
+        "description": "今後のイベント"
+      },
+      "featured": {
+        "title": "ケーススタディ：金融",
+        "description": "フィンテックスタートアップが5,000件以上の質の高いリードを獲得"
+      }
+    },
+    "resources": {
+      "learn": "学ぶ",
+      "support": "サポート",
+      "blog": {
+        "name": "ブログ",
+        "description": "業界のインサイトとヒント"
+      },
+      "webinars": {
+        "name": "ウェビナー",
+        "description": "オンデマンド学習"
+      },
+      "caseStudies": {
+        "name": "ケーススタディ",
+        "description": "成功事例"
+      },
+      "ebooks": {
+        "name": "Eブック",
+        "description": "詳細なガイドとレポート"
+      },
+      "ooh101": {
+        "name": "OOH 101",
+        "description": "屋外広告の基礎"
+      },
+      "pressNews": {
+        "name": "プレス＆ニュース",
+        "description": "最新のお知らせ"
+      },
+      "helpCenter": {
+        "name": "ヘルプセンター",
+        "description": "迅速に回答を得る"
+      },
+      "documentation": {
+        "name": "ドキュメント",
+        "description": "技術ガイド"
+      },
+      "apiReference": {
+        "name": "APIリファレンス",
+        "description": "開発者リソース"
+      },
+      "community": {
+        "name": "コミュニティ",
+        "description": "仲間とつながる"
+      },
+      "integrations": {
+        "name": "インテグレーション",
+        "description": "ツールを接続"
+      },
+      "featured": {
+        "title": "ケーススタディ：テクノロジー",
+        "description": "テック企業が1000万インプレッションで製品をローンチ"
+      }
+    }
+  },
+  "landingPage": {
+    "trustBar": {
+      "soc2": "SOC 2 認証取得",
+      "googlePartner": "Google プレミアパートナー",
+      "iabMember": "IAB メンバー",
+      "gdprCompliant": "GDPR 準拠"
+    },
+    "asianBornGlobal": {
+      "badge": "アジア生まれ、グローバルビジョン",
+      "title": "ブランドを",
+      "titleHighlight": "世界中のオーディエンスとつなぐ",
+      "description": "東南アジアをルーツとして、30カ国以上で広告キャンペーンを展開し、世界中で10,000以上のクライアントにサービスを提供しています。",
+      "stats": {
+        "countries": "30+",
+        "countriesLabel": "カ国",
+        "screens": "28億+",
+        "screensLabel": "スクリーン",
+        "clients": "1万+",
+        "clientsLabel": "クライアント"
+      }
+    },
+    "solutions": {
+      "badge": "ソリューション",
+      "title": "すべてのステークホルダーに最適なソリューション",
+      "description": "ブランド、メディアオーナー、代理店のいずれであっても、DOOHエコシステムで成功するために必要なツールとテクノロジーを提供します。",
+      "brand": {
+        "title": "ブランド",
+        "description": "プレミアムな屋外広告在庫でブランドメッセージを拡大。データドリブンなキャンペーンでターゲットオーディエンスに大規模にリーチし、認知度とエンゲージメントを向上させます。",
+        "features": {
+          "0": "マルチチャネルキャンペーン管理",
+          "1": "高度なオーディエンスターゲティング",
+          "2": "リアルタイムパフォーマンス分析",
+          "3": "クリエイティブ最適化ツール"
+        },
+        "cta": "ブランドソリューションを探索"
+      },
+      "mediaOwners": {
+        "title": "メディアオーナー",
+        "description": "高度なプログラマティックプラットフォームで在庫価値を最大化。プレミアム広告主と接続し、すべてのデジタルおよび従来のOOH資産の収益を最適化します。",
+        "features": {
+          "0": "プログラマティックマーケットプレイスアクセス",
+          "1": "在庫管理システム",
+          "2": "動的価格最適化",
+          "3": "パブリッシャー分析ダッシュボード"
+        },
+        "cta": "メディアオーナーソリューションを探索"
+      },
+      "agencies": {
+        "title": "代理店",
+        "description": "エンタープライズグレードのツールでDOOH運用を効率化。複数のクライアントキャンペーンを管理し、プレミアム在庫にアクセスし、代理店プラットフォームで優れた結果を提供します。",
+        "features": {
+          "0": "マルチクライアントキャンペーン管理",
+          "1": "ホワイトラベルレポート",
+          "2": "統合請求",
+          "3": "専任アカウントサポート"
+        },
+        "cta": "代理店ソリューションを探索"
+      }
+    },
+    "clients": {
+      "title": "主要プラットフォームとの統合",
+      "description": "既存のマーケティングスタックとシームレスに統合"
+    },
+    "products": {
+      "badge": "完全なMWエコシステム",
+      "title": "エンドツーエンドの広告ソリューション",
+      "description": "統合プラットフォームで広告戦略を変革。各製品がシームレスに接続し、マーケティングワークフロー全体で測定可能な結果を提供します。",
+      "stages": {
+        "plan": "計画",
+        "create": "制作",
+        "buy": "購入",
+        "activate": "配信",
+        "measure": "測定"
+      },
+      "productsLabel": "製品",
+      "learnMore": "詳細を見る",
+      "mwPlanner": {
+        "stageLabel": "戦略計画",
+        "description": "AIドリブンなキャンペーン計画、競合分析、ROI予測でマーケティング戦略を変革します。",
+        "outcome": "ROI 156%向上"
+      },
+      "mwStudio": {
+        "stageLabel": "クリエイティブサービス",
+        "description": "インテリジェントなアセット管理、ブランドコンプライアンス、マルチフォーマット最適化でクリエイティブ制作を拡大します。",
+        "outcome": "5倍高速な納品"
+      },
+      "mwMarketplace": {
+        "stageLabel": "メディア購入",
+        "description": "透明な価格設定で、すべてのチャネルにわたるプレミアム在庫と検証済みパブリッシャーパートナーシップにアクセスします。",
+        "outcome": "28億ドル以上の在庫"
+      },
+      "mwReach": {
+        "stageLabel": "オーディエンスターゲティング",
+        "description": "高度なオーディエンスセグメンテーションとクロスデバイスリンクで、35億以上のユーザーに精密なターゲティングを実行します。",
+        "outcome": "94.7%マッチ率"
+      },
+      "mwActivate": {
+        "stageLabel": "キャンペーン管理",
+        "description": "リアルタイムAI判断、予算配分、パフォーマンス向上でキャンペーン最適化を自動化します。",
+        "outcome": "95%高速な展開"
+      },
+      "mwMeasure": {
+        "stageLabel": "分析とインサイト",
+        "description": "高度なアトリビューションモデリング、クロスチャネル分析、予測フォーキャストで実用的なインサイトを解放します。",
+        "outcome": "完全な可視性"
+      },
+      "cta": {
+        "buildCustomStack": "カスタムスタックを構築",
+        "productsSelected": "選択した製品",
+        "readyToTransform": "広告を変革する準備はできましたか？",
+        "getPersonalizedDemo": "選択した製品のパーソナライズされたデモと価格を取得",
+        "selectProducts": "上記の製品を選択するか、完全なプラットフォームソリューションから始める",
+        "getCustomQuote": "カスタム見積もりを取得",
+        "startFreeTrial": "無料トライアルを開始",
+        "scheduleDemo": "デモを予約",
+        "clearSelection": "選択をクリア"
+      }
+    },
+    "customerLogos": {
+      "title": "主要ブランドから信頼されています",
+      "description": "より良い結果を達成している数千の企業に参加"
+    },
+    "testimonials": {
+      "badge": "クライアントの成功",
+      "title": "お客様の",
+      "titleHighlight": "声",
+      "description": "Moving Wallsで広告を変革しているブランドや代理店の声をお聞きください。"
+    },
+    "about": {
+      "title": "屋外広告を再定義",
+      "description1": "Moving Wallsは、革新的なプラットフォームと深い業界専門知識を組み合わせ、世界中のブランドに卓越した結果を提供する、テクノロジー主導の屋外広告の主要企業です。",
+      "description2": "私たちの使命は、屋外広告をデジタル広告と同様にターゲット可能、測定可能、効果的にすることです—両方の世界の長所を取り入れ、ブランドが有意義な方法でオーディエンスとつながることを支援します。",
+      "features": {
+        "yearsOfExcellence": "卓越の年数",
+        "dailyImpressions": "日次インプレッション",
+        "markets": "市場",
+        "dataDriven": {
+          "label": "データドリブン",
+          "desc": "意思決定を促進するインサイト"
+        },
+        "fullService": {
+          "label": "フルサービス",
+          "desc": "エンドツーエンドソリューション"
+        },
+        "globalReach": {
+          "label": "グローバルリーチ",
+          "desc": "100以上の市場"
+        },
+        "innovation": {
+          "label": "イノベーション",
+          "desc": "最先端テクノロジー"
+        }
+      },
+      "cta": "私たちのストーリーを知る"
+    },
+    "caseStudy": {
+      "badge": "成功事例",
+      "title": "注目のケーススタディ",
+      "industry": "自動車業界",
+      "roasIncrease": "ROAS向上",
+      "headline": "AutoBrandがDOOH戦略を変革した方法",
+      "description": "大手自動車ブランドがMWのAI搭載プラットフォームを使用してデジタル屋外広告戦略を変革しました。記録的なキャンペーンパフォーマンス、市場シェアの拡大、15市場での完全なアトリビューション可視性を達成した方法をご覧ください。",
+      "readTime": "6分で読む",
+      "date": "2024年12月",
+      "dailyReach": "日次リーチ",
+      "lowerCPA": "より低いCPA",
+      "readFullCaseStudy": "完全なケーススタディを読む",
+      "viewAllCaseStudies": "すべてのケーススタディを見る"
+    },
+    "contactForm": {
+      "badge": "ビジョンについて話し合いましょう",
+      "title": "あなたの成功物語はここから始まります",
+      "description": "広告の課題と目標を共有してください。私たちの専門家が、あなたのビジョンを測定可能なビジネス成果に変えるカスタマイズされた戦略を作成します。",
+      "form": {
+        "name": "氏名",
+        "email": "メールアドレス",
+        "company": "会社名",
+        "phone": "電話番号",
+        "service": "興味のあるサービス",
+        "budget": "月間予算",
+        "message": "プロジェクトについて教えてください",
+        "submit": "旅を始める",
+        "submitting": "送信中...",
+        "success": "メッセージ送信完了！",
+        "successDesc": "24時間以内にご連絡いたします。"
+      },
+      "selectService": "サービスを選択",
+      "selectBudget": "予算範囲を選択",
+      "services": {
+        "brandAdvertising": "ブランド広告",
+        "mediaOwnerSolutions": "メディアオーナーソリューション",
+        "agencyServices": "代理店サービス",
+        "programmaticDOOH": "プログラマティックDOOH",
+        "customSolution": "カスタムソリューション"
+      },
+      "budgets": {
+        "under10k": "10,000ドル未満",
+        "10k50k": "10,000 - 50,000ドル",
+        "50k100k": "50,000 - 100,000ドル",
+        "100k500k": "100,000 - 500,000ドル",
+        "over500k": "500,000ドル以上"
+      },
+      "benefits": {
+        "title": "なぜ私たちとパートナーを組むのか？",
+        "freeConsultation": "無料戦略コンサルティング",
+        "freeConsultationDesc": "目標に合わせた専門家のインサイトを取得",
+        "customProposal": "カスタム提案",
+        "customProposalDesc": "48時間以内に詳細な計画を受け取る",
+        "noCommitment": "コミットメント不要",
+        "noCommitmentDesc": "決定前にオプションを探索"
+      },
+      "contact": {
+        "title": "直接連絡",
+        "email": "hello@movingwalls.com",
+        "phone": "+1 (888) MW-WALLS"
+      }
+    }
+  }
+}
