@@ -3,93 +3,21 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { blogPosts, blogCategories, getFeaturedPost, searchPosts } from "@/data/blog-posts";
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const categories = ["All", "Industry Trends", "Best Practices", "Product Updates", "Case Studies", "Technology"];
-
-  const articles = [
-    {
-      title: "The Future of Digital Out-of-Home Advertising in 2025",
-      excerpt: "Explore the latest trends shaping the DOOH landscape and how AI is transforming campaign performance.",
-      category: "Industry Trends",
-      author: "Sarah Johnson",
-      date: "Dec 1, 2025",
-      readTime: "8 min read",
-      image: "/placeholder.jpg",
-      featured: true
-    },
-    {
-      title: "10 Best Practices for Automotive Advertising Campaigns",
-      excerpt: "Learn how to reach car shoppers at every stage of their journey with proven strategies.",
-      category: "Best Practices",
-      author: "Michael Chen",
-      date: "Nov 28, 2025",
-      readTime: "6 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      title: "Introducing MW Science: AI-Powered Audience Insights",
-      excerpt: "Discover how our new AI-powered platform helps you understand and target audiences better.",
-      category: "Product Updates",
-      author: "Emily Rodriguez",
-      date: "Nov 25, 2025",
-      readTime: "5 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      title: "How Retail Brands Are Winning with Location-Based Marketing",
-      excerpt: "Real-world examples of successful retail campaigns using geo-targeting technology.",
-      category: "Case Studies",
-      author: "David Park",
-      date: "Nov 22, 2025",
-      readTime: "7 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      title: "Understanding Programmatic DOOH: A Beginner's Guide",
-      excerpt: "Everything you need to know about programmatic digital out-of-home advertising.",
-      category: "Best Practices",
-      author: "Lisa Thompson",
-      date: "Nov 19, 2025",
-      readTime: "10 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      title: "The Role of Machine Learning in Ad Optimization",
-      excerpt: "How ML algorithms are revolutionizing campaign performance and ROI.",
-      category: "Technology",
-      author: "James Wilson",
-      date: "Nov 15, 2025",
-      readTime: "9 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      title: "Healthcare Marketing: Reaching Patients Effectively",
-      excerpt: "Strategies for healthcare brands to connect with patients while maintaining compliance.",
-      category: "Industry Trends",
-      author: "Dr. Amanda Lee",
-      date: "Nov 12, 2025",
-      readTime: "6 min read",
-      image: "/placeholder.jpg"
-    },
-    {
-      title: "Measuring Campaign Success: Key Metrics That Matter",
-      excerpt: "A comprehensive guide to tracking and analyzing your advertising performance.",
-      category: "Best Practices",
-      author: "Robert Martinez",
-      date: "Nov 8, 2025",
-      readTime: "8 min read",
-      image: "/placeholder.jpg"
-    }
-  ];
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredArticles = selectedCategory === "All" 
-    ? articles 
-    : articles.filter(article => article.category === selectedCategory);
+    ? blogPosts 
+    : blogPosts.filter(article => article.category === selectedCategory);
 
-  const featuredArticle = articles.find(a => a.featured);
+  const displayedArticles = searchQuery 
+    ? searchPosts(searchQuery) 
+    : filteredArticles;
+
+  const featuredArticle = getFeaturedPost();
 
   return (
     <div className="min-h-screen bg-white">
@@ -122,6 +50,8 @@ export default function BlogPage() {
                 <input
                   type="text"
                   placeholder="Search articles..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-6 py-4 pl-14 border border-mw-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-mw-blue-500 focus:border-transparent shadow-mw-sm"
                 />
                 <svg className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mw-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,7 +67,7 @@ export default function BlogPage() {
       <section className="py-8 bg-white border-b border-mw-gray-200 sticky top-20 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 overflow-x-auto pb-2">
-            {categories.map((category) => (
+            {blogCategories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
@@ -155,7 +85,7 @@ export default function BlogPage() {
       </section>
 
       {/* Featured Article */}
-      {selectedCategory === "All" && featuredArticle && (
+      {selectedCategory === "All" && !searchQuery && featuredArticle && (
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -182,7 +112,7 @@ export default function BlogPage() {
                     <span className="text-sm text-blue-100">{featuredArticle.readTime}</span>
                   </div>
                   <Link
-                    href="#"
+                    href={`/resources/blog/${featuredArticle.slug}`}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-white text-mw-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
                   >
                     Read Article
@@ -191,10 +121,24 @@ export default function BlogPage() {
                     </svg>
                   </Link>
                 </div>
-                <div className="aspect-video bg-white/10 rounded-xl backdrop-blur-sm flex items-center justify-center">
-                  <svg className="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0v8h12V6H4z" />
-                  </svg>
+                <div className="aspect-video bg-white/10 rounded-xl backdrop-blur-sm overflow-hidden">
+                  {featuredArticle.featuredImage ? (
+                    <img
+                      src={featuredArticle.featuredImage}
+                      alt={featuredArticle.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <svg className="w-20 h-20 text-white/30" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0v8h12V6H4z" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -207,62 +151,87 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-mw-gray-900">
-              {selectedCategory === "All" ? "Latest Articles" : `${selectedCategory} Articles`}
+              {searchQuery 
+                ? `Search Results for "${searchQuery}"` 
+                : selectedCategory === "All" 
+                  ? "Latest Articles" 
+                  : `${selectedCategory} Articles`}
             </h2>
-            <span className="text-sm text-mw-gray-600">{filteredArticles.length} articles</span>
+            <span className="text-sm text-mw-gray-600">{displayedArticles.length} articles</span>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map((article, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Link href="#" className="group block bg-white rounded-xl overflow-hidden shadow-mw-sm hover:shadow-mw-lg transition-all duration-300">
-                  <div className="aspect-video bg-gradient-to-br from-mw-blue-500 to-mw-blue-700 relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-white/20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0v8h12V6H4z" />
-                      </svg>
-                    </div>
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-white text-mw-blue-600 text-xs font-medium rounded-full">
-                        {article.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-mw-gray-900 mb-3 group-hover:text-mw-blue-600 transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-mw-gray-600 mb-4 line-clamp-2">{article.excerpt}</p>
-                    <div className="flex items-center justify-between pt-4 border-t border-mw-gray-200">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-mw-gray-200 rounded-full flex items-center justify-center">
-                          <span className="text-xs font-medium text-mw-gray-600">{article.author[0]}</span>
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-mw-gray-900">{article.author}</p>
-                          <p className="text-xs text-mw-gray-500">{article.date}</p>
-                        </div>
+          {displayedArticles.length === 0 ? (
+            <div className="text-center py-16">
+              <svg className="w-16 h-16 mx-auto text-mw-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-lg font-medium text-mw-gray-900 mb-2">No articles found</h3>
+              <p className="text-mw-gray-600">Try adjusting your search or filter criteria</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {displayedArticles.map((article, index) => (
+                <motion.div
+                  key={article.slug}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Link 
+                    href={`/resources/blog/${article.slug}`} 
+                    className="group block bg-white rounded-xl overflow-hidden shadow-mw-sm hover:shadow-mw-lg transition-all duration-300"
+                  >
+                    <div className="aspect-video bg-gradient-to-br from-mw-blue-500 to-mw-blue-700 relative overflow-hidden">
+                      {article.featuredImage && (
+                        <img
+                          src={article.featuredImage}
+                          alt={article.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                          }}
+                        />
+                      )}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1 bg-white text-mw-blue-600 text-xs font-medium rounded-full">
+                          {article.category}
+                        </span>
                       </div>
-                      <span className="text-sm text-mw-gray-500">{article.readTime}</span>
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-mw-gray-900 mb-3 group-hover:text-mw-blue-600 transition-colors line-clamp-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-mw-gray-600 mb-4 line-clamp-2">{article.excerpt}</p>
+                      <div className="flex items-center justify-between pt-4 border-t border-mw-gray-200">
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 bg-mw-gray-200 rounded-full flex items-center justify-center">
+                            <span className="text-xs font-medium text-mw-gray-600">{article.author[0]}</span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-mw-gray-900">{article.author}</p>
+                            <p className="text-xs text-mw-gray-500">{article.date}</p>
+                          </div>
+                        </div>
+                        <span className="text-sm text-mw-gray-500">{article.readTime}</span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          )}
 
           {/* Load More */}
-          <div className="text-center mt-12">
-            <button className="px-8 py-3 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-medium rounded-lg transition-colors shadow-mw-md">
-              Load More Articles
-            </button>
-          </div>
+          {displayedArticles.length > 0 && (
+            <div className="text-center mt-12">
+              <button className="px-8 py-3 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-medium rounded-lg transition-colors shadow-mw-md">
+                Load More Articles
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
