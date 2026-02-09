@@ -11,6 +11,7 @@ import About from "../components/About";
 import Newsletter from "../components/Newsletter";
 import CaseStudiesSection from "../components/CaseStudiesSection";
 import ContactForm from "../components/ContactForm";
+import Sustainability from "../components/Sustainability";
 
 export const metadata: Metadata = {
   title: "Moving Walls - Connected Media Platform for OOH Advertising",
@@ -36,7 +37,8 @@ export default function Home() {
       <Products />
       <CustomerLogos />
       <TestimonialSection />
-      <About />
+      {/* <About /> */}
+      <Sustainability />
       <Newsletter />
       <CaseStudiesSection />
       <ContactForm />

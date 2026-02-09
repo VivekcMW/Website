@@ -84,11 +84,11 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/assets/videos/19627-304735769_small.mp4" type="video/mp4" />
+        <source src="/assets/videos/WebsiteHeroVideo BG.mp4" type="video/mp4" />
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-black/45" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

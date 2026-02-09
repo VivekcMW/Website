@@ -234,35 +234,6 @@ export default function BlogPage() {
           )}
         </div>
       </section>
-
-      {/* Newsletter CTA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-mw-gray-900 to-mw-gray-800 rounded-2xl p-8 lg:p-12 text-center"
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">Never Miss an Update</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Get the latest insights, tips, and industry news delivered straight to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-mw-blue-500"
-              />
-              <button className="px-8 py-3 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-medium rounded-lg transition-colors whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
-            <p className="text-sm text-gray-400 mt-4">No spam. Unsubscribe anytime.</p>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
