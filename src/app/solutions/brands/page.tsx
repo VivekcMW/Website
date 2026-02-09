@@ -13,92 +13,303 @@ export default function BrandsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-700 text-white py-24 md:py-36 overflow-hidden">
+      {/* Hero Section with 3D Globe */}
+      <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-700 text-white py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-mw-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-mw-blue-400/15 rounded-full blur-3xl"></div>
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 2 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
         </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-white/20">
-              For Brands
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Result-Driven OOH Planning<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">
-                and Buying in Just a Few Clicks
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-mw-blue-100 max-w-4xl mx-auto mb-10 leading-relaxed">
-              We help brands launch result-driven OOH campaigns using automation technology. 
-              Our platform streamlines campaign creation, providing optimized proposals in minutes. 
-              Real-time performance analytics, attribution, and validation allow for maximum impact.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-mw-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-mw-gray-50 transition-all hover:scale-105 shadow-lg"
-              >
-                Get A Demo
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <Link
-                href="#features"
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all"
-              >
-                Learn More
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Result-Driven OOH Planning and Buying{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">
+                  in Just a Few Clicks
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                We help brands launch result-driven OOH campaigns using automation technology. 
+                Our platform streamlines campaign creation, providing optimized proposals in minutes.
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-300">2.5M+</div>
+                  <div className="text-sm text-mw-blue-200">Screens Worldwide</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-300">50+</div>
+                  <div className="text-sm text-mw-blue-200">Countries</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-300">10x</div>
+                  <div className="text-sm text-mw-blue-200">Faster Planning</div>
+                </motion.div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-mw-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-mw-gray-50 transition-all hover:scale-105 shadow-lg"
+                >
+                  Get A Demo
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link
+                  href="#features"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Interactive 3D Globe */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+            >
+              <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px]">
+                {/* Outer Glow Ring */}
+                <motion.div
+                  className="absolute inset-0 rounded-full border-2 border-cyan-400/30"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                />
+                
+                {/* Orbital Ring 1 */}
+                <motion.div
+                  className="absolute inset-4 rounded-full border border-cyan-300/20"
+                  style={{ transform: 'rotateX(60deg)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                >
+                  <motion.div 
+                    className="absolute -top-2 left-1/2 w-4 h-4 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                </motion.div>
+
+                {/* Orbital Ring 2 */}
+                <motion.div
+                  className="absolute inset-8 rounded-full border border-blue-300/20"
+                  style={{ transform: 'rotateX(75deg) rotateY(20deg)' }}
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                >
+                  <motion.div 
+                    className="absolute -bottom-2 right-1/4 w-3 h-3 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"
+                    animate={{ scale: [1, 1.3, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                </motion.div>
+
+                {/* Main Globe */}
+                <motion.div
+                  className="absolute inset-12 rounded-full bg-gradient-to-br from-mw-blue-600 via-mw-blue-700 to-mw-blue-900 shadow-2xl"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  style={{
+                    boxShadow: '0 0 60px rgba(6, 182, 212, 0.3), inset -20px -20px 60px rgba(0,0,0,0.3), inset 20px 20px 60px rgba(255,255,255,0.1)',
+                  }}
+                >
+                  {/* Globe Grid Lines */}
+                  <div className="absolute inset-0 rounded-full overflow-hidden opacity-30">
+                    {/* Horizontal Lines */}
+                    {[20, 40, 60, 80].map((top, i) => (
+                      <div key={`h-${i}`} className="absolute w-full h-px bg-cyan-300" style={{ top: `${top}%` }} />
+                    ))}
+                    {/* Vertical Lines */}
+                    {[20, 40, 60, 80].map((left, i) => (
+                      <div key={`v-${i}`} className="absolute h-full w-px bg-cyan-300" style={{ left: `${left}%` }} />
+                    ))}
+                  </div>
+
+                  {/* Glowing Location Dots - Major Cities */}
+                  {[
+                    { top: '25%', left: '70%', size: 'lg', delay: 0 },     // Tokyo
+                    { top: '35%', left: '15%', size: 'md', delay: 0.5 },   // New York
+                    { top: '30%', left: '45%', size: 'lg', delay: 1 },     // London
+                    { top: '60%', left: '75%', size: 'md', delay: 1.5 },   // Sydney
+                    { top: '40%', left: '55%', size: 'sm', delay: 2 },     // Dubai
+                    { top: '45%', left: '25%', size: 'md', delay: 2.5 },   // LA
+                    { top: '50%', left: '65%', size: 'lg', delay: 3 },     // Singapore
+                    { top: '35%', left: '48%', size: 'sm', delay: 3.5 },   // Paris
+                    { top: '55%', left: '35%', size: 'md', delay: 4 },     // São Paulo
+                    { top: '28%', left: '58%', size: 'sm', delay: 4.5 },   // Mumbai
+                  ].map((dot, i) => (
+                    <motion.div
+                      key={i}
+                      className={`absolute rounded-full ${
+                        dot.size === 'lg' ? 'w-4 h-4' : dot.size === 'md' ? 'w-3 h-3' : 'w-2 h-2'
+                      }`}
+                      style={{ top: dot.top, left: dot.left }}
+                      animate={{
+                        scale: [1, 1.5, 1],
+                        opacity: [0.6, 1, 0.6],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: dot.delay,
+                      }}
+                    >
+                      <div className="w-full h-full bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/80" />
+                      <motion.div
+                        className="absolute inset-0 bg-cyan-400 rounded-full"
+                        animate={{ scale: [1, 2.5], opacity: [0.6, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: dot.delay }}
+                      />
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Live Campaign</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">Tokyo</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.3 }}
+                  className="absolute -left-4 bottom-1/3 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Active Screens</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">125K+</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.6 }}
+                  className="absolute left-1/4 -bottom-2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Impressions Today</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">48.2M</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Platform Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-gradient-to-b from-white via-mw-gray-50/50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-mw-gray-900 mb-6">
               Leverage Advanced<br/>
-              <span className="text-mw-blue-600">OOH Media Automation Technology</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-mw-blue-600 to-cyan-500">OOH Media Automation Technology</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto leading-relaxed">
               From planning to measurement, manage your entire OOH workflow in one unified platform
             </p>
           </motion.div>
 
           {/* Top Tabs - Campaigns, Real Time, Measurement */}
-          <div className="grid grid-cols-3 gap-4 mb-12">
-            {[
-              { id: 'campaigns', name: 'Campaigns' },
-              { id: 'realtime', name: 'Real Time' },
-              { id: 'measurement', name: 'Measurement' },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActivePlatform(tab.id)}
-                className={`px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-center ${
-                  activePlatform === tab.id
-                    ? 'bg-mw-blue-600 text-white shadow-lg shadow-mw-blue-600/30'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
+          <div className="flex justify-center mb-16">
+            <div className="inline-flex border border-mw-gray-200 p-1.5 rounded-xl gap-1">
+              {[
+                { id: 'campaigns', name: 'Campaigns', icon: (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                )},
+                { id: 'realtime', name: 'Real Time', icon: (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                )},
+                { id: 'measurement', name: 'Measurement', icon: (
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                )},
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActivePlatform(tab.id)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                    activePlatform === tab.id
+                      ? 'bg-mw-blue-600 text-white'
+                      : 'text-mw-gray-600 hover:text-mw-blue-600 hover:bg-mw-gray-50'
+                  }`}
+                >
+                  {tab.icon}
+                  {tab.name}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Tab Content - Left text, Right image */}
@@ -106,85 +317,88 @@ export default function BrandsPage() {
             key={activePlatform}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            transition={{ duration: 0.5 }}
+            className="grid lg:grid-cols-2 gap-16 items-center"
           >
             {/* Left - Content */}
-            <div>
+            <div className="order-2 lg:order-1">
               {activePlatform === 'campaigns' && (
-                <>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-mw-gray-900 mb-4">
                     Create and Execute Campaigns
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-mw-gray-600 leading-relaxed">
                     Our platform enables you to transform your briefs into optimised proposals within minutes, empowering you to deliver real-time top-quality campaigns. With this unique feature, you can seamlessly create and run OOH campaigns that are customised to your brand's specific needs and goals, all with the click of a button.
                   </p>
-                </>
+                </motion.div>
               )}
               {activePlatform === 'realtime' && (
-                <>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-mw-gray-900 mb-4">
                     Execute Campaigns in Real-Time
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-mw-gray-600 leading-relaxed">
                     Moving Walls takes OOH campaign management to the next level with our purpose-built DSP (Demand-Side Platform). Our intuitive platform empowers advertisers to effortlessly create and execute campaigns, all while harnessing the power of real-time data for optimization and maximum brand impact.
                   </p>
-                </>
+                </motion.div>
               )}
               {activePlatform === 'measurement' && (
-                <>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-mw-gray-900 mb-4">
                     Measurement & Analytics
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-mw-gray-600 leading-relaxed">
                     Moving Walls takes OOH campaign management to the next level with our purpose-built DSP (Demand-Side Platform). Our intuitive platform empowers advertisers to effortlessly create and execute campaigns, all while harnessing the power of real-time data for optimization and maximum brand impact.
                   </p>
-                </>
+                </motion.div>
               )}
             </div>
 
-            {/* Right - Image Placeholder */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-4 shadow-xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-mw-blue-50 to-mw-blue-100 rounded-xl flex items-center justify-center">
+            {/* Right - Image */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="bg-gradient-to-br from-mw-gray-100 to-mw-gray-200 rounded-2xl p-4">
+                <div className="rounded-xl overflow-hidden">
                   {activePlatform === 'campaigns' && (
-                    <div className="text-center p-8">
-                      <div className="w-20 h-20 mx-auto mb-4 bg-mw-blue-100 rounded-full flex items-center justify-center">
-                        <svg className="w-10 h-10 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </div>
-                      <p className="text-mw-blue-600 font-medium">Campaign Creation Screenshot</p>
-                      <p className="text-gray-500 text-sm mt-2">Image placeholder</p>
-                    </div>
+                    <Image
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop"
+                      alt="Campaign Dashboard"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-cover"
+                    />
                   )}
                   {activePlatform === 'realtime' && (
-                    <div className="text-center p-8">
-                      <div className="w-20 h-20 mx-auto mb-4 bg-mw-blue-100 rounded-full flex items-center justify-center">
-                        <svg className="w-10 h-10 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <p className="text-mw-blue-600 font-medium">Real-Time Dashboard Screenshot</p>
-                      <p className="text-gray-500 text-sm mt-2">Image placeholder</p>
-                    </div>
+                    <Image
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop"
+                      alt="Real-Time Dashboard"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-cover"
+                    />
                   )}
                   {activePlatform === 'measurement' && (
-                    <div className="text-center p-8">
-                      <div className="w-20 h-20 mx-auto mb-4 bg-mw-blue-100 rounded-full flex items-center justify-center">
-                        <svg className="w-10 h-10 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                      </div>
-                      <p className="text-mw-blue-600 font-medium">Analytics Dashboard Screenshot</p>
-                      <p className="text-gray-500 text-sm mt-2">Image placeholder</p>
-                    </div>
+                    <Image
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80"
+                      alt="Analytics Dashboard"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-cover"
+                    />
                   )}
                 </div>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-mw-blue-500/10 rounded-full blur-2xl"></div>
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-mw-blue-400/10 rounded-full blur-2xl"></div>
             </div>
           </motion.div>
         </div>
@@ -925,65 +1139,6 @@ export default function BrandsPage() {
               </svg>
             </Link>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-mw-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-mw-gray-900 mb-4">
-              Why Brands Choose Moving Walls
-            </h2>
-            <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto">
-              Everything you need to run successful OOH campaigns
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: 'Real-Time Monitoring', description: 'Track your campaigns in real-time with live dashboards and instant alerts.' },
-              { title: 'Creative Management', description: 'Upload, manage, and distribute creatives across all your screens seamlessly.' },
-              { title: 'Advanced Analytics', description: 'Get detailed insights with attribution, footfall, and ROI measurement.' },
-              { title: 'Smart Optimization', description: 'AI-powered recommendations to maximize your campaign performance.' },
-              { title: 'Fast Activation', description: 'Launch campaigns in minutes with automated workflows.' },
-              { title: 'Privacy-First', description: 'GDPR-compliant measurement that respects user privacy.' },
-              { title: 'Global Reach', description: 'Access inventory across multiple markets from one platform.' },
-              { title: 'Easy Integration', description: 'Connect with your existing tools through our robust API.' }
-            ].map((feature: { title: string; description: string }, index: number) => {
-              const icons = [
-                <svg key="icon-0" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
-                <svg key="icon-1" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>,
-                <svg key="icon-2" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
-                <svg key="icon-3" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>,
-                <svg key="icon-4" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-                <svg key="icon-5" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
-                <svg key="icon-6" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-                <svg key="icon-7" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
-              ];
-              return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-2xl shadow-mw-lg hover:shadow-mw-xl transition-all duration-300 border border-mw-blue-100"
-              >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-mw-blue-600 via-mw-blue-500 to-purple-600 p-3 text-white mb-6 group-hover:scale-110 transition-transform">
-                  {icons[index]}
-                </div>
-                <h3 className="text-xl font-bold text-mw-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-mw-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
