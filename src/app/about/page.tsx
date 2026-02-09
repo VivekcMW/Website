@@ -2,7 +2,20 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
+
+const associations = [
+  { name: "World Out of Home Organisation", logo: "/assets/images/proudly-associated-logos/world-out-of-home-organisation-member-2024.png" },
+  { name: "IAB SEA+India", logo: "/assets/images/proudly-associated-logos/iab-sea-india.png" },
+  { name: "Digital Signage Federation", logo: "/assets/images/proudly-associated-logos/digital-signage-federation.png" },
+  { name: "Outdoor Advertising Association of Malaysia", logo: "/assets/images/proudly-associated-logos/outdoor-advertising-association-of-malaysia.png" },
+  { name: "Malaysian Digital Association", logo: "/assets/images/proudly-associated-logos/malaysian-digital-association.png" },
+  { name: "Malaysia Advertisers Association", logo: "/assets/images/proudly-associated-logos/malaysia-advertisers-association.png" },
+  { name: "Association of Advertising and Marketing Singapore", logo: "/assets/images/proudly-associated-logos/association-of-advertising-and-marketing-singapore.png" },
+  { name: "Media Specialists Association of the Philippines", logo: "/assets/images/proudly-associated-logos/media-specialists-association-of-the-philippines.png" },
+  { name: "Outdoor Advertising Association of Nigeria", logo: "/assets/images/proudly-associated-logos/outdoor-advertising-association-of-nigeria.png" },
+];
 
 export default function AboutUsPage() {
   const stats = [
@@ -260,7 +273,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Awards & Recognition */}
+      {/* Awards & Recognition - Hidden for now
       <section className="py-20 bg-mw-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -297,6 +310,67 @@ export default function AboutUsPage() {
                 <p className="text-mw-gray-600">{award.description}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+      */}
+
+      {/* Proudly Associated Section */}
+      <section className="py-20 bg-mw-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="text-mw-blue-600 text-sm font-medium uppercase tracking-wider">
+              Our Partners
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-mw-gray-900 mt-4 mb-6">
+              We are Proudly Associated with
+            </h2>
+            <p className="text-mw-gray-600 max-w-2xl mx-auto text-lg">
+              Partnering with leading industry organizations to drive innovation and excellence in out-of-home advertising.
+            </p>
+          </motion.div>
+
+          <div className="relative overflow-hidden">
+            {/* Gradient masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-mw-gray-50 to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-mw-gray-50 to-transparent z-10" />
+
+            {/* Scrolling logos */}
+            <motion.div
+              animate={{ x: [0, -1440] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear",
+                },
+              }}
+              className="flex gap-8"
+            >
+              {/* Triple the associations for seamless loop */}
+              {[...associations, ...associations, ...associations].map((association, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-40 h-20 bg-white rounded-xl border-2 border-mw-gray-200 flex items-center justify-center group hover:border-mw-blue-400 hover:shadow-mw-lg transition-all duration-300 px-4"
+                >
+                  <div className="flex items-center justify-center group-hover:scale-110 transition-transform duration-300 h-12 w-full relative">
+                    <Image
+                      src={association.logo}
+                      alt={association.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
