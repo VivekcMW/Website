@@ -81,6 +81,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }: { question: string; answ
 
 export default function MalaysiaPage() {
   const [openFAQ, setOpenFAQ] = React.useState<number | null>(0)
+  const [isContactFormOpen, setIsContactFormOpen] = React.useState(false)
 
   const highVisibilityBillboards = [
     {
@@ -491,6 +492,93 @@ export default function MalaysiaPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-mw-blue-50 to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true, margin: "-50px" }} 
+            variants={fadeUp} 
+            className="text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Contact Our Malaysia Team
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Get in touch with our local experts in Kuala Lumpur. We&apos;re here to help you plan your next DOOH campaign.
+            </p>
+            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100">
+              <div className="flex flex-col items-center gap-6">
+                <div className="w-16 h-16 bg-mw-blue-100 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Ready to Start Your Campaign?</h3>
+                  <p className="text-gray-600 mb-6">Fill out our contact form and our Malaysia team will get back to you within 24 hours.</p>
+                </div>
+                <button
+                  onClick={() => setIsContactFormOpen(true)}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-mw-blue-600 hover:bg-mw-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Open Contact Form
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form Modal */}
+      {isContactFormOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsContactFormOpen(false)}
+          />
+          
+          {/* Modal */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden z-10"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gradient-to-r from-mw-blue-600 to-mw-blue-700">
+              <h3 className="text-lg font-semibold text-white">Contact Our Malaysia Team</h3>
+              <button
+                onClick={() => setIsContactFormOpen(false)}
+                className="p-2 hover:bg-white/20 rounded-full transition-colors"
+              >
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            {/* Form iframe */}
+            <div className="h-[70vh]">
+              <iframe
+                src="https://forms.zoho.com/movingwallsholdingpteltd/form/MalaysiaContact"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                style={{ border: 'none' }}
+                title="Malaysia Contact Form"
+                allow="geolocation"
+              />
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   )
 }
