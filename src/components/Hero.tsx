@@ -71,21 +71,37 @@ function AnimatedCounter({ value, suffix, label, duration = 2 }: { value: number
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoError, setVideoError] = useState(false);
   const { t } = useLocale();
+
+  // Handle video load error
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const handleError = () => setVideoError(true);
+      video.addEventListener('error', handleError);
+      return () => video.removeEventListener('error', handleError);
+    }
+  }, []);
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden pt-20" style={{ minHeight: '90vh' }}>
-      {/* Video Background */}
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/assets/videos/WebsiteHeroVideo BG.mp4" type="video/mp4" />
-      </video>
+      {/* Video Background with fallback gradient */}
+      {!videoError ? (
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setVideoError(true)}
+        >
+          <source src="/assets/videos/WebsiteHeroVideo BG.mp4" type="video/mp4" />
+        </video>
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-slate-900" />
+      )}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/45" />

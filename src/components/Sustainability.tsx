@@ -21,6 +21,7 @@ export default function Sustainability() {
   const [visibleChars, setVisibleChars] = useState<number[]>([]);
   const [heartPhase, setHeartPhase] = useState<number[]>([]); // 0 = heart, 1 = transitioning, 2 = number
   const [startAnimation, setStartAnimation] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -95,16 +96,21 @@ export default function Sustainability() {
 
   return (
     <section ref={sectionRef} className="relative py-32 overflow-hidden">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/assets/videos/Sustainability BG.mp4" type="video/mp4" />
-      </video>
+      {/* Background Video with fallback */}
+      {!videoError ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => setVideoError(true)}
+        >
+          <source src="/assets/videos/Sustainability BG.mp4" type="video/mp4" />
+        </video>
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900" />
+      )}
 
       {/* Green Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/85 to-green-800/85" />
