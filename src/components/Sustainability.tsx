@@ -106,7 +106,7 @@ export default function Sustainability() {
           className="absolute inset-0 w-full h-full object-cover"
           onError={() => setVideoError(true)}
         >
-          <source src="/assets/videos/Sustainability BG.mp4" type="video/mp4" />
+          <source src="/assets/videos/Sustainability.mp4" type="video/mp4" />
         </video>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900" />

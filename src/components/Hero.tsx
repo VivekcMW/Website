@@ -97,7 +97,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           onError={() => setVideoError(true)}
         >
-          <source src="/assets/videos/WebsiteHeroVideo BG.mp4" type="video/mp4" />
+          <source src="/assets/videos/HeroVideo BG.mp4" type="video/mp4" />
         </video>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-slate-900" />
