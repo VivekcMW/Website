@@ -1,27 +1,15 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
-// Character data for "3,000,000+"
-const numberChars = [
-  { char: '3', isZero: false },
-  { char: ',', isZero: false },
-  { char: '0', isZero: true },
-  { char: '0', isZero: true },
-  { char: '0', isZero: true },
-  { char: ',', isZero: false },
-  { char: '0', isZero: true },
-  { char: '0', isZero: true },
-  { char: '0', isZero: true },
-  { char: '+', isZero: false },
-];
+// Starting count for hearts
+const STARTING_COUNT = 3000000;
 
 export default function Sustainability() {
-  const [visibleChars, setVisibleChars] = useState<number[]>([]);
-  const [heartPhase, setHeartPhase] = useState<number[]>([]); // 0 = heart, 1 = transitioning, 2 = number
-  const [startAnimation, setStartAnimation] = useState(false);
+  const [heartCount, setHeartCount] = useState(STARTING_COUNT);
   const [videoError, setVideoError] = useState(false);
+  const [startAnimation, setStartAnimation] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -41,61 +29,24 @@ export default function Sustainability() {
     return () => observer.disconnect();
   }, [startAnimation]);
 
+  // Increment counter every 3 seconds when in view
   useEffect(() => {
     if (!startAnimation) return;
 
-    let charIndex = 0;
-    const timings = [
-      300,  // 3
-      200,  // ,
-      400,  // 0 (heart first)
-      400,  // 0
-      400,  // 0
-      200,  // ,
-      400,  // 0
-      400,  // 0
-      400,  // 0
-      300,  // +
-    ];
+    const interval = setInterval(() => {
+      setHeartCount(prev => prev + 1);
+    }, 6000);
 
-    const showNextChar = () => {
-      if (charIndex >= numberChars.length) return;
-
-      const currentChar = numberChars[charIndex];
-      const currentIndex = charIndex;
-
-      if (currentChar.isZero) {
-        // Show heart first
-        setVisibleChars(prev => [...prev, currentIndex]);
-        setHeartPhase(prev => [...prev, 0]); // Heart phase
-
-        // After 300ms, transition to number
-        setTimeout(() => {
-          setHeartPhase(prev => {
-            const newPhase = [...prev];
-            const phaseIndex = newPhase.length - 1;
-            if (phaseIndex >= 0) newPhase[phaseIndex] = 2;
-            return newPhase;
-          });
-        }, 350);
-      } else {
-        // Show character directly
-        setVisibleChars(prev => [...prev, currentIndex]);
-        setHeartPhase(prev => [...prev, 2]); // Already number
-      }
-
-      charIndex++;
-      if (charIndex < numberChars.length) {
-        setTimeout(showNextChar, timings[charIndex]);
-      }
-    };
-
-    // Start after initial delay
-    setTimeout(showNextChar, 500);
+    return () => clearInterval(interval);
   }, [startAnimation]);
 
+  // Format number with commas
+  const formatNumber = (num: number) => {
+    return num.toLocaleString();
+  };
+
   return (
-    <section ref={sectionRef} className="relative py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-12 overflow-hidden">
       {/* Background Video with fallback */}
       {!videoError ? (
         <video
@@ -109,11 +60,11 @@ export default function Sustainability() {
           <source src="/assets/videos/Sustainability.mp4" type="video/mp4" />
         </video>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-950" />
       )}
 
-      {/* Green Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/85 to-green-800/85" />
+      {/* Theme Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-mw-blue-900/40 to-mw-blue-800/40" />
 
       {/* Animated Falling Hearts Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -123,26 +74,12 @@ export default function Sustainability() {
           const duration = 20 + (i % 6) * 4; // Much slower: 20-44 seconds
           const delay = (i / 35) * 12;
           
-          // Multi-color palette for hearts
-          const colors = [
-            'text-pink-400',
-            'text-rose-400', 
-            'text-red-400',
-            'text-orange-400',
-            'text-amber-400',
-            'text-yellow-400',
-            'text-lime-400',
-            'text-emerald-400',
-            'text-teal-400',
-            'text-cyan-400',
-            'text-sky-400',
-            'text-blue-400',
-            'text-indigo-400',
-            'text-violet-400',
-            'text-purple-400',
-            'text-fuchsia-400',
-          ];
-          const colorClass = colors[i % colors.length];
+          // Alternate between white transparent and neon cyan transparent
+          const isWhite = i % 2 === 0;
+          const colorClass = isWhite ? 'text-white/40' : 'text-cyan-400/50';
+          const glowClass = isWhite 
+            ? 'drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]' 
+            : 'drop-shadow-[0_0_12px_rgba(34,211,238,0.6)]';
           
           return (
             <motion.div
@@ -191,7 +128,7 @@ export default function Sustainability() {
                   ease: "linear"
                 }}
               >
-                <svg className="w-5 h-5 sm:w-7 sm:h-7 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-5 h-5 sm:w-7 sm:h-7 ${glowClass}`} fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
               </motion.div>
@@ -226,106 +163,171 @@ export default function Sustainability() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl sm:text-2xl text-emerald-100 mb-12"
+            className="text-xl sm:text-2xl text-mw-blue-100 mb-12"
           >
             Towards Sustainable OOH Media
           </motion.p>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="inline-block bg-white/10 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-white/20"
-          >
-            <p className="text-lg sm:text-xl text-emerald-100 mb-4">
-              To date, our partners have generated
-            </p>
-            <div className="flex items-center justify-center min-h-[80px] sm:min-h-[96px] lg:min-h-[112px]">
-              <div className="flex items-center">
-                {numberChars.map((charData, index) => {
-                  const isVisible = visibleChars.includes(index);
-                  const phaseIndex = visibleChars.indexOf(index);
-                  const phase = phaseIndex >= 0 ? heartPhase[phaseIndex] : -1;
-                  const showHeart = charData.isZero && phase === 0;
-                  
-                  return (
-                    <span
-                      key={index}
-                      className="text-5xl sm:text-6xl lg:text-7xl font-bold relative inline-block"
-                      style={{ minWidth: charData.char === ',' ? '20px' : '45px' }}
-                    >
-                      <AnimatePresence mode="wait">
-                        {isVisible && (
-                          <>
-                            {showHeart ? (
-                              <motion.span
-                                key={`heart-${index}`}
-                                initial={{ scale: 0, opacity: 0 }}
-                                animate={{ 
-                                  scale: [0, 1.3, 1], 
-                                  opacity: 1,
-                                }}
-                                exit={{ scale: 0.8, opacity: 0 }}
-                                transition={{ duration: 0.3, ease: "easeOut" }}
-                                className="absolute inset-0 flex items-center justify-center text-red-400"
-                              >
-                                <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 drop-shadow-[0_0_15px_rgba(248,113,113,0.8)]" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                                </svg>
-                              </motion.span>
-                            ) : (
-                              <motion.span
-                                key={`char-${index}`}
-                                initial={{ scale: charData.isZero ? 0.5 : 0, opacity: 0, y: charData.isZero ? 0 : 10 }}
-                                animate={{ scale: 1, opacity: 1, y: 0 }}
-                                transition={{ 
-                                  duration: charData.isZero ? 0.25 : 0.2,
-                                  ease: "easeOut"
-                                }}
-                                className="text-white inline-block"
-                              >
-                                {charData.char}
-                              </motion.span>
-                            )}
-                          </>
-                        )}
-                      </AnimatePresence>
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-            <p className="text-2xl sm:text-3xl font-semibold text-emerald-200 mt-2">
-              Hearts
-            </p>
-          </motion.div>
+          {/* Three Cards Row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Card 1 - Carbon Neutral */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="group bg-white/10 backdrop-blur-md rounded-[6px] p-6 border border-white/20 hover:bg-white/15 hover:border-mw-blue-400/40 transition-all duration-300"
+            >
+              {/* Animated Icon */}
+              <motion.div 
+                className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.svg 
+                  className="w-8 h-8 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                </motion.svg>
+              </motion.div>
+              <h3 className="text-xl font-bold text-white mb-3">Carbon Neutral by Default</h3>
+              <p className="text-mw-blue-100/80 text-sm leading-relaxed">
+                We offset all campaign emissions across all bookings — neutrality is automatically applied.
+              </p>
+            </motion.div>
 
-          {/* Additional Info */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-emerald-200/80 mt-8 max-w-2xl mx-auto"
-          >
-            Every campaign contributes to a more sustainable future for outdoor advertising.
-          </motion.p>
+            {/* Card 2 - Industry Standard */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="group bg-white/10 backdrop-blur-md rounded-[6px] p-6 border border-white/20 hover:bg-white/15 hover:border-mw-blue-400/40 transition-all duration-300"
+            >
+              {/* Animated Icon */}
+              <motion.div 
+                className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center"
+                whileHover={{ scale: 1.1, rotate: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <svg 
+                  className="w-8 h-8 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </motion.div>
+              <h3 className="text-xl font-bold text-white mb-3">Industry-leading Standard</h3>
+              <p className="text-mw-blue-100/80 text-sm leading-relaxed">
+                Moving Walls is the first OOH platform to adopt GMSF v1.2 as the measurement standard globally.
+              </p>
+            </motion.div>
+
+            {/* Card 3 - Commitment */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="group bg-white/10 backdrop-blur-md rounded-[6px] p-6 border border-white/20 hover:bg-white/15 hover:border-mw-blue-400/40 transition-all duration-300"
+            >
+              {/* Animated Icon */}
+              <motion.div 
+                className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.svg 
+                  className="w-8 h-8 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </motion.svg>
+              </motion.div>
+              <h3 className="text-xl font-bold text-white mb-3">Sustainable Commitment</h3>
+              <p className="text-mw-blue-100/80 text-sm leading-relaxed">
+                We partner with certified carbon offset providers to create a community ensuring credible and measurable impact.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Hearts Counter */}
+          <div className="flex flex-col items-center gap-3">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="text-base sm:text-lg text-mw-blue-100"
+            >
+              To date, our partners have generated
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="bg-white/10 backdrop-blur-md rounded-[6px] px-8 py-4 border border-white/20"
+            >
+              <div className="flex items-center justify-center gap-4">
+                {/* Animated Number */}
+                <motion.span
+                  key={heartCount}
+                  initial={{ scale: 1.05, opacity: 0.8 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
+                >
+                  {formatNumber(heartCount)}
+                </motion.span>
+                
+                {/* Heartbeat Icon */}
+                <motion.svg 
+                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-pink-400 drop-shadow-[0_0_15px_rgba(244,114,182,0.8)]" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                  animate={{ scale: [1, 1.2, 1, 1.15, 1] }}
+                  transition={{ 
+                    duration: 0.8, 
+                    repeat: Infinity, 
+                    repeatDelay: 0.5,
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </motion.svg>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Learn More Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
             className="mt-8"
           >
             <a
               href="https://movinghearts.media/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-emerald-50 text-emerald-700 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-mw-blue-50 text-mw-blue-700 font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Learn More
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
