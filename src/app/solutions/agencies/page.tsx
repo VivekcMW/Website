@@ -13,62 +13,350 @@ export default function AgenciesPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Hero Section with Isometric City */}
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+          {[
+            { left: 5, top: 10 }, { left: 15, top: 25 }, { left: 25, top: 5 }, { left: 35, top: 45 },
+            { left: 45, top: 15 }, { left: 55, top: 35 }, { left: 65, top: 8 }, { left: 75, top: 55 },
+            { left: 85, top: 20 }, { left: 95, top: 40 }, { left: 10, top: 60 }, { left: 20, top: 75 },
+            { left: 30, top: 85 }, { left: 40, top: 65 }, { left: 50, top: 90 }, { left: 60, top: 70 },
+            { left: 70, top: 80 }, { left: 80, top: 95 }, { left: 90, top: 72 }, { left: 8, top: 88 },
+            { left: 18, top: 42 }, { left: 28, top: 58 }, { left: 38, top: 22 }, { left: 48, top: 78 },
+            { left: 58, top: 12 }, { left: 68, top: 48 }, { left: 78, top: 32 }, { left: 88, top: 62 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                left: `${pos.left}%`,
+                top: `${pos.top}%`,
+              }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 2 + (i % 3),
+                repeat: Infinity,
+                delay: (i % 5) * 0.4,
+              }}
+            />
+          ))}
         </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              White-Label OOH Platform<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">
-                Built for Agency Success
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Offer clients a complete OOH solution under your brand. Access global inventory, AI planning, and real-time analytics.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105"
-              >
-                Become a Partner
-              </Link>
-              <button className="inline-block bg-blue-500/20 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500/30 transition-all">
-                Watch Demo
-              </button>
-            </div>
-            
-            {/* Hero Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-              {[
-                { value: '150+', label: 'Agency Partners' },
-                { value: '68%', label: 'Time Saved' },
-                { value: '$500M+', label: 'Media Managed' },
-                { value: '99.8%', label: 'Uptime SLA' }
-              ].map((stat, index) => (
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                White-Label OOH Platform{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">
+                  Built for Agencies
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-blue-100 max-w-xl mb-8 leading-relaxed">
+                Offer clients a complete OOH solution under your brand. Access global inventory, AI planning, and real-time analytics.
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
+                  transition={{ delay: 0.3 }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-300">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-blue-300">150+</div>
+                  <div className="text-sm text-blue-200">Agency Partners</div>
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-blue-300">68%</div>
+                  <div className="text-sm text-blue-200">Time Saved</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-blue-300">$500M+</div>
+                  <div className="text-sm text-blue-200">Media Managed</div>
+                </motion.div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all hover:scale-105 shadow-lg"
+                >
+                  Become a Partner
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link
+                  href="#platform"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all"
+                >
+                  Watch Demo
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Isometric City with Animated Screens */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px]">
+                {/* Isometric City Container */}
+                <motion.div
+                  className="absolute inset-0"
+                  style={{ 
+                    transformStyle: 'preserve-3d',
+                    transform: 'rotateX(60deg) rotateZ(-45deg)',
+                  }}
+                >
+                  {/* City Base/Ground */}
+                  <div 
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-blue-800/50 to-indigo-900/50 rounded-lg"
+                    style={{ transform: 'translateZ(-20px)' }}
+                  />
+                  
+                  {/* Grid Lines on Ground */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72" style={{ transform: 'translateZ(-19px)' }}>
+                    {[0, 1, 2, 3, 4, 5].map((i) => (
+                      <div key={`h-${i}`} className="absolute w-full h-px bg-blue-400/20" style={{ top: `${i * 20}%` }} />
+                    ))}
+                    {[0, 1, 2, 3, 4, 5].map((i) => (
+                      <div key={`v-${i}`} className="absolute h-full w-px bg-blue-400/20" style={{ left: `${i * 20}%` }} />
+                    ))}
+                  </div>
+
+                  {/* Isometric Buildings */}
+                  {[
+                    { x: -60, y: -40, height: 80, width: 40, color: 'blue', hasScreen: true, screenDelay: 0 },
+                    { x: 20, y: -60, height: 100, width: 35, color: 'indigo', hasScreen: true, screenDelay: 0.3 },
+                    { x: -30, y: 30, height: 60, width: 45, color: 'blue', hasScreen: true, screenDelay: 0.6 },
+                    { x: 50, y: 10, height: 70, width: 38, color: 'indigo', hasScreen: false, screenDelay: 0 },
+                    { x: -70, y: 20, height: 50, width: 30, color: 'blue', hasScreen: false, screenDelay: 0 },
+                    { x: 60, y: -30, height: 55, width: 32, color: 'indigo', hasScreen: true, screenDelay: 0.9 },
+                    { x: 0, y: 0, height: 90, width: 42, color: 'purple', hasScreen: true, screenDelay: 1.2 },
+                  ].map((building, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute"
+                      style={{
+                        left: `calc(50% + ${building.x}px)`,
+                        top: `calc(50% + ${building.y}px)`,
+                        transform: 'translate(-50%, -50%)',
+                        transformStyle: 'preserve-3d',
+                      }}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                    >
+                      {/* Building Base */}
+                      <div
+                        className={`absolute bg-gradient-to-t ${
+                          building.color === 'blue' ? 'from-blue-700 to-blue-500' :
+                          building.color === 'indigo' ? 'from-indigo-700 to-indigo-500' :
+                          'from-purple-700 to-purple-500'
+                        }`}
+                        style={{
+                          width: `${building.width}px`,
+                          height: `${building.height}px`,
+                          transform: `translateZ(${building.height / 2}px)`,
+                          boxShadow: '0 0 20px rgba(0,0,0,0.3)',
+                        }}
+                      >
+                        {/* Windows */}
+                        <div className="absolute inset-2 grid grid-cols-3 gap-1">
+                          {[...Array(9)].map((_, wi) => (
+                            <motion.div
+                              key={wi}
+                              className="bg-yellow-300/60 rounded-sm"
+                              animate={{ opacity: [0.3, 0.8, 0.3] }}
+                              transition={{ 
+                                duration: 2, 
+                                repeat: Infinity, 
+                                delay: wi * 0.2 + i * 0.1 
+                              }}
+                            />
+                          ))}
+                        </div>
+                        
+                        {/* Digital Screen on Building */}
+                        {building.hasScreen && (
+                          <motion.div
+                            className="absolute -right-2 top-1/4 w-8 h-6 rounded overflow-hidden"
+                            style={{
+                              background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+                              boxShadow: '0 0 15px rgba(14, 165, 233, 0.6)',
+                            }}
+                            animate={{
+                              boxShadow: [
+                                '0 0 15px rgba(14, 165, 233, 0.4)',
+                                '0 0 25px rgba(14, 165, 233, 0.8)',
+                                '0 0 15px rgba(14, 165, 233, 0.4)',
+                              ]
+                            }}
+                            transition={{ duration: 2, repeat: Infinity, delay: building.screenDelay }}
+                          >
+                            <motion.div
+                              className="w-full h-full bg-gradient-to-r from-cyan-400 to-blue-500"
+                              animate={{ opacity: [0.5, 1, 0.5] }}
+                              transition={{ duration: 1.5, repeat: Infinity, delay: building.screenDelay }}
+                            />
+                          </motion.div>
+                        )}
+                      </div>
+                      
+                      {/* Building Roof */}
+                      <div
+                        className={`absolute ${
+                          building.color === 'blue' ? 'bg-blue-400' :
+                          building.color === 'indigo' ? 'bg-indigo-400' :
+                          'bg-purple-400'
+                        }`}
+                        style={{
+                          width: `${building.width}px`,
+                          height: `${building.width * 0.6}px`,
+                          transform: `rotateX(-90deg) translateZ(${-building.height}px)`,
+                          transformOrigin: 'bottom',
+                        }}
+                      />
+                    </motion.div>
+                  ))}
+
+                  {/* Street Level Digital Screens */}
+                  {[
+                    { x: -80, y: -10, delay: 0.2 },
+                    { x: 80, y: 40, delay: 0.5 },
+                    { x: 30, y: -80, delay: 0.8 },
+                  ].map((screen, i) => (
+                    <motion.div
+                      key={`street-${i}`}
+                      className="absolute"
+                      style={{
+                        left: `calc(50% + ${screen.x}px)`,
+                        top: `calc(50% + ${screen.y}px)`,
+                        transform: 'translate(-50%, -50%) translateZ(15px)',
+                      }}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1 + screen.delay }}
+                    >
+                      {/* Screen Frame */}
+                      <motion.div
+                        className="w-10 h-14 rounded bg-gradient-to-t from-gray-700 to-gray-500"
+                        style={{ boxShadow: '0 5px 15px rgba(0,0,0,0.3)' }}
+                      >
+                        <motion.div
+                          className="absolute top-1 left-1 right-1 bottom-4 rounded overflow-hidden"
+                          style={{
+                            background: 'linear-gradient(180deg, #06b6d4, #3b82f6)',
+                            boxShadow: '0 0 10px rgba(6, 182, 212, 0.5)',
+                          }}
+                          animate={{
+                            background: [
+                              'linear-gradient(180deg, #06b6d4, #3b82f6)',
+                              'linear-gradient(180deg, #8b5cf6, #ec4899)',
+                              'linear-gradient(180deg, #10b981, #06b6d4)',
+                              'linear-gradient(180deg, #06b6d4, #3b82f6)',
+                            ]
+                          }}
+                          transition={{ duration: 4, repeat: Infinity, delay: screen.delay }}
+                        />
+                      </motion.div>
+                      {/* Stand */}
+                      <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1 h-3 bg-gray-600" />
+                    </motion.div>
+                  ))}
+
+                  {/* Animated Data Particles Rising */}
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <motion.div
+                      key={`data-${i}`}
+                      className="absolute left-1/2 top-1/2 w-2 h-2 rounded-full bg-cyan-400"
+                      style={{ 
+                        marginLeft: `${(i - 2) * 30}px`,
+                        boxShadow: '0 0 10px rgba(6, 182, 212, 0.8)',
+                      }}
+                      animate={{
+                        y: [0, -100],
+                        opacity: [0, 1, 0],
+                        scale: [0.5, 1, 0.5],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        delay: i * 0.6,
+                        ease: "easeOut",
+                      }}
+                    />
+                  ))}
+                </motion.div>
+
+                {/* Floating Info Cards (outside isometric transform) */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 z-10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Live Campaigns</span>
+                  </div>
+                  <div className="text-lg font-bold text-blue-300">2,847</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.8 }}
+                  className="absolute -left-4 bottom-1/3 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 z-10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Client ROI</span>
+                  </div>
+                  <div className="text-lg font-bold text-blue-300">+340%</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.1 }}
+                  className="absolute left-1/4 -bottom-2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 z-10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Global Reach</span>
+                  </div>
+                  <div className="text-lg font-bold text-blue-300">180+ Countries</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

@@ -13,415 +13,460 @@ export default function MediaOwnersPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Hero Section with 3D Globe */}
+      <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-700 text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars - Fixed positions */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+          {[
+            { left: 5, top: 10 }, { left: 15, top: 25 }, { left: 25, top: 5 }, { left: 35, top: 45 },
+            { left: 45, top: 15 }, { left: 55, top: 35 }, { left: 65, top: 8 }, { left: 75, top: 55 },
+            { left: 85, top: 20 }, { left: 95, top: 40 }, { left: 10, top: 60 }, { left: 20, top: 75 },
+            { left: 30, top: 85 }, { left: 40, top: 65 }, { left: 50, top: 90 }, { left: 60, top: 70 },
+            { left: 70, top: 80 }, { left: 80, top: 95 }, { left: 90, top: 72 }, { left: 8, top: 88 },
+            { left: 18, top: 42 }, { left: 28, top: 58 }, { left: 38, top: 22 }, { left: 48, top: 78 },
+            { left: 58, top: 12 }, { left: 68, top: 48 }, { left: 78, top: 32 }, { left: 88, top: 62 },
+            { left: 3, top: 35 }, { left: 13, top: 92 }, { left: 23, top: 18 }, { left: 33, top: 52 },
+            { left: 43, top: 28 }, { left: 53, top: 82 }, { left: 63, top: 38 }, { left: 73, top: 68 },
+            { left: 83, top: 15 }, { left: 93, top: 58 }, { left: 7, top: 72 }, { left: 17, top: 48 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                left: `${pos.left}%`,
+                top: `${pos.top}%`,
+              }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 2 + (i % 3),
+                repeat: Infinity,
+                delay: (i % 5) * 0.4,
+              }}
+            />
+          ))}
         </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Monetize Your OOH Inventory<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-300">
-                With Smart SSP Technology
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Connect to premium demand sources, optimize yield with AI, and automate your entire OOH sales operation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all hover:scale-105"
-              >
-                Join Our Network
-              </Link>
-              <button className="inline-block bg-blue-500/20 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-500/30 transition-all">
-                Watch Demo
-              </button>
-            </div>
-            
-            {/* Hero Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-              {[
-                { value: '500K+', label: 'Screens Connected' },
-                { value: '95%', label: 'Fill Rate' },
-                { value: '$2.4B+', label: 'Annual Revenue' },
-                { value: '180+', label: 'Countries' }
-              ].map((stat, index) => (
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Monetize Your OOH Inventory{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">
+                  Smarter
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                Connect to premium demand sources, optimize yield with AI, and automate your entire OOH sales operation.
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
+                  transition={{ delay: 0.3 }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-300">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-300">500K+</div>
+                  <div className="text-sm text-mw-blue-200">Screens Connected</div>
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-300">95%</div>
+                  <div className="text-sm text-mw-blue-200">Fill Rate</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-300">180+</div>
+                  <div className="text-sm text-mw-blue-200">Countries</div>
+                </motion.div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-mw-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-mw-gray-50 transition-all hover:scale-105 shadow-lg"
+                >
+                  Join Our Network
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link
+                  href="#platform"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - 3D Billboard Network Grid */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px]">
+                {/* 3D Billboard Network Container */}
+                <motion.div
+                  className="absolute inset-0"
+                  style={{ transformStyle: 'preserve-3d' }}
+                  animate={{ rotateY: 360 }}
+                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                >
+                  {/* Network Connection Lines */}
+                  <svg className="absolute inset-0 w-full h-full" style={{ transform: 'translateZ(0px)' }}>
+                    <defs>
+                      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="rgba(6, 182, 212, 0)" />
+                        <stop offset="50%" stopColor="rgba(6, 182, 212, 0.6)" />
+                        <stop offset="100%" stopColor="rgba(6, 182, 212, 0)" />
+                      </linearGradient>
+                    </defs>
+                    {/* Connection lines between billboards */}
+                    {[
+                      { x1: '50%', y1: '20%', x2: '20%', y2: '40%' },
+                      { x1: '50%', y1: '20%', x2: '80%', y2: '35%' },
+                      { x1: '20%', y1: '40%', x2: '35%', y2: '70%' },
+                      { x1: '80%', y1: '35%', x2: '70%', y2: '65%' },
+                      { x1: '35%', y1: '70%', x2: '70%', y2: '65%' },
+                      { x1: '50%', y1: '20%', x2: '50%', y2: '50%' },
+                      { x1: '20%', y1: '40%', x2: '50%', y2: '50%' },
+                      { x1: '80%', y1: '35%', x2: '50%', y2: '50%' },
+                    ].map((line, i) => (
+                      <motion.line
+                        key={i}
+                        x1={line.x1}
+                        y1={line.y1}
+                        x2={line.x2}
+                        y2={line.y2}
+                        stroke="url(#lineGradient)"
+                        strokeWidth="1.5"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: [0.3, 0.8, 0.3] }}
+                        transition={{
+                          pathLength: { duration: 2, delay: i * 0.2 },
+                          opacity: { duration: 3, repeat: Infinity, delay: i * 0.3 }
+                        }}
+                      />
+                    ))}
+                  </svg>
+
+                  {/* Central Hub Node */}
+                  <motion.div
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20"
+                    style={{ transform: 'translateZ(30px)' }}
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 shadow-2xl shadow-cyan-500/50 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-cyan-400"
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.8, 0, 0.8] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  </motion.div>
+
+                  {/* 3D Billboards arranged in network */}
+                  {[
+                    { x: '50%', y: '15%', z: 40, rotateX: -15, rotateY: 0, size: 'lg', color: 'cyan', delay: 0 },
+                    { x: '15%', y: '38%', z: 25, rotateX: 0, rotateY: 25, size: 'md', color: 'blue', delay: 0.3 },
+                    { x: '85%', y: '32%', z: 35, rotateX: 5, rotateY: -20, size: 'lg', color: 'cyan', delay: 0.6 },
+                    { x: '30%', y: '72%', z: 20, rotateX: 10, rotateY: 15, size: 'md', color: 'indigo', delay: 0.9 },
+                    { x: '75%', y: '68%', z: 30, rotateX: 5, rotateY: -10, size: 'lg', color: 'blue', delay: 1.2 },
+                  ].map((billboard, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute"
+                      style={{
+                        left: billboard.x,
+                        top: billboard.y,
+                        transform: `translate(-50%, -50%) translateZ(${billboard.z}px) rotateX(${billboard.rotateX}deg) rotateY(${billboard.rotateY}deg)`,
+                        transformStyle: 'preserve-3d',
+                      }}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: billboard.delay, duration: 0.5 }}
+                    >
+                      {/* Billboard Frame */}
+                      <motion.div
+                        className={`${billboard.size === 'lg' ? 'w-20 h-14' : 'w-16 h-11'} rounded-lg overflow-hidden shadow-xl`}
+                        style={{
+                          background: `linear-gradient(135deg, ${billboard.color === 'cyan' ? '#0891b2' : billboard.color === 'blue' ? '#2563eb' : '#4f46e5'}, ${billboard.color === 'cyan' ? '#06b6d4' : billboard.color === 'blue' ? '#3b82f6' : '#6366f1'})`,
+                          boxShadow: `0 10px 40px -10px ${billboard.color === 'cyan' ? 'rgba(6, 182, 212, 0.5)' : billboard.color === 'blue' ? 'rgba(59, 130, 246, 0.5)' : 'rgba(99, 102, 241, 0.5)'}`,
+                        }}
+                        animate={{ 
+                          boxShadow: [
+                            `0 10px 40px -10px ${billboard.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : billboard.color === 'blue' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(99, 102, 241, 0.3)'}`,
+                            `0 10px 40px -10px ${billboard.color === 'cyan' ? 'rgba(6, 182, 212, 0.7)' : billboard.color === 'blue' ? 'rgba(59, 130, 246, 0.7)' : 'rgba(99, 102, 241, 0.7)'}`,
+                            `0 10px 40px -10px ${billboard.color === 'cyan' ? 'rgba(6, 182, 212, 0.3)' : billboard.color === 'blue' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(99, 102, 241, 0.3)'}`,
+                          ]
+                        }}
+                        transition={{ duration: 2, repeat: Infinity, delay: billboard.delay }}
+                      >
+                        {/* Screen Content Animation */}
+                        <div className="w-full h-full p-1.5 flex flex-col gap-1">
+                          <motion.div
+                            className="flex-1 bg-white/20 rounded"
+                            animate={{ opacity: [0.3, 0.8, 0.3] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: billboard.delay + 0.5 }}
+                          />
+                          <div className="flex gap-1">
+                            <motion.div
+                              className="flex-1 h-1.5 bg-white/30 rounded"
+                              animate={{ scaleX: [0.5, 1, 0.5] }}
+                              transition={{ duration: 3, repeat: Infinity, delay: billboard.delay }}
+                            />
+                            <div className="w-3 h-1.5 bg-white/40 rounded" />
+                          </div>
+                        </div>
+                      </motion.div>
+                      
+                      {/* Billboard Stand */}
+                      <div 
+                        className="absolute left-1/2 -translate-x-1/2 w-1 h-6 bg-gradient-to-b from-gray-400 to-gray-600"
+                        style={{ top: '100%', transformOrigin: 'top' }}
+                      />
+                      
+                      {/* Status Indicator */}
+                      <motion.div
+                        className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-400"
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: billboard.delay }}
+                        style={{ boxShadow: '0 0 10px rgba(74, 222, 128, 0.8)' }}
+                      />
+                    </motion.div>
+                  ))}
+
+                  {/* Data Flow Particles */}
+                  {[0, 1, 2, 3, 4, 5].map((i) => (
+                    <motion.div
+                      key={`particle-${i}`}
+                      className="absolute w-2 h-2 rounded-full bg-cyan-400"
+                      style={{
+                        left: '50%',
+                        top: '50%',
+                        boxShadow: '0 0 10px rgba(6, 182, 212, 0.8)',
+                      }}
+                      animate={{
+                        x: [0, (i % 2 === 0 ? 1 : -1) * (50 + i * 20)],
+                        y: [0, (i % 3 === 0 ? -1 : 1) * (30 + i * 15)],
+                        opacity: [1, 0],
+                        scale: [0.5, 1.5],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: i * 0.4,
+                        ease: "easeOut",
+                      }}
+                    />
+                  ))}
+                </motion.div>
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 z-10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Live Screens</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">500K+</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.3 }}
+                  className="absolute -left-4 bottom-1/3 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 z-10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Network Health</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">99.9%</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.6 }}
+                  className="absolute left-1/4 -bottom-2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20 z-10"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Daily Revenue</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">$2.4M</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Platform Section */}
-      <section className="py-20 bg-white">
+      <section id="platform" className="py-24 bg-gradient-to-b from-white via-mw-gray-50/50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Platform
+            <h2 className="text-3xl md:text-5xl font-bold text-mw-gray-900 mb-6">
+              Leverage Advanced<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-mw-blue-600 to-cyan-500">SSP Technology</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-mw-gray-600 max-w-3xl mx-auto leading-relaxed">
               A complete suite of tools to manage, sell, and optimize your OOH inventory
             </p>
           </motion.div>
 
-          {/* Platform Tabs */}
-          <div className="grid lg:grid-cols-12 gap-8 items-start">
-            {/* Left - Screenshot */}
-            <div className="lg:col-span-7 relative order-2 lg:order-1">
-              <motion.div
-                key={activePlatform}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-4 shadow-2xl">
-                  <div className="bg-white rounded-xl overflow-hidden border border-gray-200">
-                    {/* Browser Header */}
-                    <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
-                      <div className="flex gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                      </div>
-                      <div className="flex-1 ml-4">
-                        <div className="bg-white rounded-md px-4 py-1 text-sm text-gray-500 max-w-md">
-                          app.movingwalls.com/{activePlatform}
-                        </div>
-                      </div>
-                    </div>
-                    {/* Screenshot Placeholder */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
-                      {activePlatform === 'marketplace' && (
-                        <div className="w-full h-full grid grid-cols-3 gap-3">
-                          {[...Array(6)].map((_, i) => (
-                            <div key={i} className="bg-white rounded-lg p-3 shadow-sm">
-                              <div className="aspect-square bg-gradient-to-br from-blue-100 to-indigo-200 rounded-lg mb-2 flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                </svg>
-                              </div>
-                              <div className="h-2 w-full bg-gray-200 rounded"></div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {activePlatform === 'inventory' && (
-                        <div className="w-full h-full flex flex-col">
-                          <div className="flex gap-4 mb-4">
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <div className="h-3 w-20 bg-gray-200 rounded mb-2"></div>
-                              <div className="h-8 w-full bg-blue-100 rounded"></div>
-                            </div>
-                            <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                              <div className="h-3 w-20 bg-gray-200 rounded mb-2"></div>
-                              <div className="h-8 w-full bg-blue-100 rounded"></div>
-                            </div>
-                          </div>
-                          <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                            <div className="h-full bg-gradient-to-r from-blue-200 to-indigo-200 rounded-lg flex items-center justify-center">
-                              <svg className="w-16 h-16 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {activePlatform === 'yield' && (
-                        <div className="w-full h-full flex flex-col gap-4">
-                          <div className="grid grid-cols-3 gap-3">
-                            {[
-                              { label: 'Fill Rate', value: '95%', color: 'blue' },
-                              { label: 'eCPM', value: '$12.40', color: 'green' },
-                              { label: 'Revenue', value: '+24%', color: 'purple' },
-                            ].map((stat, i) => (
-                              <div key={i} className="bg-white rounded-lg p-3 shadow-sm text-center">
-                                <div className={`text-lg font-bold text-${stat.color}-600`}>{stat.value}</div>
-                                <div className="text-xs text-gray-500">{stat.label}</div>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                            <div className="h-full flex items-end gap-2">
-                              {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                                <div key={i} className="flex-1 bg-gradient-to-t from-blue-500 to-indigo-500 rounded-t" style={{ height: `${h}%` }}></div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {activePlatform === 'analytics' && (
-                        <div className="w-full h-full flex flex-col gap-4">
-                          <div className="bg-white rounded-lg p-4 shadow-sm">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                </svg>
-                              </div>
-                              <div className="flex-1">
-                                <div className="h-3 w-32 bg-gray-200 rounded mb-1"></div>
-                                <div className="h-2 w-24 bg-gray-100 rounded"></div>
-                              </div>
-                              <div className="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full font-semibold">Live</div>
-                            </div>
-                            <div className="h-2 bg-blue-200 rounded-full">
-                              <div className="h-2 bg-blue-600 rounded-full w-4/5"></div>
-                            </div>
-                          </div>
-                          <div className="flex-1 bg-white rounded-lg p-4 shadow-sm">
-                            <div className="h-full bg-gradient-to-r from-blue-100 to-indigo-100 rounded flex items-center justify-center">
-                              <svg className="w-12 h-12 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {activePlatform === 'automation' && (
-                        <div className="w-full h-full flex gap-4">
-                          <div className="w-16 bg-white rounded-lg p-2 shadow-sm flex flex-col gap-2">
-                            {[...Array(5)].map((_, i) => (
-                              <div key={i} className={`w-full aspect-square rounded ${i === 0 ? 'bg-blue-500' : 'bg-gray-200'}`}></div>
-                            ))}
-                          </div>
-                          <div className="flex-1 bg-white rounded-lg p-4 shadow-sm flex items-center justify-center">
-                            <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center">
-                              <svg className="w-16 h-16 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
-                <div className="absolute -top-4 -left-4 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
-              </motion.div>
-            </div>
-
-            {/* Right - Tabs and Content */}
-            <div className="lg:col-span-5 order-1 lg:order-2">
-              {/* Tabs */}
-              <div className="flex flex-col gap-2 mb-8">
-                {[
-                  { id: 'marketplace', name: 'Demand Marketplace' },
-                  { id: 'inventory', name: 'Inventory Management' },
-                  { id: 'yield', name: 'Yield Optimization' },
-                  { id: 'analytics', name: 'Analytics & Insights' },
-                  { id: 'automation', name: 'Workflow Automation' },
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActivePlatform(tab.id)}
-                    className={`px-6 py-3 rounded-[6px] font-semibold transition-all duration-300 text-left ${
-                      activePlatform === tab.id
-                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
-                  >
-                    {tab.name}
-                  </button>
-                ))}
-              </div>
-
-              {/* Content */}
-              <motion.div
-                key={activePlatform}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {activePlatform === 'marketplace' && (
-                  <>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Connect to Premium Demand
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      Access thousands of advertisers and agencies through our integrated demand marketplace. Maximize fill rates with programmatic and direct sales channels.
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        'Access 1000+ active advertisers',
-                        'Programmatic & direct demand',
-                        'Real-time bidding integration',
-                      ].map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-3 h-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href="/products/mw-marketplace" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </>
-                )}
-                {activePlatform === 'inventory' && (
-                  <>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Centralized Inventory Control
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      Manage all your screens, formats, and availability from a single dashboard. Define rates, set blackout periods, and control access permissions.
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        'Unified inventory dashboard',
-                        'Flexible pricing rules',
-                        'Real-time availability sync',
-                      ].map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href="/products/mw-reach" className="inline-flex items-center gap-2 text-green-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </>
-                )}
-                {activePlatform === 'yield' && (
-                  <>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      AI-Powered Yield Optimization
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      Maximize revenue per screen with intelligent pricing algorithms. Dynamic floor prices, demand forecasting, and automated rate adjustments.
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        'Dynamic pricing algorithms',
-                        'Demand forecasting',
-                        'Revenue optimization AI',
-                      ].map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-3 h-3 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href="/products/mw-science" className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </>
-                )}
-                {activePlatform === 'analytics' && (
-                  <>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Real-Time Analytics & Reporting
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      Track performance across your entire network with comprehensive dashboards. Proof of play, audience metrics, and revenue analytics.
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        'Real-time performance dashboards',
-                        'Automated proof of play',
-                        'Audience measurement integration',
-                      ].map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-3 h-3 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href="/products/mw-measure" className="inline-flex items-center gap-2 text-pink-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </>
-                )}
-                {activePlatform === 'automation' && (
-                  <>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      Automated Workflow Management
-                    </h3>
-                    <p className="text-gray-600 mb-6">
-                      Streamline operations with automated booking confirmations, creative trafficking, and billing reconciliation.
-                    </p>
-                    <ul className="space-y-3 mb-6">
-                      {[
-                        'Automated booking workflows',
-                        'Creative trafficking system',
-                        'Billing & invoicing automation',
-                      ].map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
-                            <svg className="w-3 h-3 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href="/products/mw-activate" className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-3 transition-all text-sm">
-                      Learn more
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </Link>
-                  </>
-                )}
-              </motion.div>
+          {/* Top Tabs */}
+          <div className="flex justify-center mb-16">
+            <div className="inline-flex border border-mw-gray-200 p-1.5 rounded-xl gap-1 flex-wrap justify-center">
+              {[
+                { id: 'marketplace', name: 'Marketplace' },
+                { id: 'inventory', name: 'Inventory' },
+                { id: 'yield', name: 'Yield' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActivePlatform(tab.id)}
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                    activePlatform === tab.id
+                      ? 'bg-mw-blue-600 text-white'
+                      : 'text-mw-gray-600 hover:text-mw-blue-600 hover:bg-mw-gray-50'
+                  }`}
+                >
+                  {tab.name}
+                </button>
+              ))}
             </div>
           </div>
+
+          {/* Tab Content */}
+          <motion.div
+            key={activePlatform}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="grid lg:grid-cols-2 gap-16 items-center"
+          >
+            {/* Left - Content */}
+            <div className="order-2 lg:order-1">
+              {activePlatform === 'marketplace' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-mw-gray-900 mb-4">
+                    Connect to Premium Demand
+                  </h3>
+                  <p className="text-lg text-mw-gray-600 leading-relaxed">
+                    Access thousands of advertisers and agencies through our integrated demand marketplace. Maximize fill rates with programmatic and direct sales channels.
+                  </p>
+                </motion.div>
+              )}
+              {activePlatform === 'inventory' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-mw-gray-900 mb-4">
+                    Inventory Management
+                  </h3>
+                  <p className="text-lg text-mw-gray-600 leading-relaxed">
+                    Manage all your OOH assets in one place. Upload creative specifications, set availability, define pricing rules, and track performance across your entire network.
+                  </p>
+                </motion.div>
+              )}
+              {activePlatform === 'yield' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-mw-gray-900 mb-4">
+                    Yield Optimization
+                  </h3>
+                  <p className="text-lg text-mw-gray-600 leading-relaxed">
+                    Maximize revenue with AI-powered yield optimization. Dynamic pricing, demand forecasting, and automated deal prioritization ensure you get the best value for your inventory.
+                  </p>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Right - Image */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="bg-gradient-to-br from-mw-gray-100 to-mw-gray-200 rounded-2xl p-4">
+                <div className="rounded-xl overflow-hidden">
+                  {activePlatform === 'marketplace' && (
+                    <Image
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop"
+                      alt="Demand Marketplace Dashboard"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-cover"
+                    />
+                  )}
+                  {activePlatform === 'inventory' && (
+                    <Image
+                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop"
+                      alt="Inventory Management Dashboard"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-cover"
+                    />
+                  )}
+                  {activePlatform === 'yield' && (
+                    <Image
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80"
+                      alt="Yield Optimization Dashboard"
+                      width={800}
+                      height={500}
+                      className="w-full h-auto object-cover"
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
