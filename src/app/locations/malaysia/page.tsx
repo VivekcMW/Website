@@ -180,46 +180,249 @@ export default function MalaysiaPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section with 3D Petronas Towers */}
       <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-900 py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0">
+          {[
+            { left: 5, top: 10 }, { left: 15, top: 25 }, { left: 25, top: 5 }, { left: 35, top: 45 },
+            { left: 45, top: 15 }, { left: 55, top: 35 }, { left: 65, top: 8 }, { left: 75, top: 55 },
+            { left: 85, top: 20 }, { left: 95, top: 40 }, { left: 10, top: 60 }, { left: 20, top: 75 },
+            { left: 30, top: 85 }, { left: 40, top: 65 }, { left: 50, top: 90 }, { left: 60, top: 70 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
+              animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+              transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: (i % 5) * 0.4 }}
+            />
+          ))}
         </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                OOH Advertising in Malaysia
-              </motion.h1>
-              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl md:text-2xl text-mw-blue-100 max-w-3xl mb-6">
-                Ready to plan your next OOH advertising campaign in Malaysia?
-              </motion.p>
-              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-lg text-mw-blue-200 max-w-4xl mb-10">
-                Leverage the power of OOH advertising in Malaysia to reach a wider audience through strategic outdoor placements and high-impact visuals.
-              </motion.p>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors"
-                >
+            {/* Left Content */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                OOH Advertising in{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">Malaysia</span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                Leverage the power of OOH advertising in Malaysia to reach a wider audience through strategic outdoor placements.
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                {[
+                  { value: '33.4M+', label: 'Population' },
+                  { value: '50K+', label: 'Billboards' },
+                  { value: '76%', label: 'Urban Rate' },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-cyan-300">{stat.value}</div>
+                    <div className="text-sm text-mw-blue-200">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-all hover:scale-105">
                   Get Started
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
-              </motion.div>
-            </div>
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
-                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </motion.div>
+
+            {/* Right Side - 3D Petronas Towers */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[400px] md:w-[400px] md:h-[450px]">
+                {/* City Glow Base */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-20 bg-gradient-to-t from-cyan-500/20 to-transparent blur-2xl" />
+                
+                {/* Twin Towers Container */}
+                <div className="absolute inset-0 flex items-end justify-center gap-4 pb-8">
+                  {/* Left Tower */}
+                  <motion.div
+                    className="relative"
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    {/* Tower Structure */}
+                    <div className="relative w-16 h-64 md:w-20 md:h-72">
+                      {/* Tower Body */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-blue-600 to-cyan-400 rounded-t-full" 
+                        style={{ clipPath: 'polygon(20% 100%, 80% 100%, 90% 20%, 50% 0%, 10% 20%)' }}>
+                        {/* Window Lights */}
+                        <div className="absolute inset-x-2 top-1/4 bottom-4 grid grid-cols-3 gap-1">
+                          {[...Array(18)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className="bg-yellow-200/60 rounded-sm"
+                              animate={{ opacity: [0.3, 0.9, 0.3] }}
+                              transition={{ duration: 2, repeat: Infinity, delay: i * 0.15 }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      {/* Spire */}
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-1 h-8 bg-gradient-to-t from-cyan-400 to-white" />
+                      <motion.div
+                        className="absolute -top-10 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan-300 rounded-full"
+                        animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.3, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        style={{ boxShadow: '0 0 10px rgba(6, 182, 212, 0.8)' }}
+                      />
+                      {/* Digital Screen on Tower */}
+                      <motion.div
+                        className="absolute top-1/3 -right-3 w-6 h-8 rounded bg-gradient-to-br from-cyan-400 to-blue-500"
+                        animate={{ opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        style={{ boxShadow: '0 0 15px rgba(6, 182, 212, 0.6)' }}
+                      />
                     </div>
-                    <p className="text-white/80 text-sm">Watch OOH Advertising in Malaysia</p>
-                  </div>
+                  </motion.div>
+
+                  {/* Sky Bridge */}
+                  <motion.div
+                    className="absolute top-1/3 left-1/2 -translate-x-1/2 w-20 h-3 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 rounded"
+                    animate={{ opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    style={{ boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)' }}
+                  />
+
+                  {/* Right Tower */}
+                  <motion.div
+                    className="relative"
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  >
+                    <div className="relative w-16 h-64 md:w-20 md:h-72">
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-blue-600 to-cyan-400 rounded-t-full"
+                        style={{ clipPath: 'polygon(20% 100%, 80% 100%, 90% 20%, 50% 0%, 10% 20%)' }}>
+                        <div className="absolute inset-x-2 top-1/4 bottom-4 grid grid-cols-3 gap-1">
+                          {[...Array(18)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className="bg-yellow-200/60 rounded-sm"
+                              animate={{ opacity: [0.3, 0.9, 0.3] }}
+                              transition={{ duration: 2, repeat: Infinity, delay: i * 0.15 + 0.5 }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-1 h-8 bg-gradient-to-t from-cyan-400 to-white" />
+                      <motion.div
+                        className="absolute -top-10 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan-300 rounded-full"
+                        animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.3, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+                        style={{ boxShadow: '0 0 10px rgba(6, 182, 212, 0.8)' }}
+                      />
+                      <motion.div
+                        className="absolute top-1/2 -left-3 w-6 h-8 rounded bg-gradient-to-br from-cyan-400 to-blue-500"
+                        animate={{ opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                        style={{ boxShadow: '0 0 15px rgba(6, 182, 212, 0.6)' }}
+                      />
+                    </div>
+                  </motion.div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+
+                {/* Surrounding Billboards */}
+                {[
+                  { x: -80, y: 60, delay: 0.3 },
+                  { x: 80, y: 80, delay: 0.6 },
+                  { x: -60, y: 140, delay: 0.9 },
+                  { x: 70, y: 160, delay: 1.2 },
+                ].map((billboard, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{ left: `calc(50% + ${billboard.x}px)`, bottom: `${billboard.y}px` }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: billboard.delay }}
+                  >
+                    <motion.div
+                      className="w-8 h-6 rounded bg-gradient-to-br from-blue-400 to-cyan-500"
+                      animate={{ opacity: [0.6, 1, 0.6] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: billboard.delay }}
+                      style={{ boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)' }}
+                    />
+                    <div className="w-0.5 h-4 bg-gray-500 mx-auto" />
+                  </motion.div>
+                ))}
+
+                {/* Connection Lines */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                  <defs>
+                    <linearGradient id="lineGradientMY" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="rgba(6, 182, 212, 0)" />
+                      <stop offset="50%" stopColor="rgba(6, 182, 212, 0.6)" />
+                      <stop offset="100%" stopColor="rgba(6, 182, 212, 0)" />
+                    </linearGradient>
+                  </defs>
+                  {[
+                    { x1: '35%', y1: '40%', x2: '15%', y2: '70%' },
+                    { x1: '65%', y1: '40%', x2: '85%', y2: '65%' },
+                    { x1: '35%', y1: '55%', x2: '20%', y2: '80%' },
+                    { x1: '65%', y1: '55%', x2: '80%', y2: '75%' },
+                  ].map((line, i) => (
+                    <motion.line
+                      key={i}
+                      x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2}
+                      stroke="url(#lineGradientMY)"
+                      strokeWidth="1"
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      animate={{ pathLength: 1, opacity: [0.3, 0.7, 0.3] }}
+                      transition={{ pathLength: { duration: 2, delay: i * 0.3 }, opacity: { duration: 2, repeat: Infinity, delay: i * 0.3 } }}
+                    />
+                  ))}
+                </svg>
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">HQ Network</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">50K+ Screens</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.8 }}
+                  className="absolute -left-4 top-1/2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Daily Reach</span>
+                  </div>
+                  <div className="text-lg font-bold text-cyan-300">12M+</div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

@@ -133,31 +133,227 @@ export default function SriLankaPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero Section with 3D Lotus Tower */}
       <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-900 py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10"><div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0">
+          {[
+            { left: 9, top: 13 }, { left: 19, top: 33 }, { left: 29, top: 5 }, { left: 39, top: 53 },
+            { left: 49, top: 15 }, { left: 59, top: 43 }, { left: 69, top: 10 }, { left: 79, top: 63 },
+            { left: 89, top: 25 }, { left: 14, top: 69 }, { left: 24, top: 83 }, { left: 34, top: 73 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
+              animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+              transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: (i % 5) * 0.4 }}
+            />
+          ))}
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6"><h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1><p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p></motion.div>
-              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-              </motion.div>
-            </div>
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
-                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            {/* Left Content */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                OOH Advertising in{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">{countryData.name}</span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                {countryData.description}
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                {countryData.stats.slice(0, 3).map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-fuchsia-300">{stat.value}</div>
+                    <div className="text-sm text-mw-blue-200">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-all hover:scale-105">
+                  Contact Sales
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - 3D Lotus Tower */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[400px] md:w-[400px] md:h-[450px]">
+                {/* Base Platform */}
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-40 h-6 bg-gradient-to-t from-gray-400 to-gray-200 rounded-lg" />
+
+                {/* Lotus Tower Structure */}
+                <motion.div
+                  className="absolute bottom-12 left-1/2 -translate-x-1/2"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {/* Tower Stem/Core */}
+                  <div className="relative w-8 h-56 bg-gradient-to-t from-purple-700 via-fuchsia-600 to-pink-500 rounded-full mx-auto">
+                    {/* Observation Deck Rings */}
+                    {[0.3, 0.5, 0.65].map((pos, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute left-1/2 -translate-x-1/2 rounded-full"
+                        style={{
+                          bottom: `${pos * 100}%`,
+                          width: `${50 + i * 10}px`,
+                          height: '12px',
+                          background: 'linear-gradient(to right, #d946ef, #a855f7, #ec4899)',
+                          boxShadow: '0 0 15px rgba(217, 70, 239, 0.5)',
+                        }}
+                        animate={{ opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                      />
+                    ))}
+                    
+                    {/* Lotus Petals (Top) */}
+                    <div className="absolute -top-20 left-1/2 -translate-x-1/2 flex items-end">
+                      {[-2, -1, 0, 1, 2].map((idx) => (
+                        <motion.div
+                          key={idx}
+                          className="w-8 h-20 bg-gradient-to-t from-fuchsia-500 via-pink-400 to-pink-300 rounded-t-full mx-0.5"
+                          style={{
+                            transform: `rotate(${idx * 15}deg) translateY(${Math.abs(idx) * 8}px)`,
+                            boxShadow: '0 0 10px rgba(236, 72, 153, 0.4)',
+                          }}
+                          animate={{
+                            opacity: [0.8, 1, 0.8],
+                            scale: [1, 1.02, 1],
+                          }}
+                          transition={{ duration: 3, repeat: Infinity, delay: (idx + 2) * 0.2 }}
+                        />
+                      ))}
                     </div>
-                    <p className="text-white/80 text-sm">Watch OOH Advertising in {countryData.name}</p>
+                    
+                    {/* Antenna/Spire */}
+                    <motion.div
+                      className="absolute -top-32 left-1/2 -translate-x-1/2 w-2 h-16 bg-gradient-to-t from-fuchsia-400 to-pink-300"
+                      animate={{ opacity: [0.8, 1, 0.8] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <motion.div
+                        className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-pink-300 rounded-full"
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
+                        transition={{ duration: 1, repeat: Infinity }}
+                        style={{ boxShadow: '0 0 20px rgba(244, 114, 182, 0.8)' }}
+                      />
+                    </motion.div>
                   </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+                </motion.div>
+
+                {/* Data Broadcast Waves */}
+                {[0, 1, 2, 3].map((i) => (
+                  <motion.div
+                    key={`wave-${i}`}
+                    className="absolute left-1/2 -translate-x-1/2 rounded-full border border-fuchsia-400/30"
+                    style={{
+                      bottom: '50%',
+                      width: `${80 + i * 50}px`,
+                      height: `${80 + i * 50}px`,
+                    }}
+                    animate={{
+                      scale: [1, 1.5, 2],
+                      opacity: [0.5, 0.2, 0],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: i * 0.8,
+                    }}
+                  />
+                ))}
+
+                {/* Colombo Skyline */}
+                {[
+                  { x: -100, y: 40, h: 50, w: 18, delay: 0.6 },
+                  { x: -75, y: 45, h: 40, w: 14, delay: 0.7 },
+                  { x: 75, y: 42, h: 45, w: 16, delay: 0.8 },
+                  { x: 100, y: 48, h: 35, w: 14, delay: 0.9 },
+                ].map((bldg, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{ 
+                      left: `calc(50% + ${bldg.x}px)`,
+                      bottom: `${bldg.y}px`,
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: bldg.delay }}
+                  >
+                    <div 
+                      className="bg-gradient-to-t from-gray-700 to-gray-500 rounded-t"
+                      style={{ width: `${bldg.w}px`, height: `${bldg.h}px` }}
+                    >
+                      <div className="grid grid-cols-2 gap-0.5 p-0.5 h-full">
+                        {[...Array(6)].map((_, wi) => (
+                          <motion.div
+                            key={wi}
+                            className="bg-yellow-200/30 rounded-sm"
+                            animate={{ opacity: [0.2, 0.5, 0.2] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: wi * 0.2 }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-fuchsia-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Broadcast Reach</span>
+                  </div>
+                  <div className="text-lg font-bold text-fuchsia-300">8M+</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.8 }}
+                  className="absolute -left-4 top-1/2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Billboard Sites</span>
+                  </div>
+                  <div className="text-lg font-bold text-fuchsia-300">1,800+</div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
         </div>
       </section>
 

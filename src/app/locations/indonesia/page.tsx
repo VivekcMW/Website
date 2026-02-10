@@ -133,33 +133,214 @@ export default function IndonesiaPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero Section with 3D Monas Monument */}
       <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-900 py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0">
+          {[
+            { left: 7, top: 15 }, { left: 17, top: 30 }, { left: 27, top: 8 }, { left: 37, top: 50 },
+            { left: 47, top: 20 }, { left: 57, top: 40 }, { left: 67, top: 10 }, { left: 77, top: 60 },
+            { left: 87, top: 25 }, { left: 12, top: 65 }, { left: 22, top: 80 }, { left: 32, top: 70 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
+              animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+              transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: (i % 5) * 0.4 }}
+            />
+          ))}
         </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1>
-                <p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p>
-              </motion.div>
-              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-              </motion.div>
-            </div>
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
-                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                    </div>
-                    <p className="text-white/80 text-sm">Watch OOH Advertising in {countryData.name}</p>
-                  </div>
+            {/* Left Content */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                OOH Advertising in{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-300">{countryData.name}</span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                {countryData.description}
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                {countryData.stats.slice(0, 3).map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-yellow-300">{stat.value}</div>
+                    <div className="text-sm text-mw-blue-200">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-all hover:scale-105">
+                  Contact Sales
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - 3D Monas Monument */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[400px] md:w-[400px] md:h-[450px]">
+                {/* Base Glow */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-60 h-20 bg-gradient-to-t from-yellow-500/20 to-transparent blur-2xl" />
+                
+                {/* Monas Monument */}
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+                  {/* Base Platform */}
+                  <motion.div
+                    className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-40 h-8 bg-gradient-to-t from-gray-600 to-gray-400 rounded"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 }}
+                  />
+                  
+                  {/* Main Obelisk */}
+                  <motion.div
+                    className="relative w-8 h-56 md:h-64 mx-auto"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    {/* Lower Section */}
+                    <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-gray-500 to-gray-400" style={{ clipPath: 'polygon(0% 100%, 100% 100%, 85% 0%, 15% 0%)' }} />
+                    
+                    {/* Middle Section */}
+                    <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-6 h-32 bg-gradient-to-t from-gray-400 to-gray-300" />
+                    
+                    {/* Upper Taper */}
+                    <div className="absolute bottom-52 left-1/2 -translate-x-1/2 w-4 h-8 bg-gradient-to-t from-gray-300 to-white" style={{ clipPath: 'polygon(20% 100%, 80% 100%, 50% 0%)' }} />
+                    
+                    {/* Golden Flame */}
+                    <motion.div
+                      className="absolute -top-6 left-1/2 -translate-x-1/2"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <div className="w-6 h-10 bg-gradient-to-t from-yellow-500 via-yellow-400 to-yellow-200 rounded-full"
+                        style={{ clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)', boxShadow: '0 0 30px rgba(234, 179, 8, 0.8)' }}
+                      />
+                      <motion.div
+                        className="absolute inset-0 bg-yellow-300 rounded-full blur-md"
+                        animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.2, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      />
+                    </motion.div>
+                  </motion.div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+
+                {/* Orbital Billboard Rings */}
+                {[0, 1, 2].map((ring) => (
+                  <motion.div
+                    key={ring}
+                    className="absolute left-1/2 bottom-1/3 -translate-x-1/2"
+                    style={{
+                      width: `${180 + ring * 60}px`,
+                      height: `${60 + ring * 20}px`,
+                      transform: `translateX(-50%) rotateX(70deg) rotateZ(${ring * 30}deg)`,
+                    }}
+                    animate={{ rotateZ: [ring * 30, ring * 30 + 360] }}
+                    transition={{ duration: 20 + ring * 5, repeat: Infinity, ease: "linear" }}
+                  >
+                    <div className="absolute inset-0 border border-cyan-400/30 rounded-full" />
+                    {/* Orbiting billboards */}
+                    {[0, 90, 180, 270].map((angle, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-8 h-6 bg-gradient-to-br from-red-500 to-yellow-500 rounded"
+                        style={{
+                          left: `${50 + 45 * Math.cos((angle * Math.PI) / 180)}%`,
+                          top: `${50 + 45 * Math.sin((angle * Math.PI) / 180)}%`,
+                          transform: 'translate(-50%, -50%)',
+                          boxShadow: '0 0 10px rgba(234, 179, 8, 0.5)',
+                        }}
+                        animate={{ opacity: [0.6, 1, 0.6] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                      />
+                    ))}
+                  </motion.div>
+                ))}
+
+                {/* Surrounding City Buildings */}
+                {[
+                  { x: -100, y: 50, h: 40, delay: 0.5 },
+                  { x: -80, y: 70, h: 55, delay: 0.6 },
+                  { x: 80, y: 60, h: 50, delay: 0.7 },
+                  { x: 100, y: 80, h: 35, delay: 0.8 },
+                  { x: -60, y: 100, h: 30, delay: 0.9 },
+                  { x: 70, y: 95, h: 45, delay: 1.0 },
+                ].map((bldg, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{ left: `calc(50% + ${bldg.x}px)`, bottom: `${bldg.y}px` }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: bldg.delay }}
+                  >
+                    <div 
+                      className="bg-gradient-to-t from-blue-800 to-blue-600 rounded-t"
+                      style={{ width: '20px', height: `${bldg.h}px` }}
+                    >
+                      <div className="grid grid-cols-2 gap-0.5 p-1">
+                        {[...Array(6)].map((_, wi) => (
+                          <motion.div
+                            key={wi}
+                            className="w-1.5 h-1.5 bg-yellow-200/50"
+                            animate={{ opacity: [0.3, 0.8, 0.3] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: wi * 0.2 }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Archipelago</span>
+                  </div>
+                  <div className="text-lg font-bold text-yellow-300">17K+ Islands</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.8 }}
+                  className="absolute -left-4 top-1/2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Population</span>
+                  </div>
+                  <div className="text-lg font-bold text-yellow-300">270M+</div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

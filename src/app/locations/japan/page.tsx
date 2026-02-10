@@ -133,28 +133,235 @@ export default function JapanPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero Section with 3D Shibuya Crossing */}
       <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-900 py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10"><div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0">
+          {[
+            { left: 5, top: 15 }, { left: 15, top: 28 }, { left: 25, top: 9 }, { left: 35, top: 55 },
+            { left: 45, top: 17 }, { left: 55, top: 38 }, { left: 65, top: 13 }, { left: 75, top: 58 },
+            { left: 85, top: 22 }, { left: 10, top: 66 }, { left: 20, top: 78 }, { left: 30, top: 70 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
+              animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+              transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: (i % 5) * 0.4 }}
+            />
+          ))}
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6"><h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1><p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p></motion.div>
-              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-              </motion.div>
-            </div>
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
-                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            {/* Left Content */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                OOH Advertising in{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400">{countryData.name}</span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                {countryData.description}
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                {countryData.stats.slice(0, 3).map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-rose-300">{stat.value}</div>
+                    <div className="text-sm text-mw-blue-200">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-all hover:scale-105">
+                  Contact Sales
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - 3D Shibuya Crossing */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[400px] md:w-[400px] md:h-[450px]">
+                {/* Crossing Ground Pattern */}
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[300px] h-[100px]" style={{ transform: 'rotateX(60deg) translateX(-50%)' }}>
+                  {/* Zebra Crossings */}
+                  {[0, 1, 2, 3].map((dir) => (
+                    <div
+                      key={dir}
+                      className="absolute left-1/2 top-1/2 w-16 h-32"
+                      style={{ 
+                        transform: `translate(-50%, -50%) rotate(${dir * 45}deg)`,
+                      }}
+                    >
+                      {[...Array(8)].map((_, si) => (
+                        <div key={si} className={`h-3 mb-0.5 ${si % 2 === 0 ? 'bg-white/30' : 'bg-transparent'}`} />
+                      ))}
                     </div>
-                    <p className="text-white/80 text-sm">Watch OOH Advertising in {countryData.name}</p>
-                  </div>
+                  ))}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+
+                {/* Buildings with LED Screens */}
+                {[
+                  { x: -100, y: 60, h: 140, w: 55, screens: 2, delay: 0.3 },
+                  { x: -40, y: 70, h: 160, w: 65, screens: 3, delay: 0.4 },
+                  { x: 40, y: 65, h: 150, w: 60, screens: 2, delay: 0.5 },
+                  { x: 100, y: 75, h: 130, w: 50, screens: 2, delay: 0.6 },
+                ].map((bldg, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{ 
+                      left: `calc(50% + ${bldg.x}px)`,
+                      bottom: `${bldg.y}px`,
+                      transform: 'translateX(-50%)',
+                    }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: bldg.delay }}
+                  >
+                    {/* Building Structure */}
+                    <div 
+                      className="bg-gradient-to-t from-gray-800 via-gray-700 to-gray-600 rounded-t relative"
+                      style={{ width: `${bldg.w}px`, height: `${bldg.h}px` }}
+                    >
+                      {/* Window Grid */}
+                      <div className="absolute inset-2 grid grid-cols-3 gap-0.5">
+                        {[...Array(15)].map((_, wi) => (
+                          <motion.div
+                            key={wi}
+                            className="bg-yellow-200/30 rounded-sm"
+                            animate={{ opacity: [0.2, 0.6, 0.2] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: wi * 0.1 + i * 0.2 }}
+                          />
+                        ))}
+                      </div>
+                      
+                      {/* LED Screens */}
+                      {[...Array(bldg.screens)].map((_, si) => (
+                        <motion.div
+                          key={si}
+                          className="absolute rounded"
+                          style={{
+                            left: '50%',
+                            top: `${15 + si * 35}%`,
+                            transform: 'translateX(-50%)',
+                            width: `${bldg.w - 10}px`,
+                            height: '28px',
+                            background: `linear-gradient(${90 + si * 45}deg, ${['#ec4899', '#8b5cf6', '#06b6d4', '#10b981'][i % 4]}, ${['#f97316', '#6366f1', '#14b8a6', '#84cc16'][(i + 1) % 4]})`,
+                            boxShadow: `0 0 20px ${['rgba(236, 72, 153, 0.6)', 'rgba(139, 92, 246, 0.6)', 'rgba(6, 182, 212, 0.6)', 'rgba(16, 185, 129, 0.6)'][i % 4]}`,
+                          }}
+                          animate={{ 
+                            opacity: [0.8, 1, 0.8],
+                          }}
+                          transition={{ duration: 2, repeat: Infinity, delay: si * 0.5 }}
+                        >
+                          {/* Japanese Text Placeholder */}
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-[8px] font-bold text-white">広告</span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    {/* Rooftop Neon Signs */}
+                    <motion.div
+                      className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold"
+                      style={{ 
+                        color: ['#ec4899', '#8b5cf6', '#06b6d4', '#f97316'][i % 4],
+                        textShadow: `0 0 10px ${['#ec4899', '#8b5cf6', '#06b6d4', '#f97316'][i % 4]}`,
+                      }}
+                      animate={{ opacity: [0.7, 1, 0.7] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      ネオン
+                    </motion.div>
+                  </motion.div>
+                ))}
+
+                {/* Pedestrians (represented as dots) */}
+                {[...Array(12)].map((i, idx) => (
+                  <motion.div
+                    key={`ped-${idx}`}
+                    className="absolute w-2 h-2 bg-white/60 rounded-full"
+                    style={{
+                      left: `${40 + (idx % 4) * 8}%`,
+                      bottom: `${20 + Math.floor(idx / 4) * 5}%`,
+                    }}
+                    animate={{
+                      x: [0, (idx % 2 === 0 ? 1 : -1) * 30, 0],
+                      y: [0, (idx % 3) * 10, 0],
+                      opacity: [0.4, 0.8, 0.4],
+                    }}
+                    transition={{
+                      duration: 4 + (idx % 3),
+                      repeat: Infinity,
+                      delay: idx * 0.3,
+                    }}
+                  />
+                ))}
+
+                {/* Iconic Starbucks Building */}
+                <motion.div
+                  className="absolute bottom-[80px] left-1/2 -translate-x-1/2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  <div className="w-20 h-10 bg-gradient-to-t from-green-800 to-green-600 rounded-t">
+                    <motion.div
+                      className="absolute top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-green-400 rounded-full"
+                      animate={{ opacity: [0.6, 1, 0.6] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      style={{ boxShadow: '0 0 10px rgba(74, 222, 128, 0.8)' }}
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Daily Crossing</span>
+                  </div>
+                  <div className="text-lg font-bold text-rose-300">2.5M+</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.8 }}
+                  className="absolute -left-4 top-1/2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Digital Screens</span>
+                  </div>
+                  <div className="text-lg font-bold text-rose-300">8,500+</div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

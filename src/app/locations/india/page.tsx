@@ -133,28 +133,212 @@ export default function IndiaPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Hero Section with 3D Gateway of India */}
       <section className="relative bg-gradient-to-br from-mw-blue-900 via-mw-blue-800 to-mw-blue-900 py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10"><div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div></div>
+        <div className="absolute inset-0 bg-black/10"></div>
+        
+        {/* Animated Background Stars */}
+        <div className="absolute inset-0">
+          {[
+            { left: 6, top: 14 }, { left: 16, top: 29 }, { left: 26, top: 7 }, { left: 36, top: 49 },
+            { left: 46, top: 19 }, { left: 56, top: 39 }, { left: 66, top: 11 }, { left: 76, top: 59 },
+            { left: 86, top: 24 }, { left: 11, top: 64 }, { left: 21, top: 79 }, { left: 31, top: 69 },
+          ].map((pos, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{ left: `${pos.left}%`, top: `${pos.top}%` }}
+              animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+              transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: (i % 5) * 0.4 }}
+            />
+          ))}
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="mb-6"><h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">{countryData.name}</h1><p className="text-mw-blue-200 text-lg">Billboard & OOH Advertising Network</p></motion.div>
-              <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-mw-blue-100 max-w-3xl mb-10">{countryData.description}</motion.p>
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-colors">Contact Sales<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></Link>
-              </motion.div>
-            </div>
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} className="hidden lg:block">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center cursor-pointer hover:bg-white/30 transition-colors">
-                      <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+            {/* Left Content */}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                OOH Advertising in{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-green-400">{countryData.name}</span>
+              </h1>
+              <p className="text-lg md:text-xl text-mw-blue-100 max-w-xl mb-8 leading-relaxed">
+                {countryData.description}
+              </p>
+              
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-6 mb-8">
+                {countryData.stats.slice(0, 3).map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + i * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-orange-300">{stat.value}</div>
+                    <div className="text-sm text-mw-blue-200">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-mw-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-mw-blue-50 transition-all hover:scale-105">
+                  Contact Sales
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right Side - 3D Gateway of India */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative flex items-center justify-center"
+              style={{ perspective: '1000px' }}
+            >
+              <div className="relative w-[350px] h-[400px] md:w-[400px] md:h-[450px]">
+                {/* Water Reflection */}
+                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-blue-400/20 to-transparent blur-sm" />
+                
+                {/* Gateway of India Structure */}
+                <motion.div
+                  className="absolute bottom-16 left-1/2 -translate-x-1/2"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {/* Main Arch */}
+                  <div className="relative">
+                    {/* Left Pillar */}
+                    <div className="absolute left-0 bottom-0 w-10 h-44 bg-gradient-to-t from-amber-700 via-amber-600 to-amber-500 rounded-t">
+                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-6 h-4 bg-amber-400/50 rounded" />
+                      <div className="absolute top-8 left-1/2 -translate-x-1/2 w-5 h-32 bg-amber-500/30" />
                     </div>
-                    <p className="text-white/80 text-sm">Watch OOH Advertising in {countryData.name}</p>
+                    
+                    {/* Right Pillar */}
+                    <div className="absolute right-0 bottom-0 w-10 h-44 bg-gradient-to-t from-amber-700 via-amber-600 to-amber-500 rounded-t">
+                      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-6 h-4 bg-amber-400/50 rounded" />
+                      <div className="absolute top-8 left-1/2 -translate-x-1/2 w-5 h-32 bg-amber-500/30" />
+                    </div>
+                    
+                    {/* Central Arch */}
+                    <div className="relative mx-10 w-24 h-36 border-t-[40px] border-l-[12px] border-r-[12px] border-amber-600 rounded-t-full" />
+                    
+                    {/* Top Dome Structure */}
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-20 h-12 bg-gradient-to-t from-amber-600 to-amber-400 rounded-t-lg">
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-6 bg-amber-500 rounded-t-full" />
+                    </div>
+                    
+                    {/* Corner Towers */}
+                    <div className="absolute -left-4 -top-4 w-6 h-16 bg-gradient-to-t from-amber-700 to-amber-500 rounded-t">
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-amber-400 rounded-full" />
+                    </div>
+                    <div className="absolute -right-4 -top-4 w-6 h-16 bg-gradient-to-t from-amber-700 to-amber-500 rounded-t">
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-amber-400 rounded-full" />
+                    </div>
                   </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-mw-blue-900/50 to-transparent"></div>
+                </motion.div>
+
+                {/* Mumbai Skyline Buildings */}
+                {[
+                  { x: -110, y: 40, h: 70, w: 18, delay: 0.6 },
+                  { x: -85, y: 50, h: 55, w: 14, delay: 0.7 },
+                  { x: 85, y: 45, h: 65, w: 16, delay: 0.8 },
+                  { x: 110, y: 55, h: 50, w: 14, delay: 0.9 },
+                  { x: -65, y: 70, h: 40, w: 12, delay: 1.0 },
+                  { x: 70, y: 65, h: 45, w: 13, delay: 1.1 },
+                ].map((bldg, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{ left: `calc(50% + ${bldg.x}px)`, bottom: `${bldg.y}px` }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: bldg.delay }}
+                  >
+                    <div 
+                      className="bg-gradient-to-t from-blue-900 to-blue-700 rounded-t"
+                      style={{ width: `${bldg.w}px`, height: `${bldg.h}px` }}
+                    >
+                      <div className="grid grid-cols-2 gap-0.5 p-1 h-full">
+                        {[...Array(8)].map((_, wi) => (
+                          <motion.div
+                            key={wi}
+                            className="bg-yellow-200/40 rounded-sm"
+                            animate={{ opacity: [0.2, 0.8, 0.2] }}
+                            transition={{ duration: 2, repeat: Infinity, delay: wi * 0.2 + i * 0.1 }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Billboard on building */}
+                    {i % 2 === 0 && (
+                      <motion.div
+                        className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-6 bg-gradient-to-r from-orange-500 to-green-500 rounded"
+                        animate={{ opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                        style={{ boxShadow: '0 0 10px rgba(249, 115, 22, 0.5)' }}
+                      />
+                    )}
+                  </motion.div>
+                ))}
+
+                {/* Data Particles flowing to Gateway */}
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <motion.div
+                    key={`particle-${i}`}
+                    className="absolute w-2 h-2 rounded-full"
+                    style={{
+                      left: `${20 + i * 12}%`,
+                      bottom: '30%',
+                      background: i % 2 === 0 ? '#f97316' : '#22c55e',
+                      boxShadow: `0 0 8px ${i % 2 === 0 ? 'rgba(249, 115, 22, 0.8)' : 'rgba(34, 197, 94, 0.8)'}`,
+                    }}
+                    animate={{
+                      x: [0, (50 - i * 12) * 2],
+                      y: [0, -50],
+                      opacity: [0, 1, 0],
+                      scale: [0.5, 1, 0.5],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: i * 0.5,
+                      ease: "easeOut",
+                    }}
+                  />
+                ))}
+
+                {/* Floating Info Cards */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="absolute -right-4 top-1/4 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Metro Cities</span>
+                  </div>
+                  <div className="text-lg font-bold text-orange-300">8 Major</div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.8 }}
+                  className="absolute -left-4 top-1/2 bg-white/10 backdrop-blur-md rounded-lg p-3 border border-white/20"
+                >
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-white">Monthly Reach</span>
+                  </div>
+                  <div className="text-lg font-bold text-orange-300">500M+</div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
