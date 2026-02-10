@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import React from 'react'
 import { motion } from 'framer-motion'
@@ -110,46 +111,164 @@ export default function MalaysiaPage() {
     },
   ]
 
+  const [selectedMarket, setSelectedMarket] = useState(0)
+  const [currentTime, setCurrentTime] = useState(new Date())
+
+  // Update current time every minute for the chart indicator
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date())
+    }, 60000) // Update every minute
+    return () => clearInterval(timer)
+  }, [])
+
+  // Calculate current time position as percentage (0-100) across 24 hours
+  const currentTimePosition = ((currentTime.getHours() * 60 + currentTime.getMinutes()) / 1440) * 100
+  const currentHour = currentTime.getHours()
+  const currentTimeLabel = currentHour === 0 ? '12:00 AM' : currentHour < 12 ? `${currentHour}:${currentTime.getMinutes().toString().padStart(2, '0')} AM` : currentHour === 12 ? `12:${currentTime.getMinutes().toString().padStart(2, '0')} PM` : `${currentHour - 12}:${currentTime.getMinutes().toString().padStart(2, '0')} PM`
+
   const keyMarkets = [
     {
       city: "Kuala Lumpur",
-      population: "1.9 million",
+      code: "KUL",
+      population: "1.9M",
+      screens: 2847,
+      screensGrowth: 12,
+      dailyReach: "4.2M",
+      dailyReachGrowth: 8.3,
+      monthlyImpressions: "126M",
+      monthlyImpressionsGrowth: 15.2,
+      yoyGrowth: 18.5,
+      avgDwell: "2.4 min",
+      peakHours: "8-10 AM, 5-8 PM",
+      topCategory: "Retail & F&B",
+      viewability: 94.2,
+      hourlyData: [15, 35, 85, 95, 70, 45, 40, 55, 75, 90, 85, 60, 45, 50, 65, 80, 95, 85, 55, 30, 20, 15, 10, 8],
       description: "The capital and economic heart of Malaysia with iconic landmarks like the Petronas Twin Towers.",
       locations: [
-        { name: "Bukit Bintang", desc: "Major shopping and entertainment district" },
-        { name: "KL Sentral", desc: "Main transportation hub" },
-        { name: "Federal Highway", desc: "One of the busiest highways" },
-        { name: "Golden Triangle", desc: "Commercial and shopping hub" },
+        { name: "Bukit Bintang", desc: "Shopping & Entertainment", traffic: 850000, screens: 342, score: 98 },
+        { name: "Golden Triangle", desc: "Commercial Hub", traffic: 720000, screens: 278, score: 96 },
+        { name: "KL Sentral", desc: "Transportation Hub", traffic: 620000, screens: 186, score: 95 },
+        { name: "Federal Highway", desc: "Major Highway", traffic: 480000, screens: 124, score: 92 },
+      ],
+      audience: [
+        { name: "Professionals", percentage: 35, color: "bg-blue-500" },
+        { name: "Families", percentage: 28, color: "bg-emerald-500" },
+        { name: "Students", percentage: 22, color: "bg-purple-500" },
+        { name: "Tourists", percentage: 15, color: "bg-amber-500" },
+      ],
+      mediaFormats: [
+        { name: "Digital Billboards", percentage: 45 },
+        { name: "Transit Screens", percentage: 32 },
+        { name: "Mall Networks", percentage: 18 },
+        { name: "Street Furniture", percentage: 5 },
       ],
     },
     {
       city: "Penang",
-      population: "1.8 million",
+      code: "PEN",
+      population: "1.8M",
+      screens: 1256,
+      screensGrowth: 18,
+      dailyReach: "2.1M",
+      dailyReachGrowth: 12.5,
+      monthlyImpressions: "63M",
+      monthlyImpressionsGrowth: 19.8,
+      yoyGrowth: 22.3,
+      avgDwell: "3.1 min",
+      peakHours: "10 AM-12 PM, 6-9 PM",
+      topCategory: "Tourism & Hospitality",
+      viewability: 91.8,
+      hourlyData: [10, 20, 45, 65, 80, 90, 85, 75, 60, 70, 85, 95, 80, 65, 70, 80, 90, 95, 85, 60, 40, 25, 15, 10],
       description: "Known for its rich cultural heritage and booming tourism industry.",
       locations: [
-        { name: "George Town", desc: "UNESCO World Heritage Site" },
-        { name: "Gurney Drive", desc: "Popular seafront promenade" },
+        { name: "George Town", desc: "UNESCO Heritage Site", traffic: 420000, screens: 156, score: 94 },
+        { name: "Gurney Drive", desc: "Seafront Promenade", traffic: 380000, screens: 98, score: 91 },
+      ],
+      audience: [
+        { name: "Tourists", percentage: 42, color: "bg-amber-500" },
+        { name: "Families", percentage: 30, color: "bg-emerald-500" },
+        { name: "Professionals", percentage: 18, color: "bg-blue-500" },
+        { name: "Students", percentage: 10, color: "bg-purple-500" },
+      ],
+      mediaFormats: [
+        { name: "Digital Billboards", percentage: 38 },
+        { name: "Transit Screens", percentage: 28 },
+        { name: "Mall Networks", percentage: 24 },
+        { name: "Street Furniture", percentage: 10 },
       ],
     },
     {
       city: "Johor Bahru",
-      population: "1.7 million",
-      description: "The southern gateway to Malaysia, rapidly growing city.",
+      code: "JHB",
+      population: "1.7M",
+      screens: 1124,
+      screensGrowth: 24,
+      dailyReach: "1.8M",
+      dailyReachGrowth: 15.7,
+      monthlyImpressions: "54M",
+      monthlyImpressionsGrowth: 22.4,
+      yoyGrowth: 28.7,
+      avgDwell: "1.8 min",
+      peakHours: "7-9 AM, 4-7 PM",
+      topCategory: "Cross-border Retail",
+      viewability: 89.5,
+      hourlyData: [8, 25, 70, 95, 80, 55, 45, 50, 60, 65, 70, 75, 70, 60, 65, 80, 95, 90, 70, 45, 30, 20, 12, 8],
+      description: "The southern gateway to Malaysia, rapidly growing city with cross-border traffic.",
       locations: [
-        { name: "CIQ Complex", desc: "Main entry point from Singapore" },
-        { name: "Legoland Malaysia", desc: "Major family attraction" },
+        { name: "CIQ Complex", desc: "Singapore Gateway", traffic: 520000, screens: 86, score: 97 },
+        { name: "Legoland Malaysia", desc: "Family Attraction", traffic: 180000, screens: 42, score: 88 },
+      ],
+      audience: [
+        { name: "Cross-border Commuters", percentage: 38, color: "bg-blue-500" },
+        { name: "Families", percentage: 32, color: "bg-emerald-500" },
+        { name: "Professionals", percentage: 20, color: "bg-purple-500" },
+        { name: "Tourists", percentage: 10, color: "bg-amber-500" },
+      ],
+      mediaFormats: [
+        { name: "Digital Billboards", percentage: 52 },
+        { name: "Transit Screens", percentage: 25 },
+        { name: "Mall Networks", percentage: 15 },
+        { name: "Street Furniture", percentage: 8 },
       ],
     },
     {
       city: "Kota Kinabalu",
-      population: "500,000",
-      description: "The capital of Sabah, known for its natural attractions.",
+      code: "BKI",
+      population: "500K",
+      screens: 423,
+      screensGrowth: 32,
+      dailyReach: "620K",
+      dailyReachGrowth: 24.3,
+      monthlyImpressions: "18.6M",
+      monthlyImpressionsGrowth: 28.6,
+      yoyGrowth: 34.2,
+      avgDwell: "2.8 min",
+      peakHours: "9-11 AM, 5-8 PM",
+      topCategory: "Tourism & Adventure",
+      viewability: 87.3,
+      hourlyData: [5, 15, 35, 55, 75, 85, 90, 85, 70, 65, 70, 80, 85, 75, 70, 75, 85, 90, 80, 55, 35, 20, 10, 5],
+      description: "The capital of Sabah, known for its natural attractions and adventure tourism.",
       locations: [
-        { name: "Jesselton Point", desc: "Main ferry terminal" },
-        { name: "Imago Shopping Mall", desc: "Premier shopping destination" },
+        { name: "Jesselton Point", desc: "Ferry Terminal", traffic: 85000, screens: 28, score: 86 },
+        { name: "Imago Shopping Mall", desc: "Premier Shopping", traffic: 120000, screens: 64, score: 89 },
+      ],
+      audience: [
+        { name: "Tourists", percentage: 48, color: "bg-amber-500" },
+        { name: "Families", percentage: 28, color: "bg-emerald-500" },
+        { name: "Professionals", percentage: 16, color: "bg-blue-500" },
+        { name: "Students", percentage: 8, color: "bg-purple-500" },
+      ],
+      mediaFormats: [
+        { name: "Digital Billboards", percentage: 35 },
+        { name: "Transit Screens", percentage: 20 },
+        { name: "Mall Networks", percentage: 35 },
+        { name: "Street Furniture", percentage: 10 },
       ],
     },
   ]
+
+  const currentMarket = keyMarkets[selectedMarket]
 
   const faqs = [
     {
@@ -556,40 +675,443 @@ export default function MalaysiaPage() {
         </div>
       </section>
 
-      {/* Key Markets */}
-      <section className="py-16 md:py-20">
+      {/* Key Markets Dashboard */}
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Key Markets for Outdoor Billboard Advertising
-            </h2>
+          {/* Dashboard Header */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="mb-8">
+            <div className="mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                Key Markets Dashboard
+              </h2>
+              <p className="text-gray-600">Real-time outdoor advertising metrics across Malaysia</p>
+            </div>
+
+            {/* Location Tabs */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-2 grid grid-cols-4 gap-2 w-full">
+              {keyMarkets.map((market, index) => (
+                <button
+                  key={market.city}
+                  onClick={() => setSelectedMarket(index)}
+                  className={`px-4 py-3 rounded-xl font-medium transition-all duration-300 text-center ${
+                    selectedMarket === index
+                      ? 'bg-mw-blue-600 text-white shadow-lg shadow-mw-blue-600/25'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+                >
+                  <span className="hidden sm:inline">{market.city}</span>
+                  <span className="sm:hidden">{market.code}</span>
+                </button>
+              ))}
+            </div>
           </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="space-y-8">
-            {keyMarkets.map((market, index) => (
-              <motion.div key={market.city} variants={staggerItem} className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-mw-blue-100 flex items-center justify-center text-xl font-bold text-mw-blue-600">
-                    {index + 1}
+
+          {/* Dashboard Content */}
+          <motion.div
+            key={selectedMarket}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="space-y-6"
+          >
+            {/* City Header Card */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-mw-blue-500 to-mw-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-xl">{currentMarket.code}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{market.city}</h3>
-                    <p className="text-mw-blue-600 font-medium">Population: {market.population}</p>
+                    <h3 className="text-2xl font-bold text-gray-900">{currentMarket.city}</h3>
+                    <p className="text-gray-500">{currentMarket.description}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6">{market.description}</p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {market.locations.map((loc) => (
-                    <div key={loc.name} className="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                      {Icons.location}
-                      <div>
-                        <div className="font-semibold text-gray-900">{loc.name}</div>
-                        <div className="text-sm text-gray-600">{loc.desc}</div>
+                <div className="flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2">
+                  <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  <span className="text-green-700 font-semibold">+{currentMarket.yoyGrowth}% YoY</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats Cards Row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <span className="text-green-600 text-sm font-medium flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    {currentMarket.screensGrowth}%
+                  </span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{currentMarket.screens.toLocaleString()}</div>
+                <div className="text-gray-500 text-sm">Total Screens</div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-green-600 text-sm font-medium flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    {currentMarket.dailyReachGrowth}%
+                  </span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{currentMarket.dailyReach}</div>
+                <div className="text-gray-500 text-sm">Daily Reach</div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <span className="text-green-600 text-sm font-medium flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    {currentMarket.monthlyImpressionsGrowth}%
+                  </span>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{currentMarket.monthlyImpressions}</div>
+                <div className="text-gray-500 text-sm">Monthly Impressions</div>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{currentMarket.population}</div>
+                <div className="text-gray-500 text-sm">Population</div>
+              </div>
+            </div>
+
+            {/* Performance Metrics & Peak Hours */}
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Performance Metrics */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                  Performance Metrics
+                </h4>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                    <span className="text-gray-600">Average Dwell Time</span>
+                    <span className="font-semibold text-gray-900">{currentMarket.avgDwell}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                    <span className="text-gray-600">Peak Hours</span>
+                    <span className="font-semibold text-gray-900">{currentMarket.peakHours}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                    <span className="text-gray-600">Top Category</span>
+                    <span className="font-semibold text-gray-900">{currentMarket.topCategory}</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3">
+                    <span className="text-gray-600">Viewability Rate</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-mw-blue-600 rounded-full" style={{ width: `${currentMarket.viewability}%` }} />
+                      </div>
+                      <span className="font-semibold text-gray-900">{currentMarket.viewability}%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Peak Hours Chart */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-6">
+                  <h4 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                    <svg className="w-5 h-5 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Hourly Traffic Distribution
+                  </h4>
+                  <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-t from-mw-blue-600 to-mw-blue-400" />
+                      <span className="text-gray-500">Traffic Volume</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chart Container */}
+                <div className="relative">
+                  {/* Y-axis labels */}
+                  <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-gray-400 -ml-1">
+                    <span>100%</span>
+                    <span>75%</span>
+                    <span>50%</span>
+                    <span>25%</span>
+                    <span>0%</span>
+                  </div>
+
+                  {/* Chart Area */}
+                  <div className="ml-8">
+                    {/* Grid lines */}
+                    <div className="absolute left-8 right-0 top-0 h-40 flex flex-col justify-between pointer-events-none">
+                      {[0, 1, 2, 3, 4].map((i) => (
+                        <div key={i} className="w-full border-t border-gray-100" />
+                      ))}
+                    </div>
+
+                    {/* Bars */}
+                    <div className="flex items-end justify-between h-40 gap-0.5 relative">
+                      {/* Current Time Indicator - Small Dot with Tooltip */}
+                      <motion.div
+                        className="absolute z-20 group cursor-pointer"
+                        style={{ left: `${currentTimePosition}%`, bottom: '0' }}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        {/* Tooltip */}
+                        <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                          <div className="bg-gray-900 text-white text-xs font-medium px-3 py-2 rounded-lg shadow-lg">
+                            <div className="flex items-center gap-2">
+                              <span className="text-red-400">●</span>
+                              <span>Current Time: {currentTimeLabel}</span>
+                            </div>
+                          </div>
+                          <div className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 bg-gray-900 rotate-45" />
+                        </div>
+                        
+                        {/* Pulsing Dot */}
+                        <div className="relative -translate-x-1/2">
+                          <span className="absolute inline-flex h-4 w-4 rounded-full bg-red-400 opacity-75 animate-ping" />
+                          <span className="relative inline-flex h-4 w-4 rounded-full bg-red-500 border-2 border-white shadow-lg" />
+                        </div>
+                      </motion.div>
+
+                      {currentMarket.hourlyData.map((value, i) => {
+                        const isPeak = value >= 85;
+                        const hour = i;
+                        const isCurrentHour = hour === currentHour;
+                        const timeLabel = hour === 0 ? '12AM' : hour < 12 ? `${hour}AM` : hour === 12 ? '12PM' : `${hour - 12}PM`;
+                        return (
+                          <div key={i} className={`flex-1 flex flex-col items-center group relative ${isCurrentHour ? 'z-10' : ''}`}>
+                            {/* Tooltip */}
+                            <div className="absolute bottom-full mb-2 hidden group-hover:block z-10">
+                              <div className="bg-gray-900 text-white text-xs rounded-lg px-3 py-2 whitespace-nowrap shadow-lg">
+                                <div className="font-semibold">{timeLabel} {isCurrentHour && '(Now)'}</div>
+                                <div className="text-gray-300">{value}% capacity</div>
+                                <div className="text-gray-300">{Math.round(value * (parseInt(currentMarket.dailyReach) * 10) / 2400).toLocaleString()} visitors</div>
+                              </div>
+                              <div className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 bg-gray-900 rotate-45" />
+                            </div>
+                            
+                            {/* Bar */}
+                            <motion.div
+                              className={`w-full rounded-t-sm cursor-pointer transition-all duration-200 group-hover:opacity-80 ${
+                                isCurrentHour
+                                  ? 'bg-gradient-to-t from-red-500 to-red-400 ring-2 ring-red-300 ring-offset-1'
+                                  : isPeak 
+                                    ? 'bg-gradient-to-t from-amber-500 to-amber-400' 
+                                    : 'bg-gradient-to-t from-mw-blue-600 to-mw-blue-400'
+                              }`}
+                              initial={{ height: 0 }}
+                              animate={{ height: `${value}%` }}
+                              transition={{ duration: 0.6, delay: i * 0.03, ease: "easeOut" }}
+                            />
+                            
+                            {/* Peak indicator */}
+                            {isPeak && !isCurrentHour && (
+                              <motion.div
+                                className="absolute -top-1 left-1/2 -translate-x-1/2"
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.8 + i * 0.03 }}
+                              >
+                                <div className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                              </motion.div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* X-axis labels */}
+                    <div className="flex justify-between mt-3 text-xs text-gray-500">
+                      <span>12AM</span>
+                      <span>3AM</span>
+                      <span>6AM</span>
+                      <span>9AM</span>
+                      <span>12PM</span>
+                      <span>3PM</span>
+                      <span>6PM</span>
+                      <span>9PM</span>
+                      <span>12AM</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Legend */}
+                <div className="mt-4 flex items-center justify-center gap-6 text-xs flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-sm bg-gradient-to-t from-mw-blue-600 to-mw-blue-400" />
+                    <span className="text-gray-500">Normal Traffic</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-sm bg-gradient-to-t from-amber-500 to-amber-400" />
+                    <span className="text-gray-500">Peak Traffic (≥85%)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-sm bg-gradient-to-t from-red-500 to-red-400" />
+                    <span className="text-gray-500">Current Hour</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Prime Locations Table */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-6">
+                <h4 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Prime Locations
+                </h4>
+                <span className="text-gray-500 text-sm">{currentMarket.locations.length} zones available</span>
+              </div>
+              
+              {/* Table Header */}
+              <div className="hidden md:grid grid-cols-12 gap-4 py-3 px-4 bg-gray-50 rounded-lg text-sm font-medium text-gray-600 mb-2">
+                <div className="col-span-1">#</div>
+                <div className="col-span-3">Location</div>
+                <div className="col-span-3">Description</div>
+                <div className="col-span-2 text-right">Daily Traffic</div>
+                <div className="col-span-1 text-right">Screens</div>
+                <div className="col-span-2 text-right">Score</div>
+              </div>
+
+              {/* Table Rows */}
+              <div className="space-y-2">
+                {currentMarket.locations.map((loc, index) => (
+                  <motion.div
+                    key={loc.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="grid grid-cols-2 md:grid-cols-12 gap-4 py-4 px-4 bg-gray-50 hover:bg-blue-50 rounded-xl transition-colors cursor-pointer group"
+                  >
+                    <div className="hidden md:flex col-span-1 items-center">
+                      <span className="w-8 h-8 bg-mw-blue-100 text-mw-blue-600 rounded-lg flex items-center justify-center font-semibold text-sm group-hover:bg-mw-blue-600 group-hover:text-white transition-colors">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <div className="col-span-1 md:col-span-3 flex items-center">
+                      <span className="font-semibold text-gray-900">{loc.name}</span>
+                    </div>
+                    <div className="col-span-1 md:col-span-3 flex items-center text-gray-600 text-sm">
+                      {loc.desc}
+                    </div>
+                    <div className="hidden md:flex col-span-2 items-center justify-end font-medium text-gray-900">
+                      {(loc.traffic / 1000).toFixed(0)}K
+                    </div>
+                    <div className="hidden md:flex col-span-1 items-center justify-end">
+                      <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md text-sm font-medium">
+                        {loc.screens}
+                      </span>
+                    </div>
+                    <div className="hidden md:flex col-span-2 items-center justify-end gap-2">
+                      <div className="w-20 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-mw-blue-500 to-mw-blue-600 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${loc.score}%` }}
+                          transition={{ duration: 0.8, delay: index * 0.1 }}
+                        />
+                      </div>
+                      <span className="font-semibold text-gray-900 w-8">{loc.score}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Audience & Media Format */}
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Audience Breakdown */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Audience Breakdown
+                </h4>
+                <div className="space-y-4">
+                  {currentMarket.audience.map((segment, index) => (
+                    <div key={segment.name} className="flex items-center gap-4">
+                      <div className={`w-3 h-3 rounded-full ${segment.color}`} />
+                      <span className="flex-1 text-gray-700">{segment.name}</span>
+                      <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          className={`h-full ${segment.color} rounded-full`}
+                          initial={{ width: 0 }}
+                          animate={{ width: `${segment.percentage}%` }}
+                          transition={{ duration: 0.8, delay: index * 0.1 }}
+                        />
+                      </div>
+                      <span className="font-semibold text-gray-900 w-12 text-right">{segment.percentage}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Media Format Mix */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                <h4 className="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-mw-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                  </svg>
+                  Media Format Mix
+                </h4>
+                <div className="space-y-4">
+                  {currentMarket.mediaFormats.map((format, index) => (
+                    <div key={format.name}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-gray-700">{format.name}</span>
+                        <span className="font-semibold text-gray-900">{format.percentage}%</span>
+                      </div>
+                      <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-mw-blue-500 to-mw-blue-600 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${format.percentage}%` }}
+                          transition={{ duration: 0.8, delay: index * 0.1 }}
+                        />
                       </div>
                     </div>
                   ))}
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
