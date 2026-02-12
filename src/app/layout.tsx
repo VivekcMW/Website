@@ -136,11 +136,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Structured Data - Organization */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
@@ -181,17 +176,13 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=2116798625788074&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
       </head>
       <body className={`${poppins.variable} font-sans antialiased bg-white text-mw-gray-900`}>
+        {/* Structured Data - Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -199,6 +190,16 @@ export default function RootLayout({
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {/* Meta Pixel (noscript) */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=2116798625788074&ev=PageView&noscript=1"
+            alt=""
           />
         </noscript>
         <LocaleProvider>
