@@ -759,66 +759,129 @@ export default function MWMarketplacePage() {
         </div>
       </section>
 
-      {/* Competitive Advantages Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Competitive Advantages Section - Statistics Focus */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Why Choose MW Marketplace?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how we compare to traditional agencies and direct billboard owners
+              The numbers speak for themselves
             </p>
           </motion.div>
 
+          {/* Main Stats Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {[
+              { 
+                value: "2", 
+                unit: "min", 
+                label: "Average Booking Time",
+                description: "vs 2-4 weeks with traditional agencies"
+              },
+              { 
+                value: "147", 
+                unit: "+", 
+                label: "Countries Covered",
+                description: "Global reach from a single platform"
+              },
+              { 
+                value: "250K", 
+                unit: "+", 
+                label: "Billboard Inventory",
+                description: "Premium screens worldwide"
+              },
+              { 
+                value: "5", 
+                unit: "%", 
+                label: "Platform Fee",
+                description: "vs 15-25% typical agency fees"
+              }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative group"
+              >
+                <div className="bg-white rounded-[6px] p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 h-full">
+                  <div className="flex items-baseline gap-1 mb-2">
+                    <motion.span 
+                      className="text-5xl md:text-6xl font-bold text-gray-900"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      {stat.value}
+                    </motion.span>
+                    <span className="text-3xl font-bold text-blue-600">{stat.unit}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{stat.label}</h3>
+                  <p className="text-gray-500 text-sm">{stat.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Secondary Stats Row */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-2xl overflow-hidden"
+            className="grid md:grid-cols-3 gap-6"
           >
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white">
-                  <tr>
-                    <th className="px-6 py-6 text-left text-lg font-bold">Feature</th>
-                    <th className="px-6 py-6 text-center text-lg font-bold">MW Marketplace</th>
-                    <th className="px-6 py-6 text-center text-lg font-bold opacity-70">Traditional Agencies</th>
-                    <th className="px-6 py-6 text-center text-lg font-bold opacity-70">Direct Owners</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {[
-                    { feature: 'Booking Speed', mw: '2 minutes', agency: '2-4 weeks', direct: '1-2 weeks' },
-                    { feature: 'Global Coverage', mw: '147 countries', agency: 'Limited', direct: 'Single location' },
-                    { feature: 'Price Transparency', mw: 'Real-time pricing', agency: 'Quote-based', direct: 'Negotiable' },
-                    { feature: 'Multi-Currency', mw: '30 currencies', agency: 'Limited', direct: 'Local only' },
-                    { feature: 'Live Analytics', mw: 'Real-time dashboard', agency: 'Monthly reports', direct: 'No analytics' },
-                    { feature: 'Commission', mw: '5%', agency: '15-25%', direct: 'N/A' },
-                    { feature: '24/7 Support', mw: 'Yes', agency: 'Business hours', direct: 'Limited' },
-                    { feature: 'Instant Availability', mw: 'Yes', agency: 'Manual check', direct: 'Manual check' }
-                  ].map((row, index) => (
-                    <tr key={index} className="hover:bg-white/50 transition-colors">
-                      <td className="px-6 py-5 font-semibold text-gray-900">{row.feature}</td>
-                      <td className="px-6 py-5 text-center">
-                        <span className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold text-sm">
-                          <CheckIcon className="w-4 h-4" />
-                          {row.mw}
-                        </span>
-                      </td>
-                      <td className="px-6 py-5 text-center text-gray-600">{row.agency}</td>
-                      <td className="px-6 py-5 text-center text-gray-600">{row.direct}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            {[
+              { value: "30+", label: "Currencies Supported", sublabel: "Pay in your local currency" },
+              { value: "24/7", label: "Support Available", sublabel: "Dedicated team always ready" },
+              { value: "Real-time", label: "Analytics Dashboard", sublabel: "Track every impression" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-4 bg-white rounded-[6px] p-6 border border-gray-200 shadow-md"
+              >
+                <div className="w-1 h-16 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full" />
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">{item.value}</div>
+                  <div className="text-gray-800 font-medium">{item.label}</div>
+                  <div className="text-gray-500 text-sm">{item.sublabel}</div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Bottom comparison highlight */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <div className="inline-flex items-center gap-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full px-8 py-4 border border-green-200">
+              <span className="text-gray-700 font-medium">
+                <span className="text-green-600 font-bold">85% faster</span> campaign launches than traditional methods
+              </span>
             </div>
           </motion.div>
         </div>
@@ -933,7 +996,7 @@ export default function MWMarketplacePage() {
       </section>
 
       {/* Social Proof Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -942,61 +1005,69 @@ export default function MWMarketplacePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Performance That Speaks For Itself
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real numbers from real campaigns on MW Marketplace
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Main Performance Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
-              { label: 'Average Campaign ROI', value: '385%', icon: ChartBarIcon, color: 'from-green-500 to-emerald-500', description: 'vs 180% industry avg' },
-              { label: 'Average Booking Time', value: '2.3 min', icon: BoltIcon, color: 'from-yellow-500 to-orange-500', description: 'vs 2-4 weeks traditional' },
-              { label: 'Billboard Fill Rate', value: '94%', icon: PhotoIcon, color: 'from-blue-500 to-cyan-500', description: 'vs 67% industry avg' },
-              { label: 'Customer Satisfaction', value: '4.9/5', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', description: 'from 8,500+ reviews' }
+              { label: 'Average Campaign ROI', value: '385', suffix: '%', comparison: 'vs 180% industry avg' },
+              { label: 'Average Booking Time', value: '2.3', suffix: 'min', comparison: 'vs 2-4 weeks traditional' },
+              { label: 'Billboard Fill Rate', value: '94', suffix: '%', comparison: 'vs 67% industry avg' },
+              { label: 'Customer Satisfaction', value: '4.9', suffix: '/5', comparison: 'from 8,500+ reviews' }
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="bg-gray-50 rounded-[6px] p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
               >
-                <div className={`bg-gradient-to-br ${stat.color} p-8 rounded-2xl shadow-2xl mb-4 relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-white/10 animate-pulse"></div>
-                  <stat.icon className="w-12 h-12 mx-auto mb-4 relative z-10" />
-                  <div className="text-5xl font-bold mb-2 relative z-10">{stat.value}</div>
+                <div className="flex items-baseline gap-1 mb-3">
+                  <span className="text-5xl font-bold text-gray-900">{stat.value}</span>
+                  <span className="text-2xl font-semibold text-gray-500">{stat.suffix}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-2">{stat.label}</h3>
-                <p className="text-sm text-gray-400">{stat.description}</p>
+                <h3 className="text-base font-semibold text-gray-800 mb-2">{stat.label}</h3>
+                <p className="text-sm text-gray-500">{stat.comparison}</p>
               </motion.div>
             ))}
           </div>
 
-          {/* Additional Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: 'Total Campaigns', value: '45,000+' },
-              { label: 'Countries Served', value: '147' },
-              { label: 'Monthly Impressions', value: '2.8B' },
-              { label: 'Active Users', value: '12,000+' }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl text-center"
-              >
-                <div className="text-3xl font-bold text-yellow-400 mb-2">{stat.value}</div>
-                <div className="text-sm text-gray-300">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Additional Stats - Horizontal Band */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[6px] p-8 md:p-10"
+          >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+              {[
+                { label: 'Total Campaigns', value: '45,000+' },
+                { label: 'Countries Served', value: '147' },
+                { label: 'Monthly Impressions', value: '2.8B' },
+                { label: 'Active Users', value: '12,000+' }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-sm text-blue-100">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
