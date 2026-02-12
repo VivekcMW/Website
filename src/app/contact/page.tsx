@@ -204,12 +204,6 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-mw-blue-100 to-indigo-100 rounded-full mb-8">
-              <svg className="w-4 h-4 text-mw-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-              </svg>
-              <span className="text-mw-blue-600 text-sm font-medium">Ready to Transform Your Advertising?</span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-mw-gray-900 mb-6">
               Let's Build Something
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-mw-blue-600 to-indigo-600 block">
@@ -262,12 +256,6 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 bg-mw-blue-100 px-4 py-2 rounded-full mb-6">
-              <svg className="w-4 h-4 text-mw-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-mw-blue-600 text-sm font-medium">9 Offices Across Asia</span>
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-mw-gray-900 mb-4">
               Our Global Presence
             </h2>
